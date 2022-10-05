@@ -1,16 +1,19 @@
 <template>
   <div>
     <TheHeader />
-    <h1>Stará Krč - now in Nuxt3</h1>
+    <h1>{{ title }}</h1>
     <TheFooter />
   </div>
 </template>
 
 <script setup lang="ts">
+  const runtimeConfig = useRuntimeConfig()
+  const title = runtimeConfig.public.textTitle
+
   useHead({
-    title: "Stará Krč",
+    title: title,
     bodyAttrs: {
-      id: 'krc',
+      id: 'main',
     },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
@@ -19,7 +22,7 @@
 </script>
 
 <style>
-  #krc {
+  #main {
     margin: 0px;
     background-color: #faebd7;
     font-family: "Helvetica Neue";

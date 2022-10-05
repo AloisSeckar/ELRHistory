@@ -1,13 +1,21 @@
 <template>
     <footer>
-        <a href="https://www.toplist.cz/stat/1445867" title="Počítadlo přístupů"></a>
         <div>
-            © 2022 <strong>Stará Krč</strong> by <a href="http://alois-seckar.cz/">Alois Sečkár</a>
+            © {{ year }} <strong>{{ title }} </strong> by <a v-show="website" :href="website">{{ author }}</a><span v-show="!website">>{{ author }}</span>
             powered by <a href="https://v3.nuxtjs.org/">Nuxt3</a>
             | <a href="/login"><span class="glyphicon glyphicon-lock"></span></a>
         </div>
     </footer>
 </template>
+
+<script setup lang="ts">
+    const runtimeConfig = useRuntimeConfig()
+    const title = runtimeConfig.public.textTitle
+    const author = runtimeConfig.public.textAuthorName
+    const website = runtimeConfig.public.textAuthorWebsite
+    const year = new Date().getFullYear()
+</script>
+
 
 <style scoped>
     footer {
