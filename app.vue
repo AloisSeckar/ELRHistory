@@ -1,7 +1,9 @@
 <template>
   <div>
     <TheHeader />
+    <TheMenu />
     <h1>{{ title }}</h1>
+    <NuxtPage/>
     <TheFooter />
   </div>
 </template>

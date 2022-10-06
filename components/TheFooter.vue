@@ -1,13 +1,13 @@
 <template>
-    <footer>
+    <div>
         <client-only>
-            <div>
+            <div id="footer">
                 © {{ year }} <strong>{{ title }} </strong> by <a v-show="website" :href="website">{{ author }}</a><span v-show="!website">>{{ author }}</span>
                 powered by <a href="https://v3.nuxtjs.org/">Nuxt3</a>
-                | <span><a href="/login"><fa icon="fa-solid fa-key" /></a></span>
+                | <span><NuxtLink to="/login"><fa icon="fa-solid fa-key" /></NuxtLink></span>
             </div>
         </client-only>
-    </footer>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -20,19 +20,19 @@
 
 
 <style scoped>
-    footer {
+    #footer {
         position: fixed;
         width: 100%;
         left: 0;
         bottom: 0;
         background-color: #333333;
         color: #cccccc;
-    }
-    footer > div {
-        margin: 5px;
         text-align: center;
+        padding-bottom: 3px;
+        padding-top: 4px;
     }
-    footer > div > span {
+
+    #footer > span {
         font-size: 10px;
     }
     
