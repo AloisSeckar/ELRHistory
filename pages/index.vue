@@ -4,5 +4,6 @@
     </div>
     <div>
         <TailwindDemo />
+        <SupabaseDemo />
     </div>
 </template>
