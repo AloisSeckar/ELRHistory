@@ -10,10 +10,10 @@
 
 <script setup lang="ts">
   import './assets/css/tailwind.css'
+import { useNewsStore } from './composables/useNewsStore';
 
   const runtimeConfig = useRuntimeConfig()
   const title = runtimeConfig.public.textTitle
-
   useHead({
     title: title,
     bodyAttrs: {
@@ -23,6 +23,9 @@
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   });
+
+  useNewsStore().fill()
+
 </script>
 
 <style>
