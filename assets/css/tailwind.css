@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .box {
+        @apply mb-4 bg-white border border-sky-500;
+    }
+    .box-header{
+        @apply p-2 bg-navy text-silver font-bold;
+    }
+    .box-content {
+        @apply p-2 text-navy;
+    }
+  }

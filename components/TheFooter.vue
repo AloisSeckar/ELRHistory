@@ -4,7 +4,7 @@
             <div id="footer">
                 © {{ year }} <strong>{{ title }} </strong> by <a v-show="website" :href="website">{{ author }}</a><span v-show="!website">>{{ author }}</span>
                 powered by <a href="https://v3.nuxtjs.org/">Nuxt3</a>
-                | <span><NuxtLink to="/login"><fa icon="fa-solid fa-key" /></NuxtLink></span>
+                | <span><NuxtLink to="/login"><fa icon="key" /></NuxtLink></span>
             </div>
         </client-only>
     </div>
