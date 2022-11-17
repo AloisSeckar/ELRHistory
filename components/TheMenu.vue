@@ -1,33 +1,9 @@
 <template>
-    <div>
-        <div id="menu">
-            <NuxtLink to="/">Index</NuxtLink>
-            <NuxtLink to="/gallery">Gallery</NuxtLink>
-            <NuxtLink to="/articles">Articles</NuxtLink>
-            <NuxtLink to="/books">Books</NuxtLink>
-            <NuxtLink to="/links">Links</NuxtLink>
-        </div>
+    <div class="py-1 bg-navy text-lg text-silver text-center space-x-8">
+        <NuxtLink to="/"><fa icon="home" /> Index</NuxtLink>
+        <NuxtLink to="/articles"><fa icon="graduation-cap" /> Articles</NuxtLink>
+        <NuxtLink to="/gallery"><fa icon="image" /> Gallery</NuxtLink>
+        <NuxtLink to="/books"><fa icon="book" /> Books</NuxtLink>
+        <NuxtLink to="/links"><fa icon="globe" /> Links</NuxtLink>
     </div>
 </template>
-
-<style scoped>
-    #menu {
-        background-color: #000033;
-        text-align: center;
-        padding: 5px;
-    }
-
-    a {
-        margin: 5px;
-    }
-
-    a:link, a:visited {
-        color: #cccccc;
-    }
-
-    a:hover, a:active {
-        color: white;
-    }
-
-
-</style>

@@ -2,7 +2,7 @@
   <div>
     <TheHeader />
     <TheMenu />
-    <h1 class="ml-32 mb-4 font-sans font-bold text-4xl text-navy">{{ title }}</h1>
+    <h1 class="ml-32 mb-2 font-sans font-bold text-4xl text-navy">{{ title }}</h1>
     <div class="mx-32 mb-12">
       <NuxtPage />
     </div>
