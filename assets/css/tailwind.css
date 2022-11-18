@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+    #main {
+        @apply bg-orange-100 font-sans text-justify;
+    }
     .box {
         @apply mb-4 bg-white border border-sky-500;
     }
