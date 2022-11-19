@@ -7,26 +7,22 @@ export const useNewsStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Object[],
+      items: [] as News[],
     }
   },
   actions: {
     async fill() {
       console.log("getting " + table_name + " from Supabase")
-      const supabase = useSupabaseClient()
-      const { data, error } = await supabase
-        .from(table_name)
-        .select(`date_created, content, elrh_author(author_id, name)`)
-        .order('date_created', { ascending: false })
-      if (data) {
+      getItems(useSupabaseClient())
+      .then(x => {
         console.log(table_name + " loaded from Supabase")
-        this.items = data
+        this.items = x.data
         this.loaded = true
-      } else {
+      }).catch(x => {
         console.log("failed to load " + table_name + " from Supabase")
-        console.log(error)
+        console.log(x.error)
         this.loaded = false
-      }
+      })
     }
   },
   getters: {
@@ -34,3 +30,13 @@ export const useNewsStore = defineStore({
     getTopItems: state => state.items.slice(0, 5),
   },
 })
+
+async function getItems(supabase: any) {
+  return await supabase
+  .from(table_name)
+  .select(`date_created, content, elrh_author(author_id, name)`)
+  .order('date_created', { ascending: false })
+}
+
+type NewsResponse = Awaited<ReturnType<typeof getItems>>
+export type News = NewsResponse['data']

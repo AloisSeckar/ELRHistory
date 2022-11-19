@@ -7,32 +7,38 @@ export const useCategoryStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Object[],
+      items: [] as Category[],
     }
   },
   actions: {
     async fill() {
       console.log("getting " + table_name + " from Supabase")
-      const supabase = useSupabaseClient()
-      const { data, error } = await supabase
-        .from(table_name)
-        .select(`category_id, ord, name, dscr, type`)
-        .order('ord')
-      if (data) {
+      getItems(useSupabaseClient())
+      .then(x => {
         console.log(table_name + " loaded from Supabase")
-        this.items = data
+        this.items = x.data
         this.loaded = true
-      } else {
+      }).catch(x => {
         console.log("failed to load " + table_name + " from Supabase")
-        console.log(error)
+        console.log(x.error)
         this.loaded = false
-      }
+      })
     }
   },
   getters: {
     getItems: state => state.items,
     getByType: (state) => {
-      return (type: string) => state.items.filter(i => i.type === type) // TODO fix the TS type error
+      return (type: string) => state.items.filter(i => i.type === type)
     }
   },
 })
+
+async function getItems(supabase: any) {
+  return await supabase
+  .from(table_name)
+  .select(`category_id, ord, name, dscr, type`)
+  .order('ord')
+}
+
+type CategoryResponse = Awaited<ReturnType<typeof getItems>>
+export type Category = CategoryResponse['data']
