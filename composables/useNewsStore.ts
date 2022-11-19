@@ -9,20 +9,22 @@ export const useNewsStore = defineStore({
   },
   actions: {
     async fill() {
-        console.log("getting 'web_news' from Supabase")
+        console.log("getting 'elrh_news' from Supabase")
         const supabase = useSupabaseClient()
         let { data } = await supabase
-            .from('web_news')
+            .from('elrh_news')
             .select(`date_created, content`)
+            .order('date_created', { ascending: false })
         if (data) {
-            console.log("'web_news' loaded from Supabase")
+            console.log("'elrh_news' loaded from Supabase")
             this.newsList = data
         } else {
-            console.log("failed to load 'web_news' from Supabase")
+            console.log("failed to load 'elrh_news' from Supabase")
         }
     }
   },
   getters: {
     getNews: state => state.newsList,
+    getTopNews: state => state.newsList.slice(0,5),
   },
 })
