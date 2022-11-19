@@ -6,7 +6,7 @@
             </div>
             <div class="box-content">
                 <div v-for="item in news">
-                    <strong>{{ toDate(item.date_created) }}</strong> {{ item.content }}
+                    <NewsItem :item="item" />
                 </div>
             </div>
         </div>

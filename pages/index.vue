@@ -40,7 +40,7 @@
             </div>
             <div class="box-content">
                 <div v-for="item in news.getTopNews">
-                    <strong>{{ toDate(item.date_created) }}</strong> {{ item.content }}
+                    <NewsItem :item="item" />
                 </div>
                 <div>
                     [ <NuxtLink to="/news">All news</NuxtLink> ]
