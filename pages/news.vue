@@ -5,7 +5,7 @@
                 <fa icon="bullhorn" /> News
             </div>
             <div class="box-content">
-                <div v-for="item in news">
+                <div v-for="item in news.getNews">
                     <NewsItem :item="item" />
                 </div>
             </div>
@@ -14,5 +14,8 @@
 </template>
 
 <script setup>
-const news = useNewsStore().getNews
+const news = useNewsStore()
+if (!news.loaded) {
+    await news.fill()
+}
 </script>

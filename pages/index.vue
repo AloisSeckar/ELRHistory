@@ -52,4 +52,7 @@
 
 <script setup>
 const news = useNewsStore()
+if (!news.loaded) {
+    await news.fill()
+}
 </script>

@@ -24,7 +24,4 @@ useHead({
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
   ]
 });
-
-useNewsStore().fill()
-
 </script>
