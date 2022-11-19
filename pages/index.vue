@@ -39,7 +39,7 @@
                 <fa icon="bullhorn" /> News
             </div>
             <div class="box-content">
-                <div v-for="item in news.getTopNews">
+                <div v-for="item in news.getTopItems">
                     <NewsItem :item="item" />
                 </div>
                 <div>

@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 
-const table_name = "elrh_news"
+const table_name = "elrh_link"
 
-export const useNewsStore = defineStore({
+export const useLinkStore = defineStore({
   id: table_name + '-store',
   state: () => {
     return {
@@ -16,8 +16,8 @@ export const useNewsStore = defineStore({
       const supabase = useSupabaseClient()
       const { data, error } = await supabase
         .from(table_name)
-        .select(`date_created, content, elrh_author(author_id, name)`)
-        .order('date_created', { ascending: false })
+        .select(`category_id, name, dscr, url, thumb`)
+        .order('ord')
       if (data) {
         console.log(table_name + " loaded from Supabase")
         this.items = data
@@ -31,6 +31,8 @@ export const useNewsStore = defineStore({
   },
   getters: {
     getItems: state => state.items,
-    getTopItems: state => state.items.slice(0, 5),
+    getByCategory: (state) => {
+      return (category: number) => state.items.filter(i => i.category_id === category) // TODO fix the TS type error
+    }
   },
 })

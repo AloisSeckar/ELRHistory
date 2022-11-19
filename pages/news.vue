@@ -5,7 +5,7 @@
                 <fa icon="bullhorn" /> News
             </div>
             <div class="box-content">
-                <div v-for="item in news.getNews">
+                <div v-for="item in news.getItems">
                     <NewsItem :item="item" />
                 </div>
             </div>
