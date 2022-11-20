@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 
-const table_name = "elrh_category"
+const tableName = "elrh_category"
 
 export const useCategoryStore = defineStore({
-  id: table_name + '-store',
+  id: tableName + '-store',
   state: () => {
     return {
       loaded: false,
@@ -12,17 +12,7 @@ export const useCategoryStore = defineStore({
   },
   actions: {
     async fill() {
-      console.log("getting " + table_name + " from Supabase")
-      getItems(useSupabaseClient())
-      .then(x => {
-        console.log(table_name + " loaded from Supabase")
-        this.items = x.data
-        this.loaded = true
-      }).catch(x => {
-        console.log("failed to load " + table_name + " from Supabase")
-        console.log(x.error)
-        this.loaded = false
-      })
+      fillStore(tableName, this, getItems)
     }
   },
   getters: {
@@ -34,10 +24,8 @@ export const useCategoryStore = defineStore({
 })
 
 async function getItems(supabase: any) {
-  return await supabase
-  .from(table_name)
-  .select(`category_id, ord, name, dscr, type`)
-  .order('ord')
+  const query = `category_id, ord, name, dscr, type`
+  return fetchSupabase(supabase, tableName, query, 'ord', {})
 }
 
 type CategoryResponse = Awaited<ReturnType<typeof getItems>>
