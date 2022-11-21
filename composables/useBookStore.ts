@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia'
 
-const tableName = "elrh_link"
+const tableName = "elrh_book"
 
-export const useLinkStore = defineStore({
+export const useBookStore = defineStore({
   id: tableName + '-store',
   state: () => {
     return {
       loaded: false,
-      items: [] as Link[],
+      items: [] as Book[],
     }
   },
   actions: {
@@ -24,9 +24,9 @@ export const useLinkStore = defineStore({
 })
 
 async function getItems(supabase: any) {
-  const query = `category_id, name, dscr, url, thumb`
+  const query = `category_id, name, dscr, url, thumb, writer, review, year`
   return fetchSupabase(supabase, tableName, query, 'ord', {})
 }
 
-type LinkResponse = Awaited<ReturnType<typeof getItems>>
-export type Link = LinkResponse['data']
+type BookResponse = Awaited<ReturnType<typeof getItems>>
+export type Book = BookResponse['data']

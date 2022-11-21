@@ -28,16 +28,16 @@ CREATE TABLE "elrh_author" (
 DROP TABLE IF EXISTS "elrh_book";
 CREATE TABLE "elrh_book" (
 	"book_id"	SERIAL PRIMARY KEY,
+	"category_id"	integer NOT NULL,
 	"ord"	integer NOT NULL CHECK("ord" >= 0),
 	"date_created"	timestamp NOT NULL,
 	"date_edited"	timestamp NOT NULL,
 	"name"	varchar(100) NOT NULL,
-	"writer"	varchar(100) NOT NULL,
 	"dscr"	varchar(255) NOT NULL,
 	"url"	varchar(255) NOT NULL,
 	"thumb"	varchar(100) NOT NULL,
 	"author_id"	integer NOT NULL,
-	"category_id"	integer NOT NULL,
+	"writer"	varchar(100) NOT NULL,
 	"review"	varchar(255),
 	"year"	varchar(4) NOT NULL
 );

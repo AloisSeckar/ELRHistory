@@ -17,3 +17,10 @@ INSERT INTO "elrh_category"("ord", "name", "dscr", "type") VALUES (2, 'Bad links
 INSERT INTO "elrh_link"("category_id", "ord", "date_created", "date_edited", "name", "dscr", "url", "thumb", "author_id") VALUES 
     (1, 1, now(), now(), 'Homepage', 'Link to my hompeage', 'http://alois-seckar.cz', 'link/01.jpg', 1),
     (1, 2, now(), now(), 'GitHub', 'Link to my github', 'https://github.com/AloisSeckar', 'link/02.jpg', 1);
+
+    
+INSERT INTO "elrh_category"("ord", "name", "dscr", "type") VALUES (1, 'Good books', 'Books I like', 'b');
+INSERT INTO "elrh_category"("ord", "name", "dscr", "type") VALUES (2, 'Bad books', 'Books I dont like', 'b');
+
+--TODO book data
+--INSERT INTO "elrh_book" VALUES (1, 3, now(), now(),'Test book','Test author','Test description of the book','http://www.databazeknih.cz/knihy/130-let-zeleznicni-trate-nusle-modrany-1882-2012-195556','book/01.jpg',1,2,NULL,'2022');
