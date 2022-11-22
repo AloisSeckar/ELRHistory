@@ -3,16 +3,26 @@
 @tailwind utilities;
 
 @layer components {
+
     #main {
         @apply bg-orange-100 font-sans text-justify;
     }
+
     .box {
         @apply mb-4 bg-white border border-sky-500;
     }
-    .box-header{
+    .box-header {
         @apply p-1 pl-2 bg-navy text-lg text-silver font-bold;
     }
     .box-content {
         @apply p-2 text-navy;
     }
+
+    a:hover, a:active {
+        @apply text-amber-300
+    }
+    .box a:hover, .box a:active {
+        @apply text-sky-500
+    }
+
   }
