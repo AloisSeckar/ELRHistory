@@ -7,15 +7,15 @@ BEGIN TRANSACTION;
 DROP TABLE IF EXISTS "elrh_article";
 CREATE TABLE "elrh_article" (
 	"article_id"	SERIAL PRIMARY KEY,
+	"category_id"	integer NOT NULL,
 	"date_created"	timestamp NOT NULL,
 	"date_edited"	timestamp NOT NULL,
+	"name"	varchar(50) NOT NULL,
 	"dscr"	varchar(255) NOT NULL,
 	"content"	text NOT NULL,
 	"thumb"	varchar(100) NOT NULL,
 	"author_id"	integer NOT NULL,
-	"category_id"	integer NOT NULL,
-	"gallery_id"	integer,
-	"name"	varchar(50) NOT NULL
+	"gallery_id"	integer
 );
 
 DROP TABLE IF EXISTS "elrh_author";
