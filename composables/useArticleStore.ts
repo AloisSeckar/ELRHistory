@@ -19,12 +19,15 @@ export const useArticleStore = defineStore({
     getItems: state => state.items,
     getByCategory: (state) => {
       return (category: number) => state.items.filter(i => i.category_id === category)
+    },
+    getById: (state) => {
+      return (article_id: Number) => state.items.find(i => i.article_id == article_id)
     }
   },
 })
 
 async function getItems(supabase: any) {
-  const query = `elrh_category(category_id, name), date_created, name, dscr, content, thumb, elrh_author(author_id, name), elrh_gallery(gallery_id, name)`
+  const query = `article_id, elrh_category(category_id, name), date_created, name, dscr, content, thumb, elrh_author(author_id, name), elrh_gallery(gallery_id, name)`
   return fetchSupabase(supabase, tableName, query, 'date_created', {ascending: false})
 }
 
