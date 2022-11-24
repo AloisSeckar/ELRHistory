@@ -17,7 +17,7 @@
         </div>
     </div>
 </template>
-a
+
 <script setup lang="ts">
 defineProps({
     item: {type: Object, required: true}
