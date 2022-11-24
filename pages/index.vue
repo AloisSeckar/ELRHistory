@@ -50,7 +50,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const news = useNewsStore()
 if (!news.loaded) {
     await news.fill()
