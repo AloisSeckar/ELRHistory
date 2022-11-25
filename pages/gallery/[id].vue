@@ -1,6 +1,6 @@
 <template>
     <div>
-        <GalleryItem :item="item" :parent="parent" />
+        <ItemGallery :item="item" :parent="parent" />
     </div>
 </template>
 

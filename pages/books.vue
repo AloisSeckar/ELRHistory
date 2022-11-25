@@ -5,7 +5,7 @@
             <div class="box-content">
                 <div>{{ category.dscr }}</div>
                 <div v-for="link in books.getByCategory(category.category_id)">
-                    <BookItem :item="link" />
+                    <ItemBook :item="link" />
                 </div>
                 <div class="p-2" v-if="books.getByCategory(category.category_id).length < 1">No items</div>
             </div>

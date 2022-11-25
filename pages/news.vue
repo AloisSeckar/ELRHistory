@@ -6,7 +6,7 @@
             </div>
             <div class="box-content">
                 <div v-for="item in news.getItems">
-                    <NewsItem :item="item" />
+                    <ItemNews :item="item" />
                 </div>
             </div>
         </div>

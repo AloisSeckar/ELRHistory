@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ArticleItem :item="item" :detail="true" />
+        <ItemArticle :item="item" :detail="true" />
     </div>
 </template>
 

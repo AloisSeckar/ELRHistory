@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ArticleItem v-for="article in articles.items" :item="article" />
+        <ItemArticle v-for="article in articles.items" :item="article" />
     </div>
 </template>
 

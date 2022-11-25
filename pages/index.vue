@@ -40,7 +40,7 @@
             </div>
             <div class="box-content">
                 <div v-for="item in news.getTopItems">
-                    <NewsItem :item="item" />
+                    <ItemNews :item="item" />
                 </div>
                 <div>
                     [ <NuxtLink to="/news">All news</NuxtLink> ]

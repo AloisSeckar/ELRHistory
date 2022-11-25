@@ -1,6 +1,6 @@
 <template>
     <div>
-        <GalleryItem v-for="gallery in galleries.items" :item="gallery" />
+        <ItemGallery v-for="gallery in galleries.items" :item="gallery" />
     </div>
 </template>
 
