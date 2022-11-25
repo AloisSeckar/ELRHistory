@@ -36,3 +36,7 @@ INSERT INTO "elrh_category"("ord", "name", "dscr", "type") VALUES (2, 'Bad artic
 --<p style="text-align: justify;">Heldo urus ócom lótë sindë randa lohtë ilweran fárëa tancë. Orróna melin huiva lav mitya. Mandulómi quimellë cantil lunca minga. Túrëa sanya ertuilë antil mintya namma nahámë imbit cúma tuo finya melko. Nieninquëa singollo talas uinen vaiaro walta estel singwa voronda lepsë yúyal. Tangwa quentaro tyalangan hrón quesset nelci senna númëa orma mindo valto porë úfanwa. ósanwë lor coivienéni ettë lepecan marina. <a title="coivienéni ettë lepecan marina" href="http://google.com">coivienéni ettë lepecan marina</a>.</p>
 --
 --','article/01.jpg',1,5,null,'Test article title');
+
+INSERT INTO "elrh_gallery" VALUES (1, now(), now(), 'Test gallery', 'Gallery contains some images and a sub-gallery', 1, null);
+INSERT INTO "elrh_gallery" VALUES (2, now(), now(), 'Test sub-gallery', 'Gallery inside the main one', 1, 1);
+INSERT INTO "elrh_gallery" VALUES (3, now(), now(), 'Test empty gallery', 'This one will contain no images', 1, null);
