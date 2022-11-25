@@ -40,3 +40,6 @@ INSERT INTO "elrh_category"("ord", "name", "dscr", "type") VALUES (2, 'Bad artic
 INSERT INTO "elrh_gallery" VALUES (1, now(), now(), 'Test gallery', 'Gallery contains some images and a sub-gallery', 1, null);
 INSERT INTO "elrh_gallery" VALUES (2, now(), now(), 'Test sub-gallery', 'Gallery inside the main one', 1, 1);
 INSERT INTO "elrh_gallery" VALUES (3, now(), now(), 'Test empty gallery', 'This one will contain no images', 1, null);
+
+-- TODO related article data
+-- INSERT INTO "elrh_article" VALUES (2,now(), now(),'This article links to a gallery','<p style="text-align: justify;">Just a little mock text</p>','article/02.jpg',1,5,1,'Test article with gallery');
