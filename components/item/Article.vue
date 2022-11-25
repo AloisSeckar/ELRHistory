@@ -32,8 +32,11 @@
 </template>
 
 <script setup lang="ts">
+import type { Article } from '@/composables/useArticleStore'
+import { PropType } from 'vue'
+
 defineProps({
-    item: { type: Object, required: true, default: {} },
+    item: { type: Object as PropType<Article>, required: true, default: {} },
     detail: { type: Boolean, default: false }
 })
 </script>

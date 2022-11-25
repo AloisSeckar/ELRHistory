@@ -19,7 +19,10 @@
 </template>
 
 <script setup lang="ts">
+import type { Book } from '@/composables/useBookStore'
+import { PropType } from 'vue'
+
 defineProps({
-    item: {type: Object, required: true}
+    item: {type: Object as PropType<Book>, required: true}
 })
 </script>

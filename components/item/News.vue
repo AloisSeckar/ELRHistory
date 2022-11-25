@@ -10,7 +10,10 @@
 </template>
 
 <script setup lang="ts">
+import type { News } from '@/composables/useNewsStore'
+import { PropType } from 'vue'
+
 defineProps({
-    item: {type: Object, required: true}
+    item: {type: Object as PropType<News>, required: true}
 })
 </script>

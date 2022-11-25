@@ -28,8 +28,11 @@
 </template>
 
 <script setup lang="ts">
+import type { Gallery } from '@/composables/useGalleryStore'
+import { PropType } from 'vue'
+
 defineProps({
-    item: { type: Object, required: true, default: {} },
+    item: { type: Object as PropType<Gallery>, required: true, default: {} },
     parent: { type: String, default: '' },
 })
 </script>

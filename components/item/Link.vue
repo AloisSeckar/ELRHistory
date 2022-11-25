@@ -16,7 +16,10 @@
 </template>
 
 <script setup lang="ts">
+import type { Link } from '@/composables/useLinkStore'
+import { PropType } from 'vue'
+
 defineProps({
-    item: {type: Object, required: true}
+    item: {type: Object as PropType<Link>, required: true}
 })
 </script>
