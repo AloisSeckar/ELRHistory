@@ -18,12 +18,12 @@ export const useArticleStore = defineStore({
   getters: {
     getItems: state => state.items,
     getByCategory: (state) => {
-      return (category: number) => state.items.filter(i => i.category_id === category)
+      return (category_id: number) => state.items.filter(i => i.category_id === category_id)
     },
     getById: (state) => {
       return (article_id: Number) => state.items.find(i => i.article_id == article_id)
     }
-  },
+  }
 })
 
 async function getItems(supabase: any) {

@@ -20,7 +20,7 @@ export const useGalleryStore = defineStore({
     getById: (state) => {
       return (gallery_id: Number) => state.items.find(i => i.gallery_id == gallery_id)
     }
-  },
+  }
 })
 
 async function getItems(supabase: any) {

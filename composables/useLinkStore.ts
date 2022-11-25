@@ -18,9 +18,9 @@ export const useLinkStore = defineStore({
   getters: {
     getItems: state => state.items,
     getByCategory: (state) => {
-      return (category: number) => state.items.filter(i => i.category_id === category)
+      return (category_id: number) => state.items.filter(i => i.category_id === category_id)
     }
-  },
+  }
 })
 
 async function getItems(supabase: any) {

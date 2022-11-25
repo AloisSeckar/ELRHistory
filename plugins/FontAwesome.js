@@ -15,4 +15,4 @@ library.add(faSquareFacebook)
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.component('fa', FontAwesomeIcon)
-});
+})

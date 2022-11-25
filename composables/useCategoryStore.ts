@@ -20,7 +20,7 @@ export const useCategoryStore = defineStore({
     getByType: (state) => {
       return (type: string) => state.items.filter(i => i.type === type)
     }
-  },
+  }
 })
 
 async function getItems(supabase: any) {
