@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="box" v-for="category in categories.getByType('b')">
-            <div class="box-header">{{ category.name }}</div>
+            <div class="box-header"><fa icon="book" />&nbsp;&nbsp;{{ category.name }}</div>
             <div class="box-content">
                 <div>{{ category.dscr }}</div>
                 <div v-for="link in books.getByCategory(category.category_id)">

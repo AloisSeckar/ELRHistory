@@ -2,7 +2,7 @@
     <div>
         <div class="box">
             <div class="box-header">
-                <fa icon="home" /> About
+                <fa icon="home" />&nbsp;&nbsp;About
             </div>
             <div class="box-content">
                 Helca vincarna tassa verno erë loctë marta yendi. Oarel hellë armaro moryo tenna lucassë yeldë. Tarwesta
@@ -19,7 +19,7 @@
         </div>
         <div class="box">
             <div class="box-header">
-                <fa icon="envelope" /> Contacts
+                <fa icon="envelope" />&nbsp;&nbsp;Contacts
             </div>
             <div class="box-content">
                 Helca vincarna tassa verno erë loctë marta yendi. Oarel hellë armaro moryo tenna lucassë yeldë. Tarwesta
@@ -36,7 +36,7 @@
         </div>
         <div class="box">
             <div class="box-header">
-                <fa icon="bullhorn" /> News
+                <fa icon="bullhorn" />&nbsp;&nbsp;News
             </div>
             <div class="box-content">
                 <div v-for="item in news.getTopItems">

@@ -2,6 +2,7 @@
     <div>
         <div class="box" v-if="item.name">
             <div class="box-header">
+                <fa icon="image" />&nbsp;
                 <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">{{ item.name }}</NuxtLink>
                 <span class="float-right pr-1 text-base font-normal">
                     <strong>{{ parent ? parent : 'Index' }}</strong> | {{ item.elrh_author?.name }} |
@@ -13,8 +14,8 @@
                 <div v-else>
                     <span v-if="item.dscr?.length > 200" v-html="item.dscr.substring(0, 200) + '...'"></span>
                     <span v-else v-html="item.dscr"></span>
-                    <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }" v-if="item.dscr?.length > 200">
-                        [ Read more ]</NuxtLink>
+                    [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }" v-if="item.dscr?.length > 200">
+                        Read more</NuxtLink> ]
                 </div>
                 <div>
                     Here will be images
