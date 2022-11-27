@@ -9,8 +9,18 @@
                 </span>
             </div>
             <div class="box-content">
+                <div v-if="detail" v-html="item.dscr"></div>
+                <div v-else>
+                    <span v-if="item.dscr?.length > 200" v-html="item.dscr.substring(0, 200) + '...'"></span>
+                    <span v-else v-html="item.dscr"></span>
+                    <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }" v-if="item.dscr?.length > 200">
+                        [ Read more ]</NuxtLink>
+                </div>
                 <div>
                     Here will be images
+                </div>
+                <div v-if="detail">
+                    Here will be parent
                 </div>
                 <div>
                     Here will be sub-galleries
@@ -29,10 +39,12 @@
 
 <script setup lang="ts">
 import type { Gallery } from '@/composables/useGalleryStore'
+import { typeofTypeAnnotation } from '@babel/types';
 import { PropType } from 'vue'
 
 defineProps({
     item: { type: Object as PropType<Gallery>, required: true, default: {} },
+    detail: { type: Boolean, default: false },
     parent: { type: String, default: '' },
 })
 </script>
