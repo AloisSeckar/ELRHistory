@@ -25,4 +25,8 @@
         @apply text-sky-500
     }
 
+    .thumb {
+        @apply w-28 h-20
+    }
+
   }

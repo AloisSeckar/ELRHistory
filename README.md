@@ -3,6 +3,13 @@ Website designed for photos/pictures and information about random historical top
 
 Originally a new version of [StaraKrc Python project](https://github.com/AloisSeckar/StaraKrc), this time in [Nuxt3](https://v3.nuxtjs.org/). However, my current goal is to make it customizable for possible re-use for other city parts etc.
 
+## Attributions
+- Nuxt 3 framework
+- Tailwind CSS
+- Supabase DB
+- Icons made possible by [FortAwesome](https://github.com/FortAwesome/vue-fontawesome)
+- Test images by [Unsplash](https://unsplash.com/)
+
 ## Setting up
 
 Right now you can just clone the repo and follow [Nuxt 3 deployment instructions](https://v3.nuxtjs.org/getting-started/deployment/).

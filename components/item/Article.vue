@@ -11,7 +11,7 @@
             </div>
             <div class="box-content flex">
                 <div class="flex-none pr-2">
-                    <img :src="'/' + item.thumb" :alt="item.name" :width="120" />
+                    <img class="thumb" :src="'/' + item.thumb" :alt="item.name" :title="item.name" />
                 </div>
                 <div class="flex-1">
                     <div class="pb-1">{{ item.dscr }}</div>
