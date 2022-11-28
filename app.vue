@@ -12,10 +12,6 @@
 
 <script setup lang="ts">
 import './assets/css/tailwind.css'
-import { createPinia } from 'pinia'
-
-const pinia = createPinia()
-useNuxtApp().vueApp.use(pinia)
 
 const runtimeConfig = useRuntimeConfig()
 const title = runtimeConfig.public.textTitle
