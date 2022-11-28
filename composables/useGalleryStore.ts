@@ -19,13 +19,16 @@ export const useGalleryStore = defineStore({
     getItems: state => state.items,
     getById: (state) => {
       return (gallery_id: Number) => state.items.find(i => i.gallery_id == gallery_id)
+    },
+    getByParent: (state) => {
+      return (parent_id: Number | null) => state.items.filter(i => i.parent_id?.gallery_id == parent_id)
     }
   }
 })
 
 async function getItems(supabase: any) {
-  const query = `gallery_id, date_created, name, dscr, elrh_author(author_id, name), elrh_gallery(parent_id, name)`
-  return fetchSupabase(supabase, tableName, query, 'date_created', {ascending: false})
+  const query = `gallery_id, date_created, name, dscr, author_id(author_id, name), parent_id(gallery_id, name)`
+  return fetchSupabase(supabase, tableName, query, 'name', {})
 }
 
 type GalleryResponse = Awaited<ReturnType<typeof getItems>>

@@ -1,12 +1,13 @@
 <template>
     <div>
-        <ItemGallery v-for="gallery in galleries.items" :item="gallery" />
+        <ItemGallery v-for="gallery in galleries" :item="gallery" />
     </div>
 </template>
 
 <script setup lang="ts">
-const galleries = useGalleryStore()
-if (!galleries.loaded) {
-    await galleries.fill()
+const galleryStore = useGalleryStore()
+if (!galleryStore.loaded) {
+    await galleryStore.fill()
 }
+const galleries = computed(() => galleryStore.getByParent(null))
 </script>
