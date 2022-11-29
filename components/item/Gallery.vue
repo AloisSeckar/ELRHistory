@@ -19,8 +19,14 @@
                             Read more</NuxtLink> ]
                     </span>
                 </div>
-                <div>
-                    Here will be images
+                <div class="flex flex-wrap">
+                    <div v-for="image in images">
+                        <img class="thumb" :src="'/' + image.image" :alt="image.name" :title="image.title" />
+                    </div>
+                    <div v-if="!detail" class="thumb leading-6">
+                        <br />
+                        [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">View gallery</NuxtLink> ]
+                    </div>
                 </div>
                 <div v-if="detail">
                     <strong>Parent gallery:</strong>
@@ -49,10 +55,12 @@
 
 <script setup lang="ts">
 import type { Gallery } from '@/composables/useGalleryStore'
+import type { Image } from '@/composables/useImageStore'
 import { PropType } from 'vue'
 
 defineProps({
     item: { type: Object as PropType<Gallery>, required: true, default: {} },
+    images: { type: Array as PropType<Image[]>, default: [] },
     detail: { type: Boolean, default: false },
     parent: { type: String, default: '' },
 })

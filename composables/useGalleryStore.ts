@@ -21,7 +21,7 @@ export const useGalleryStore = defineStore({
       return (gallery_id: Number) => state.items.find(i => i.gallery_id == gallery_id)
     },
     getByParent: (state) => {
-      return (parent_id: Number | null) => state.items.filter(i => i.parent_id?.gallery_id == parent_id)
+      return (parent_id?: Number) => state.items.filter(i => i.parent_id?.gallery_id == parent_id)
     }
   }
 })

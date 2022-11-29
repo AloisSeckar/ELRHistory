@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ItemGallery :item="item" :detail="true" :parent="parent" />
+        <ItemGallery :item="item" :images="useImageStore().getByGallery(item?.gallery_id)" :detail="true" :parent="parent" />
     </div>
 </template>
 
@@ -9,6 +9,12 @@ const galleries = useGalleryStore()
 if (!galleries.loaded) {
     await galleries.fill()
 }
+
+const imageStore = useImageStore()
+if (!imageStore.loaded) {
+    await imageStore.fill()
+}
+
 const item = computed(() => {
     let id = null
     try {

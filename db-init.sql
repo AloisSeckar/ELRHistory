@@ -87,14 +87,14 @@ CREATE TABLE "elrh_gallery" (
 DROP TABLE IF EXISTS "elrh_image";
 CREATE TABLE "elrh_image" (
 	"image_id"	SERIAL PRIMARY KEY,
-	"author_id"	integer NOT NULL,
 	"date_created"	timestamp NOT NULL,
 	"date_edited"	timestamp NOT NULL,
-	"gallery_id"	integer NOT NULL,
-	"ord"	integer NOT NULL CHECK("ord" >= 0),
 	"name"	varchar(50) NOT NULL,
 	"dscr"	text,
+	"author_id"	integer NOT NULL,
 	"image"	varchar(100) NOT NULL,
+	"gallery_id"	integer NOT NULL,
+	"ord"	integer NOT NULL CHECK("ord" >= 0),
 	"prev_id"	integer,
 	"next_id"	integer
 );

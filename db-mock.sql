@@ -46,3 +46,24 @@ INSERT INTO "elrh_gallery" VALUES (4, now(), now(), '03 - Test gallery with no d
 
 -- TODO related article data
 -- INSERT INTO "elrh_article" VALUES (2,now(), now(),'This article links to a gallery','<p style="text-align: justify;">Just a little mock text</p>','article/02.jpg',1,5,1,'Test article with gallery');
+
+INSERT INTO "elrh_image" VALUES (1, now(), now(),'Image 01','This is a test image',1,'image/01.jpg',1,1, NULL, NULL);
+INSERT INTO "elrh_image" VALUES (2, now(), now(),'Image 02','This is a test image',1,'image/02.jpg',1,1, NULL, NULL);
+INSERT INTO "elrh_image" VALUES (3, now(), now(),'Image 03','This is a test image',1,'image/03.jpg',1,1, NULL, NULL);
+INSERT INTO "elrh_image" VALUES (4, now(), now(),'Image 04','This is a test image',1,'image/04.jpg',1,1, NULL, NULL);
+INSERT INTO "elrh_image" VALUES (5, now(), now(),'Image 05','This is a test image',1,'image/05.jpg',1,1, NULL, NULL);
+INSERT INTO "elrh_image" VALUES (6, now(), now(),'Image 06','This is a test image',1,'image/06.jpg',1,1, NULL, NULL);
+INSERT INTO "elrh_image" VALUES (7, now(), now(),'Image 07','This is a test image',1,'image/07.jpg',1,1, NULL, NULL);
+INSERT INTO "elrh_image" VALUES (8, now(), now(),'Image 08','This is a test image',1,'image/08.jpg',1,1, NULL, NULL);
+
+UPDATE "elrh_image" SET "next_id" = 2 WHERE "image_id" = 1;
+UPDATE "elrh_image" SET "prev_id" = 1, "next_id" = 3 WHERE "image_id" = 2;
+UPDATE "elrh_image" SET "prev_id" = 2, "next_id" = 4 WHERE "image_id" = 3;
+UPDATE "elrh_image" SET "prev_id" = 3, "next_id" = 5 WHERE "image_id" = 4;
+UPDATE "elrh_image" SET "prev_id" = 4, "next_id" = 6 WHERE "image_id" = 5;
+UPDATE "elrh_image" SET "prev_id" = 5, "next_id" = 7 WHERE "image_id" = 6;
+UPDATE "elrh_image" SET "prev_id" = 6, "next_id" = 8 WHERE "image_id" = 7;
+UPDATE "elrh_image" SET "prev_id" = 7 WHERE "image_id" = 8;
+
+INSERT INTO "elrh_image" VALUES (9, now(), now(),'Image 09','This is a test image',1,'image/09.jpg',2,1, NULL, NULL);
+INSERT INTO "elrh_image" VALUES (10, now(), now(),'Image 10','This is a test image',1,'image/10.jpg',4,1, NULL, NULL);
