@@ -21,14 +21,13 @@ export const useImageStore = defineStore({
             return (image_id: Number) => state.items.find(i => i.image_id == image_id)
         },
         getByGallery: (state) => {
-            return (gallery_id?: Number, limit?: number) => state.items.filter(i => i.gallery_id == gallery_id).slice(0, limit)
+            return (gallery_id?: Number, limit?: number) => state.items.filter(i => i.gallery_id?.gallery_id == gallery_id).slice(0, limit)
         }
     }
 })
 
 async function getItems(supabase: any) {
-    // TODO author and gallery name
-    const query = `image_id, date_created, name, dscr, author_id, image, gallery_id, ord, prev_id, next_id`
+    const query = `image_id, date_created, name, dscr, author_id(author_id, name), image, gallery_id(gallery_id, name), ord, prev_id, next_id`
     return fetchSupabase(supabase, tableName, query, 'ord', {})
 }
 
