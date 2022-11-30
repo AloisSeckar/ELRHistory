@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ItemGallery :item="item" :images="useImageStore().getByGallery(item?.gallery_id)" :detail="true" :parent="parent" />
+        <ItemGallery :detail="true" :item="item" :images="images" :children="children" :parent="parent" />
     </div>
 </template>
 
@@ -25,5 +25,7 @@ const item = computed(() => {
     }
     return {}
 })
+const images = computed(() => useImageStore().getByGallery(item.value?.gallery_id))
+const children = computed(() => useGalleryStore().getByParent(item.value?.gallery_id))
 const parent = computed(() => 'Parent TBA')
 </script>

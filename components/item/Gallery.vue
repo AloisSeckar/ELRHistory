@@ -23,15 +23,18 @@
                     <div v-for="image in images">
                         <img class="thumb" :src="'/' + image.image" :alt="image.name" :title="image.title" />
                     </div>
-                    <div v-if="!detail" class="thumb leading-6">
+                    <div v-if="!detail && images.length > 0" class="thumb leading-6">
                         <br />
                         [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">View gallery</NuxtLink> ]
+                    </div>
+                    <div v-if="images.length === 0">
+                        This gallery has no images
                     </div>
                 </div>
                 <div v-if="detail">
                     <strong>Parent gallery:</strong>
                     <div v-if="item.parent_id">
-                        &#9656;&nbsp;<NuxtLink :to="{ path: '/galleries/' + item.parent_id.gallery_id }">
+                        &#9656;&nbsp;<NuxtLink :to="{ path: '/gallery/' + item.parent_id.gallery_id }">
                             {{ item.parent_id.name }}</NuxtLink>
                     </div>
                     <div v-else>
@@ -39,7 +42,14 @@
                     </div>
                 </div>
                 <div>
-                    Here will be sub-galleries
+                    <strong>Sub-galleries:</strong>
+                    <div v-for="gallery in children">
+                        &#9656;&nbsp;<NuxtLink :to="{ path: '/gallery/' + gallery.gallery_id }">
+                            {{ gallery.name }}</NuxtLink>
+                    </div>
+                    <div v-if="children.length === 0">
+                        No sub-galleries
+                    </div>
                 </div>
                 <div>
                     Here will be sub-article
@@ -59,9 +69,10 @@ import type { Image } from '@/composables/useImageStore'
 import { PropType } from 'vue'
 
 defineProps({
+    detail: { type: Boolean, default: false },
     item: { type: Object as PropType<Gallery>, required: true, default: {} },
     images: { type: Array as PropType<Image[]>, default: [] },
-    detail: { type: Boolean, default: false },
+    children: { type: Array as PropType<Gallery[]>, default: [] },
     parent: { type: String, default: '' },
 })
 </script>
