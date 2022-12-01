@@ -22,25 +22,27 @@
                 <div>
                     <strong>Images in gallery:</strong>
                     <div class="flex flex-wrap">
-                        <div v-for="image in images">
+                        <div v-for="image in thumbs">
                             <img class="thumb" :src="'/' + image.image" :alt="image.name" :title="image.title" />
                         </div>
-                        <div v-if="(!detail && images.length > 5)" class="thumb leading-6">
+                        <div v-if="(!detail && images > 5)" class="thumb leading-6">
                             <br />
                             [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">See more...</NuxtLink> ]
                         </div>
                     </div>
                 </div>
                 <div>
-                    <span v-if="images.length > 0">
-                        This gallery contains 
-                        <strong>{{ useImageStore().getCountByGallery(item.gallery_id) }}</strong> 
+                    <span v-if="images > 0">
+                        This gallery contains
+                        <strong>{{ useImageStore().getCountByGallery(item.gallery_id) }}</strong>
                         images in total
                     </span>
                     <span v-else>
                         This gallery has no images
                     </span>
-                    [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">View gallery</NuxtLink> ]
+                    <span v-if="!detail">
+                        [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">View gallery</NuxtLink> ]
+                    </span>
                 </div>
                 <div v-if="detail">
                     <strong>Parent gallery:</strong>
@@ -76,14 +78,16 @@
 
 <script setup lang="ts">
 import type { Gallery } from '@/composables/useGalleryStore'
-import type { Image } from '@/composables/useImageStore'
 import { PropType } from 'vue'
 
-defineProps({
+const props = defineProps({
     detail: { type: Boolean, default: false },
     item: { type: Object as PropType<Gallery>, required: true, default: {} },
-    images: { type: Array as PropType<Image[]>, default: [] },
-    children: { type: Array as PropType<Gallery[]>, default: [] },
-    parent: { type: String, default: '' },
 })
+
+const id = props.item.gallery_id
+const images = computed(() => useImageStore().getCountByGallery(id))
+const thumbs = computed(() => useImageStore().getByGallery(id, props.detail ? undefined : 5))
+const children = computed(() => useGalleryStore().getByParent(id))
+const parent = computed(() => 'Index') // TODO
 </script>
