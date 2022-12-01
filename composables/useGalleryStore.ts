@@ -18,6 +18,7 @@ export const useGalleryStore = defineStore({
   getters: {
     getItems: state => state.items,
     getById: (state) => {
+      console.log(state.items)
       return (gallery_id: Number) => state.items.find(i => i.gallery_id == gallery_id)
     },
     getByParent: (state) => {
@@ -27,7 +28,8 @@ export const useGalleryStore = defineStore({
 })
 
 async function getItems(supabase: any) {
-  const query = `gallery_id, date_created, name, dscr, author_id(author_id, name), parent_id(gallery_id, name)`
+  const query = `gallery_id, date_created, name, dscr, author_id(author_id, name), parent_id(gallery_id, name), 
+  elrh_article(article_id, name, author_id(author_id, name), gallery_id)`
   return fetchSupabase(supabase, tableName, query, 'name', {})
 }
 

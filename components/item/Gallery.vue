@@ -65,7 +65,11 @@
                     </div>
                 </div>
                 <div>
-                    Here will be sub-article
+                    <strong>Related articles:</strong>
+                    <div v-for="article in articles">
+                        &#9656;&nbsp;<NuxtLink :to="{ path: '/article/' + article.article_id }">
+                            {{ article.name }}</NuxtLink> [ {{ article.author_id?.name }} ]<br />
+                    </div>
                 </div>
             </div>
         </div>
@@ -90,4 +94,5 @@ const images = computed(() => useImageStore().getCountByGallery(id))
 const thumbs = computed(() => useImageStore().getByGallery(id, props.detail ? undefined : 5))
 const children = computed(() => useGalleryStore().getByParent(id))
 const parent = computed(() => 'Index') // TODO
+const articles = computed(() => props.item.elrh_article)
 </script>
