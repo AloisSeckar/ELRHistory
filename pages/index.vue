@@ -39,7 +39,7 @@
                 <fa icon="bullhorn" />&nbsp;&nbsp;News
             </div>
             <div class="box-content">
-                <div v-for="item in news.getTopItems">
+                <div v-for="item in useNewsStore().getTopItems">
                     <ItemNews :item="item" />
                 </div>
                 <div>
@@ -49,10 +49,3 @@
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-const news = useNewsStore()
-if (!news.loaded) {
-    await news.fill()
-}
-</script>
