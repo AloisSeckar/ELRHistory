@@ -22,6 +22,9 @@ export const useImageStore = defineStore({
         },
         getByGallery: (state) => {
             return (gallery_id?: Number, limit?: number) => state.items.filter(i => i.gallery_id?.gallery_id == gallery_id).slice(0, limit)
+        },
+        getCountByGallery: (state) => {
+            return (gallery_id: Number) => state.items.filter(i => i.gallery_id?.gallery_id == gallery_id).length
         }
     }
 })

@@ -19,17 +19,28 @@
                             Read more</NuxtLink> ]
                     </span>
                 </div>
-                <div class="flex flex-wrap">
-                    <div v-for="image in images">
-                        <img class="thumb" :src="'/' + image.image" :alt="image.name" :title="image.title" />
+                <div>
+                    <strong>Images in gallery:</strong>
+                    <div class="flex flex-wrap">
+                        <div v-for="image in images">
+                            <img class="thumb" :src="'/' + image.image" :alt="image.name" :title="image.title" />
+                        </div>
+                        <div v-if="(!detail && images.length > 5)" class="thumb leading-6">
+                            <br />
+                            [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">See more...</NuxtLink> ]
+                        </div>
                     </div>
-                    <div v-if="!detail && images.length > 0" class="thumb leading-6">
-                        <br />
-                        [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">View gallery</NuxtLink> ]
-                    </div>
-                    <div v-if="images.length === 0">
+                </div>
+                <div>
+                    <span v-if="images.length > 0">
+                        This gallery contains 
+                        <strong>{{ useImageStore().getCountByGallery(item.gallery_id) }}</strong> 
+                        images in total
+                    </span>
+                    <span v-else>
                         This gallery has no images
-                    </div>
+                    </span>
+                    [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">View gallery</NuxtLink> ]
                 </div>
                 <div v-if="detail">
                     <strong>Parent gallery:</strong>
