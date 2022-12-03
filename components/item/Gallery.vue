@@ -23,7 +23,9 @@
                     <strong>Images in gallery:</strong>
                     <div class="flex flex-wrap">
                         <div v-for="image in thumbs">
-                            <img class="thumb" :src="'/' + image.image" :alt="image.name" :title="image.title" />
+                            <NuxtLink :to="{ path: '/image/' + image.image_id }">
+                                <img class="thumb" :src="'/' + image.image" :alt="image.name" :title="image.title" />
+                            </NuxtLink>
                         </div>
                         <div v-if="(!detail && images > 5)" class="thumb leading-6">
                             <br />
