@@ -72,6 +72,9 @@
                         &#9656;&nbsp;<NuxtLink :to="{ path: '/article/' + article.article_id }">
                             {{ article.name }}</NuxtLink> [ {{ article.author_id?.name }} ]<br />
                     </div>
+                    <div v-if="articles.length === 0">
+                        No related articles
+                    </div>
                 </div>
             </div>
         </div>
