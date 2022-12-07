@@ -30,11 +30,12 @@ useHead({
 // TODO also there is a problem that gallery info doesn't load on time 
 //   when starting directly at /gallery/[id]
 await useTextStore().fill()
+await useContactStore().fill()
+await useNewsStore().fill()
+await useCategoryStore().fill()
 await useArticleStore().fill()
 await useBookStore().fill()
-await useCategoryStore().fill()
 await useGalleryStore().fill()
 await useImageStore().fill()
 await useLinkStore().fill()
-await useNewsStore().fill()
 </script>

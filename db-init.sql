@@ -51,6 +51,15 @@ CREATE TABLE "elrh_category" (
 	"type"	varchar(1) NOT NULL
 );
 
+DROP TABLE IF EXISTS "elrh_contact";
+CREATE TABLE "elrh_contact" (
+	"contact_id"	SERIAL PRIMARY KEY,
+	"name"	varchar(50) NOT NULL,
+	"email"	varchar(255) NOT NULL,
+	"phone"	varchar(16) NOT NULL,
+	"fb"	varchar(100) NOT NULL
+);
+
 DROP TABLE IF EXISTS "elrh_link";
 CREATE TABLE "elrh_link" (
 	"link_id"	SERIAL PRIMARY KEY,
