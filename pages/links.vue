@@ -10,5 +10,6 @@
                 <div class="p-2" v-if="useLinkStore().getByCategory(category.category_id).length < 1">No items</div>
             </div>
         </div>
+        <div class="-mt-2 text-lg">Total links: <strong>{{ useLinkStore().getCount }}</strong></div>
     </div>
 </template>

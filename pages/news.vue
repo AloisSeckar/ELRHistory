@@ -10,5 +10,6 @@
                 </div>
             </div>
         </div>
+        <div class="-mt-2 text-lg">Total news: <strong>{{ useNewsStore().getCount }}</strong></div>
     </div>
 </template>

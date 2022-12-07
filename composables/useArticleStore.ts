@@ -17,6 +17,7 @@ export const useArticleStore = defineStore({
   },
   getters: {
     getItems: state => state.items,
+    getCount: state => state.items.length,
     getByCategory: (state) => {
       return (category_id: number) => state.items.filter(i => i.category_id === category_id)
     },

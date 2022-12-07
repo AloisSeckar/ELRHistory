@@ -18,6 +18,7 @@ export const useNewsStore = defineStore({
   getters: {
     getItems: state => state.items,
     getTopItems: state => state.items.slice(0, 5),
+    getCount: state => state.items.length
   },
 })
 

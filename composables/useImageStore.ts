@@ -17,6 +17,7 @@ export const useImageStore = defineStore({
     },
     getters: {
         getItems: state => state.items,
+        getCount: state => state.items.length,
         getById: (state) => {
             return (image_id: Number) => state.items.find(i => i.image_id == image_id)
         },

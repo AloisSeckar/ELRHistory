@@ -17,6 +17,7 @@ export const useGalleryStore = defineStore({
   },
   getters: {
     getItems: state => state.items,
+    getCount: state => state.items.length,
     getById: (state) => {
       return (gallery_id: Number) => state.items.find(i => i.gallery_id == gallery_id)
     },
