@@ -99,6 +99,12 @@ CREATE TABLE "elrh_image" (
 	"next_id"	integer
 );
 
+DROP TABLE IF EXISTS "elrh_text";
+CREATE TABLE "elrh_text" (
+	"key"	text NOT NULL,
+	"value"	text NOT NULL,
+	PRIMARY KEY ("key")
+);
 
 ALTER TABLE "elrh_article" ADD CONSTRAINT "fk_article_author" FOREIGN KEY ("author_id") REFERENCES "elrh_author"("author_id");
 ALTER TABLE "elrh_article" ADD CONSTRAINT "fk_article_category" FOREIGN KEY ("category_id") REFERENCES "elrh_category"("category_id");

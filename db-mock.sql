@@ -1,6 +1,6 @@
 -- DB mock data for ELRHistory 1.0
 -- use to populate your DB with some values for testing
--- last revision: 2022-11-19
+-- last revision: 2022-12-07
 
 INSERT INTO "elrh_author"("email", "name") VALUES ('alois.seckar@gmail.com', 'ELRHistory');
 
@@ -67,3 +67,7 @@ UPDATE "elrh_image" SET "prev_id" = 7 WHERE "image_id" = 8;
 
 INSERT INTO "elrh_image" VALUES (9, now(), now(),'Image 09','This is a test image',1,'image/09.jpg',2,1, NULL, NULL);
 INSERT INTO "elrh_image" VALUES (10, now(), now(),'Image 10','This is a test image',1,'image/10.jpg',4,1, NULL, NULL);
+
+
+INSERT INTO "elrh_text" VALUES ('welcome', 'This is a welcome text displayed on the index page.<br /><br />
+It can be <strong>HTML <span style="color: red">formatted</span></strong>.');
