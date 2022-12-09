@@ -71,6 +71,7 @@ INSERT INTO "elrh_image" VALUES (9, now(), now(),'Image 09','This is a test imag
 INSERT INTO "elrh_image" VALUES (10, now(), now(),'Image 10','This is a test image',1,'image/10.jpg',4,1, NULL, NULL);
 
 
+INSERT INTO "elrh_text" VALUES ('web-author', '<a href="http://alois-seckar.cz/">Alois Sečkár</a>');
 INSERT INTO "elrh_text" VALUES ('index-welcome', 'This is a welcome text displayed on the index page.<br /><br />
 It can be <strong>HTML <span style="color: red">formatted</span></strong>.');
 INSERT INTO "elrh_text" VALUES ('index-about', 'About');

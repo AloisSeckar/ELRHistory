@@ -9,8 +9,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       textTitle: 'ELRHistory',
-      textAuthorName: 'Alois Sečkár',
-      textAuthorWebsite: 'http://alois-seckar.cz/',
     }
   },
 })
