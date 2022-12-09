@@ -17,7 +17,14 @@ export const useTextStore = defineStore({
   },
   getters: {
     getKey: (state) => {
-        return (key: string) => state.items.find(i => i.key == key)
+        return (key: string) => {
+          const match = state.items.find(i => i.key == key)
+          if (match) {
+            return match.value
+          } else {
+            return `UNDEFINED {'${key}'}`
+          }
+        }
     }
   },
 })
