@@ -17,17 +17,17 @@
                     <div class="pb-1">{{ item.dscr }}</div>
                     <div class="pt-1" v-if="detail" v-html="item.content"></div>
                     <div class="pt-1" v-else>
-                        [ <NuxtLink :to="{ path: '/article/' + item.article_id }">Read article</NuxtLink> ]
+                        [ <NuxtLink :to="{ path: '/article/' + item.article_id }">{{ text.getKey('article-read') }}</NuxtLink> ]
                     </div>
                     <div class="pt-1" v-if="detail && item.elrh_gallery">
-                        [ <NuxtLink :to="{ path: '/gallery/' + item.elrh_gallery.gallery_id }">View gallery</NuxtLink> ]
+                        [ <NuxtLink :to="{ path: '/gallery/' + item.elrh_gallery.gallery_id }">{{ text.getKey('article-gallery') }}</NuxtLink> ]
                     </div>
                 </div>
             </div>
         </div>
         <div class="box" v-else>
-            <div class="box-header">Invalid article ID</div>
-            <div class="box-content flex">Data doesn't exist or cannot be loaded</div>
+            <div class="box-header">{{ text.getKey('invalid-article') }}</div>
+            <div class="box-content flex">{{ text.getKey('invalid-content') }}</div>
         </div>
     </div>
 </template>
@@ -40,4 +40,6 @@ defineProps({
     item: { type: Object as PropType<Article>, required: true, default: {} },
     detail: { type: Boolean, default: false }
 })
+
+const text = useTextStore()
 </script>

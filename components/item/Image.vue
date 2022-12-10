@@ -23,8 +23,8 @@
             </div>
         </div>
         <div class="box" v-else>
-            <div class="box-header">Invalid image ID</div>
-            <div class="box-content flex">Data doesn't exist or cannot be loaded</div>
+            <div class="box-header">{{ text.getKey('invalid-image') }}</div>
+            <div class="box-content flex">{{ text.getKey('invalid-content') }}</div>
         </div>
     </div>
 </template>
@@ -36,6 +36,8 @@ import { PropType } from 'vue'
 const props = defineProps({
     item: { type: Object as PropType<Image>, required: true, default: {} },
 })
+
+const text = useTextStore()
 
 // TODO will depend on login state
 const editable = false
