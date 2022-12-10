@@ -3,7 +3,11 @@
         <ItemGallery v-for="gallery in useGalleryStore().getByParent()" :item="gallery" />
     </div>
     <div class="-mt-2 text-lg">
-        Total galleries: <strong>{{ useGalleryStore().getCount }}</strong> |
-        Total images: <strong>{{ useImageStore().getCount }}</strong>
+        {{ text.getKey('galleries-total') }}: <strong>{{ useGalleryStore().getCount }}</strong> |
+        {{ text.getKey('images-total') }}: <strong>{{ useImageStore().getCount }}</strong>
     </div>
 </template>
+
+<script setup lang="ts">
+const text = useTextStore()
+</script>
