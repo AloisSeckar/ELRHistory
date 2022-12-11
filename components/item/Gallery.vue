@@ -81,10 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="box" v-else>
-            <div class="box-header">{{ text.getKey('invalid-gallery') }}</div>
-            <div class="box-content flex">{{ text.getKey('invalid-content') }}</div>
-        </div>
+        <ItemInvalid item="gallery" v-else />
     </div>
 </template>
 

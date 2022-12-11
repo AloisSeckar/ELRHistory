@@ -22,10 +22,7 @@
                 <ItemImageNav :item="item" :editable="editable" />
             </div>
         </div>
-        <div class="box" v-else>
-            <div class="box-header">{{ text.getKey('invalid-image') }}</div>
-            <div class="box-content flex">{{ text.getKey('invalid-content') }}</div>
-        </div>
+        <ItemInvalid item="image" v-else />
     </div>
 </template>
 

@@ -25,10 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="box" v-else>
-            <div class="box-header">{{ text.getKey('invalid-article') }}</div>
-            <div class="box-content flex">{{ text.getKey('invalid-content') }}</div>
-        </div>
+        <ItemInvalid item="article" v-else />
     </div>
 </template>
 
