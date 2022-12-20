@@ -4,6 +4,11 @@
             <div class="box-header">
                 <fa icon="graduation-cap" />&nbsp;
                 {{ item.name }}
+                <div class="inline pl-2" v-if="user">
+                    <NuxtLink :to="{ path: '/admin/edit/article/' + item.article_id }">
+                        <fa class="text-green-500 hover:text-yellow-400" icon="wrench" title="Edit article" />
+                    </NuxtLink>
+                </div>
                 <span class="float-right pr-1 text-base font-normal">
                     <strong>{{ item.elrh_category?.name }}</strong> | {{ item.elrh_author?.name }} | 
                     <em>{{ item.date_created?.split('T')[0] }}</em>
@@ -39,4 +44,5 @@ defineProps({
 })
 
 const text = useTextStore()
+const user = computed(() => useLoginStore().user)
 </script>

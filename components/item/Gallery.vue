@@ -4,6 +4,11 @@
             <div class="box-header">
                 <fa icon="image" />&nbsp;
                 <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }">{{ item.name }}</NuxtLink>
+                <div class="inline pl-2" v-if="user">
+                    <NuxtLink :to="{ path: '/admin/edit/gallery/' + item.gallery_id }">
+                        <fa class="text-green-500 hover:text-yellow-400" icon="wrench" title="Edit gallery" />
+                    </NuxtLink>
+                </div>
                 <span class="float-right pr-1 text-base font-normal">
                     <strong>{{ parent ? parent : 'Index' }}</strong> | {{ item.author_id?.name }} |
                     <em>{{ item.date_created?.split('T')[0] }}</em>
@@ -95,6 +100,7 @@ const props = defineProps({
 })
 
 const text = useTextStore()
+const user = computed(() => useLoginStore().user)
 
 const id = props.item.gallery_id
 const images = computed(() => useImageStore().getCountByGallery(id))

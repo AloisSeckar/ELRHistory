@@ -4,6 +4,11 @@
             <div class="box-header">
                 <fa icon="image" />&nbsp;
                 {{ item.name }}
+                <div class="inline pl-2" v-if="user">
+                    <NuxtLink :to="{ path: '/admin/edit/image/' + item.image_id }">
+                        <fa class="text-green-500 hover:text-yellow-400" icon="wrench" title="Edit image" />
+                    </NuxtLink>
+                </div>
                 <span class="float-right pr-1 text-base font-normal">
                     <NuxtLink :to="{ path: '/gallery/' + item.gallery_id?.gallery_id }">
                         <strong>{{ item.gallery_id?.name }}</strong>
@@ -35,4 +40,5 @@ defineProps({
 })
 
 const editable = computed(() => useLoginStore().user ? true : false)
+const user = computed(() => useLoginStore().user)
 </script>
