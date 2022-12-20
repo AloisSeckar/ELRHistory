@@ -3,7 +3,7 @@
         
         <div class="inline-block" v-if="editable">
             <NuxtLink :to="{ path: '/image/' + item.prev_id }" title="Move image forward" v-if="item.prev_id">
-                <fa class="mx-4 text-emerald-600 hover:text-emerald-400" icon="backward"/>
+                <fa class="mx-4 text-green-500 hover:text-yellow-400" icon="backward"/>
             </NuxtLink>
             <fa class="mx-4 text-gray-400" icon="backward" v-else />
         </div>
@@ -24,7 +24,7 @@
 
         <div class="inline-block" v-if="editable">
             <NuxtLink :to="{ path: '/image/' + item.next_id }" title="Next" v-if="item.next_id">
-                <fa class="mx-4 text-emerald-600 hover:text-emerald-400" icon="forward" />
+                <fa class="mx-4 text-green-500 hover:text-yellow-400" icon="forward" />
             </NuxtLink>
             <fa class="mx-4 text-gray-400" icon="forward" v-else />
         </div>
