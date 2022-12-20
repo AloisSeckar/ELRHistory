@@ -30,12 +30,9 @@
 import type { Image } from '@/composables/useImageStore'
 import { PropType } from 'vue'
 
-const props = defineProps({
+defineProps({
     item: { type: Object as PropType<Image>, required: true, default: {} },
 })
 
-const text = useTextStore()
-
-// TODO will depend on login state
-const editable = false
+const editable = computed(() => useLoginStore().user ? true : false)
 </script>
