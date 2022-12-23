@@ -7,19 +7,22 @@
             <div>
                 {{ user }}
             </div>
-            <button :class="button" @click="attemptLogout()">Logout</button>
+            <FormKit type="form" @submit="attemptLogout" submit-label="Logout" />
         </div>
         <div v-else>
             <div :class="header">Přihlásit:</div>
-            <div>
-                <label>E-mail: </label>
-                <input type="text" name="email" v-model="email" />
-            </div>
-            <div>
-                <label>Password: </label>
-                <input type="password" name="password" v-model="password" />
-            </div>
-            <button :class="button" @click="attemptLogin()">Login</button>
+            <FormKit type="form" @submit="attemptLogin" submit-label="Login" autocomplete="off">
+                <FormKit
+                    type="text" name="email" id="email"
+                    label="E-mail:" placeholder="“Your email”"
+                    validation="required" autocomplete="new-login"
+                    v-model="email" />
+                <FormKit
+                    type="password" name="password" id="password"
+                    label="Password:" placeholder="“Your password”"
+                    validation="required" autocomplete="new-password"
+                    v-model="password" />
+            </FormKit>
         </div>
     </div>
 </template>
@@ -41,3 +44,11 @@ async function attemptLogout() {
 }
 
 </script>
+
+<style scoped>
+.formkit-input {
+    /* otherwise style from tailwind.css is ignored */
+    /* TODO study and apply https://formkit.com/guides/create-a-tailwind-theme */
+    display: inline-block;
+}
+</style>

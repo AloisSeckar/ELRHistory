@@ -29,4 +29,8 @@
         @apply m-1 w-28 h-20
     }
 
+    button.formkit-input {
+        @apply my-2 px-2 py-1 rounded bg-navy text-white hover:text-amber-300
+    }
+
   }
