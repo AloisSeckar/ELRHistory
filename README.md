@@ -39,6 +39,10 @@ List of texts, that also allow HTML:
 * `web-author` - name and possible link to author's website
 * `index-welcome` - text to be displayed at the index page to describe the site and greet the visitors
 
+### Form validation
+
+To change the language used in form validation messages, change default `locale` in `formkit.config.ts` on line 7. You may also need to import the corresponding source from `@formkit/i18n` on line 2.
+
 ### Images
 
 Replace following images in `/public` directory with your own content.
