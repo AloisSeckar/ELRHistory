@@ -11,16 +11,14 @@
         </div>
         <div v-else>
             <div :class="header">Přihlásit:</div>
-            <FormKit type="form" @submit="attemptLogin" submit-label="Login" autocomplete="off">
+            <FormKit type="form" @submit="attemptLogin" submit-label="Login">
                 <FormKit
                     type="text" name="email" id="email"
-                    label="E-mail:" placeholder="“Your email”"
-                    validation="required" autocomplete="new-login"
+                    label="E-mail:" validation="required"
                     v-model="email" />
                 <FormKit
                     type="password" name="password" id="password"
-                    label="Password:" placeholder="“Your password”"
-                    validation="required" autocomplete="new-password"
+                    label="Password:" validation="required"
                     v-model="password" />
             </FormKit>
         </div>

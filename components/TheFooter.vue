@@ -3,7 +3,7 @@
         © {{ year }} <strong>{{ title }}</strong> by <span v-html="author"></span>
         powered by <a href="https://nuxt.com/">Nuxt3</a>
         | 
-        <span class="text-xs">
+        <span class="pl-1 text-xs">
             <NuxtLink to="/login">
                 <fa icon="key" />
             </NuxtLink>
