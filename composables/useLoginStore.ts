@@ -12,10 +12,14 @@ export const useLoginStore = defineStore({
 
             if (data) {
                 console.log(data)
-                console.log(data.user.email)
-                this.user = data.user.email
+                console.log(data.user?.email)
+                if (data.user?.email) {
+                    this.user = data.user.email 
+                } else {
+                    console.error('User undefined!')
+                }
             } else {
-                console.log(error)
+                console.error(error)
             }
         },
         logout() {
