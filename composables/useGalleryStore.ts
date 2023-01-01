@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia'
-
 const tableName = "elrh_gallery"
 
 export const useGalleryStore = defineStore({

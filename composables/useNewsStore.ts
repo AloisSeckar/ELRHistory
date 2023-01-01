@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia'
-
 const tableName = "elrh_news"
 
 export const useNewsStore = defineStore({

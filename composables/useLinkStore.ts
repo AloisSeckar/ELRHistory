@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia'
-
 const tableName = "elrh_link"
 
 export const useLinkStore = defineStore({
