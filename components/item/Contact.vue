@@ -10,7 +10,7 @@
             {{ item.phone }}
         </div>
         <div class="grow">
-            <NuxtLink :to="{ path: item.fb }" :title=" item.name + ' - Facebook'" class="text-xl">
+            <NuxtLink :to="item.fb" :external="true" :title=" item.name + ' - Facebook'" class="text-xl">
                 <fa icon="fab fa-facebook-square" />
             </NuxtLink>
         </div>
