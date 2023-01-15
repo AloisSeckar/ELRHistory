@@ -11,6 +11,13 @@ export const useArticleStore = defineStore({
   actions: {
     async fill() {
       fillStore(tableName, this, getItems)
+    },
+    async save(data: Article) {
+      const { error } = await useSupabaseClient()
+        .from(tableName)
+        .insert(data)
+
+      console.log("res:" + error?.message)
     }
   },
   getters: {

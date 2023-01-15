@@ -3,14 +3,11 @@
         <div>
         </div>
         <div v-if="user">
-            <div :class="header">Přihlášený uživatel:</div>
-            <div>
-                {{ user }}
-            </div>
+            <AdminSummary />
             <FormKit type="form" @submit="attemptLogout" submit-label="Logout" />
         </div>
         <div v-else>
-            <div :class="header">Přihlásit:</div>
+            <div class="text-xl font-bold">Přihlásit:</div>
             <FormKit type="form" @submit="attemptLogin" submit-label="Login">
                 <FormKit
                     type="text" name="email" id="email"
@@ -26,9 +23,6 @@
 </template>
 
 <script setup lang="ts">
-const header = "text-xl font-bold"
-const button = "p-1 border border-black bg-navy text-silver"
-
 let email = ''
 let password = ''
 
@@ -40,7 +34,6 @@ async function attemptLogin() {
 async function attemptLogout() {
     useLoginStore().logout()
 }
-
 </script>
 
 <style scoped>
