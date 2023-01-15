@@ -1,12 +1,22 @@
 -- DB scheme for ELRHistory 1.0
 -- syntax is valid for PostgreSQL
--- last revision: 2022-11-19
+-- last revision: 2023-01-15
 
 BEGIN TRANSACTION;
 
+DROP TABLE IF EXISTS "elrh_book";
+DROP TABLE IF EXISTS "elrh_contact";
+DROP TABLE IF EXISTS "elrh_link";
+DROP TABLE IF EXISTS "elrh_news";
+DROP TABLE IF EXISTS "elrh_image";
 DROP TABLE IF EXISTS "elrh_article";
+DROP TABLE IF EXISTS "elrh_gallery";
+DROP TABLE IF EXISTS "elrh_category";
+DROP TABLE IF EXISTS "elrh_author";
+DROP TABLE IF EXISTS "elrh_text";
+
 CREATE TABLE "elrh_article" (
-	"article_id"	SERIAL PRIMARY KEY,
+	"article_id"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"category_id"	integer NOT NULL,
 	"date_created"	timestamp NOT NULL,
 	"date_edited"	timestamp NOT NULL,
@@ -18,51 +28,46 @@ CREATE TABLE "elrh_article" (
 	"gallery_id"	integer
 );
 
-DROP TABLE IF EXISTS "elrh_author";
 CREATE TABLE "elrh_author" (
-	"author_id"	SERIAL PRIMARY KEY,
+	"author_id"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"email"	varchar(100) NOT NULL,
 	"name"	varchar(50) NOT NULL
 );
 
-DROP TABLE IF EXISTS "elrh_book";
 CREATE TABLE "elrh_book" (
-	"book_id"	SERIAL PRIMARY KEY,
+	"book_id"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"category_id"	integer NOT NULL,
 	"ord"	integer NOT NULL CHECK("ord" >= 0),
 	"date_created"	timestamp NOT NULL,
 	"date_edited"	timestamp NOT NULL,
+	"writer"	varchar(100) NOT NULL,
 	"name"	varchar(100) NOT NULL,
 	"dscr"	varchar(255) NOT NULL,
 	"url"	varchar(255) NOT NULL,
 	"thumb"	varchar(100) NOT NULL,
-	"author_id"	integer NOT NULL,
-	"writer"	varchar(100) NOT NULL,
 	"review"	varchar(255),
-	"year"	varchar(4) NOT NULL
+	"year"	varchar(4) NOT NULL,
+	"author_id"	integer NOT NULL
 );
 
-DROP TABLE IF EXISTS "elrh_category";
 CREATE TABLE "elrh_category" (
-	"category_id"	SERIAL PRIMARY KEY,
+	"category_id"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"ord"	integer NOT NULL CHECK("ord" >= 0),
 	"name"	varchar(50) NOT NULL,
 	"dscr"	varchar(255) NOT NULL,
 	"type"	varchar(1) NOT NULL
 );
 
-DROP TABLE IF EXISTS "elrh_contact";
 CREATE TABLE "elrh_contact" (
-	"contact_id"	SERIAL PRIMARY KEY,
+	"contact_id"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"name"	varchar(50) NOT NULL,
 	"email"	varchar(255) NOT NULL,
 	"phone"	varchar(16) NOT NULL,
 	"fb"	varchar(100) NOT NULL
 );
 
-DROP TABLE IF EXISTS "elrh_link";
 CREATE TABLE "elrh_link" (
-	"link_id"	SERIAL PRIMARY KEY,
+	"link_id"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"category_id"	integer NOT NULL,
 	"ord"	integer NOT NULL CHECK("ord" >= 0),
 	"date_created"	timestamp NOT NULL,
@@ -74,17 +79,15 @@ CREATE TABLE "elrh_link" (
 	"author_id"	integer NOT NULL
 );
 
-DROP TABLE IF EXISTS "elrh_news";
 CREATE TABLE "elrh_news" (
-	"news_id"	SERIAL PRIMARY KEY,
+	"news_id"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"content"	text NOT NULL,
 	"author_id"	integer NOT NULL,
 	"date_created"	timestamp NOT NULL
 );
 
-DROP TABLE IF EXISTS "elrh_gallery";
 CREATE TABLE "elrh_gallery" (
-	"gallery_id"	SERIAL PRIMARY KEY,
+	"gallery_id"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"date_created"	timestamp NOT NULL,
 	"date_edited"	timestamp NOT NULL,
 	"name"	varchar(50) NOT NULL,
@@ -93,9 +96,8 @@ CREATE TABLE "elrh_gallery" (
 	"parent_id"	integer
 );
 
-DROP TABLE IF EXISTS "elrh_image";
 CREATE TABLE "elrh_image" (
-	"image_id"	SERIAL PRIMARY KEY,
+	"image_id"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"date_created"	timestamp NOT NULL,
 	"date_edited"	timestamp NOT NULL,
 	"name"	varchar(50) NOT NULL,
@@ -108,7 +110,6 @@ CREATE TABLE "elrh_image" (
 	"next_id"	integer
 );
 
-DROP TABLE IF EXISTS "elrh_text";
 CREATE TABLE "elrh_text" (
 	"key"	text NOT NULL,
 	"value"	text NOT NULL,
