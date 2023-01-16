@@ -4,7 +4,7 @@
         <FormKit type="form" @submit="save" submit-label="Add">
             <FormKit
                 type="select" name="author" id="author"
-                label="Author:"
+                label="Author:" validation="required"
                 :options="authors"
                 v-model="article.elrh_author" />
             <FormKit
@@ -38,13 +38,16 @@
 </template>
 
 <script setup lang="ts">
-const authors = useAuthorStore().getItems.map(author => ({ value: author, label: author.name }))
-const categories = useCategoryStore().getByType('a').map(cat => ({ value: cat, label: cat.name }))
-const galleries = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery, label: gallery.name }))
+const authors = useAuthorStore().getItems.map(author => ({ value: author.author_id, label: author.name }))
+const categories = useCategoryStore().getByType('a').map(cat => ({ value: cat.category_id, label: cat.name }))
+const galleries = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery.gallery_id, label: gallery.name }))
 
 const article = reactive(useArticleStore().getEmpty)
+article.author_id = authors[0].value
+article.category_id = categories[0].value
+article.gallery_id = null
 
 const save = () => {
-    useArticleStore().save(article)
+    useArticleStore().save(JSON.parse(JSON.stringify(article)));
 }
 </script>

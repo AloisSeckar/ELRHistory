@@ -16,6 +16,9 @@ export const useAuthorStore = defineStore({
   getters: {
     getItems: state => state.items,
     getCount: state => state.items.length,
+    getById: (state) => {
+      return (author_id: number) => state.items.find(i => i.author_id === author_id)
+    },
     getByCategory: (state) => {
       return (category_id: number) => state.items.filter(i => i.category_id === category_id)
     }

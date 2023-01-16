@@ -16,11 +16,14 @@ export const useArticleStore = defineStore({
       const { data, error } = await useSupabaseClient()
         .from(tableName)
         .insert(newItem)
+        .select()
 
       if (data) {
-        console.log("res:" + data)
+        console.debug("new article saved into Supabase")
+        fillStore(tableName, this, getItems) // TODO can we just load the new one?
       } else {
-        console.log("res:" + error?.message)
+        console.error("failed to save new article into Supabase")
+        console.error(error?.message)
       }
     }
   },
@@ -35,15 +38,12 @@ export const useArticleStore = defineStore({
     },
     getEmpty: (): Article => {
       const newItem: Article = {
-        elrh_category: {},
         date_created: new Date(),
         date_edited: new Date(),
         name: '',
         dscr: '',
         content: '',
         thumb: '',
-        elrh_author: {},
-        elrh_gallery: {},
       }
       return newItem
     }

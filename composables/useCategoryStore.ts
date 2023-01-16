@@ -15,6 +15,9 @@ export const useCategoryStore = defineStore({
   },
   getters: {
     getItems: state => state.items,
+    getById: (state) => {
+      return (category_id: number) => state.items.find(i => i.category_id === category_id)
+    },
     getByType: (state) => {
       return (type: string) => state.items.filter(i => i.type === type)
     }
