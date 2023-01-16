@@ -12,12 +12,16 @@ export const useArticleStore = defineStore({
     async fill() {
       fillStore(tableName, this, getItems)
     },
-    async save(data: Article) {
-      const { error } = await useSupabaseClient()
+    async save(newItem: Article) {
+      const { data, error } = await useSupabaseClient()
         .from(tableName)
-        .insert(data)
+        .insert(newItem)
 
-      console.log("res:" + error?.message)
+      if (data) {
+        console.log("res:" + data)
+      } else {
+        console.log("res:" + error?.message)
+      }
     }
   },
   getters: {
@@ -28,6 +32,20 @@ export const useArticleStore = defineStore({
     },
     getById: (state) => {
       return (article_id: Number) => state.items.find(i => i.article_id == article_id)
+    },
+    getEmpty: (): Article => {
+      const newItem: Article = {
+        elrh_category: {},
+        date_created: new Date(),
+        date_edited: new Date(),
+        name: '',
+        dscr: '',
+        content: '',
+        thumb: '',
+        elrh_author: {},
+        elrh_gallery: {},
+      }
+      return newItem
     }
   }
 })

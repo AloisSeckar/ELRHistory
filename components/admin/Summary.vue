@@ -12,7 +12,6 @@
                         <li><NuxtLink to="/admin/add/book">Add new book</NuxtLink></li>
                         <li><NuxtLink to="/admin/add/gallery">Add new gallery</NuxtLink></li>
                         <li><NuxtLink to="/admin/add/image">Add new image</NuxtLink></li>
-                        <li><NuxtLink to="/admin/add/index">Add new index</NuxtLink></li>
                         <li><NuxtLink to="/admin/add/link">Add new link</NuxtLink></li>
                         <li><NuxtLink to="/admin/add/news">Add new news</NuxtLink></li>
                     </ul>
