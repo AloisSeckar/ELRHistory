@@ -11,7 +11,7 @@ const item = computed(() => {
         id = new Number(useRoute().params.id)
         return useArticleStore().getById(id)
     } catch (ex) {
-        console.log(`failed to fetch article '${id}': ${ex}`)
+        console.error(`failed to fetch article '${id}': ${ex}`)
     }
     return {}
 })

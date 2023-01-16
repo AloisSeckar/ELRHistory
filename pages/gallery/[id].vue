@@ -11,7 +11,7 @@ const item = computed(() => {
         id = new Number(useRoute().params.id)
         return useGalleryStore().getById(id)
     } catch (ex) {
-        console.log(`failed to fetch gallery '${id}': ${ex}`)
+        console.error(`failed to fetch gallery '${id}': ${ex}`)
     }
     return {}
 })

@@ -17,7 +17,6 @@
 <script setup lang="ts">
 const title = useRuntimeConfig().public.textTitle
 const author = computed(() => useTextStore().getKey('web-author'))
-console.log(author.value)
 const year = new Date().getFullYear()
 const user = computed(() => useLoginStore().user)
 </script>

@@ -8,11 +8,7 @@ export const useLoginStore = defineStore({
     actions: {
         async login(email: string, password: string) {
             const { data, error } = await useSupabaseClient().auth.signInWithPassword({ email, password })
-            console.log(data)
-
             if (data) {
-                console.log(data)
-                console.log(data.user?.email)
                 if (data.user?.email) {
                     this.user = data.user.email 
                 } else {

@@ -1,15 +1,15 @@
 // TODO convert into TS type checks
 
 async function fillStore(tableName, store, getFunction) {
-    console.log("getting " + tableName + " from Supabase")
+    console.debug("getting " + tableName + " from Supabase")
     getFunction(useSupabaseClient())
     .then(x => {
-      console.log(tableName + " loaded from Supabase")
+      console.debug(tableName + " loaded from Supabase")
       store.items = x.data
       store.loaded = true
     }).catch(x => {
-      console.log("failed to load " + tableName + " from Supabase")
-      console.log(x.error)
+      console.error("failed to load " + tableName + " from Supabase")
+      console.error(x.error)
       store.loaded = false
     })
   }

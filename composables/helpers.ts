@@ -6,7 +6,7 @@ function toDate(timestamp: string): string {
             const d = timestamp.substring(8,9)
             return `${d.padStart(2,'0')}.${m.padStart(2,'0')}.${y}`
         } catch (error) {
-            console.log("unparsable date " + timestamp)
+            console.error("unparsable date " + timestamp)
         }
     }
     return ""
@@ -21,7 +21,7 @@ function toDateTime(timestamp: string): string {
             const t = timestamp.substring(11,19)
             return `${t} ${d.padStart(2,'0')}.${m.padStart(2,'0')}.${y}`
         } catch (error) {
-            console.log("unparsable date " + timestamp)
+            console.error("unparsable date " + timestamp)
         }
     }
     return ""

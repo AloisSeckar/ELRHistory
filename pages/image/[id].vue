@@ -11,7 +11,7 @@ const item = computed(() => {
         id = new Number(useRoute().params.id)
         return useImageStore().getById(id)
     } catch (ex) {
-        console.log(`failed to fetch image '${id}': ${ex}`)
+        console.error(`failed to fetch image '${id}': ${ex}`)
     }
     return {}
 })
