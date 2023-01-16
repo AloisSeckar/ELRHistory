@@ -3,6 +3,11 @@
         <h1>Add new article</h1>
         <FormKit type="form" @submit="save" submit-label="Add">
             <FormKit
+                type="select" name="author" id="author"
+                label="Author:"
+                :options="authors"
+                v-model="article.elrh_author" />
+            <FormKit
                 type="select" name="category" id="category"
                 label="Category:" validation="required"
                 :options="categories"
@@ -33,6 +38,7 @@
 </template>
 
 <script setup lang="ts">
+const authors = useAuthorStore().getItems.map(author => ({ value: author, label: author.name }))
 const categories = useCategoryStore().getByType('a').map(cat => ({ value: cat, label: cat.name }))
 const galleries = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery, label: gallery.name }))
 
