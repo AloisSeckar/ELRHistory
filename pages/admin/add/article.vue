@@ -6,12 +6,9 @@
 </template>
 
 <script setup lang="ts">
-const authors = useAuthorStore().getItems.map(author => ({ value: author.author_id, label: author.name }))
-const categories = useCategoryStore().getByType('a').map(cat => ({ value: cat.category_id, label: cat.name }))
-
 const article = reactive(useArticleStore().getEmpty)
-article.author_id = authors[0].value
-article.category_id = categories[0].value
+article.author_id = useAuthorStore().getItems?.[0]?.author_id
+article.category_id = useCategoryStore().getByType('a')?.[0]?.category_id
 article.gallery_id = null
 
 const save = () => {
