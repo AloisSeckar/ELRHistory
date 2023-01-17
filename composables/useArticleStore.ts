@@ -25,6 +25,33 @@ export const useArticleStore = defineStore({
         console.error("failed to save new article into Supabase")
         console.error(error?.message)
       }
+    },
+    async update(editedItem: Article) {
+      console.log(editedItem);
+
+      const articleId = editedItem.article_id;
+      
+      delete editedItem.article_id;
+      if (editedItem.gallery_id === undefined) {
+        delete editedItem.gallery_id;
+      }
+      editedItem.date_edited = new Date();
+
+      console.log(editedItem);
+
+      const { data, error } = await useSupabaseClient()
+        .from(tableName)
+        .update(editedItem)
+        .eq('article_id', articleId)
+        .select()
+
+      if (data) {
+        console.debug("new article saved into Supabase")
+        fillStore(tableName, this, getItems) // TODO can we just load the new one?
+      } else {
+        console.error("failed to save new article into Supabase")
+        console.error(error?.message)
+      }
     }
   },
   getters: {
