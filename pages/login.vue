@@ -35,11 +35,3 @@ async function attemptLogout() {
     useLoginStore().logout()
 }
 </script>
-
-<style scoped>
-.formkit-input {
-    /* otherwise style from tailwind.css is ignored */
-    /* TODO study and apply https://formkit.com/guides/create-a-tailwind-theme */
-    display: inline-block;
-}
-</style>

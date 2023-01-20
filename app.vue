@@ -39,3 +39,11 @@ await useImageStore().fill()
 await useLinkStore().fill()
 
 </script>
+
+<style>
+.formkit-input {
+    /* otherwise style from tailwind.css is ignored */
+    /* TODO study and apply https://formkit.com/guides/create-a-tailwind-theme */
+    display: inline-block;
+}
+</style>
