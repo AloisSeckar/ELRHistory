@@ -37,11 +37,11 @@
 </template>
 
 <script setup lang="ts">
-import type { Article } from '@/composables/useArticleStore'
+import type { Article, NewArticle } from '@/database/types'
 import { PropType } from 'vue'
 
 defineProps({
-    article: { type: Object as PropType<Article>, required: true },
+    article: { type: Object as PropType<Article|NewArticle>, required: true },
 })
 defineEmits<{
   (e: 'save', article: Article): void

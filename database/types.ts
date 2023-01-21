@@ -1,10 +1,11 @@
 import type { definitions } from './_api';
 
 export type Article = definitions['elrh_article'] & {
-	elrh_author: Author;
-	elrh_category: Category;
-	elrh_gallery?: Gallery;
+	elrh_author?: Pick<Author, 'author_id' | 'name'>;
+	elrh_category?: Pick<Category, 'category_id' | 'name'>;
+	elrh_gallery?: Pick<Gallery, 'gallery_id' | 'name'>;
 }
+export type NewArticle = Omit<Article, 'article_id'>
 
 export type Author = definitions['elrh_author'];
 
