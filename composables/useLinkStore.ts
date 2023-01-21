@@ -1,3 +1,6 @@
+import { Link } from '@/database/types'
+import { SupabaseClient } from '@supabase/supabase-js'
+
 const tableName = "elrh_link"
 
 export const useLinkStore = defineStore({
@@ -22,10 +25,7 @@ export const useLinkStore = defineStore({
   }
 })
 
-async function getItems(supabase: any) {
+async function getItems(supabase: SupabaseClient) {
   const query = `category_id, name, dscr, url, thumb`
   return fetchSupabase(supabase, tableName, query, 'ord', {})
 }
-
-type LinkResponse = Awaited<ReturnType<typeof getItems>>
-export type Link = LinkResponse['data']

@@ -1,3 +1,7 @@
+import { Text } from '@/database/types'
+import { SupabaseClient } from '@supabase/supabase-js'
+
+
 const tableName = "elrh_text"
 
 export const useTextStore = defineStore({
@@ -27,10 +31,7 @@ export const useTextStore = defineStore({
   },
 })
 
-async function getItems(supabase: any) {
+async function getItems(supabase: SupabaseClient) {
   const query = `key, value`
   return fetchSupabase(supabase, tableName, query, 'key', { })
 }
-
-type TextResponse = Awaited<ReturnType<typeof getItems>>
-export type Text = TextResponse['data']

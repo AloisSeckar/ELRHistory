@@ -1,3 +1,6 @@
+import { Contact } from '@/database/types'
+import { SupabaseClient } from '@supabase/supabase-js'
+
 const tableName = "elrh_contact"
 
 export const useContactStore = defineStore({
@@ -17,10 +20,7 @@ export const useContactStore = defineStore({
   },
 })
 
-async function getItems(supabase: any) {
+async function getItems(supabase: SupabaseClient) {
   const query = `name, email, phone, fb`
   return fetchSupabase(supabase, tableName, query, 'name', { })
 }
-
-type ContactResponse = Awaited<ReturnType<typeof getItems>>
-export type Contact = ContactResponse['data']

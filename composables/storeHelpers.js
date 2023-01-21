@@ -7,6 +7,9 @@ async function fillStore(tableName, store, getFunction) {
       console.debug(tableName + " loaded from Supabase")
       store.items = x.data
       store.loaded = true
+      
+      console.log(this.items)
+      console.log(typeof this.items[0])
     }).catch(x => {
       console.error("failed to load " + tableName + " from Supabase")
       console.error(x.error)

@@ -1,3 +1,6 @@
+import { Category } from '@/database/types'
+import { SupabaseClient } from '@supabase/supabase-js'
+
 const tableName = "elrh_category"
 
 export const useCategoryStore = defineStore({
@@ -24,10 +27,7 @@ export const useCategoryStore = defineStore({
   }
 })
 
-async function getItems(supabase: any) {
+async function getItems(supabase: SupabaseClient) {
   const query = `category_id, ord, name, dscr, type`
   return fetchSupabase(supabase, tableName, query, 'ord', {})
 }
-
-type CategoryResponse = Awaited<ReturnType<typeof getItems>>
-export type Category = CategoryResponse['data']

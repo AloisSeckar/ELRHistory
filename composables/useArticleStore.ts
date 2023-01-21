@@ -1,3 +1,6 @@
+import { Article } from '@/database/types'
+import { SupabaseClient } from '@supabase/supabase-js'
+
 const tableName = "elrh_article"
 
 export const useArticleStore = defineStore({
@@ -64,23 +67,12 @@ export const useArticleStore = defineStore({
       return (article_id: Number) => state.items.find(i => i.article_id == article_id)
     },
     getEmpty: (): Article => {
-      const newItem: Article = {
-        date_created: new Date(),
-        date_edited: new Date(),
-        name: '',
-        dscr: '',
-        content: '',
-        thumb: '',
-      }
-      return newItem
+      return {} as Article
     }
   }
 })
 
-async function getItems(supabase: any) {
+async function getItems(supabase: SupabaseClient) {
   const query = `article_id, elrh_category(category_id, name), date_created, name, dscr, content, thumb, elrh_author(author_id, name), elrh_gallery(gallery_id, name)`
   return fetchSupabase(supabase, tableName, query, 'date_created', {ascending: false})
 }
-
-type ArticleResponse = Awaited<ReturnType<typeof getItems>>
-export type Article = ArticleResponse['data']

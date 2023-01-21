@@ -1,3 +1,6 @@
+import { Image } from '@/database/types'
+import { SupabaseClient } from '@supabase/supabase-js'
+
 const tableName = "elrh_image"
 
 export const useImageStore = defineStore({
@@ -28,10 +31,7 @@ export const useImageStore = defineStore({
     }
 })
 
-async function getItems(supabase: any) {
+async function getItems(supabase: SupabaseClient) {
     const query = `image_id, date_created, name, dscr, author_id(author_id, name), image, gallery_id(gallery_id, name), ord, prev_id, next_id`
     return fetchSupabase(supabase, tableName, query, 'ord', {})
 }
-
-type ImageResponse = Awaited<ReturnType<typeof getItems>>
-export type Image = ImageResponse['data']

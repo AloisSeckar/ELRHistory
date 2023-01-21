@@ -1,3 +1,6 @@
+import { News } from '@/database/types'
+import { SupabaseClient } from '@supabase/supabase-js'
+
 const tableName = "elrh_news"
 
 export const useNewsStore = defineStore({
@@ -20,10 +23,7 @@ export const useNewsStore = defineStore({
   },
 })
 
-async function getItems(supabase: any) {
+async function getItems(supabase: News) {
   const query = `date_created, content, elrh_author(author_id, name)`
   return fetchSupabase(supabase, tableName, query, 'date_created', { ascending: false })
 }
-
-type NewsResponse = Awaited<ReturnType<typeof getItems>>
-export type News = NewsResponse['data']

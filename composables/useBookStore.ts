@@ -1,3 +1,6 @@
+import { Book } from '@/database/types'
+import { SupabaseClient } from '@supabase/supabase-js'
+
 const tableName = "elrh_book"
 
 export const useBookStore = defineStore({
@@ -22,10 +25,7 @@ export const useBookStore = defineStore({
   }
 })
 
-async function getItems(supabase: any) {
+async function getItems(supabase: SupabaseClient) {
   const query = `category_id, name, dscr, url, thumb, writer, review, year`
   return fetchSupabase(supabase, tableName, query, 'ord', {})
 }
-
-type BookResponse = Awaited<ReturnType<typeof getItems>>
-export type Book = BookResponse['data']
