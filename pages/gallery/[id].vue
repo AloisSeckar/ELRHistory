@@ -5,6 +5,8 @@
 </template>
 
 <script setup lang="ts">
+import { Gallery } from '@/database/types';
+
 const item = computed(() => {
     let id = null
     try {
@@ -13,6 +15,6 @@ const item = computed(() => {
     } catch (ex) {
         console.error(`failed to fetch gallery '${id}': ${ex}`)
     }
-    return {}
+    return {} as Gallery
 })
 </script>

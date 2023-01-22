@@ -10,17 +10,17 @@
                     </NuxtLink>
                 </div>
                 <span class="float-right pr-1 text-base font-normal">
-                    <strong>{{ parent ? parent : 'Index' }}</strong> | {{ item.author_id?.name }} |
+                    <strong>{{ parent ? parent : 'Index' }}</strong> | {{ item.elrh_author?.name }} |
                     <em>{{ item.date_created?.split('T')[0] }}</em>
                 </span>
             </div>
             <div class="box-content">
                 <div v-if="detail" v-html="item.dscr"></div>
                 <div v-else>
-                    <span v-if="item.dscr?.length > 200" v-html="item.dscr.substring(0, 200) + '...'"></span>
+                    <span v-if="longDscr" v-html="item.dscr?.substring(0, 200) + '...'"></span>
                     <span v-else v-html="item.dscr"></span>
-                    <span v-if="item.dscr?.length > 200">
-                        [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }" v-if="item.dscr?.length > 200">
+                    <span v-if="longDscr">
+                        [ <NuxtLink :to="{ path: '/gallery/' + item.gallery_id }" v-if="longDscr">
                             {{ text.getKey('gallery-read-more') }}</NuxtLink> ]
                     </span>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="flex flex-wrap">
                         <div v-for="image in thumbs">
                             <NuxtLink :to="{ path: '/image/' + image.image_id }">
-                                <img class="thumb" :src="image.image" :alt="image.name" :title="image.title" />
+                                <img class="thumb" :src="image.image" :alt="image.name" :title="image.name" />
                             </NuxtLink>
                         </div>
                         <div v-if="(!detail && images > 5)" class="thumb leading-6">
@@ -78,9 +78,9 @@
                     <strong>{{ text.getKey('gallery-articles') }}</strong>
                     <div v-for="article in articles">
                         &#9656;&nbsp;<NuxtLink :to="{ path: '/article/' + article.article_id }">
-                            {{ article.name }}</NuxtLink> [ {{ article.author_id?.name }} ]<br />
+                            {{ article.name }}</NuxtLink> [ {{ article.elrh_author?.name }} ]<br />
                     </div>
-                    <div v-if="articles.length === 0">
+                    <div v-if="articles ? articles.length === 0 : true">
                         {{ text.getKey('gallery-articles-none') }}
                     </div>
                 </div>
@@ -91,7 +91,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Gallery } from '@/composables/useGalleryStore'
+import type { Article, Gallery } from '@/database/types'
 import { PropType } from 'vue'
 
 const props = defineProps({
@@ -108,4 +108,5 @@ const thumbs = computed(() => useImageStore().getByGallery(id, props.detail ? un
 const children = computed(() => useGalleryStore().getByParent(id))
 const parent = computed(() => 'Index') // TODO
 const articles = computed(() => props.item.elrh_article)
+const longDscr = computed(() => props.item.dscr ? props.item.dscr.length > 200 : false)
 </script>

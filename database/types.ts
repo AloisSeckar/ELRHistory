@@ -18,8 +18,8 @@ export type Category = definitions['elrh_category'];
 
 export type Contact = definitions['elrh_contact'];
 
-export type Gallery     = definitions['elrh_gallery'] & {
-	elrh_article?: Article;
+export type Gallery = definitions['elrh_gallery'] & {
+	elrh_article?: Article[];
 	elrh_author: Author;
 	parent_id?: Gallery;
 }
@@ -34,7 +34,7 @@ export type Link = definitions['elrh_link'] & {
 	elrh_category: Category;
 }
 
-export type News        = definitions['elrh_news'] & {
+export type News = definitions['elrh_news'] & {
 	elrh_author: Author;
 }
 

@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import type { News } from '@/composables/useNewsStore'
+import type { News } from '@/database/types'
 import { PropType } from 'vue'
 
 defineProps({

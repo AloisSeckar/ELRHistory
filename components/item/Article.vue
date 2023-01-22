@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Article } from '@/composables/useArticleStore'
+import type { Article } from '@/database/types'
 import { PropType } from 'vue'
 
 defineProps({

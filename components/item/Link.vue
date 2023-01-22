@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Link } from '@/composables/useLinkStore'
+import type { Link } from '@/database/types'
 import { PropType } from 'vue'
 
 defineProps({

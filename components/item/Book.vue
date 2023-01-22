@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Book } from '@/composables/useBookStore'
+import type { Book } from '@/database/types'
 import { PropType } from 'vue'
 
 defineProps({

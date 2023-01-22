@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Contact } from '@/composables/useContactStore'
+import type { Contact } from '@/database/types'
 import { PropType } from 'vue'
 
 defineProps({

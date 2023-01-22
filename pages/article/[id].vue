@@ -5,6 +5,8 @@
 </template>
 
 <script setup lang="ts">
+import { Article } from '@/database/types';
+
 const item = computed(() => {
     let id = null
     try {
@@ -13,6 +15,6 @@ const item = computed(() => {
     } catch (ex) {
         console.error(`failed to fetch article '${id}': ${ex}`)
     }
-    return {}
+    return {} as Article
 })
 </script>

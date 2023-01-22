@@ -1,4 +1,4 @@
-function toDate(timestamp: string): string {
+export function toDate(timestamp: string): string {
     if (timestamp) {
         try {
             const y = timestamp.substring(0,4)
@@ -12,7 +12,7 @@ function toDate(timestamp: string): string {
     return ""
 }
 
-function toDateTime(timestamp: string): string {
+export function toDateTime(timestamp: string): string {
     if (timestamp) {
         try {
             const y = timestamp.substring(0,4)
@@ -26,5 +26,3 @@ function toDateTime(timestamp: string): string {
     }
     return ""
 }
-
-export { toDate, toDateTime }

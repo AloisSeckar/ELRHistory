@@ -5,6 +5,8 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/database/types';
+
 const item = computed(() => {
     let id = null
     try {
@@ -13,6 +15,6 @@ const item = computed(() => {
     } catch (ex) {
         console.error(`failed to fetch image '${id}': ${ex}`)
     }
-    return {}
+    return {} as Image
 })
 </script>

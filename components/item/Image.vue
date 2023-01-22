@@ -13,7 +13,7 @@
                     <NuxtLink :to="{ path: '/gallery/' + item.gallery_id?.gallery_id }">
                         <strong>{{ item.gallery_id?.name }}</strong>
                     </NuxtLink>| 
-                    {{ item.author_id?.name }} |
+                    {{ item.elrh_author?.name }} |
                     <em>{{ item.date_created?.split('T')[0] }}</em>
                 </span>
             </div>
@@ -23,7 +23,7 @@
                 </div>
                 <hr class="mb-2" />
                 <ItemImageNav :item="item" :editable="editable" />
-                <img class="m-2 inline-block max-w-[96%]" :src="item.image" :alt="item.name" :title="item.title" />
+                <img class="m-2 inline-block max-w-[96%]" :src="item.image" :alt="item.name" :title="item.name" />
                 <ItemImageNav :item="item" :editable="editable" />
             </div>
         </div>
@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Image } from '@/composables/useImageStore'
+import type { Image } from '@/database/types'
 import { PropType } from 'vue'
 
 defineProps({

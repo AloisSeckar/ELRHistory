@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Image } from '@/composables/useImageStore'
+import type { Image } from '@/database/types'
 import { PropType } from 'vue'
 
 const props = defineProps({
