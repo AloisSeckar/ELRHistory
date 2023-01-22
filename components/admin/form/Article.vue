@@ -23,10 +23,7 @@
                 type="textarea" name="content" id="content"
                 label="Content:" validation="required"
                 v-model="article.content" />
-            <FormKit
-                type="text" name="thumb" id="thumb"
-                label="Thumb:" validation="required"
-                v-model="article.thumb" />
+            <AdminFormSelectImage :source="article.thumb" @change="setThumb" />
             <FormKit
                 type="select" name="gallery" id="gallery"
                 label="Related gallery:"
@@ -40,7 +37,7 @@
 import type { Article, ArticleDB } from '@/database/types'
 import { PropType } from 'vue'
 
-defineProps({
+const props = defineProps({
     article: { type: Object as PropType<Article|ArticleDB>, required: true },
 })
 defineEmits<{
@@ -50,4 +47,6 @@ defineEmits<{
 const authors = useAuthorStore().getItems.map(author => ({ value: author.author_id, label: author.name }))
 const categories = useCategoryStore().getByType('a').map(cat => ({ value: cat.category_id, label: cat.name }))
 const galleries = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery.gallery_id, label: gallery.name }))
+
+const setThumb = (path: string) => props.article.thumb = path
 </script>
