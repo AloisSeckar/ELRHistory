@@ -14,6 +14,6 @@ article.gallery_id = undefined
 
 const save = () => {
     console.log(article)
-    useArticleStore().save(JSON.parse(JSON.stringify(article)));
+    useArticleStore().create(JSON.parse(JSON.stringify(article)));
 }
 </script>

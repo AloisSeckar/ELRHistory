@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Article } from '@/database/types'
+import type { Article, ArticleDB } from '@/database/types'
 import { FormKitOptionsItem } from '@formkit/inputs'
 
 const id = new Number(useRoute().params.id);
@@ -23,18 +23,24 @@ for (let i = 0; i < useArticleStore().items.length; i++) {
     }
 }
 
-const currentArticle = useArticleStore().getById(id)
-const article = reactive(JSON.parse(JSON.stringify(currentArticle)));
-article.author_id = currentArticle?.elrh_author?.author_id;
-delete article.elrh_author;
-article.category_id = currentArticle?.elrh_category?.category_id;
-delete article.elrh_category;
+const {article_id, ...currentArticle} = useArticleStore().getById(id)
+const article: ArticleDB = reactive(JSON.parse(JSON.stringify(currentArticle)));
+
+if (currentArticle.elrh_author) {
+    article.author_id = currentArticle.elrh_author.author_id;
+}
+if (currentArticle.elrh_category) {
+    article.category_id = currentArticle.elrh_category.category_id;
+}
 article.gallery_id = currentArticle?.elrh_gallery?.gallery_id;
+
+delete article.elrh_author;
+delete article.elrh_category;
 delete article.elrh_gallery;
 
 const save = () => {
     // TODO category and gallery not changing
-    useArticleStore().update(JSON.parse(JSON.stringify(article)));
+    useArticleStore().update(article_id, JSON.parse(JSON.stringify(article)));
 }
 const changeItem = (calback: String) => {
     navigateTo('/admin/edit/article/' + calback)

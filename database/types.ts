@@ -5,7 +5,7 @@ export type Article = definitions['elrh_article'] & {
 	elrh_category?: Pick<Category, 'category_id' | 'name'>;
 	elrh_gallery?: Pick<Gallery, 'gallery_id' | 'name'>;
 }
-export type NewArticle = Omit<Article, 'article_id'>
+export type ArticleDB = Omit<Article, 'article_id'>
 
 export type Author = definitions['elrh_author'];
 

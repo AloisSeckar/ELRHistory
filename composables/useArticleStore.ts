@@ -1,4 +1,4 @@
-import { Article, NewArticle } from '@/database/types'
+import { Article, ArticleDB } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
 
 const tableName = "elrh_article"
@@ -15,9 +15,8 @@ export const useArticleStore = defineStore({
     async fill() {
       fillStore(tableName, this, getItems)
     },
-    async save(newItem: NewArticle) {
-      console.log(newItem);
-      const { data, error } = await useSupabaseClient<NewArticle>()
+    async create(newItem: ArticleDB) {
+      const { data, error } = await useSupabaseClient<ArticleDB>()
         .from(tableName)
         .insert(newItem)
         .select()
@@ -30,14 +29,11 @@ export const useArticleStore = defineStore({
         console.error(error?.message)
       }
     },
-    async update(editedItem: Article) {
-      const articleId = editedItem.article_id;
-      console.log(editedItem);
-
-      const { data, error } = await useSupabaseClient<Article>()
+    async update(itemId: Number, editedItem: ArticleDB) {
+      const { data, error } = await useSupabaseClient<ArticleDB>()
         .from(tableName)
         .update(editedItem)
-        .eq('article_id', articleId)
+        .eq('article_id', itemId)
         .select()
 
       if (data) {
@@ -56,10 +52,13 @@ export const useArticleStore = defineStore({
       return (category_id: number) => state.items.filter(i => i.category_id === category_id)
     },
     getById: (state) => {
-      return (article_id: Number) => state.items.find(i => i.article_id == article_id)
+      return (article_id: Number) => {
+        const article = state.items.find(i => i.article_id == article_id)
+        return article ? article : { article_id: 0} as Article
+      }
     },
-    getEmpty: (): NewArticle => {
-      const newArticle: NewArticle = {
+    getEmpty: (): ArticleDB => {
+      const newArticle: ArticleDB = {
         category_id: 0,
         date_created: new Date().toISOString(),
         date_edited: new Date().toISOString(),
