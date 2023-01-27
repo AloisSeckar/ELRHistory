@@ -9,9 +9,6 @@
 import { ArticleDB } from '@/database/types';
 
 const save = (article: ArticleDB) => {
-    console.log(article)
-    article.date_created = new Date().toISOString()
-    article.date_edited = new Date().toISOString()
     useArticleStore().create(JSON.parse(JSON.stringify(article)));
 }
 </script>

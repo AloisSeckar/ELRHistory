@@ -26,9 +26,6 @@ for (let i = 0; i < useArticleStore().items.length; i++) {
 }
 
 const save = (article: ArticleDB) => {
-    console.log(article)
-    article.date_edited = new Date().toISOString()
-    // TODO category and gallery not changing
     useArticleStore().update(article_id, JSON.parse(JSON.stringify(article)));
 }
 const changeItem = (calback: String) => {

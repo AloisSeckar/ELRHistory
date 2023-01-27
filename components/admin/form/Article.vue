@@ -66,6 +66,7 @@ if (props.article_id > 0) {
 const authors = useAuthorStore().getItems.map(author => ({ value: author.author_id, label: author.name }))
 const categories = useCategoryStore().getByType('a').map(cat => ({ value: cat.category_id, label: cat.name }))
 const galleries = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery.gallery_id, label: gallery.name }))
+galleries.unshift({ value: -1, label: "" })
 
 const setThumb = (path: string) => article.thumb = path
 

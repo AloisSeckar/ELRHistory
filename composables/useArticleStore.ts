@@ -16,6 +16,7 @@ export const useArticleStore = defineStore({
       fillStore(tableName, this, getItems)
     },
     async create(newItem: ArticleDB) {
+      treatInput(newItem)
       const { data, error } = await useSupabaseClient<ArticleDB>()
         .from(tableName)
         .insert(newItem)
@@ -30,6 +31,7 @@ export const useArticleStore = defineStore({
       }
     },
     async update(itemId: Number, editedItem: ArticleDB) {
+      treatInput(editedItem)
       const { data, error } = await useSupabaseClient<ArticleDB>()
         .from(tableName)
         .update(editedItem)
@@ -77,4 +79,14 @@ export const useArticleStore = defineStore({
 async function getItems(supabase: SupabaseClient) {
   const query = `article_id, elrh_category(category_id, name), date_created, name, dscr, content, thumb, elrh_author(author_id, name), elrh_gallery(gallery_id, name)`
   return fetchSupabase(supabase, tableName, query, 'date_created', { ascending: false })
+}
+
+function treatInput(input: ArticleDB) {
+  input.date_edited = new Date().toISOString()
+  if (input.date_created === undefined) {
+    input.date_created = new Date().toISOString()
+  }
+  if (input.gallery_id === -1) {
+    input.gallery_id = undefined
+  }
 }
