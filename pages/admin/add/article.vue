@@ -10,5 +10,6 @@ import { ArticleDB } from '@/database/types';
 
 const save = (article: ArticleDB) => {
     useArticleStore().create(JSON.parse(JSON.stringify(article)));
+    return navigateTo('/articles')
 }
 </script>

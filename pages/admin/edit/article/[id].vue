@@ -27,6 +27,7 @@ for (let i = 0; i < useArticleStore().items.length; i++) {
 
 const save = (article: ArticleDB) => {
     useArticleStore().update(article_id, JSON.parse(JSON.stringify(article)));
+    return navigateTo('/article/' + article_id)
 }
 const changeItem = (calback: String) => {
     navigateTo('/admin/edit/article/' + calback)
