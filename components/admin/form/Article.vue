@@ -1,6 +1,6 @@
 <template>
     <div>
-        <FormKit type="form" submit-label="Add" #default="{ value }" @submit="saveForm">
+        <FormKit type="form" :submit-label="label" #default="{ value }" @submit="saveForm">
             <pre>{{ value }}</pre>
             <FormKit
                 type="select" name="author_id" id="author_id"
@@ -44,8 +44,10 @@ const emit = defineEmits<{
   (e: 'save', article: ArticleDB): void
 }>()
 
-let article: ArticleDB = {} as ArticleDB
+let label: string
+let article: ArticleDB
 if (props.article_id > 0) {
+    label = "Edit"
     const {article_id, ...currentArticle} = useArticleStore().getById(props.article_id)
     article = reactive(JSON.parse(JSON.stringify(currentArticle)));
 
@@ -57,6 +59,7 @@ if (props.article_id > 0) {
     }
     article.gallery_id = currentArticle?.elrh_gallery?.gallery_id;
 } else {
+    label = "Add"
     article = reactive(JSON.parse(JSON.stringify(useArticleStore().getEmpty)))
     article.author_id = useAuthorStore().getItems?.[0]?.author_id
     article.category_id = useCategoryStore().getByType('a')?.[0]?.category_id
