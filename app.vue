@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TheModal v-show="useModalStore().show" />
     <TheHeader />
     <TheMenu />
     <TheTitle />

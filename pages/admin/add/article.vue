@@ -10,6 +10,7 @@ import { ArticleDB } from '@/database/types';
 
 const save = (article: ArticleDB) => {
     useArticleStore().create(JSON.parse(JSON.stringify(article)));
+    useModalStore().showModal("Item saved", "Article was successfully created");
     return navigateTo('/articles')
 }
 </script>

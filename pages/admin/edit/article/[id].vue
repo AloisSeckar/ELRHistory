@@ -27,6 +27,7 @@ for (let i = 0; i < useArticleStore().items.length; i++) {
 
 const save = (article: ArticleDB) => {
     useArticleStore().update(article_id, JSON.parse(JSON.stringify(article)));
+    useModalStore().showModal("Item saved", "Article was successfully updated");
     return navigateTo('/article/' + article_id)
 }
 const changeItem = (calback: String) => {
