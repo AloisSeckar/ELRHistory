@@ -25,10 +25,14 @@ for (let i = 0; i < useArticleStore().items.length; i++) {
     }
 }
 
-const save = (article: ArticleDB) => {
-    useArticleStore().update(article_id, JSON.parse(JSON.stringify(article)));
-    useModalStore().showModal("Item saved", "Article was successfully updated");
-    return navigateTo('/article/' + article_id)
+const save = async (article: ArticleDB) => {
+    const result = await useArticleStore().update(article_id, JSON.parse(JSON.stringify(article)));
+    if (result) {
+        useModalStore().showModal("Item saved", "Article was successfully updated");
+        return navigateTo('/article/' + article_id)
+    } else {
+        useModalStore().showModal("Error", "Article wasn't updated");
+    }
 }
 const changeItem = (calback: String) => {
     navigateTo('/admin/edit/article/' + calback)

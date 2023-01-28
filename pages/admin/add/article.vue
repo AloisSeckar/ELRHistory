@@ -8,9 +8,13 @@
 <script setup lang="ts">
 import { ArticleDB } from '@/database/types';
 
-const save = (article: ArticleDB) => {
-    useArticleStore().create(JSON.parse(JSON.stringify(article)));
-    useModalStore().showModal("Item saved", "Article was successfully created");
-    return navigateTo('/articles')
+const save = async (article: ArticleDB) => {
+    const result = await useArticleStore().create(JSON.parse(JSON.stringify(article)))
+    if (result) {
+        useModalStore().showModal("Item saved", "Article was successfully created");
+        return navigateTo('/articles')
+    } else {
+        useModalStore().showModal("Error", "Article wasn't created");
+    }
 }
 </script>

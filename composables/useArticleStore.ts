@@ -15,7 +15,7 @@ export const useArticleStore = defineStore({
     async fill() {
       fillStore(tableName, this, getItems)
     },
-    async create(newItem: ArticleDB) {
+    async create(newItem: ArticleDB): Promise<boolean> {
       treatInput(newItem)
       const { data, error } = await useSupabaseClient<ArticleDB>()
         .from(tableName)
@@ -25,12 +25,14 @@ export const useArticleStore = defineStore({
       if (data) {
         console.debug("new article saved into Supabase")
         fillStore(tableName, this, getItems) // TODO can we just load the new one?
+        return true
       } else {
         console.error("failed to save new article into Supabase")
         console.error(error?.message)
+        return false
       }
     },
-    async update(itemId: Number, editedItem: ArticleDB) {
+    async update(itemId: Number, editedItem: ArticleDB): Promise<boolean> {
       treatInput(editedItem)
       const { data, error } = await useSupabaseClient<ArticleDB>()
         .from(tableName)
@@ -41,9 +43,11 @@ export const useArticleStore = defineStore({
       if (data) {
         console.debug("new article saved into Supabase")
         fillStore(tableName, this, getItems) // TODO can we just load the new one?
+        return true
       } else {
         console.error("failed to save new article into Supabase")
         console.error(error?.message)
+        return false
       }
     }
   },
