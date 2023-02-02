@@ -4,18 +4,18 @@
 
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS "elrh_book";
-DROP TABLE IF EXISTS "elrh_contact";
-DROP TABLE IF EXISTS "elrh_link";
-DROP TABLE IF EXISTS "elrh_news";
-DROP TABLE IF EXISTS "elrh_image";
-DROP TABLE IF EXISTS "elrh_article";
-DROP TABLE IF EXISTS "elrh_gallery";
-DROP TABLE IF EXISTS "elrh_category";
-DROP TABLE IF EXISTS "elrh_author";
-DROP TABLE IF EXISTS "elrh_text";
+DROP TABLE IF EXISTS "elrhBook";
+DROP TABLE IF EXISTS "elrhContact";
+DROP TABLE IF EXISTS "elrhLink";
+DROP TABLE IF EXISTS "elrhNews";
+DROP TABLE IF EXISTS "elrhImage";
+DROP TABLE IF EXISTS "elrhArticle";
+DROP TABLE IF EXISTS "elrhGallery";
+DROP TABLE IF EXISTS "elrhCategory";
+DROP TABLE IF EXISTS "elrhAuthor";
+DROP TABLE IF EXISTS "elrhText";
 
-CREATE TABLE "elrh_article" (
+CREATE TABLE "elrhArticle" (
 	"articleId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"categoryId"	integer NOT NULL,
 	"dateCreated"	timestamp NOT NULL,
@@ -28,13 +28,13 @@ CREATE TABLE "elrh_article" (
 	"galleryId"	integer
 );
 
-CREATE TABLE "elrh_author" (
+CREATE TABLE "elrhAuthor" (
 	"authorId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"email"	varchar(100) NOT NULL,
 	"name"	varchar(50) NOT NULL
 );
 
-CREATE TABLE "elrh_book" (
+CREATE TABLE "elrhBook" (
 	"bookId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"categoryId"	integer NOT NULL,
 	"ord"	integer NOT NULL CHECK("ord" >= 0),
@@ -50,7 +50,7 @@ CREATE TABLE "elrh_book" (
 	"authorId"	integer NOT NULL
 );
 
-CREATE TABLE "elrh_category" (
+CREATE TABLE "elrhCategory" (
 	"categoryId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"ord"	integer NOT NULL CHECK("ord" >= 0),
 	"name"	varchar(50) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE "elrh_category" (
 	"type"	varchar(1) NOT NULL
 );
 
-CREATE TABLE "elrh_contact" (
+CREATE TABLE "elrhContact" (
 	"contactId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"name"	varchar(50) NOT NULL,
 	"email"	varchar(255) NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE "elrh_contact" (
 	"fb"	varchar(100) NOT NULL
 );
 
-CREATE TABLE "elrh_link" (
+CREATE TABLE "elrhLink" (
 	"linkId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"categoryId"	integer NOT NULL,
 	"ord"	integer NOT NULL CHECK("ord" >= 0),
@@ -79,14 +79,14 @@ CREATE TABLE "elrh_link" (
 	"authorId"	integer NOT NULL
 );
 
-CREATE TABLE "elrh_news" (
+CREATE TABLE "elrhNews" (
 	"newsId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"content"	text NOT NULL,
 	"authorId"	integer NOT NULL,
 	"dateCreated"	timestamp NOT NULL
 );
 
-CREATE TABLE "elrh_gallery" (
+CREATE TABLE "elrhGallery" (
 	"galleryId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"dateCreated"	timestamp NOT NULL,
 	"dateEdited"	timestamp NOT NULL,
@@ -96,7 +96,7 @@ CREATE TABLE "elrh_gallery" (
 	"parentId"	integer
 );
 
-CREATE TABLE "elrh_image" (
+CREATE TABLE "elrhImage" (
 	"imageId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	"dateCreated"	timestamp NOT NULL,
 	"dateEdited"	timestamp NOT NULL,
@@ -110,25 +110,25 @@ CREATE TABLE "elrh_image" (
 	"nextId"	integer
 );
 
-CREATE TABLE "elrh_text" (
+CREATE TABLE "elrhText" (
 	"key"	text NOT NULL,
 	"value"	text NOT NULL,
 	PRIMARY KEY ("key")
 );
 
-ALTER TABLE "elrh_article" ADD CONSTRAINT "fk_article_author" FOREIGN KEY ("authorId") REFERENCES "elrh_author"("authorId");
-ALTER TABLE "elrh_article" ADD CONSTRAINT "fk_article_category" FOREIGN KEY ("categoryId") REFERENCES "elrh_category"("categoryId");
-ALTER TABLE "elrh_article" ADD CONSTRAINT "fk_article_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrh_gallery"("galleryId");
-ALTER TABLE "elrh_book" ADD CONSTRAINT "fk_book_author" FOREIGN KEY ("authorId") REFERENCES "elrh_author"("authorId");
-ALTER TABLE "elrh_book" ADD CONSTRAINT "fk_book_category" FOREIGN KEY ("categoryId") REFERENCES "elrh_category"("categoryId");
-ALTER TABLE "elrh_link" ADD CONSTRAINT "fk_link_author" FOREIGN KEY ("authorId") REFERENCES "elrh_author"("authorId");
-ALTER TABLE "elrh_link" ADD CONSTRAINT "fk_link_category" FOREIGN KEY ("categoryId") REFERENCES "elrh_category"("categoryId");
-ALTER TABLE "elrh_news" ADD CONSTRAINT "fk_news_author" FOREIGN KEY ("authorId") REFERENCES "elrh_author"("authorId");
-ALTER TABLE "elrh_gallery" ADD CONSTRAINT "fk_gallery_parent" FOREIGN KEY ("parentId") REFERENCES "elrh_gallery"("galleryId");
-ALTER TABLE "elrh_gallery" ADD CONSTRAINT "fk_gallery_author" FOREIGN KEY ("authorId") REFERENCES "elrh_author"("authorId");
-ALTER TABLE "elrh_image" ADD CONSTRAINT "fk_image_author" FOREIGN KEY ("authorId") REFERENCES "elrh_author"("authorId");
-ALTER TABLE "elrh_image" ADD CONSTRAINT "fk_image_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrh_gallery"("galleryId");
-ALTER TABLE "elrh_image" ADD CONSTRAINT "fk_image_prev" FOREIGN KEY ("prevId") REFERENCES "elrh_image"("imageId");
-ALTER TABLE "elrh_image" ADD CONSTRAINT "fk_image_next" FOREIGN KEY ("nextId") REFERENCES "elrh_image"("imageId");
+ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
+ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_category" FOREIGN KEY ("categoryId") REFERENCES "elrhCategory"("categoryId");
+ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrhGallery"("galleryId");
+ALTER TABLE "elrhBook" ADD CONSTRAINT "fk_book_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
+ALTER TABLE "elrhBook" ADD CONSTRAINT "fk_book_category" FOREIGN KEY ("categoryId") REFERENCES "elrhCategory"("categoryId");
+ALTER TABLE "elrhLink" ADD CONSTRAINT "fk_link_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
+ALTER TABLE "elrhLink" ADD CONSTRAINT "fk_link_category" FOREIGN KEY ("categoryId") REFERENCES "elrhCategory"("categoryId");
+ALTER TABLE "elrhNews" ADD CONSTRAINT "fk_news_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
+ALTER TABLE "elrhGallery" ADD CONSTRAINT "fk_gallery_parent" FOREIGN KEY ("parentId") REFERENCES "elrhGallery"("galleryId");
+ALTER TABLE "elrhGallery" ADD CONSTRAINT "fk_gallery_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
+ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
+ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrhGallery"("galleryId");
+ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_prev" FOREIGN KEY ("prevId") REFERENCES "elrhImage"("imageId");
+ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_next" FOREIGN KEY ("nextId") REFERENCES "elrhImage"("imageId");
 
 COMMIT;
