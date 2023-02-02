@@ -1,8 +1,9 @@
 -- DB mock data for ELRHistory 1.0
 -- use to populate your DB with some values for testing
--- last revision: 2023-01-22
+-- last revision: 2023-02-02
 
 INSERT INTO "elrh_author"("email", "name") VALUES ('alois.seckar@gmail.com', 'ELRHistory');
+INSERT INTO "elrh_author"("email", "name") VALUES ('ellrohir@seznam.com', 'ELRHistory2');
 
 INSERT INTO "elrh_contact"("name", "email", "phone", "fb") VALUES ('ELRHistory', 'alois.seckar@gmail.com', '123 456 789', 'https://www.facebook.com/');
 
