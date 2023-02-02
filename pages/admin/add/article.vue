@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Add new article</h1>
-        <AdminFormArticle :article_id="-1" @save="save" />
+        <AdminFormArticle :articleId="-1" @save="save" />
     </div>
 </template>
 

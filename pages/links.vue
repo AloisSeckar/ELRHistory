@@ -4,10 +4,10 @@
             <div class="box-header"><fa icon="globe" />&nbsp;&nbsp;{{ category.name }}</div>
             <div class="box-content">
                 <div>{{ category.dscr }}</div>
-                <div v-for="link in useLinkStore().getByCategory(category.category_id)">
+                <div v-for="link in useLinkStore().getByCategory(category.categoryId)">
                     <ItemLink :item="link" />
                 </div>
-                <div class="p-2" v-if="useLinkStore().getByCategory(category.category_id).length < 1">{{ text.getKey('links-none') }}</div>
+                <div class="p-2" v-if="useLinkStore().getByCategory(category.categoryId).length < 1">{{ text.getKey('links-none') }}</div>
             </div>
         </div>
         <div class="-mt-2 text-lg">{{ text.getKey('links-total') }}: <strong>{{ useLinkStore().getCount }}</strong></div>

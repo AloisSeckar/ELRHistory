@@ -1,7 +1,7 @@
 import { Gallery } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
 
-const tableName = "elrh_gallery"
+const tableName = "elrhGallery"
 
 export const useGalleryStore = defineStore({
   id: tableName + '-store',
@@ -20,16 +20,16 @@ export const useGalleryStore = defineStore({
     getItems: state => state.items,
     getCount: state => state.items.length,
     getById: (state) => {
-      return (gallery_id: Number) => state.items.find(i => i.gallery_id == gallery_id)
+      return (galleryId: Number) => state.items.find(i => i.galleryId == galleryId)
     },
     getByParent: (state) => {
-      return (parent_id?: Number) => state.items.filter(i => i.parent_id?.gallery_id == parent_id)
+      return (parentId?: Number) => state.items.filter(i => i.parentId?.galleryId == parentId)
     }
   }
 })
 
 async function getItems(supabase: SupabaseClient) {
-  const query = `gallery_id, date_created, name, dscr, author_id(author_id, name), parent_id(gallery_id, name), 
-  elrh_article(article_id, name, author_id(author_id, name), gallery_id)`
+  const query = `galleryId, dateCreated, name, dscr, elrhAuthor(authorId, name), parentId(galleryId, name), 
+  elrhArticle(articleId, name, authorId(authorId, name), galleryId)`
   return fetchSupabase(supabase, tableName, query, 'name', {})
 }

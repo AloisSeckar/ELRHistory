@@ -33,7 +33,7 @@ To connect the application to your own Supabase, you need to provide unique `SUP
 
 ### Text
 
-Static texts are stored in `elrh_text` database table. They are organized as `key - value` pair. Texts are being retrieved using Pinia store instance defined in `composables/useTextStore`. The getter designed for retrieving the values is `getKey(key_name)`. The method either fetches given key from underlying `Supabase` DB or returns `UNDEFINED {'key_name'}` if nothing found (or the DB or the table cannot be accessed).
+Static texts are stored in `elrhText` database table. They are organized as `key - value` pair. Texts are being retrieved using Pinia store instance defined in `composables/useTextStore`. The getter designed for retrieving the values is `getKey(key_name)`. The method either fetches given key from underlying `Supabase` DB or returns `UNDEFINED {'key_name'}` if nothing found (or the DB or the table cannot be accessed).
 
 List of texts, that also allow HTML:
 * `web-author` - name and possible link to author's website

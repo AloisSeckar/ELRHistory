@@ -12,20 +12,119 @@ export interface paths {
       };
     };
   };
+  "/elrhContact": {
+    get: {
+      parameters: {
+        query: {
+          contactId?: parameters["rowFilter.elrhContact.contactId"];
+          name?: parameters["rowFilter.elrhContact.name"];
+          email?: parameters["rowFilter.elrhContact.email"];
+          phone?: parameters["rowFilter.elrhContact.phone"];
+          fb?: parameters["rowFilter.elrhContact.fb"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhContact"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhContact */
+          elrhContact?: definitions["elrhContact"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          contactId?: parameters["rowFilter.elrhContact.contactId"];
+          name?: parameters["rowFilter.elrhContact.name"];
+          email?: parameters["rowFilter.elrhContact.email"];
+          phone?: parameters["rowFilter.elrhContact.phone"];
+          fb?: parameters["rowFilter.elrhContact.fb"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          contactId?: parameters["rowFilter.elrhContact.contactId"];
+          name?: parameters["rowFilter.elrhContact.name"];
+          email?: parameters["rowFilter.elrhContact.email"];
+          phone?: parameters["rowFilter.elrhContact.phone"];
+          fb?: parameters["rowFilter.elrhContact.fb"];
+        };
+        body: {
+          /** elrhContact */
+          elrhContact?: definitions["elrhContact"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/elrh_article": {
     get: {
       parameters: {
         query: {
-          article_id?: parameters["rowFilter.elrh_article.article_id"];
-          category_id?: parameters["rowFilter.elrh_article.category_id"];
-          date_created?: parameters["rowFilter.elrh_article.date_created"];
-          date_edited?: parameters["rowFilter.elrh_article.date_edited"];
+          articleId?: parameters["rowFilter.elrh_article.articleId"];
+          categoryId?: parameters["rowFilter.elrh_article.categoryId"];
+          dateCreated?: parameters["rowFilter.elrh_article.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_article.dateEdited"];
           name?: parameters["rowFilter.elrh_article.name"];
           dscr?: parameters["rowFilter.elrh_article.dscr"];
           content?: parameters["rowFilter.elrh_article.content"];
           thumb?: parameters["rowFilter.elrh_article.thumb"];
-          author_id?: parameters["rowFilter.elrh_article.author_id"];
-          gallery_id?: parameters["rowFilter.elrh_article.gallery_id"];
+          authorId?: parameters["rowFilter.elrh_article.authorId"];
+          galleryId?: parameters["rowFilter.elrh_article.galleryId"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -76,16 +175,16 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          article_id?: parameters["rowFilter.elrh_article.article_id"];
-          category_id?: parameters["rowFilter.elrh_article.category_id"];
-          date_created?: parameters["rowFilter.elrh_article.date_created"];
-          date_edited?: parameters["rowFilter.elrh_article.date_edited"];
+          articleId?: parameters["rowFilter.elrh_article.articleId"];
+          categoryId?: parameters["rowFilter.elrh_article.categoryId"];
+          dateCreated?: parameters["rowFilter.elrh_article.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_article.dateEdited"];
           name?: parameters["rowFilter.elrh_article.name"];
           dscr?: parameters["rowFilter.elrh_article.dscr"];
           content?: parameters["rowFilter.elrh_article.content"];
           thumb?: parameters["rowFilter.elrh_article.thumb"];
-          author_id?: parameters["rowFilter.elrh_article.author_id"];
-          gallery_id?: parameters["rowFilter.elrh_article.gallery_id"];
+          authorId?: parameters["rowFilter.elrh_article.authorId"];
+          galleryId?: parameters["rowFilter.elrh_article.galleryId"];
         };
         header: {
           /** Preference */
@@ -100,16 +199,16 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          article_id?: parameters["rowFilter.elrh_article.article_id"];
-          category_id?: parameters["rowFilter.elrh_article.category_id"];
-          date_created?: parameters["rowFilter.elrh_article.date_created"];
-          date_edited?: parameters["rowFilter.elrh_article.date_edited"];
+          articleId?: parameters["rowFilter.elrh_article.articleId"];
+          categoryId?: parameters["rowFilter.elrh_article.categoryId"];
+          dateCreated?: parameters["rowFilter.elrh_article.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_article.dateEdited"];
           name?: parameters["rowFilter.elrh_article.name"];
           dscr?: parameters["rowFilter.elrh_article.dscr"];
           content?: parameters["rowFilter.elrh_article.content"];
           thumb?: parameters["rowFilter.elrh_article.thumb"];
-          author_id?: parameters["rowFilter.elrh_article.author_id"];
-          gallery_id?: parameters["rowFilter.elrh_article.gallery_id"];
+          authorId?: parameters["rowFilter.elrh_article.authorId"];
+          galleryId?: parameters["rowFilter.elrh_article.galleryId"];
         };
         body: {
           /** elrh_article */
@@ -130,7 +229,7 @@ export interface paths {
     get: {
       parameters: {
         query: {
-          contact_id?: parameters["rowFilter.elrh_contact.contact_id"];
+          contactId?: parameters["rowFilter.elrh_contact.contactId"];
           name?: parameters["rowFilter.elrh_contact.name"];
           email?: parameters["rowFilter.elrh_contact.email"];
           phone?: parameters["rowFilter.elrh_contact.phone"];
@@ -185,7 +284,7 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          contact_id?: parameters["rowFilter.elrh_contact.contact_id"];
+          contactId?: parameters["rowFilter.elrh_contact.contactId"];
           name?: parameters["rowFilter.elrh_contact.name"];
           email?: parameters["rowFilter.elrh_contact.email"];
           phone?: parameters["rowFilter.elrh_contact.phone"];
@@ -204,7 +303,7 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          contact_id?: parameters["rowFilter.elrh_contact.contact_id"];
+          contactId?: parameters["rowFilter.elrh_contact.contactId"];
           name?: parameters["rowFilter.elrh_contact.name"];
           email?: parameters["rowFilter.elrh_contact.email"];
           phone?: parameters["rowFilter.elrh_contact.phone"];
@@ -229,13 +328,13 @@ export interface paths {
     get: {
       parameters: {
         query: {
-          gallery_id?: parameters["rowFilter.elrh_gallery.gallery_id"];
-          date_created?: parameters["rowFilter.elrh_gallery.date_created"];
-          date_edited?: parameters["rowFilter.elrh_gallery.date_edited"];
+          galleryId?: parameters["rowFilter.elrh_gallery.galleryId"];
+          dateCreated?: parameters["rowFilter.elrh_gallery.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_gallery.dateEdited"];
           name?: parameters["rowFilter.elrh_gallery.name"];
           dscr?: parameters["rowFilter.elrh_gallery.dscr"];
-          author_id?: parameters["rowFilter.elrh_gallery.author_id"];
-          parent_id?: parameters["rowFilter.elrh_gallery.parent_id"];
+          authorId?: parameters["rowFilter.elrh_gallery.authorId"];
+          parentId?: parameters["rowFilter.elrh_gallery.parentId"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -286,13 +385,13 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          gallery_id?: parameters["rowFilter.elrh_gallery.gallery_id"];
-          date_created?: parameters["rowFilter.elrh_gallery.date_created"];
-          date_edited?: parameters["rowFilter.elrh_gallery.date_edited"];
+          galleryId?: parameters["rowFilter.elrh_gallery.galleryId"];
+          dateCreated?: parameters["rowFilter.elrh_gallery.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_gallery.dateEdited"];
           name?: parameters["rowFilter.elrh_gallery.name"];
           dscr?: parameters["rowFilter.elrh_gallery.dscr"];
-          author_id?: parameters["rowFilter.elrh_gallery.author_id"];
-          parent_id?: parameters["rowFilter.elrh_gallery.parent_id"];
+          authorId?: parameters["rowFilter.elrh_gallery.authorId"];
+          parentId?: parameters["rowFilter.elrh_gallery.parentId"];
         };
         header: {
           /** Preference */
@@ -307,13 +406,13 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          gallery_id?: parameters["rowFilter.elrh_gallery.gallery_id"];
-          date_created?: parameters["rowFilter.elrh_gallery.date_created"];
-          date_edited?: parameters["rowFilter.elrh_gallery.date_edited"];
+          galleryId?: parameters["rowFilter.elrh_gallery.galleryId"];
+          dateCreated?: parameters["rowFilter.elrh_gallery.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_gallery.dateEdited"];
           name?: parameters["rowFilter.elrh_gallery.name"];
           dscr?: parameters["rowFilter.elrh_gallery.dscr"];
-          author_id?: parameters["rowFilter.elrh_gallery.author_id"];
-          parent_id?: parameters["rowFilter.elrh_gallery.parent_id"];
+          authorId?: parameters["rowFilter.elrh_gallery.authorId"];
+          parentId?: parameters["rowFilter.elrh_gallery.parentId"];
         };
         body: {
           /** elrh_gallery */
@@ -330,11 +429,206 @@ export interface paths {
       };
     };
   };
+  "/elrhCategory": {
+    get: {
+      parameters: {
+        query: {
+          categoryId?: parameters["rowFilter.elrhCategory.categoryId"];
+          ord?: parameters["rowFilter.elrhCategory.ord"];
+          name?: parameters["rowFilter.elrhCategory.name"];
+          dscr?: parameters["rowFilter.elrhCategory.dscr"];
+          type?: parameters["rowFilter.elrhCategory.type"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhCategory"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhCategory */
+          elrhCategory?: definitions["elrhCategory"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          categoryId?: parameters["rowFilter.elrhCategory.categoryId"];
+          ord?: parameters["rowFilter.elrhCategory.ord"];
+          name?: parameters["rowFilter.elrhCategory.name"];
+          dscr?: parameters["rowFilter.elrhCategory.dscr"];
+          type?: parameters["rowFilter.elrhCategory.type"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          categoryId?: parameters["rowFilter.elrhCategory.categoryId"];
+          ord?: parameters["rowFilter.elrhCategory.ord"];
+          name?: parameters["rowFilter.elrhCategory.name"];
+          dscr?: parameters["rowFilter.elrhCategory.dscr"];
+          type?: parameters["rowFilter.elrhCategory.type"];
+        };
+        body: {
+          /** elrhCategory */
+          elrhCategory?: definitions["elrhCategory"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/elrhNews": {
+    get: {
+      parameters: {
+        query: {
+          newsId?: parameters["rowFilter.elrhNews.newsId"];
+          content?: parameters["rowFilter.elrhNews.content"];
+          authorId?: parameters["rowFilter.elrhNews.authorId"];
+          dateCreated?: parameters["rowFilter.elrhNews.dateCreated"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhNews"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhNews */
+          elrhNews?: definitions["elrhNews"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          newsId?: parameters["rowFilter.elrhNews.newsId"];
+          content?: parameters["rowFilter.elrhNews.content"];
+          authorId?: parameters["rowFilter.elrhNews.authorId"];
+          dateCreated?: parameters["rowFilter.elrhNews.dateCreated"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          newsId?: parameters["rowFilter.elrhNews.newsId"];
+          content?: parameters["rowFilter.elrhNews.content"];
+          authorId?: parameters["rowFilter.elrhNews.authorId"];
+          dateCreated?: parameters["rowFilter.elrhNews.dateCreated"];
+        };
+        body: {
+          /** elrhNews */
+          elrhNews?: definitions["elrhNews"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/elrh_author": {
     get: {
       parameters: {
         query: {
-          author_id?: parameters["rowFilter.elrh_author.author_id"];
+          authorId?: parameters["rowFilter.elrh_author.authorId"];
           email?: parameters["rowFilter.elrh_author.email"];
           name?: parameters["rowFilter.elrh_author.name"];
           /** Filtering Columns */
@@ -387,7 +681,7 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          author_id?: parameters["rowFilter.elrh_author.author_id"];
+          authorId?: parameters["rowFilter.elrh_author.authorId"];
           email?: parameters["rowFilter.elrh_author.email"];
           name?: parameters["rowFilter.elrh_author.name"];
         };
@@ -404,7 +698,7 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          author_id?: parameters["rowFilter.elrh_author.author_id"];
+          authorId?: parameters["rowFilter.elrh_author.authorId"];
           email?: parameters["rowFilter.elrh_author.email"];
           name?: parameters["rowFilter.elrh_author.name"];
         };
@@ -427,16 +721,16 @@ export interface paths {
     get: {
       parameters: {
         query: {
-          link_id?: parameters["rowFilter.elrh_link.link_id"];
-          category_id?: parameters["rowFilter.elrh_link.category_id"];
+          linkId?: parameters["rowFilter.elrh_link.linkId"];
+          categoryId?: parameters["rowFilter.elrh_link.categoryId"];
           ord?: parameters["rowFilter.elrh_link.ord"];
-          date_created?: parameters["rowFilter.elrh_link.date_created"];
-          date_edited?: parameters["rowFilter.elrh_link.date_edited"];
+          dateCreated?: parameters["rowFilter.elrh_link.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_link.dateEdited"];
           name?: parameters["rowFilter.elrh_link.name"];
           dscr?: parameters["rowFilter.elrh_link.dscr"];
           url?: parameters["rowFilter.elrh_link.url"];
           thumb?: parameters["rowFilter.elrh_link.thumb"];
-          author_id?: parameters["rowFilter.elrh_link.author_id"];
+          authorId?: parameters["rowFilter.elrh_link.authorId"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -487,16 +781,16 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          link_id?: parameters["rowFilter.elrh_link.link_id"];
-          category_id?: parameters["rowFilter.elrh_link.category_id"];
+          linkId?: parameters["rowFilter.elrh_link.linkId"];
+          categoryId?: parameters["rowFilter.elrh_link.categoryId"];
           ord?: parameters["rowFilter.elrh_link.ord"];
-          date_created?: parameters["rowFilter.elrh_link.date_created"];
-          date_edited?: parameters["rowFilter.elrh_link.date_edited"];
+          dateCreated?: parameters["rowFilter.elrh_link.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_link.dateEdited"];
           name?: parameters["rowFilter.elrh_link.name"];
           dscr?: parameters["rowFilter.elrh_link.dscr"];
           url?: parameters["rowFilter.elrh_link.url"];
           thumb?: parameters["rowFilter.elrh_link.thumb"];
-          author_id?: parameters["rowFilter.elrh_link.author_id"];
+          authorId?: parameters["rowFilter.elrh_link.authorId"];
         };
         header: {
           /** Preference */
@@ -511,16 +805,16 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          link_id?: parameters["rowFilter.elrh_link.link_id"];
-          category_id?: parameters["rowFilter.elrh_link.category_id"];
+          linkId?: parameters["rowFilter.elrh_link.linkId"];
+          categoryId?: parameters["rowFilter.elrh_link.categoryId"];
           ord?: parameters["rowFilter.elrh_link.ord"];
-          date_created?: parameters["rowFilter.elrh_link.date_created"];
-          date_edited?: parameters["rowFilter.elrh_link.date_edited"];
+          dateCreated?: parameters["rowFilter.elrh_link.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_link.dateEdited"];
           name?: parameters["rowFilter.elrh_link.name"];
           dscr?: parameters["rowFilter.elrh_link.dscr"];
           url?: parameters["rowFilter.elrh_link.url"];
           thumb?: parameters["rowFilter.elrh_link.thumb"];
-          author_id?: parameters["rowFilter.elrh_link.author_id"];
+          authorId?: parameters["rowFilter.elrh_link.authorId"];
         };
         body: {
           /** elrh_link */
@@ -537,21 +831,216 @@ export interface paths {
       };
     };
   };
+  "/elrhText": {
+    get: {
+      parameters: {
+        query: {
+          key?: parameters["rowFilter.elrhText.key"];
+          value?: parameters["rowFilter.elrhText.value"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhText"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhText */
+          elrhText?: definitions["elrhText"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          key?: parameters["rowFilter.elrhText.key"];
+          value?: parameters["rowFilter.elrhText.value"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          key?: parameters["rowFilter.elrhText.key"];
+          value?: parameters["rowFilter.elrhText.value"];
+        };
+        body: {
+          /** elrhText */
+          elrhText?: definitions["elrhText"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/elrhGallery": {
+    get: {
+      parameters: {
+        query: {
+          galleryId?: parameters["rowFilter.elrhGallery.galleryId"];
+          dateCreated?: parameters["rowFilter.elrhGallery.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhGallery.dateEdited"];
+          name?: parameters["rowFilter.elrhGallery.name"];
+          dscr?: parameters["rowFilter.elrhGallery.dscr"];
+          authorId?: parameters["rowFilter.elrhGallery.authorId"];
+          parentId?: parameters["rowFilter.elrhGallery.parentId"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhGallery"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhGallery */
+          elrhGallery?: definitions["elrhGallery"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          galleryId?: parameters["rowFilter.elrhGallery.galleryId"];
+          dateCreated?: parameters["rowFilter.elrhGallery.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhGallery.dateEdited"];
+          name?: parameters["rowFilter.elrhGallery.name"];
+          dscr?: parameters["rowFilter.elrhGallery.dscr"];
+          authorId?: parameters["rowFilter.elrhGallery.authorId"];
+          parentId?: parameters["rowFilter.elrhGallery.parentId"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          galleryId?: parameters["rowFilter.elrhGallery.galleryId"];
+          dateCreated?: parameters["rowFilter.elrhGallery.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhGallery.dateEdited"];
+          name?: parameters["rowFilter.elrhGallery.name"];
+          dscr?: parameters["rowFilter.elrhGallery.dscr"];
+          authorId?: parameters["rowFilter.elrhGallery.authorId"];
+          parentId?: parameters["rowFilter.elrhGallery.parentId"];
+        };
+        body: {
+          /** elrhGallery */
+          elrhGallery?: definitions["elrhGallery"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/elrh_image": {
     get: {
       parameters: {
         query: {
-          image_id?: parameters["rowFilter.elrh_image.image_id"];
-          date_created?: parameters["rowFilter.elrh_image.date_created"];
-          date_edited?: parameters["rowFilter.elrh_image.date_edited"];
+          imageId?: parameters["rowFilter.elrh_image.imageId"];
+          dateCreated?: parameters["rowFilter.elrh_image.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_image.dateEdited"];
           name?: parameters["rowFilter.elrh_image.name"];
           dscr?: parameters["rowFilter.elrh_image.dscr"];
-          author_id?: parameters["rowFilter.elrh_image.author_id"];
+          authorId?: parameters["rowFilter.elrh_image.authorId"];
           image?: parameters["rowFilter.elrh_image.image"];
-          gallery_id?: parameters["rowFilter.elrh_image.gallery_id"];
+          galleryId?: parameters["rowFilter.elrh_image.galleryId"];
           ord?: parameters["rowFilter.elrh_image.ord"];
-          prev_id?: parameters["rowFilter.elrh_image.prev_id"];
-          next_id?: parameters["rowFilter.elrh_image.next_id"];
+          prevId?: parameters["rowFilter.elrh_image.prevId"];
+          nextId?: parameters["rowFilter.elrh_image.nextId"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -602,17 +1091,17 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          image_id?: parameters["rowFilter.elrh_image.image_id"];
-          date_created?: parameters["rowFilter.elrh_image.date_created"];
-          date_edited?: parameters["rowFilter.elrh_image.date_edited"];
+          imageId?: parameters["rowFilter.elrh_image.imageId"];
+          dateCreated?: parameters["rowFilter.elrh_image.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_image.dateEdited"];
           name?: parameters["rowFilter.elrh_image.name"];
           dscr?: parameters["rowFilter.elrh_image.dscr"];
-          author_id?: parameters["rowFilter.elrh_image.author_id"];
+          authorId?: parameters["rowFilter.elrh_image.authorId"];
           image?: parameters["rowFilter.elrh_image.image"];
-          gallery_id?: parameters["rowFilter.elrh_image.gallery_id"];
+          galleryId?: parameters["rowFilter.elrh_image.galleryId"];
           ord?: parameters["rowFilter.elrh_image.ord"];
-          prev_id?: parameters["rowFilter.elrh_image.prev_id"];
-          next_id?: parameters["rowFilter.elrh_image.next_id"];
+          prevId?: parameters["rowFilter.elrh_image.prevId"];
+          nextId?: parameters["rowFilter.elrh_image.nextId"];
         };
         header: {
           /** Preference */
@@ -627,17 +1116,17 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          image_id?: parameters["rowFilter.elrh_image.image_id"];
-          date_created?: parameters["rowFilter.elrh_image.date_created"];
-          date_edited?: parameters["rowFilter.elrh_image.date_edited"];
+          imageId?: parameters["rowFilter.elrh_image.imageId"];
+          dateCreated?: parameters["rowFilter.elrh_image.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_image.dateEdited"];
           name?: parameters["rowFilter.elrh_image.name"];
           dscr?: parameters["rowFilter.elrh_image.dscr"];
-          author_id?: parameters["rowFilter.elrh_image.author_id"];
+          authorId?: parameters["rowFilter.elrh_image.authorId"];
           image?: parameters["rowFilter.elrh_image.image"];
-          gallery_id?: parameters["rowFilter.elrh_image.gallery_id"];
+          galleryId?: parameters["rowFilter.elrh_image.galleryId"];
           ord?: parameters["rowFilter.elrh_image.ord"];
-          prev_id?: parameters["rowFilter.elrh_image.prev_id"];
-          next_id?: parameters["rowFilter.elrh_image.next_id"];
+          prevId?: parameters["rowFilter.elrh_image.prevId"];
+          nextId?: parameters["rowFilter.elrh_image.nextId"];
         };
         body: {
           /** elrh_image */
@@ -654,14 +1143,251 @@ export interface paths {
       };
     };
   };
+  "/elrhBook": {
+    get: {
+      parameters: {
+        query: {
+          bookId?: parameters["rowFilter.elrhBook.bookId"];
+          categoryId?: parameters["rowFilter.elrhBook.categoryId"];
+          ord?: parameters["rowFilter.elrhBook.ord"];
+          dateCreated?: parameters["rowFilter.elrhBook.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhBook.dateEdited"];
+          writer?: parameters["rowFilter.elrhBook.writer"];
+          name?: parameters["rowFilter.elrhBook.name"];
+          dscr?: parameters["rowFilter.elrhBook.dscr"];
+          url?: parameters["rowFilter.elrhBook.url"];
+          thumb?: parameters["rowFilter.elrhBook.thumb"];
+          review?: parameters["rowFilter.elrhBook.review"];
+          year?: parameters["rowFilter.elrhBook.year"];
+          authorId?: parameters["rowFilter.elrhBook.authorId"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhBook"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhBook */
+          elrhBook?: definitions["elrhBook"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          bookId?: parameters["rowFilter.elrhBook.bookId"];
+          categoryId?: parameters["rowFilter.elrhBook.categoryId"];
+          ord?: parameters["rowFilter.elrhBook.ord"];
+          dateCreated?: parameters["rowFilter.elrhBook.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhBook.dateEdited"];
+          writer?: parameters["rowFilter.elrhBook.writer"];
+          name?: parameters["rowFilter.elrhBook.name"];
+          dscr?: parameters["rowFilter.elrhBook.dscr"];
+          url?: parameters["rowFilter.elrhBook.url"];
+          thumb?: parameters["rowFilter.elrhBook.thumb"];
+          review?: parameters["rowFilter.elrhBook.review"];
+          year?: parameters["rowFilter.elrhBook.year"];
+          authorId?: parameters["rowFilter.elrhBook.authorId"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          bookId?: parameters["rowFilter.elrhBook.bookId"];
+          categoryId?: parameters["rowFilter.elrhBook.categoryId"];
+          ord?: parameters["rowFilter.elrhBook.ord"];
+          dateCreated?: parameters["rowFilter.elrhBook.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhBook.dateEdited"];
+          writer?: parameters["rowFilter.elrhBook.writer"];
+          name?: parameters["rowFilter.elrhBook.name"];
+          dscr?: parameters["rowFilter.elrhBook.dscr"];
+          url?: parameters["rowFilter.elrhBook.url"];
+          thumb?: parameters["rowFilter.elrhBook.thumb"];
+          review?: parameters["rowFilter.elrhBook.review"];
+          year?: parameters["rowFilter.elrhBook.year"];
+          authorId?: parameters["rowFilter.elrhBook.authorId"];
+        };
+        body: {
+          /** elrhBook */
+          elrhBook?: definitions["elrhBook"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/elrhArticle": {
+    get: {
+      parameters: {
+        query: {
+          articleId?: parameters["rowFilter.elrhArticle.articleId"];
+          categoryId?: parameters["rowFilter.elrhArticle.categoryId"];
+          dateCreated?: parameters["rowFilter.elrhArticle.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhArticle.dateEdited"];
+          name?: parameters["rowFilter.elrhArticle.name"];
+          dscr?: parameters["rowFilter.elrhArticle.dscr"];
+          content?: parameters["rowFilter.elrhArticle.content"];
+          thumb?: parameters["rowFilter.elrhArticle.thumb"];
+          authorId?: parameters["rowFilter.elrhArticle.authorId"];
+          galleryId?: parameters["rowFilter.elrhArticle.galleryId"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhArticle"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhArticle */
+          elrhArticle?: definitions["elrhArticle"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          articleId?: parameters["rowFilter.elrhArticle.articleId"];
+          categoryId?: parameters["rowFilter.elrhArticle.categoryId"];
+          dateCreated?: parameters["rowFilter.elrhArticle.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhArticle.dateEdited"];
+          name?: parameters["rowFilter.elrhArticle.name"];
+          dscr?: parameters["rowFilter.elrhArticle.dscr"];
+          content?: parameters["rowFilter.elrhArticle.content"];
+          thumb?: parameters["rowFilter.elrhArticle.thumb"];
+          authorId?: parameters["rowFilter.elrhArticle.authorId"];
+          galleryId?: parameters["rowFilter.elrhArticle.galleryId"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          articleId?: parameters["rowFilter.elrhArticle.articleId"];
+          categoryId?: parameters["rowFilter.elrhArticle.categoryId"];
+          dateCreated?: parameters["rowFilter.elrhArticle.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhArticle.dateEdited"];
+          name?: parameters["rowFilter.elrhArticle.name"];
+          dscr?: parameters["rowFilter.elrhArticle.dscr"];
+          content?: parameters["rowFilter.elrhArticle.content"];
+          thumb?: parameters["rowFilter.elrhArticle.thumb"];
+          authorId?: parameters["rowFilter.elrhArticle.authorId"];
+          galleryId?: parameters["rowFilter.elrhArticle.galleryId"];
+        };
+        body: {
+          /** elrhArticle */
+          elrhArticle?: definitions["elrhArticle"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/elrh_news": {
     get: {
       parameters: {
         query: {
-          news_id?: parameters["rowFilter.elrh_news.news_id"];
+          newsId?: parameters["rowFilter.elrh_news.newsId"];
           content?: parameters["rowFilter.elrh_news.content"];
-          author_id?: parameters["rowFilter.elrh_news.author_id"];
-          date_created?: parameters["rowFilter.elrh_news.date_created"];
+          authorId?: parameters["rowFilter.elrh_news.authorId"];
+          dateCreated?: parameters["rowFilter.elrh_news.dateCreated"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -712,10 +1438,10 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          news_id?: parameters["rowFilter.elrh_news.news_id"];
+          newsId?: parameters["rowFilter.elrh_news.newsId"];
           content?: parameters["rowFilter.elrh_news.content"];
-          author_id?: parameters["rowFilter.elrh_news.author_id"];
-          date_created?: parameters["rowFilter.elrh_news.date_created"];
+          authorId?: parameters["rowFilter.elrh_news.authorId"];
+          dateCreated?: parameters["rowFilter.elrh_news.dateCreated"];
         };
         header: {
           /** Preference */
@@ -730,14 +1456,245 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          news_id?: parameters["rowFilter.elrh_news.news_id"];
+          newsId?: parameters["rowFilter.elrh_news.newsId"];
           content?: parameters["rowFilter.elrh_news.content"];
-          author_id?: parameters["rowFilter.elrh_news.author_id"];
-          date_created?: parameters["rowFilter.elrh_news.date_created"];
+          authorId?: parameters["rowFilter.elrh_news.authorId"];
+          dateCreated?: parameters["rowFilter.elrh_news.dateCreated"];
         };
         body: {
           /** elrh_news */
           elrh_news?: definitions["elrh_news"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/elrhImage": {
+    get: {
+      parameters: {
+        query: {
+          imageId?: parameters["rowFilter.elrhImage.imageId"];
+          dateCreated?: parameters["rowFilter.elrhImage.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhImage.dateEdited"];
+          name?: parameters["rowFilter.elrhImage.name"];
+          dscr?: parameters["rowFilter.elrhImage.dscr"];
+          authorId?: parameters["rowFilter.elrhImage.authorId"];
+          image?: parameters["rowFilter.elrhImage.image"];
+          galleryId?: parameters["rowFilter.elrhImage.galleryId"];
+          ord?: parameters["rowFilter.elrhImage.ord"];
+          prevId?: parameters["rowFilter.elrhImage.prevId"];
+          nextId?: parameters["rowFilter.elrhImage.nextId"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhImage"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhImage */
+          elrhImage?: definitions["elrhImage"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          imageId?: parameters["rowFilter.elrhImage.imageId"];
+          dateCreated?: parameters["rowFilter.elrhImage.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhImage.dateEdited"];
+          name?: parameters["rowFilter.elrhImage.name"];
+          dscr?: parameters["rowFilter.elrhImage.dscr"];
+          authorId?: parameters["rowFilter.elrhImage.authorId"];
+          image?: parameters["rowFilter.elrhImage.image"];
+          galleryId?: parameters["rowFilter.elrhImage.galleryId"];
+          ord?: parameters["rowFilter.elrhImage.ord"];
+          prevId?: parameters["rowFilter.elrhImage.prevId"];
+          nextId?: parameters["rowFilter.elrhImage.nextId"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          imageId?: parameters["rowFilter.elrhImage.imageId"];
+          dateCreated?: parameters["rowFilter.elrhImage.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhImage.dateEdited"];
+          name?: parameters["rowFilter.elrhImage.name"];
+          dscr?: parameters["rowFilter.elrhImage.dscr"];
+          authorId?: parameters["rowFilter.elrhImage.authorId"];
+          image?: parameters["rowFilter.elrhImage.image"];
+          galleryId?: parameters["rowFilter.elrhImage.galleryId"];
+          ord?: parameters["rowFilter.elrhImage.ord"];
+          prevId?: parameters["rowFilter.elrhImage.prevId"];
+          nextId?: parameters["rowFilter.elrhImage.nextId"];
+        };
+        body: {
+          /** elrhImage */
+          elrhImage?: definitions["elrhImage"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/elrhLink": {
+    get: {
+      parameters: {
+        query: {
+          linkId?: parameters["rowFilter.elrhLink.linkId"];
+          categoryId?: parameters["rowFilter.elrhLink.categoryId"];
+          ord?: parameters["rowFilter.elrhLink.ord"];
+          dateCreated?: parameters["rowFilter.elrhLink.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhLink.dateEdited"];
+          name?: parameters["rowFilter.elrhLink.name"];
+          dscr?: parameters["rowFilter.elrhLink.dscr"];
+          url?: parameters["rowFilter.elrhLink.url"];
+          thumb?: parameters["rowFilter.elrhLink.thumb"];
+          authorId?: parameters["rowFilter.elrhLink.authorId"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhLink"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhLink */
+          elrhLink?: definitions["elrhLink"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          linkId?: parameters["rowFilter.elrhLink.linkId"];
+          categoryId?: parameters["rowFilter.elrhLink.categoryId"];
+          ord?: parameters["rowFilter.elrhLink.ord"];
+          dateCreated?: parameters["rowFilter.elrhLink.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhLink.dateEdited"];
+          name?: parameters["rowFilter.elrhLink.name"];
+          dscr?: parameters["rowFilter.elrhLink.dscr"];
+          url?: parameters["rowFilter.elrhLink.url"];
+          thumb?: parameters["rowFilter.elrhLink.thumb"];
+          authorId?: parameters["rowFilter.elrhLink.authorId"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          linkId?: parameters["rowFilter.elrhLink.linkId"];
+          categoryId?: parameters["rowFilter.elrhLink.categoryId"];
+          ord?: parameters["rowFilter.elrhLink.ord"];
+          dateCreated?: parameters["rowFilter.elrhLink.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrhLink.dateEdited"];
+          name?: parameters["rowFilter.elrhLink.name"];
+          dscr?: parameters["rowFilter.elrhLink.dscr"];
+          url?: parameters["rowFilter.elrhLink.url"];
+          thumb?: parameters["rowFilter.elrhLink.thumb"];
+          authorId?: parameters["rowFilter.elrhLink.authorId"];
+        };
+        body: {
+          /** elrhLink */
+          elrhLink?: definitions["elrhLink"];
         };
         header: {
           /** Preference */
@@ -840,11 +1797,104 @@ export interface paths {
       };
     };
   };
+  "/elrhAuthor": {
+    get: {
+      parameters: {
+        query: {
+          authorId?: parameters["rowFilter.elrhAuthor.authorId"];
+          email?: parameters["rowFilter.elrhAuthor.email"];
+          name?: parameters["rowFilter.elrhAuthor.name"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhAuthor"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhAuthor */
+          elrhAuthor?: definitions["elrhAuthor"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          authorId?: parameters["rowFilter.elrhAuthor.authorId"];
+          email?: parameters["rowFilter.elrhAuthor.email"];
+          name?: parameters["rowFilter.elrhAuthor.name"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          authorId?: parameters["rowFilter.elrhAuthor.authorId"];
+          email?: parameters["rowFilter.elrhAuthor.email"];
+          name?: parameters["rowFilter.elrhAuthor.name"];
+        };
+        body: {
+          /** elrhAuthor */
+          elrhAuthor?: definitions["elrhAuthor"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/elrh_category": {
     get: {
       parameters: {
         query: {
-          category_id?: parameters["rowFilter.elrh_category.category_id"];
+          categoryId?: parameters["rowFilter.elrh_category.categoryId"];
           ord?: parameters["rowFilter.elrh_category.ord"];
           name?: parameters["rowFilter.elrh_category.name"];
           dscr?: parameters["rowFilter.elrh_category.dscr"];
@@ -899,7 +1949,7 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          category_id?: parameters["rowFilter.elrh_category.category_id"];
+          categoryId?: parameters["rowFilter.elrh_category.categoryId"];
           ord?: parameters["rowFilter.elrh_category.ord"];
           name?: parameters["rowFilter.elrh_category.name"];
           dscr?: parameters["rowFilter.elrh_category.dscr"];
@@ -918,7 +1968,7 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          category_id?: parameters["rowFilter.elrh_category.category_id"];
+          categoryId?: parameters["rowFilter.elrh_category.categoryId"];
           ord?: parameters["rowFilter.elrh_category.ord"];
           name?: parameters["rowFilter.elrh_category.name"];
           dscr?: parameters["rowFilter.elrh_category.dscr"];
@@ -943,11 +1993,11 @@ export interface paths {
     get: {
       parameters: {
         query: {
-          book_id?: parameters["rowFilter.elrh_book.book_id"];
-          category_id?: parameters["rowFilter.elrh_book.category_id"];
+          bookId?: parameters["rowFilter.elrh_book.bookId"];
+          categoryId?: parameters["rowFilter.elrh_book.categoryId"];
           ord?: parameters["rowFilter.elrh_book.ord"];
-          date_created?: parameters["rowFilter.elrh_book.date_created"];
-          date_edited?: parameters["rowFilter.elrh_book.date_edited"];
+          dateCreated?: parameters["rowFilter.elrh_book.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_book.dateEdited"];
           writer?: parameters["rowFilter.elrh_book.writer"];
           name?: parameters["rowFilter.elrh_book.name"];
           dscr?: parameters["rowFilter.elrh_book.dscr"];
@@ -955,7 +2005,7 @@ export interface paths {
           thumb?: parameters["rowFilter.elrh_book.thumb"];
           review?: parameters["rowFilter.elrh_book.review"];
           year?: parameters["rowFilter.elrh_book.year"];
-          author_id?: parameters["rowFilter.elrh_book.author_id"];
+          authorId?: parameters["rowFilter.elrh_book.authorId"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -1006,11 +2056,11 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          book_id?: parameters["rowFilter.elrh_book.book_id"];
-          category_id?: parameters["rowFilter.elrh_book.category_id"];
+          bookId?: parameters["rowFilter.elrh_book.bookId"];
+          categoryId?: parameters["rowFilter.elrh_book.categoryId"];
           ord?: parameters["rowFilter.elrh_book.ord"];
-          date_created?: parameters["rowFilter.elrh_book.date_created"];
-          date_edited?: parameters["rowFilter.elrh_book.date_edited"];
+          dateCreated?: parameters["rowFilter.elrh_book.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_book.dateEdited"];
           writer?: parameters["rowFilter.elrh_book.writer"];
           name?: parameters["rowFilter.elrh_book.name"];
           dscr?: parameters["rowFilter.elrh_book.dscr"];
@@ -1018,7 +2068,7 @@ export interface paths {
           thumb?: parameters["rowFilter.elrh_book.thumb"];
           review?: parameters["rowFilter.elrh_book.review"];
           year?: parameters["rowFilter.elrh_book.year"];
-          author_id?: parameters["rowFilter.elrh_book.author_id"];
+          authorId?: parameters["rowFilter.elrh_book.authorId"];
         };
         header: {
           /** Preference */
@@ -1033,11 +2083,11 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          book_id?: parameters["rowFilter.elrh_book.book_id"];
-          category_id?: parameters["rowFilter.elrh_book.category_id"];
+          bookId?: parameters["rowFilter.elrh_book.bookId"];
+          categoryId?: parameters["rowFilter.elrh_book.categoryId"];
           ord?: parameters["rowFilter.elrh_book.ord"];
-          date_created?: parameters["rowFilter.elrh_book.date_created"];
-          date_edited?: parameters["rowFilter.elrh_book.date_edited"];
+          dateCreated?: parameters["rowFilter.elrh_book.dateCreated"];
+          dateEdited?: parameters["rowFilter.elrh_book.dateEdited"];
           writer?: parameters["rowFilter.elrh_book.writer"];
           name?: parameters["rowFilter.elrh_book.name"];
           dscr?: parameters["rowFilter.elrh_book.dscr"];
@@ -1045,7 +2095,7 @@ export interface paths {
           thumb?: parameters["rowFilter.elrh_book.thumb"];
           review?: parameters["rowFilter.elrh_book.review"];
           year?: parameters["rowFilter.elrh_book.year"];
-          author_id?: parameters["rowFilter.elrh_book.author_id"];
+          authorId?: parameters["rowFilter.elrh_book.authorId"];
         };
         body: {
           /** elrh_book */
@@ -1065,23 +2115,39 @@ export interface paths {
 }
 
 export interface definitions {
+  elrhContact: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    contactId: number;
+    /** Format: character varying */
+    name: string;
+    /** Format: character varying */
+    email: string;
+    /** Format: character varying */
+    phone: string;
+    /** Format: character varying */
+    fb: string;
+  };
   elrh_article: {
     /**
      * Format: integer
      * @description Note:
      * This is a Primary Key.<pk/>
      */
-    article_id: number;
+    articleId: number;
     /**
      * Format: integer
      * @description Note:
-     * This is a Foreign Key to `elrh_category.category_id`.<fk table='elrh_category' column='category_id'/>
+     * This is a Foreign Key to `elrh_category.categoryId`.<fk table='elrh_category' column='categoryId'/>
      */
-    category_id: number;
+    categoryId: number;
     /** Format: timestamp without time zone */
-    date_created: string;
+    dateCreated: string;
     /** Format: timestamp without time zone */
-    date_edited: string;
+    dateEdited: string;
     /** Format: character varying */
     name: string;
     /** Format: character varying */
@@ -1093,15 +2159,15 @@ export interface definitions {
     /**
      * Format: integer
      * @description Note:
-     * This is a Foreign Key to `elrh_author.author_id`.<fk table='elrh_author' column='author_id'/>
+     * This is a Foreign Key to `elrh_author.authorId`.<fk table='elrh_author' column='authorId'/>
      */
-    author_id: number;
+    authorId: number;
     /**
      * Format: integer
      * @description Note:
-     * This is a Foreign Key to `elrh_gallery.gallery_id`.<fk table='elrh_gallery' column='gallery_id'/>
+     * This is a Foreign Key to `elrh_gallery.galleryId`.<fk table='elrh_gallery' column='galleryId'/>
      */
-    gallery_id?: number;
+    galleryId?: number;
   };
   elrh_contact: {
     /**
@@ -1109,7 +2175,7 @@ export interface definitions {
      * @description Note:
      * This is a Primary Key.<pk/>
      */
-    contact_id: number;
+    contactId: number;
     /** Format: character varying */
     name: string;
     /** Format: character varying */
@@ -1125,11 +2191,11 @@ export interface definitions {
      * @description Note:
      * This is a Primary Key.<pk/>
      */
-    gallery_id: number;
+    galleryId: number;
     /** Format: timestamp without time zone */
-    date_created: string;
+    dateCreated: string;
     /** Format: timestamp without time zone */
-    date_edited: string;
+    dateEdited: string;
     /** Format: character varying */
     name: string;
     /** Format: text */
@@ -1137,15 +2203,49 @@ export interface definitions {
     /**
      * Format: integer
      * @description Note:
-     * This is a Foreign Key to `elrh_author.author_id`.<fk table='elrh_author' column='author_id'/>
+     * This is a Foreign Key to `elrh_author.authorId`.<fk table='elrh_author' column='authorId'/>
      */
-    author_id: number;
+    authorId: number;
     /**
      * Format: integer
      * @description Note:
-     * This is a Foreign Key to `elrh_gallery.gallery_id`.<fk table='elrh_gallery' column='gallery_id'/>
+     * This is a Foreign Key to `elrh_gallery.galleryId`.<fk table='elrh_gallery' column='galleryId'/>
      */
-    parent_id?: number;
+    parentId?: number;
+  };
+  elrhCategory: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    categoryId: number;
+    /** Format: integer */
+    ord: number;
+    /** Format: character varying */
+    name: string;
+    /** Format: character varying */
+    dscr: string;
+    /** Format: character varying */
+    type: string;
+  };
+  elrhNews: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    newsId: number;
+    /** Format: text */
+    content: string;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhAuthor.authorId`.<fk table='elrhAuthor' column='authorId'/>
+     */
+    authorId: number;
+    /** Format: timestamp without time zone */
+    dateCreated: string;
   };
   elrh_author: {
     /**
@@ -1153,7 +2253,7 @@ export interface definitions {
      * @description Note:
      * This is a Primary Key.<pk/>
      */
-    author_id: number;
+    authorId: number;
     /** Format: character varying */
     email: string;
     /** Format: character varying */
@@ -1165,19 +2265,19 @@ export interface definitions {
      * @description Note:
      * This is a Primary Key.<pk/>
      */
-    link_id: number;
+    linkId: number;
     /**
      * Format: integer
      * @description Note:
-     * This is a Foreign Key to `elrh_category.category_id`.<fk table='elrh_category' column='category_id'/>
+     * This is a Foreign Key to `elrh_category.categoryId`.<fk table='elrh_category' column='categoryId'/>
      */
-    category_id: number;
+    categoryId: number;
     /** Format: integer */
     ord: number;
     /** Format: timestamp without time zone */
-    date_created: string;
+    dateCreated: string;
     /** Format: timestamp without time zone */
-    date_edited: string;
+    dateEdited: string;
     /** Format: character varying */
     name: string;
     /** Format: character varying */
@@ -1189,73 +2289,11 @@ export interface definitions {
     /**
      * Format: integer
      * @description Note:
-     * This is a Foreign Key to `elrh_author.author_id`.<fk table='elrh_author' column='author_id'/>
+     * This is a Foreign Key to `elrh_author.authorId`.<fk table='elrh_author' column='authorId'/>
      */
-    author_id: number;
+    authorId: number;
   };
-  elrh_image: {
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     */
-    image_id: number;
-    /** Format: timestamp without time zone */
-    date_created: string;
-    /** Format: timestamp without time zone */
-    date_edited: string;
-    /** Format: character varying */
-    name: string;
-    /** Format: text */
-    dscr?: string;
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Foreign Key to `elrh_author.author_id`.<fk table='elrh_author' column='author_id'/>
-     */
-    author_id: number;
-    /** Format: character varying */
-    image: string;
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Foreign Key to `elrh_gallery.gallery_id`.<fk table='elrh_gallery' column='gallery_id'/>
-     */
-    gallery_id: number;
-    /** Format: integer */
-    ord: number;
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Foreign Key to `elrh_image.image_id`.<fk table='elrh_image' column='image_id'/>
-     */
-    prev_id?: number;
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Foreign Key to `elrh_image.image_id`.<fk table='elrh_image' column='image_id'/>
-     */
-    next_id?: number;
-  };
-  elrh_news: {
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     */
-    news_id: number;
-    /** Format: text */
-    content: string;
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Foreign Key to `elrh_author.author_id`.<fk table='elrh_author' column='author_id'/>
-     */
-    author_id: number;
-    /** Format: timestamp without time zone */
-    date_created: string;
-  };
-  elrh_text: {
+  elrhText: {
     /**
      * Format: text
      * @description Note:
@@ -1265,41 +2303,97 @@ export interface definitions {
     /** Format: text */
     value: string;
   };
-  elrh_category: {
+  elrhGallery: {
     /**
      * Format: integer
      * @description Note:
      * This is a Primary Key.<pk/>
      */
-    category_id: number;
-    /** Format: integer */
-    ord: number;
+    galleryId: number;
+    /** Format: timestamp without time zone */
+    dateCreated: string;
+    /** Format: timestamp without time zone */
+    dateEdited: string;
     /** Format: character varying */
     name: string;
-    /** Format: character varying */
-    dscr: string;
-    /** Format: character varying */
-    type: string;
+    /** Format: text */
+    dscr?: string;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhAuthor.authorId`.<fk table='elrhAuthor' column='authorId'/>
+     */
+    authorId: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhGallery.galleryId`.<fk table='elrhGallery' column='galleryId'/>
+     */
+    parentId?: number;
   };
-  elrh_book: {
+  elrh_image: {
     /**
      * Format: integer
      * @description Note:
      * This is a Primary Key.<pk/>
      */
-    book_id: number;
+    imageId: number;
+    /** Format: timestamp without time zone */
+    dateCreated: string;
+    /** Format: timestamp without time zone */
+    dateEdited: string;
+    /** Format: character varying */
+    name: string;
+    /** Format: text */
+    dscr?: string;
     /**
      * Format: integer
      * @description Note:
-     * This is a Foreign Key to `elrh_category.category_id`.<fk table='elrh_category' column='category_id'/>
+     * This is a Foreign Key to `elrh_author.authorId`.<fk table='elrh_author' column='authorId'/>
      */
-    category_id: number;
+    authorId: number;
+    /** Format: character varying */
+    image: string;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrh_gallery.galleryId`.<fk table='elrh_gallery' column='galleryId'/>
+     */
+    galleryId: number;
+    /** Format: integer */
+    ord: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrh_image.imageId`.<fk table='elrh_image' column='imageId'/>
+     */
+    prevId?: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrh_image.imageId`.<fk table='elrh_image' column='imageId'/>
+     */
+    nextId?: number;
+  };
+  elrhBook: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    bookId: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhCategory.categoryId`.<fk table='elrhCategory' column='categoryId'/>
+     */
+    categoryId: number;
     /** Format: integer */
     ord: number;
     /** Format: timestamp without time zone */
-    date_created: string;
+    dateCreated: string;
     /** Format: timestamp without time zone */
-    date_edited: string;
+    dateEdited: string;
     /** Format: character varying */
     writer: string;
     /** Format: character varying */
@@ -1317,9 +2411,221 @@ export interface definitions {
     /**
      * Format: integer
      * @description Note:
-     * This is a Foreign Key to `elrh_author.author_id`.<fk table='elrh_author' column='author_id'/>
+     * This is a Foreign Key to `elrhAuthor.authorId`.<fk table='elrhAuthor' column='authorId'/>
      */
-    author_id: number;
+    authorId: number;
+  };
+  elrhArticle: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    articleId: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhCategory.categoryId`.<fk table='elrhCategory' column='categoryId'/>
+     */
+    categoryId: number;
+    /** Format: timestamp without time zone */
+    dateCreated: string;
+    /** Format: timestamp without time zone */
+    dateEdited: string;
+    /** Format: character varying */
+    name: string;
+    /** Format: character varying */
+    dscr: string;
+    /** Format: text */
+    content: string;
+    /** Format: character varying */
+    thumb: string;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhAuthor.authorId`.<fk table='elrhAuthor' column='authorId'/>
+     */
+    authorId: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhGallery.galleryId`.<fk table='elrhGallery' column='galleryId'/>
+     */
+    galleryId?: number;
+  };
+  elrh_news: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    newsId: number;
+    /** Format: text */
+    content: string;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrh_author.authorId`.<fk table='elrh_author' column='authorId'/>
+     */
+    authorId: number;
+    /** Format: timestamp without time zone */
+    dateCreated: string;
+  };
+  elrhImage: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    imageId: number;
+    /** Format: timestamp without time zone */
+    dateCreated: string;
+    /** Format: timestamp without time zone */
+    dateEdited: string;
+    /** Format: character varying */
+    name: string;
+    /** Format: text */
+    dscr?: string;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhAuthor.authorId`.<fk table='elrhAuthor' column='authorId'/>
+     */
+    authorId: number;
+    /** Format: character varying */
+    image: string;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhGallery.galleryId`.<fk table='elrhGallery' column='galleryId'/>
+     */
+    galleryId: number;
+    /** Format: integer */
+    ord: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhImage.imageId`.<fk table='elrhImage' column='imageId'/>
+     */
+    prevId?: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhImage.imageId`.<fk table='elrhImage' column='imageId'/>
+     */
+    nextId?: number;
+  };
+  elrhLink: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    linkId: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhCategory.categoryId`.<fk table='elrhCategory' column='categoryId'/>
+     */
+    categoryId: number;
+    /** Format: integer */
+    ord: number;
+    /** Format: timestamp without time zone */
+    dateCreated: string;
+    /** Format: timestamp without time zone */
+    dateEdited: string;
+    /** Format: character varying */
+    name: string;
+    /** Format: character varying */
+    dscr: string;
+    /** Format: character varying */
+    url: string;
+    /** Format: character varying */
+    thumb: string;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhAuthor.authorId`.<fk table='elrhAuthor' column='authorId'/>
+     */
+    authorId: number;
+  };
+  elrh_text: {
+    /**
+     * Format: text
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    key: string;
+    /** Format: text */
+    value: string;
+  };
+  elrhAuthor: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    authorId: number;
+    /** Format: character varying */
+    email: string;
+    /** Format: character varying */
+    name: string;
+  };
+  elrh_category: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    categoryId: number;
+    /** Format: integer */
+    ord: number;
+    /** Format: character varying */
+    name: string;
+    /** Format: character varying */
+    dscr: string;
+    /** Format: character varying */
+    type: string;
+  };
+  elrh_book: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    bookId: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrh_category.categoryId`.<fk table='elrh_category' column='categoryId'/>
+     */
+    categoryId: number;
+    /** Format: integer */
+    ord: number;
+    /** Format: timestamp without time zone */
+    dateCreated: string;
+    /** Format: timestamp without time zone */
+    dateEdited: string;
+    /** Format: character varying */
+    writer: string;
+    /** Format: character varying */
+    name: string;
+    /** Format: character varying */
+    dscr: string;
+    /** Format: character varying */
+    url: string;
+    /** Format: character varying */
+    thumb: string;
+    /** Format: character varying */
+    review?: string;
+    /** Format: character varying */
+    year: string;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrh_author.authorId`.<fk table='elrh_author' column='authorId'/>
+     */
+    authorId: number;
   };
 }
 
@@ -1356,16 +2662,28 @@ export interface parameters {
   offset: string;
   /** @description Limiting and Pagination */
   limit: string;
+  /** @description elrhContact */
+  "body.elrhContact": definitions["elrhContact"];
+  /** Format: integer */
+  "rowFilter.elrhContact.contactId": string;
+  /** Format: character varying */
+  "rowFilter.elrhContact.name": string;
+  /** Format: character varying */
+  "rowFilter.elrhContact.email": string;
+  /** Format: character varying */
+  "rowFilter.elrhContact.phone": string;
+  /** Format: character varying */
+  "rowFilter.elrhContact.fb": string;
   /** @description elrh_article */
   "body.elrh_article": definitions["elrh_article"];
   /** Format: integer */
-  "rowFilter.elrh_article.article_id": string;
+  "rowFilter.elrh_article.articleId": string;
   /** Format: integer */
-  "rowFilter.elrh_article.category_id": string;
+  "rowFilter.elrh_article.categoryId": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_article.date_created": string;
+  "rowFilter.elrh_article.dateCreated": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_article.date_edited": string;
+  "rowFilter.elrh_article.dateEdited": string;
   /** Format: character varying */
   "rowFilter.elrh_article.name": string;
   /** Format: character varying */
@@ -1375,13 +2693,13 @@ export interface parameters {
   /** Format: character varying */
   "rowFilter.elrh_article.thumb": string;
   /** Format: integer */
-  "rowFilter.elrh_article.author_id": string;
+  "rowFilter.elrh_article.authorId": string;
   /** Format: integer */
-  "rowFilter.elrh_article.gallery_id": string;
+  "rowFilter.elrh_article.galleryId": string;
   /** @description elrh_contact */
   "body.elrh_contact": definitions["elrh_contact"];
   /** Format: integer */
-  "rowFilter.elrh_contact.contact_id": string;
+  "rowFilter.elrh_contact.contactId": string;
   /** Format: character varying */
   "rowFilter.elrh_contact.name": string;
   /** Format: character varying */
@@ -1393,23 +2711,45 @@ export interface parameters {
   /** @description elrh_gallery */
   "body.elrh_gallery": definitions["elrh_gallery"];
   /** Format: integer */
-  "rowFilter.elrh_gallery.gallery_id": string;
+  "rowFilter.elrh_gallery.galleryId": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_gallery.date_created": string;
+  "rowFilter.elrh_gallery.dateCreated": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_gallery.date_edited": string;
+  "rowFilter.elrh_gallery.dateEdited": string;
   /** Format: character varying */
   "rowFilter.elrh_gallery.name": string;
   /** Format: text */
   "rowFilter.elrh_gallery.dscr": string;
   /** Format: integer */
-  "rowFilter.elrh_gallery.author_id": string;
+  "rowFilter.elrh_gallery.authorId": string;
   /** Format: integer */
-  "rowFilter.elrh_gallery.parent_id": string;
+  "rowFilter.elrh_gallery.parentId": string;
+  /** @description elrhCategory */
+  "body.elrhCategory": definitions["elrhCategory"];
+  /** Format: integer */
+  "rowFilter.elrhCategory.categoryId": string;
+  /** Format: integer */
+  "rowFilter.elrhCategory.ord": string;
+  /** Format: character varying */
+  "rowFilter.elrhCategory.name": string;
+  /** Format: character varying */
+  "rowFilter.elrhCategory.dscr": string;
+  /** Format: character varying */
+  "rowFilter.elrhCategory.type": string;
+  /** @description elrhNews */
+  "body.elrhNews": definitions["elrhNews"];
+  /** Format: integer */
+  "rowFilter.elrhNews.newsId": string;
+  /** Format: text */
+  "rowFilter.elrhNews.content": string;
+  /** Format: integer */
+  "rowFilter.elrhNews.authorId": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhNews.dateCreated": string;
   /** @description elrh_author */
   "body.elrh_author": definitions["elrh_author"];
   /** Format: integer */
-  "rowFilter.elrh_author.author_id": string;
+  "rowFilter.elrh_author.authorId": string;
   /** Format: character varying */
   "rowFilter.elrh_author.email": string;
   /** Format: character varying */
@@ -1417,15 +2757,15 @@ export interface parameters {
   /** @description elrh_link */
   "body.elrh_link": definitions["elrh_link"];
   /** Format: integer */
-  "rowFilter.elrh_link.link_id": string;
+  "rowFilter.elrh_link.linkId": string;
   /** Format: integer */
-  "rowFilter.elrh_link.category_id": string;
+  "rowFilter.elrh_link.categoryId": string;
   /** Format: integer */
   "rowFilter.elrh_link.ord": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_link.date_created": string;
+  "rowFilter.elrh_link.dateCreated": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_link.date_edited": string;
+  "rowFilter.elrh_link.dateEdited": string;
   /** Format: character varying */
   "rowFilter.elrh_link.name": string;
   /** Format: character varying */
@@ -1435,51 +2775,177 @@ export interface parameters {
   /** Format: character varying */
   "rowFilter.elrh_link.thumb": string;
   /** Format: integer */
-  "rowFilter.elrh_link.author_id": string;
+  "rowFilter.elrh_link.authorId": string;
+  /** @description elrhText */
+  "body.elrhText": definitions["elrhText"];
+  /** Format: text */
+  "rowFilter.elrhText.key": string;
+  /** Format: text */
+  "rowFilter.elrhText.value": string;
+  /** @description elrhGallery */
+  "body.elrhGallery": definitions["elrhGallery"];
+  /** Format: integer */
+  "rowFilter.elrhGallery.galleryId": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhGallery.dateCreated": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhGallery.dateEdited": string;
+  /** Format: character varying */
+  "rowFilter.elrhGallery.name": string;
+  /** Format: text */
+  "rowFilter.elrhGallery.dscr": string;
+  /** Format: integer */
+  "rowFilter.elrhGallery.authorId": string;
+  /** Format: integer */
+  "rowFilter.elrhGallery.parentId": string;
   /** @description elrh_image */
   "body.elrh_image": definitions["elrh_image"];
   /** Format: integer */
-  "rowFilter.elrh_image.image_id": string;
+  "rowFilter.elrh_image.imageId": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_image.date_created": string;
+  "rowFilter.elrh_image.dateCreated": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_image.date_edited": string;
+  "rowFilter.elrh_image.dateEdited": string;
   /** Format: character varying */
   "rowFilter.elrh_image.name": string;
   /** Format: text */
   "rowFilter.elrh_image.dscr": string;
   /** Format: integer */
-  "rowFilter.elrh_image.author_id": string;
+  "rowFilter.elrh_image.authorId": string;
   /** Format: character varying */
   "rowFilter.elrh_image.image": string;
   /** Format: integer */
-  "rowFilter.elrh_image.gallery_id": string;
+  "rowFilter.elrh_image.galleryId": string;
   /** Format: integer */
   "rowFilter.elrh_image.ord": string;
   /** Format: integer */
-  "rowFilter.elrh_image.prev_id": string;
+  "rowFilter.elrh_image.prevId": string;
   /** Format: integer */
-  "rowFilter.elrh_image.next_id": string;
+  "rowFilter.elrh_image.nextId": string;
+  /** @description elrhBook */
+  "body.elrhBook": definitions["elrhBook"];
+  /** Format: integer */
+  "rowFilter.elrhBook.bookId": string;
+  /** Format: integer */
+  "rowFilter.elrhBook.categoryId": string;
+  /** Format: integer */
+  "rowFilter.elrhBook.ord": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhBook.dateCreated": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhBook.dateEdited": string;
+  /** Format: character varying */
+  "rowFilter.elrhBook.writer": string;
+  /** Format: character varying */
+  "rowFilter.elrhBook.name": string;
+  /** Format: character varying */
+  "rowFilter.elrhBook.dscr": string;
+  /** Format: character varying */
+  "rowFilter.elrhBook.url": string;
+  /** Format: character varying */
+  "rowFilter.elrhBook.thumb": string;
+  /** Format: character varying */
+  "rowFilter.elrhBook.review": string;
+  /** Format: character varying */
+  "rowFilter.elrhBook.year": string;
+  /** Format: integer */
+  "rowFilter.elrhBook.authorId": string;
+  /** @description elrhArticle */
+  "body.elrhArticle": definitions["elrhArticle"];
+  /** Format: integer */
+  "rowFilter.elrhArticle.articleId": string;
+  /** Format: integer */
+  "rowFilter.elrhArticle.categoryId": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhArticle.dateCreated": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhArticle.dateEdited": string;
+  /** Format: character varying */
+  "rowFilter.elrhArticle.name": string;
+  /** Format: character varying */
+  "rowFilter.elrhArticle.dscr": string;
+  /** Format: text */
+  "rowFilter.elrhArticle.content": string;
+  /** Format: character varying */
+  "rowFilter.elrhArticle.thumb": string;
+  /** Format: integer */
+  "rowFilter.elrhArticle.authorId": string;
+  /** Format: integer */
+  "rowFilter.elrhArticle.galleryId": string;
   /** @description elrh_news */
   "body.elrh_news": definitions["elrh_news"];
   /** Format: integer */
-  "rowFilter.elrh_news.news_id": string;
+  "rowFilter.elrh_news.newsId": string;
   /** Format: text */
   "rowFilter.elrh_news.content": string;
   /** Format: integer */
-  "rowFilter.elrh_news.author_id": string;
+  "rowFilter.elrh_news.authorId": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_news.date_created": string;
+  "rowFilter.elrh_news.dateCreated": string;
+  /** @description elrhImage */
+  "body.elrhImage": definitions["elrhImage"];
+  /** Format: integer */
+  "rowFilter.elrhImage.imageId": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhImage.dateCreated": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhImage.dateEdited": string;
+  /** Format: character varying */
+  "rowFilter.elrhImage.name": string;
+  /** Format: text */
+  "rowFilter.elrhImage.dscr": string;
+  /** Format: integer */
+  "rowFilter.elrhImage.authorId": string;
+  /** Format: character varying */
+  "rowFilter.elrhImage.image": string;
+  /** Format: integer */
+  "rowFilter.elrhImage.galleryId": string;
+  /** Format: integer */
+  "rowFilter.elrhImage.ord": string;
+  /** Format: integer */
+  "rowFilter.elrhImage.prevId": string;
+  /** Format: integer */
+  "rowFilter.elrhImage.nextId": string;
+  /** @description elrhLink */
+  "body.elrhLink": definitions["elrhLink"];
+  /** Format: integer */
+  "rowFilter.elrhLink.linkId": string;
+  /** Format: integer */
+  "rowFilter.elrhLink.categoryId": string;
+  /** Format: integer */
+  "rowFilter.elrhLink.ord": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhLink.dateCreated": string;
+  /** Format: timestamp without time zone */
+  "rowFilter.elrhLink.dateEdited": string;
+  /** Format: character varying */
+  "rowFilter.elrhLink.name": string;
+  /** Format: character varying */
+  "rowFilter.elrhLink.dscr": string;
+  /** Format: character varying */
+  "rowFilter.elrhLink.url": string;
+  /** Format: character varying */
+  "rowFilter.elrhLink.thumb": string;
+  /** Format: integer */
+  "rowFilter.elrhLink.authorId": string;
   /** @description elrh_text */
   "body.elrh_text": definitions["elrh_text"];
   /** Format: text */
   "rowFilter.elrh_text.key": string;
   /** Format: text */
   "rowFilter.elrh_text.value": string;
+  /** @description elrhAuthor */
+  "body.elrhAuthor": definitions["elrhAuthor"];
+  /** Format: integer */
+  "rowFilter.elrhAuthor.authorId": string;
+  /** Format: character varying */
+  "rowFilter.elrhAuthor.email": string;
+  /** Format: character varying */
+  "rowFilter.elrhAuthor.name": string;
   /** @description elrh_category */
   "body.elrh_category": definitions["elrh_category"];
   /** Format: integer */
-  "rowFilter.elrh_category.category_id": string;
+  "rowFilter.elrh_category.categoryId": string;
   /** Format: integer */
   "rowFilter.elrh_category.ord": string;
   /** Format: character varying */
@@ -1491,15 +2957,15 @@ export interface parameters {
   /** @description elrh_book */
   "body.elrh_book": definitions["elrh_book"];
   /** Format: integer */
-  "rowFilter.elrh_book.book_id": string;
+  "rowFilter.elrh_book.bookId": string;
   /** Format: integer */
-  "rowFilter.elrh_book.category_id": string;
+  "rowFilter.elrh_book.categoryId": string;
   /** Format: integer */
   "rowFilter.elrh_book.ord": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_book.date_created": string;
+  "rowFilter.elrh_book.dateCreated": string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_book.date_edited": string;
+  "rowFilter.elrh_book.dateEdited": string;
   /** Format: character varying */
   "rowFilter.elrh_book.writer": string;
   /** Format: character varying */
@@ -1515,7 +2981,7 @@ export interface parameters {
   /** Format: character varying */
   "rowFilter.elrh_book.year": string;
   /** Format: integer */
-  "rowFilter.elrh_book.author_id": string;
+  "rowFilter.elrh_book.authorId": string;
 }
 
 export interface operations {}

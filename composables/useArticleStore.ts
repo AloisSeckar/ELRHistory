@@ -1,7 +1,7 @@
 import { Article, ArticleDB } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
 
-const tableName = "elrh_article"
+const tableName = "elrhArticle"
 
 export const useArticleStore = defineStore({
   id: tableName + '-store',
@@ -37,7 +37,7 @@ export const useArticleStore = defineStore({
       const { data, error } = await useSupabaseClient<ArticleDB>()
         .from(tableName)
         .update(editedItem)
-        .eq('article_id', itemId)
+        .eq('articleId', itemId)
         .select()
 
       if (data) {
@@ -55,25 +55,25 @@ export const useArticleStore = defineStore({
     getItems: state => state.items,
     getCount: state => state.items.length,
     getByCategory: (state) => {
-      return (category_id: number) => state.items.filter(i => i.category_id === category_id)
+      return (categoryId: number) => state.items.filter(i => i.categoryId === categoryId)
     },
     getById: (state) => {
-      return (article_id: Number) => {
-        const article = state.items.find(i => i.article_id == article_id)
-        return article ? article : { article_id: 0} as Article
+      return (articleId: Number) => {
+        const article = state.items.find(i => i.articleId == articleId)
+        return article ? article : { articleId: 0} as Article
       }
     },
     getEmpty: (): ArticleDB => {
       const newArticle: ArticleDB = {
-        category_id: 0,
-        date_created: new Date().toISOString(),
-        date_edited: new Date().toISOString(),
+        categoryId: 0,
+        dateCreated: new Date().toISOString(),
+        dateEdited: new Date().toISOString(),
         name: '',
         dscr: '',
         content: '',
         thumb: '',
-        author_id: 0,
-        gallery_id: undefined,
+        authorId: 0,
+        galleryId: undefined,
       }
       return newArticle
     }
@@ -81,16 +81,16 @@ export const useArticleStore = defineStore({
 })
 
 async function getItems(supabase: SupabaseClient) {
-  const query = `article_id, elrh_category(category_id, name), date_created, name, dscr, content, thumb, elrh_author(author_id, name), elrh_gallery(gallery_id, name)`
-  return fetchSupabase(supabase, tableName, query, 'date_created', { ascending: false })
+  const query = `articleId, elrhCategory(categoryId, name), dateCreated, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)`
+  return fetchSupabase(supabase, tableName, query, 'dateCreated', { ascending: false })
 }
 
 function treatInput(input: ArticleDB) {
-  input.date_edited = new Date().toISOString()
-  if (input.date_created === undefined) {
-    input.date_created = new Date().toISOString()
+  input.dateEdited = new Date().toISOString()
+  if (input.dateCreated === undefined) {
+    input.dateCreated = new Date().toISOString()
   }
-  if (input.gallery_id === -1) {
-    input.gallery_id = undefined
+  if (input.galleryId === -1) {
+    input.galleryId = undefined
   }
 }

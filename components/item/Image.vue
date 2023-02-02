@@ -5,16 +5,16 @@
                 <fa icon="image" />&nbsp;
                 {{ item.name }}
                 <div class="inline pl-2" v-if="user">
-                    <NuxtLink :to="{ path: '/admin/edit/image/' + item.image_id }">
+                    <NuxtLink :to="{ path: '/admin/edit/image/' + item.imageId }">
                         <fa class="text-green-500 hover:text-yellow-400" icon="wrench" title="Edit image" />
                     </NuxtLink>
                 </div>
                 <span class="float-right pr-1 text-base font-normal">
-                    <NuxtLink :to="{ path: '/gallery/' + item.gallery_id?.gallery_id }">
-                        <strong>{{ item.gallery_id?.name }}</strong>
+                    <NuxtLink :to="{ path: '/gallery/' + item.galleryId?.galleryId }">
+                        <strong>{{ item.galleryId?.name }}</strong>
                     </NuxtLink>| 
-                    {{ item.elrh_author?.name }} |
-                    <em>{{ item.date_created?.split('T')[0] }}</em>
+                    {{ item.elrhAuthor?.name }} |
+                    <em>{{ item.dateCreated?.split('T')[0] }}</em>
                 </span>
             </div>
             <div class="box-content text-center">

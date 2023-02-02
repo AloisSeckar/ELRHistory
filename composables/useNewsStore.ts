@@ -1,7 +1,7 @@
 import { News } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
 
-const tableName = "elrh_news"
+const tableName = "elrhNews"
 
 export const useNewsStore = defineStore({
   id: tableName + '-store',
@@ -24,6 +24,6 @@ export const useNewsStore = defineStore({
 })
 
 async function getItems(supabase: News) {
-  const query = `date_created, content, elrh_author(author_id, name)`
-  return fetchSupabase(supabase, tableName, query, 'date_created', { ascending: false })
+  const query = `dateCreated, content, elrhAuthor(authorId, name)`
+  return fetchSupabase(supabase, tableName, query, 'dateCreated', { ascending: false })
 }

@@ -1,7 +1,7 @@
 import { Contact } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
 
-const tableName = "elrh_contact"
+const tableName = "elrhContact"
 
 export const useContactStore = defineStore({
   id: tableName + '-store',

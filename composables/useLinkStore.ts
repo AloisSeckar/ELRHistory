@@ -1,7 +1,7 @@
 import { Link } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
 
-const tableName = "elrh_link"
+const tableName = "elrhLink"
 
 export const useLinkStore = defineStore({
   id: tableName + '-store',
@@ -20,12 +20,12 @@ export const useLinkStore = defineStore({
     getItems: state => state.items,
     getCount: state => state.items.length,
     getByCategory: (state) => {
-      return (category_id: number) => state.items.filter(i => i.category_id === category_id)
+      return (categoryId: number) => state.items.filter(i => i.categoryId === categoryId)
     }
   }
 })
 
 async function getItems(supabase: SupabaseClient) {
-  const query = `category_id, name, dscr, url, thumb`
+  const query = `categoryId, name, dscr, url, thumb`
   return fetchSupabase(supabase, tableName, query, 'ord', {})
 }

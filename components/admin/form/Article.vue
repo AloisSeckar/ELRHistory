@@ -3,15 +3,15 @@
         <FormKit type="form" :submit-label="label" #default="{ value }" @submit="saveForm">
             <pre>{{ value }}</pre>
             <FormKit
-                type="select" name="author_id" id="author_id"
+                type="select" name="authorId" id="authorId"
                 label="Author:" validation="required"
                 :options="authors"
-                v-model="article.author_id" />
+                v-model="article.authorId" />
             <FormKit
-                type="select" name="category_id" id="category_id"
+                type="select" name="categoryId" id="categoryId"
                 label="Category:" validation="required"
                 :options="categories"
-                v-model="article.category_id" />
+                v-model="article.categoryId" />
             <FormKit
                 type="text" name="name" id="name"
                 label="Name:" validation="required"
@@ -26,10 +26,10 @@
                 v-model="article.content" />
             <AdminFormSelectImage :source="article.thumb" @change="setThumb" />
             <FormKit
-                type="select" name="gallery_id" id="gallery_id"
+                type="select" name="galleryId" id="galleryId"
                 label="Related gallery:"
                 :options="galleries"
-                v-model="article.gallery_id" />
+                v-model="article.galleryId" />
         </FormKit>
     </div>
 </template>
@@ -38,7 +38,7 @@
 import type { ArticleDB } from '@/database/types'
 
 const props = defineProps({
-    article_id: { type: Number, default: -1 },
+    articleId: { type: Number, default: -1 },
 })
 const emit = defineEmits<{
   (e: 'save', article: ArticleDB): void
@@ -46,29 +46,29 @@ const emit = defineEmits<{
 
 let label: string
 let article: ArticleDB
-if (props.article_id > 0) {
+if (props.articleId > 0) {
     label = "Edit"
-    const {article_id, ...currentArticle} = useArticleStore().getById(props.article_id)
+    const {articleId, ...currentArticle} = useArticleStore().getById(props.articleId)
     article = reactive(JSON.parse(JSON.stringify(currentArticle)));
 
-    if (currentArticle.elrh_author) {
-        article.author_id = currentArticle.elrh_author.author_id;
+    if (currentArticle.elrhAuthor) {
+        article.authorId = currentArticle.elrhAuthor.authorId;
     }
-    if (currentArticle.elrh_category) {
-        article.category_id = currentArticle.elrh_category.category_id;
+    if (currentArticle.elrhCategory) {
+        article.categoryId = currentArticle.elrhCategory.categoryId;
     }
-    article.gallery_id = currentArticle?.elrh_gallery?.gallery_id;
+    article.galleryId = currentArticle?.elrhGallery?.galleryId;
 } else {
     label = "Add"
     article = reactive(JSON.parse(JSON.stringify(useArticleStore().getEmpty)))
-    article.author_id = useAuthorStore().getItems?.[0]?.author_id
-    article.category_id = useCategoryStore().getByType('a')?.[0]?.category_id
-    article.gallery_id = undefined
+    article.authorId = useAuthorStore().getItems?.[0]?.authorId
+    article.categoryId = useCategoryStore().getByType('a')?.[0]?.categoryId
+    article.galleryId = undefined
 }
 
-const authors = useAuthorStore().getItems.map(author => ({ value: author.author_id, label: author.name }))
-const categories = useCategoryStore().getByType('a').map(cat => ({ value: cat.category_id, label: cat.name }))
-const galleries = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery.gallery_id, label: gallery.name }))
+const authors = useAuthorStore().getItems.map(author => ({ value: author.authorId, label: author.name }))
+const categories = useCategoryStore().getByType('a').map(cat => ({ value: cat.categoryId, label: cat.name }))
+const galleries = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery.galleryId, label: gallery.name }))
 galleries.unshift({ value: -1, label: "" })
 
 const setThumb = (path: string) => article.thumb = path

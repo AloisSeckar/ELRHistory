@@ -1,7 +1,7 @@
 import { Image } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
 
-const tableName = "elrh_image"
+const tableName = "elrhImage"
 
 export const useImageStore = defineStore({
     id: tableName + '-store',
@@ -20,18 +20,18 @@ export const useImageStore = defineStore({
         getItems: state => state.items,
         getCount: state => state.items.length,
         getById: (state) => {
-            return (image_id: Number) => state.items.find(i => i.image_id == image_id)
+            return (imageId: Number) => state.items.find(i => i.imageId == imageId)
         },
         getByGallery: (state) => {
-            return (gallery_id?: Number, limit?: number) => state.items.filter(i => i.gallery_id?.gallery_id == gallery_id).slice(0, limit)
+            return (galleryId?: Number, limit?: number) => state.items.filter(i => i.galleryId?.galleryId == galleryId).slice(0, limit)
         },
         getCountByGallery: (state) => {
-            return (gallery_id: Number) => state.items.filter(i => i.gallery_id?.gallery_id == gallery_id).length
+            return (galleryId: Number) => state.items.filter(i => i.galleryId?.galleryId == galleryId).length
         }
     }
 })
 
 async function getItems(supabase: SupabaseClient) {
-    const query = `image_id, date_created, name, dscr, author_id(author_id, name), image, gallery_id(gallery_id, name), ord, prev_id, next_id`
+    const query = `imageId, dateCreated, name, dscr, elrhAuthor(authorId, name), image, galleryId(galleryId, name), ord, prevId, nextId`
     return fetchSupabase(supabase, tableName, query, 'ord', {})
 }

@@ -2,7 +2,7 @@
     <div>
         <AdminFormSelectItem :label="'Select article:'" :options="articleOptions" :selected="selected" @select-item="changeItem"/>
         Edit article <strong>{{ currentArticleName }}</strong>
-        <AdminFormArticle :article_id="article_id" @save="save" />
+        <AdminFormArticle :articleId="articleId" @save="save" />
     </div>
 </template>
 
@@ -10,26 +10,26 @@
 import type { Article, ArticleDB } from '@/database/types'
 import { FormKitOptionsItem } from '@formkit/inputs'
 
-const article_id = new Number(useRoute().params.id).valueOf();
+const articleId = new Number(useRoute().params.id).valueOf();
 
 const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const articleOptions = [] as FormKitOptionsItem[];
 let currentArticleName: string
 for (let i = 0; i < useArticleStore().items.length; i++) {
     const item: Article = useArticleStore().items[i]
-    articleOptions.push({ value: item.article_id, label: item.name })
-    if (item.article_id === article_id) {
-        selected.value = item.article_id
+    articleOptions.push({ value: item.articleId, label: item.name })
+    if (item.articleId === articleId) {
+        selected.value = item.articleId
         selected.label = item.name
         currentArticleName = item.name
     }
 }
 
 const save = async (article: ArticleDB) => {
-    const result = await useArticleStore().update(article_id, JSON.parse(JSON.stringify(article)));
+    const result = await useArticleStore().update(articleId, JSON.parse(JSON.stringify(article)));
     if (result) {
         useModalStore().showModal("Item saved", "Article was successfully updated");
-        return navigateTo('/article/' + article_id)
+        return navigateTo('/article/' + articleId)
     } else {
         useModalStore().showModal("Error", "Article wasn't updated");
     }

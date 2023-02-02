@@ -2,7 +2,7 @@ import { Text } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
 
 
-const tableName = "elrh_text"
+const tableName = "elrhText"
 
 export const useTextStore = defineStore({
   id: tableName + '-store',
