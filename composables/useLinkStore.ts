@@ -1,19 +1,19 @@
-import { Link } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
+import { Link } from '@/database/types'
 
-const tableName = "elrhLink"
+const tableName = 'elrhLink'
 
 export const useLinkStore = defineStore({
   id: tableName + '-store',
   state: () => {
     return {
       loaded: false,
-      items: [] as Link[],
+      items: [] as Link[]
     }
   },
   actions: {
-    async fill() {
-      fillStore(tableName, this, getItems)
+    async fill () {
+      await fillStore(tableName, this, getItems)
     }
   },
   getters: {
@@ -25,7 +25,7 @@ export const useLinkStore = defineStore({
   }
 })
 
-async function getItems(supabase: SupabaseClient) {
-  const query = `categoryId, name, dscr, url, thumb`
-  return fetchSupabase(supabase, tableName, query, 'ord', {})
+async function getItems (supabase: SupabaseClient) {
+  const query = 'categoryId, name, dscr, url, thumb'
+  return await fetchSupabase(supabase, tableName, query, 'ord', {})
 }

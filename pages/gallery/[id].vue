@@ -1,20 +1,21 @@
 <template>
-    <div>
-        <ItemGallery :detail="true" :item="item" />
-    </div>
+  <div>
+    <ItemGallery :detail="true" :item="item" />
+  </div>
 </template>
 
 <script setup lang="ts">
-import { Gallery } from '@/database/types';
+import { Gallery } from '@/database/types'
 
 const item = computed(() => {
-    let id = null
-    try {
-        id = new Number(useRoute().params.id)
-        return useGalleryStore().getById(id)
-    } catch (ex) {
-        console.error(`failed to fetch gallery '${id}': ${ex}`)
-    }
-    return {} as Gallery
+  let id = null
+  try {
+    const idString = useRoute().params.id as string
+    id = parseInt(idString)
+    return useGalleryStore().getById(id)
+  } catch (ex) {
+    console.error(`failed to fetch gallery '${id}': ${ex}`)
+  }
+  return {} as Gallery
 })
 </script>

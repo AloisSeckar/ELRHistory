@@ -1,20 +1,21 @@
 <template>
-    <div>
-        <ItemArticle :item="item" :detail="true" />
-    </div>
+  <div>
+    <ItemArticle :item="item" :detail="true" />
+  </div>
 </template>
 
 <script setup lang="ts">
-import { Article } from '@/database/types';
+import { Article } from '@/database/types'
 
 const item = computed(() => {
-    let id = null
-    try {
-        id = new Number(useRoute().params.id)
-        return useArticleStore().getById(id)
-    } catch (ex) {
-        console.error(`failed to fetch article '${id}': ${ex}`)
-    }
-    return {} as Article
+  let id = null
+  try {
+    const idString = useRoute().params.id as string
+    id = parseInt(idString)
+    return useArticleStore().getById(id)
+  } catch (ex) {
+    console.error(`failed to fetch article '${id}': ${ex}`)
+  }
+  return {} as Article
 })
 </script>

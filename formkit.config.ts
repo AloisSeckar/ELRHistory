@@ -4,7 +4,7 @@ import { DefaultConfigOptions } from '@formkit/vue'
 
 const config: DefaultConfigOptions = {
   locales: { en, de, cs },
-  locale: 'cs', // TODO should this be configured from outside?
+  locale: 'cs' // TODO should this be configured from outside?
 }
 
 export default config

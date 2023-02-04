@@ -1,21 +1,21 @@
-import { Article, ArticleDB } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
+import { Article, ArticleDB } from '@/database/types'
 
-const tableName = "elrhArticle"
+const tableName = 'elrhArticle'
 
 export const useArticleStore = defineStore({
   id: tableName + '-store',
   state: () => {
     return {
       loaded: false,
-      items: [] as Article[],
+      items: [] as Article[]
     }
   },
   actions: {
-    async fill() {
-      fillStore(tableName, this, getItems)
+    async fill () {
+      await fillStore(tableName, this, getItems)
     },
-    async create(newItem: ArticleDB): Promise<boolean> {
+    async create (newItem: ArticleDB): Promise<boolean> {
       treatInput(newItem)
       const { data, error } = await useSupabaseClient<ArticleDB>()
         .from(tableName)
@@ -23,16 +23,16 @@ export const useArticleStore = defineStore({
         .select()
 
       if (data) {
-        console.debug("new article saved into Supabase")
+        console.debug('new article saved into Supabase')
         fillStore(tableName, this, getItems) // TODO can we just load the new one?
         return true
       } else {
-        console.error("failed to save new article into Supabase")
+        console.error('failed to save new article into Supabase')
         console.error(error?.message)
         return false
       }
     },
-    async update(itemId: Number, editedItem: ArticleDB): Promise<boolean> {
+    async update (itemId: Number, editedItem: ArticleDB): Promise<boolean> {
       treatInput(editedItem)
       const { data, error } = await useSupabaseClient<ArticleDB>()
         .from(tableName)
@@ -41,11 +41,11 @@ export const useArticleStore = defineStore({
         .select()
 
       if (data) {
-        console.debug("new article saved into Supabase")
+        console.debug('new article saved into Supabase')
         fillStore(tableName, this, getItems) // TODO can we just load the new one?
         return true
       } else {
-        console.error("failed to save new article into Supabase")
+        console.error('failed to save new article into Supabase')
         console.error(error?.message)
         return false
       }
@@ -58,9 +58,9 @@ export const useArticleStore = defineStore({
       return (categoryId: number) => state.items.filter(i => i.categoryId === categoryId)
     },
     getById: (state) => {
-      return (articleId: Number) => {
-        const article = state.items.find(i => i.articleId == articleId)
-        return article ? article : { articleId: 0} as Article
+      return (articleId: number) => {
+        const article = state.items.find(i => i.articleId === articleId)
+        return article || { articleId: 0 } as Article
       }
     },
     getEmpty: (): ArticleDB => {
@@ -73,19 +73,19 @@ export const useArticleStore = defineStore({
         content: '',
         thumb: '',
         authorId: 0,
-        galleryId: undefined,
+        galleryId: undefined
       }
       return newArticle
     }
   }
 })
 
-async function getItems(supabase: SupabaseClient) {
-  const query = `articleId, elrhCategory(categoryId, name), dateCreated, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)`
-  return fetchSupabase(supabase, tableName, query, 'dateCreated', { ascending: false })
+async function getItems (supabase: SupabaseClient) {
+  const query = 'articleId, elrhCategory(categoryId, name), dateCreated, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)'
+  return await fetchSupabase(supabase, tableName, query, 'dateCreated', { ascending: false })
 }
 
-function treatInput(input: ArticleDB) {
+function treatInput (input: ArticleDB) {
   input.dateEdited = new Date().toISOString()
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()

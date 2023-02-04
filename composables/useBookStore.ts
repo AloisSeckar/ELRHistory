@@ -1,19 +1,19 @@
-import { Book } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
+import { Book } from '@/database/types'
 
-const tableName = "elrhBook"
+const tableName = 'elrhBook'
 
 export const useBookStore = defineStore({
   id: tableName + '-store',
   state: () => {
     return {
       loaded: false,
-      items: [] as Book[],
+      items: [] as Book[]
     }
   },
   actions: {
-    async fill() {
-      fillStore(tableName, this, getItems)
+    async fill () {
+      await fillStore(tableName, this, getItems)
     }
   },
   getters: {
@@ -25,7 +25,7 @@ export const useBookStore = defineStore({
   }
 })
 
-async function getItems(supabase: SupabaseClient) {
-  const query = `categoryId, name, dscr, url, thumb, writer, review, year`
-  return fetchSupabase(supabase, tableName, query, 'ord', {})
+async function getItems (supabase: SupabaseClient) {
+  const query = 'categoryId, name, dscr, url, thumb, writer, review, year'
+  return await fetchSupabase(supabase, tableName, query, 'ord', {})
 }

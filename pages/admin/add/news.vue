@@ -1,5 +1,5 @@
 <template>
-    <div>
-        Add new news
-    </div>
+  <div>
+    Add new news
+  </div>
 </template>

@@ -1,0 +1,17 @@
+{
+    "root": true,
+    "extends": [
+        "@nuxtjs/eslint-config-typescript"
+    ],
+    "rules": {
+        // TODO get rid of native console
+        "no-console": "off", 
+        // currently used to display HTML conten
+        // TODO change to some rich-text format or markdown parser? 
+        "vue/no-v-html": "off",
+        // TODO until discover how to solve this for Nuxt file structure
+        "vue/multi-word-component-names": "off", 
+        // https://stackoverflow.com/a/62839792/3204544
+        "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }]
+    }
+}

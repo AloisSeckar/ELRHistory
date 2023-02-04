@@ -8,13 +8,13 @@ export default defineNuxtConfig({
     [
       '@pinia/nuxt',
       {
-        autoImports: ['defineStore'],
-      },
-    ],
+        autoImports: ['defineStore']
+      }
+    ]
   ],
   runtimeConfig: {
     public: {
-      textTitle: 'ELRHistory',
+      textTitle: 'ELRHistory'
     }
-  },
+  }
 })

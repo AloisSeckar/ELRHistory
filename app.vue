@@ -17,7 +17,7 @@ import './assets/css/tailwind.css'
 useHead({
   title: useRuntimeConfig().public.textTitle,
   bodyAttrs: {
-    id: 'main',
+    id: 'main'
   },
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
@@ -26,7 +26,7 @@ useHead({
 
 // datastore ("dumb" loading)
 // TODO improve
-// TODO also there is a problem that gallery info doesn't load on time 
+// TODO also there is a problem that gallery info doesn't load on time
 //   when starting directly at /gallery/[id]
 await useTextStore().fill()
 await useAuthorStore().fill()

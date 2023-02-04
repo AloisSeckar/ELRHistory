@@ -1,19 +1,19 @@
-import { Category } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
+import { Category } from '@/database/types'
 
-const tableName = "elrhCategory"
+const tableName = 'elrhCategory'
 
 export const useCategoryStore = defineStore({
   id: tableName + '-store',
   state: () => {
     return {
       loaded: false,
-      items: [] as Category[],
+      items: [] as Category[]
     }
   },
   actions: {
-    async fill() {
-      fillStore(tableName, this, getItems)
+    async fill () {
+      await fillStore(tableName, this, getItems)
     }
   },
   getters: {
@@ -27,7 +27,7 @@ export const useCategoryStore = defineStore({
   }
 })
 
-async function getItems(supabase: SupabaseClient) {
-  const query = `categoryId, ord, name, dscr, type`
-  return fetchSupabase(supabase, tableName, query, 'ord', {})
+async function getItems (supabase: SupabaseClient) {
+  const query = 'categoryId, ord, name, dscr, type'
+  return await fetchSupabase(supabase, tableName, query, 'ord', {})
 }

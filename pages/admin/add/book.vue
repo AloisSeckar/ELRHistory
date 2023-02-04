@@ -1,5 +1,5 @@
 <template>
-    <div>
-        Add new book
-    </div>
+  <div>
+    Add new book
+  </div>
 </template>

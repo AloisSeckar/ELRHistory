@@ -1,5 +1,5 @@
 <template>
-    <div>
-        Add new gallery
-    </div>
+  <div>
+    Add new gallery
+  </div>
 </template>

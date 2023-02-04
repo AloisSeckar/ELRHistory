@@ -4,7 +4,7 @@
  */
 
 export interface paths {
-  "/": {
+  '/': {
     get: {
       responses: {
         /** OK */
@@ -12,37 +12,37 @@ export interface paths {
       };
     };
   };
-  "/elrhContact": {
+  '/elrhContact': {
     get: {
       parameters: {
         query: {
-          contactId?: parameters["rowFilter.elrhContact.contactId"];
-          name?: parameters["rowFilter.elrhContact.name"];
-          email?: parameters["rowFilter.elrhContact.email"];
-          phone?: parameters["rowFilter.elrhContact.phone"];
-          fb?: parameters["rowFilter.elrhContact.fb"];
+          contactId?: parameters['rowFilter.elrhContact.contactId'];
+          name?: parameters['rowFilter.elrhContact.name'];
+          email?: parameters['rowFilter.elrhContact.email'];
+          phone?: parameters['rowFilter.elrhContact.phone'];
+          fb?: parameters['rowFilter.elrhContact.fb'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhContact"][];
+          schema: definitions['elrhContact'][];
         };
         /** Partial Content */
         206: unknown;
@@ -52,15 +52,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhContact */
-          elrhContact?: definitions["elrhContact"];
+          elrhContact?: definitions['elrhContact'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -71,15 +71,15 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          contactId?: parameters["rowFilter.elrhContact.contactId"];
-          name?: parameters["rowFilter.elrhContact.name"];
-          email?: parameters["rowFilter.elrhContact.email"];
-          phone?: parameters["rowFilter.elrhContact.phone"];
-          fb?: parameters["rowFilter.elrhContact.fb"];
+          contactId?: parameters['rowFilter.elrhContact.contactId'];
+          name?: parameters['rowFilter.elrhContact.name'];
+          email?: parameters['rowFilter.elrhContact.email'];
+          phone?: parameters['rowFilter.elrhContact.phone'];
+          fb?: parameters['rowFilter.elrhContact.fb'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -90,19 +90,19 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          contactId?: parameters["rowFilter.elrhContact.contactId"];
-          name?: parameters["rowFilter.elrhContact.name"];
-          email?: parameters["rowFilter.elrhContact.email"];
-          phone?: parameters["rowFilter.elrhContact.phone"];
-          fb?: parameters["rowFilter.elrhContact.fb"];
+          contactId?: parameters['rowFilter.elrhContact.contactId'];
+          name?: parameters['rowFilter.elrhContact.name'];
+          email?: parameters['rowFilter.elrhContact.email'];
+          phone?: parameters['rowFilter.elrhContact.phone'];
+          fb?: parameters['rowFilter.elrhContact.fb'];
         };
         body: {
           /** elrhContact */
-          elrhContact?: definitions["elrhContact"];
+          elrhContact?: definitions['elrhContact'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -111,42 +111,42 @@ export interface paths {
       };
     };
   };
-  "/elrh_article": {
+  '/elrh_article': {
     get: {
       parameters: {
         query: {
-          articleId?: parameters["rowFilter.elrh_article.articleId"];
-          categoryId?: parameters["rowFilter.elrh_article.categoryId"];
-          dateCreated?: parameters["rowFilter.elrh_article.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_article.dateEdited"];
-          name?: parameters["rowFilter.elrh_article.name"];
-          dscr?: parameters["rowFilter.elrh_article.dscr"];
-          content?: parameters["rowFilter.elrh_article.content"];
-          thumb?: parameters["rowFilter.elrh_article.thumb"];
-          authorId?: parameters["rowFilter.elrh_article.authorId"];
-          galleryId?: parameters["rowFilter.elrh_article.galleryId"];
+          articleId?: parameters['rowFilter.elrh_article.articleId'];
+          categoryId?: parameters['rowFilter.elrh_article.categoryId'];
+          dateCreated?: parameters['rowFilter.elrh_article.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_article.dateEdited'];
+          name?: parameters['rowFilter.elrh_article.name'];
+          dscr?: parameters['rowFilter.elrh_article.dscr'];
+          content?: parameters['rowFilter.elrh_article.content'];
+          thumb?: parameters['rowFilter.elrh_article.thumb'];
+          authorId?: parameters['rowFilter.elrh_article.authorId'];
+          galleryId?: parameters['rowFilter.elrh_article.galleryId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_article"][];
+          schema: definitions['elrh_article'][];
         };
         /** Partial Content */
         206: unknown;
@@ -156,15 +156,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_article */
-          elrh_article?: definitions["elrh_article"];
+          elrh_article?: definitions['elrh_article'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -175,20 +175,20 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          articleId?: parameters["rowFilter.elrh_article.articleId"];
-          categoryId?: parameters["rowFilter.elrh_article.categoryId"];
-          dateCreated?: parameters["rowFilter.elrh_article.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_article.dateEdited"];
-          name?: parameters["rowFilter.elrh_article.name"];
-          dscr?: parameters["rowFilter.elrh_article.dscr"];
-          content?: parameters["rowFilter.elrh_article.content"];
-          thumb?: parameters["rowFilter.elrh_article.thumb"];
-          authorId?: parameters["rowFilter.elrh_article.authorId"];
-          galleryId?: parameters["rowFilter.elrh_article.galleryId"];
+          articleId?: parameters['rowFilter.elrh_article.articleId'];
+          categoryId?: parameters['rowFilter.elrh_article.categoryId'];
+          dateCreated?: parameters['rowFilter.elrh_article.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_article.dateEdited'];
+          name?: parameters['rowFilter.elrh_article.name'];
+          dscr?: parameters['rowFilter.elrh_article.dscr'];
+          content?: parameters['rowFilter.elrh_article.content'];
+          thumb?: parameters['rowFilter.elrh_article.thumb'];
+          authorId?: parameters['rowFilter.elrh_article.authorId'];
+          galleryId?: parameters['rowFilter.elrh_article.galleryId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -199,24 +199,24 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          articleId?: parameters["rowFilter.elrh_article.articleId"];
-          categoryId?: parameters["rowFilter.elrh_article.categoryId"];
-          dateCreated?: parameters["rowFilter.elrh_article.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_article.dateEdited"];
-          name?: parameters["rowFilter.elrh_article.name"];
-          dscr?: parameters["rowFilter.elrh_article.dscr"];
-          content?: parameters["rowFilter.elrh_article.content"];
-          thumb?: parameters["rowFilter.elrh_article.thumb"];
-          authorId?: parameters["rowFilter.elrh_article.authorId"];
-          galleryId?: parameters["rowFilter.elrh_article.galleryId"];
+          articleId?: parameters['rowFilter.elrh_article.articleId'];
+          categoryId?: parameters['rowFilter.elrh_article.categoryId'];
+          dateCreated?: parameters['rowFilter.elrh_article.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_article.dateEdited'];
+          name?: parameters['rowFilter.elrh_article.name'];
+          dscr?: parameters['rowFilter.elrh_article.dscr'];
+          content?: parameters['rowFilter.elrh_article.content'];
+          thumb?: parameters['rowFilter.elrh_article.thumb'];
+          authorId?: parameters['rowFilter.elrh_article.authorId'];
+          galleryId?: parameters['rowFilter.elrh_article.galleryId'];
         };
         body: {
           /** elrh_article */
-          elrh_article?: definitions["elrh_article"];
+          elrh_article?: definitions['elrh_article'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -225,37 +225,37 @@ export interface paths {
       };
     };
   };
-  "/elrh_contact": {
+  '/elrh_contact': {
     get: {
       parameters: {
         query: {
-          contactId?: parameters["rowFilter.elrh_contact.contactId"];
-          name?: parameters["rowFilter.elrh_contact.name"];
-          email?: parameters["rowFilter.elrh_contact.email"];
-          phone?: parameters["rowFilter.elrh_contact.phone"];
-          fb?: parameters["rowFilter.elrh_contact.fb"];
+          contactId?: parameters['rowFilter.elrh_contact.contactId'];
+          name?: parameters['rowFilter.elrh_contact.name'];
+          email?: parameters['rowFilter.elrh_contact.email'];
+          phone?: parameters['rowFilter.elrh_contact.phone'];
+          fb?: parameters['rowFilter.elrh_contact.fb'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_contact"][];
+          schema: definitions['elrh_contact'][];
         };
         /** Partial Content */
         206: unknown;
@@ -265,15 +265,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_contact */
-          elrh_contact?: definitions["elrh_contact"];
+          elrh_contact?: definitions['elrh_contact'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -284,15 +284,15 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          contactId?: parameters["rowFilter.elrh_contact.contactId"];
-          name?: parameters["rowFilter.elrh_contact.name"];
-          email?: parameters["rowFilter.elrh_contact.email"];
-          phone?: parameters["rowFilter.elrh_contact.phone"];
-          fb?: parameters["rowFilter.elrh_contact.fb"];
+          contactId?: parameters['rowFilter.elrh_contact.contactId'];
+          name?: parameters['rowFilter.elrh_contact.name'];
+          email?: parameters['rowFilter.elrh_contact.email'];
+          phone?: parameters['rowFilter.elrh_contact.phone'];
+          fb?: parameters['rowFilter.elrh_contact.fb'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -303,19 +303,19 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          contactId?: parameters["rowFilter.elrh_contact.contactId"];
-          name?: parameters["rowFilter.elrh_contact.name"];
-          email?: parameters["rowFilter.elrh_contact.email"];
-          phone?: parameters["rowFilter.elrh_contact.phone"];
-          fb?: parameters["rowFilter.elrh_contact.fb"];
+          contactId?: parameters['rowFilter.elrh_contact.contactId'];
+          name?: parameters['rowFilter.elrh_contact.name'];
+          email?: parameters['rowFilter.elrh_contact.email'];
+          phone?: parameters['rowFilter.elrh_contact.phone'];
+          fb?: parameters['rowFilter.elrh_contact.fb'];
         };
         body: {
           /** elrh_contact */
-          elrh_contact?: definitions["elrh_contact"];
+          elrh_contact?: definitions['elrh_contact'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -324,39 +324,39 @@ export interface paths {
       };
     };
   };
-  "/elrh_gallery": {
+  '/elrh_gallery': {
     get: {
       parameters: {
         query: {
-          galleryId?: parameters["rowFilter.elrh_gallery.galleryId"];
-          dateCreated?: parameters["rowFilter.elrh_gallery.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_gallery.dateEdited"];
-          name?: parameters["rowFilter.elrh_gallery.name"];
-          dscr?: parameters["rowFilter.elrh_gallery.dscr"];
-          authorId?: parameters["rowFilter.elrh_gallery.authorId"];
-          parentId?: parameters["rowFilter.elrh_gallery.parentId"];
+          galleryId?: parameters['rowFilter.elrh_gallery.galleryId'];
+          dateCreated?: parameters['rowFilter.elrh_gallery.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_gallery.dateEdited'];
+          name?: parameters['rowFilter.elrh_gallery.name'];
+          dscr?: parameters['rowFilter.elrh_gallery.dscr'];
+          authorId?: parameters['rowFilter.elrh_gallery.authorId'];
+          parentId?: parameters['rowFilter.elrh_gallery.parentId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_gallery"][];
+          schema: definitions['elrh_gallery'][];
         };
         /** Partial Content */
         206: unknown;
@@ -366,15 +366,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_gallery */
-          elrh_gallery?: definitions["elrh_gallery"];
+          elrh_gallery?: definitions['elrh_gallery'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -385,17 +385,17 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          galleryId?: parameters["rowFilter.elrh_gallery.galleryId"];
-          dateCreated?: parameters["rowFilter.elrh_gallery.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_gallery.dateEdited"];
-          name?: parameters["rowFilter.elrh_gallery.name"];
-          dscr?: parameters["rowFilter.elrh_gallery.dscr"];
-          authorId?: parameters["rowFilter.elrh_gallery.authorId"];
-          parentId?: parameters["rowFilter.elrh_gallery.parentId"];
+          galleryId?: parameters['rowFilter.elrh_gallery.galleryId'];
+          dateCreated?: parameters['rowFilter.elrh_gallery.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_gallery.dateEdited'];
+          name?: parameters['rowFilter.elrh_gallery.name'];
+          dscr?: parameters['rowFilter.elrh_gallery.dscr'];
+          authorId?: parameters['rowFilter.elrh_gallery.authorId'];
+          parentId?: parameters['rowFilter.elrh_gallery.parentId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -406,21 +406,21 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          galleryId?: parameters["rowFilter.elrh_gallery.galleryId"];
-          dateCreated?: parameters["rowFilter.elrh_gallery.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_gallery.dateEdited"];
-          name?: parameters["rowFilter.elrh_gallery.name"];
-          dscr?: parameters["rowFilter.elrh_gallery.dscr"];
-          authorId?: parameters["rowFilter.elrh_gallery.authorId"];
-          parentId?: parameters["rowFilter.elrh_gallery.parentId"];
+          galleryId?: parameters['rowFilter.elrh_gallery.galleryId'];
+          dateCreated?: parameters['rowFilter.elrh_gallery.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_gallery.dateEdited'];
+          name?: parameters['rowFilter.elrh_gallery.name'];
+          dscr?: parameters['rowFilter.elrh_gallery.dscr'];
+          authorId?: parameters['rowFilter.elrh_gallery.authorId'];
+          parentId?: parameters['rowFilter.elrh_gallery.parentId'];
         };
         body: {
           /** elrh_gallery */
-          elrh_gallery?: definitions["elrh_gallery"];
+          elrh_gallery?: definitions['elrh_gallery'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -429,37 +429,37 @@ export interface paths {
       };
     };
   };
-  "/elrhCategory": {
+  '/elrhCategory': {
     get: {
       parameters: {
         query: {
-          categoryId?: parameters["rowFilter.elrhCategory.categoryId"];
-          ord?: parameters["rowFilter.elrhCategory.ord"];
-          name?: parameters["rowFilter.elrhCategory.name"];
-          dscr?: parameters["rowFilter.elrhCategory.dscr"];
-          type?: parameters["rowFilter.elrhCategory.type"];
+          categoryId?: parameters['rowFilter.elrhCategory.categoryId'];
+          ord?: parameters['rowFilter.elrhCategory.ord'];
+          name?: parameters['rowFilter.elrhCategory.name'];
+          dscr?: parameters['rowFilter.elrhCategory.dscr'];
+          type?: parameters['rowFilter.elrhCategory.type'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhCategory"][];
+          schema: definitions['elrhCategory'][];
         };
         /** Partial Content */
         206: unknown;
@@ -469,15 +469,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhCategory */
-          elrhCategory?: definitions["elrhCategory"];
+          elrhCategory?: definitions['elrhCategory'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -488,15 +488,15 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          categoryId?: parameters["rowFilter.elrhCategory.categoryId"];
-          ord?: parameters["rowFilter.elrhCategory.ord"];
-          name?: parameters["rowFilter.elrhCategory.name"];
-          dscr?: parameters["rowFilter.elrhCategory.dscr"];
-          type?: parameters["rowFilter.elrhCategory.type"];
+          categoryId?: parameters['rowFilter.elrhCategory.categoryId'];
+          ord?: parameters['rowFilter.elrhCategory.ord'];
+          name?: parameters['rowFilter.elrhCategory.name'];
+          dscr?: parameters['rowFilter.elrhCategory.dscr'];
+          type?: parameters['rowFilter.elrhCategory.type'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -507,19 +507,19 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          categoryId?: parameters["rowFilter.elrhCategory.categoryId"];
-          ord?: parameters["rowFilter.elrhCategory.ord"];
-          name?: parameters["rowFilter.elrhCategory.name"];
-          dscr?: parameters["rowFilter.elrhCategory.dscr"];
-          type?: parameters["rowFilter.elrhCategory.type"];
+          categoryId?: parameters['rowFilter.elrhCategory.categoryId'];
+          ord?: parameters['rowFilter.elrhCategory.ord'];
+          name?: parameters['rowFilter.elrhCategory.name'];
+          dscr?: parameters['rowFilter.elrhCategory.dscr'];
+          type?: parameters['rowFilter.elrhCategory.type'];
         };
         body: {
           /** elrhCategory */
-          elrhCategory?: definitions["elrhCategory"];
+          elrhCategory?: definitions['elrhCategory'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -528,36 +528,36 @@ export interface paths {
       };
     };
   };
-  "/elrhNews": {
+  '/elrhNews': {
     get: {
       parameters: {
         query: {
-          newsId?: parameters["rowFilter.elrhNews.newsId"];
-          content?: parameters["rowFilter.elrhNews.content"];
-          authorId?: parameters["rowFilter.elrhNews.authorId"];
-          dateCreated?: parameters["rowFilter.elrhNews.dateCreated"];
+          newsId?: parameters['rowFilter.elrhNews.newsId'];
+          content?: parameters['rowFilter.elrhNews.content'];
+          authorId?: parameters['rowFilter.elrhNews.authorId'];
+          dateCreated?: parameters['rowFilter.elrhNews.dateCreated'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhNews"][];
+          schema: definitions['elrhNews'][];
         };
         /** Partial Content */
         206: unknown;
@@ -567,15 +567,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhNews */
-          elrhNews?: definitions["elrhNews"];
+          elrhNews?: definitions['elrhNews'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -586,14 +586,14 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          newsId?: parameters["rowFilter.elrhNews.newsId"];
-          content?: parameters["rowFilter.elrhNews.content"];
-          authorId?: parameters["rowFilter.elrhNews.authorId"];
-          dateCreated?: parameters["rowFilter.elrhNews.dateCreated"];
+          newsId?: parameters['rowFilter.elrhNews.newsId'];
+          content?: parameters['rowFilter.elrhNews.content'];
+          authorId?: parameters['rowFilter.elrhNews.authorId'];
+          dateCreated?: parameters['rowFilter.elrhNews.dateCreated'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -604,18 +604,18 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          newsId?: parameters["rowFilter.elrhNews.newsId"];
-          content?: parameters["rowFilter.elrhNews.content"];
-          authorId?: parameters["rowFilter.elrhNews.authorId"];
-          dateCreated?: parameters["rowFilter.elrhNews.dateCreated"];
+          newsId?: parameters['rowFilter.elrhNews.newsId'];
+          content?: parameters['rowFilter.elrhNews.content'];
+          authorId?: parameters['rowFilter.elrhNews.authorId'];
+          dateCreated?: parameters['rowFilter.elrhNews.dateCreated'];
         };
         body: {
           /** elrhNews */
-          elrhNews?: definitions["elrhNews"];
+          elrhNews?: definitions['elrhNews'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -624,35 +624,35 @@ export interface paths {
       };
     };
   };
-  "/elrh_author": {
+  '/elrh_author': {
     get: {
       parameters: {
         query: {
-          authorId?: parameters["rowFilter.elrh_author.authorId"];
-          email?: parameters["rowFilter.elrh_author.email"];
-          name?: parameters["rowFilter.elrh_author.name"];
+          authorId?: parameters['rowFilter.elrh_author.authorId'];
+          email?: parameters['rowFilter.elrh_author.email'];
+          name?: parameters['rowFilter.elrh_author.name'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_author"][];
+          schema: definitions['elrh_author'][];
         };
         /** Partial Content */
         206: unknown;
@@ -662,15 +662,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_author */
-          elrh_author?: definitions["elrh_author"];
+          elrh_author?: definitions['elrh_author'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -681,13 +681,13 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          authorId?: parameters["rowFilter.elrh_author.authorId"];
-          email?: parameters["rowFilter.elrh_author.email"];
-          name?: parameters["rowFilter.elrh_author.name"];
+          authorId?: parameters['rowFilter.elrh_author.authorId'];
+          email?: parameters['rowFilter.elrh_author.email'];
+          name?: parameters['rowFilter.elrh_author.name'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -698,17 +698,17 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          authorId?: parameters["rowFilter.elrh_author.authorId"];
-          email?: parameters["rowFilter.elrh_author.email"];
-          name?: parameters["rowFilter.elrh_author.name"];
+          authorId?: parameters['rowFilter.elrh_author.authorId'];
+          email?: parameters['rowFilter.elrh_author.email'];
+          name?: parameters['rowFilter.elrh_author.name'];
         };
         body: {
           /** elrh_author */
-          elrh_author?: definitions["elrh_author"];
+          elrh_author?: definitions['elrh_author'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -717,42 +717,42 @@ export interface paths {
       };
     };
   };
-  "/elrh_link": {
+  '/elrh_link': {
     get: {
       parameters: {
         query: {
-          linkId?: parameters["rowFilter.elrh_link.linkId"];
-          categoryId?: parameters["rowFilter.elrh_link.categoryId"];
-          ord?: parameters["rowFilter.elrh_link.ord"];
-          dateCreated?: parameters["rowFilter.elrh_link.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_link.dateEdited"];
-          name?: parameters["rowFilter.elrh_link.name"];
-          dscr?: parameters["rowFilter.elrh_link.dscr"];
-          url?: parameters["rowFilter.elrh_link.url"];
-          thumb?: parameters["rowFilter.elrh_link.thumb"];
-          authorId?: parameters["rowFilter.elrh_link.authorId"];
+          linkId?: parameters['rowFilter.elrh_link.linkId'];
+          categoryId?: parameters['rowFilter.elrh_link.categoryId'];
+          ord?: parameters['rowFilter.elrh_link.ord'];
+          dateCreated?: parameters['rowFilter.elrh_link.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_link.dateEdited'];
+          name?: parameters['rowFilter.elrh_link.name'];
+          dscr?: parameters['rowFilter.elrh_link.dscr'];
+          url?: parameters['rowFilter.elrh_link.url'];
+          thumb?: parameters['rowFilter.elrh_link.thumb'];
+          authorId?: parameters['rowFilter.elrh_link.authorId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_link"][];
+          schema: definitions['elrh_link'][];
         };
         /** Partial Content */
         206: unknown;
@@ -762,15 +762,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_link */
-          elrh_link?: definitions["elrh_link"];
+          elrh_link?: definitions['elrh_link'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -781,20 +781,20 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          linkId?: parameters["rowFilter.elrh_link.linkId"];
-          categoryId?: parameters["rowFilter.elrh_link.categoryId"];
-          ord?: parameters["rowFilter.elrh_link.ord"];
-          dateCreated?: parameters["rowFilter.elrh_link.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_link.dateEdited"];
-          name?: parameters["rowFilter.elrh_link.name"];
-          dscr?: parameters["rowFilter.elrh_link.dscr"];
-          url?: parameters["rowFilter.elrh_link.url"];
-          thumb?: parameters["rowFilter.elrh_link.thumb"];
-          authorId?: parameters["rowFilter.elrh_link.authorId"];
+          linkId?: parameters['rowFilter.elrh_link.linkId'];
+          categoryId?: parameters['rowFilter.elrh_link.categoryId'];
+          ord?: parameters['rowFilter.elrh_link.ord'];
+          dateCreated?: parameters['rowFilter.elrh_link.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_link.dateEdited'];
+          name?: parameters['rowFilter.elrh_link.name'];
+          dscr?: parameters['rowFilter.elrh_link.dscr'];
+          url?: parameters['rowFilter.elrh_link.url'];
+          thumb?: parameters['rowFilter.elrh_link.thumb'];
+          authorId?: parameters['rowFilter.elrh_link.authorId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -805,24 +805,24 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          linkId?: parameters["rowFilter.elrh_link.linkId"];
-          categoryId?: parameters["rowFilter.elrh_link.categoryId"];
-          ord?: parameters["rowFilter.elrh_link.ord"];
-          dateCreated?: parameters["rowFilter.elrh_link.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_link.dateEdited"];
-          name?: parameters["rowFilter.elrh_link.name"];
-          dscr?: parameters["rowFilter.elrh_link.dscr"];
-          url?: parameters["rowFilter.elrh_link.url"];
-          thumb?: parameters["rowFilter.elrh_link.thumb"];
-          authorId?: parameters["rowFilter.elrh_link.authorId"];
+          linkId?: parameters['rowFilter.elrh_link.linkId'];
+          categoryId?: parameters['rowFilter.elrh_link.categoryId'];
+          ord?: parameters['rowFilter.elrh_link.ord'];
+          dateCreated?: parameters['rowFilter.elrh_link.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_link.dateEdited'];
+          name?: parameters['rowFilter.elrh_link.name'];
+          dscr?: parameters['rowFilter.elrh_link.dscr'];
+          url?: parameters['rowFilter.elrh_link.url'];
+          thumb?: parameters['rowFilter.elrh_link.thumb'];
+          authorId?: parameters['rowFilter.elrh_link.authorId'];
         };
         body: {
           /** elrh_link */
-          elrh_link?: definitions["elrh_link"];
+          elrh_link?: definitions['elrh_link'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -831,34 +831,34 @@ export interface paths {
       };
     };
   };
-  "/elrhText": {
+  '/elrhText': {
     get: {
       parameters: {
         query: {
-          key?: parameters["rowFilter.elrhText.key"];
-          value?: parameters["rowFilter.elrhText.value"];
+          key?: parameters['rowFilter.elrhText.key'];
+          value?: parameters['rowFilter.elrhText.value'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhText"][];
+          schema: definitions['elrhText'][];
         };
         /** Partial Content */
         206: unknown;
@@ -868,15 +868,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhText */
-          elrhText?: definitions["elrhText"];
+          elrhText?: definitions['elrhText'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -887,12 +887,12 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          key?: parameters["rowFilter.elrhText.key"];
-          value?: parameters["rowFilter.elrhText.value"];
+          key?: parameters['rowFilter.elrhText.key'];
+          value?: parameters['rowFilter.elrhText.value'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -903,16 +903,16 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          key?: parameters["rowFilter.elrhText.key"];
-          value?: parameters["rowFilter.elrhText.value"];
+          key?: parameters['rowFilter.elrhText.key'];
+          value?: parameters['rowFilter.elrhText.value'];
         };
         body: {
           /** elrhText */
-          elrhText?: definitions["elrhText"];
+          elrhText?: definitions['elrhText'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -921,39 +921,39 @@ export interface paths {
       };
     };
   };
-  "/elrhGallery": {
+  '/elrhGallery': {
     get: {
       parameters: {
         query: {
-          galleryId?: parameters["rowFilter.elrhGallery.galleryId"];
-          dateCreated?: parameters["rowFilter.elrhGallery.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhGallery.dateEdited"];
-          name?: parameters["rowFilter.elrhGallery.name"];
-          dscr?: parameters["rowFilter.elrhGallery.dscr"];
-          authorId?: parameters["rowFilter.elrhGallery.authorId"];
-          parentId?: parameters["rowFilter.elrhGallery.parentId"];
+          galleryId?: parameters['rowFilter.elrhGallery.galleryId'];
+          dateCreated?: parameters['rowFilter.elrhGallery.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhGallery.dateEdited'];
+          name?: parameters['rowFilter.elrhGallery.name'];
+          dscr?: parameters['rowFilter.elrhGallery.dscr'];
+          authorId?: parameters['rowFilter.elrhGallery.authorId'];
+          parentId?: parameters['rowFilter.elrhGallery.parentId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhGallery"][];
+          schema: definitions['elrhGallery'][];
         };
         /** Partial Content */
         206: unknown;
@@ -963,15 +963,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhGallery */
-          elrhGallery?: definitions["elrhGallery"];
+          elrhGallery?: definitions['elrhGallery'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -982,17 +982,17 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          galleryId?: parameters["rowFilter.elrhGallery.galleryId"];
-          dateCreated?: parameters["rowFilter.elrhGallery.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhGallery.dateEdited"];
-          name?: parameters["rowFilter.elrhGallery.name"];
-          dscr?: parameters["rowFilter.elrhGallery.dscr"];
-          authorId?: parameters["rowFilter.elrhGallery.authorId"];
-          parentId?: parameters["rowFilter.elrhGallery.parentId"];
+          galleryId?: parameters['rowFilter.elrhGallery.galleryId'];
+          dateCreated?: parameters['rowFilter.elrhGallery.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhGallery.dateEdited'];
+          name?: parameters['rowFilter.elrhGallery.name'];
+          dscr?: parameters['rowFilter.elrhGallery.dscr'];
+          authorId?: parameters['rowFilter.elrhGallery.authorId'];
+          parentId?: parameters['rowFilter.elrhGallery.parentId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1003,21 +1003,21 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          galleryId?: parameters["rowFilter.elrhGallery.galleryId"];
-          dateCreated?: parameters["rowFilter.elrhGallery.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhGallery.dateEdited"];
-          name?: parameters["rowFilter.elrhGallery.name"];
-          dscr?: parameters["rowFilter.elrhGallery.dscr"];
-          authorId?: parameters["rowFilter.elrhGallery.authorId"];
-          parentId?: parameters["rowFilter.elrhGallery.parentId"];
+          galleryId?: parameters['rowFilter.elrhGallery.galleryId'];
+          dateCreated?: parameters['rowFilter.elrhGallery.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhGallery.dateEdited'];
+          name?: parameters['rowFilter.elrhGallery.name'];
+          dscr?: parameters['rowFilter.elrhGallery.dscr'];
+          authorId?: parameters['rowFilter.elrhGallery.authorId'];
+          parentId?: parameters['rowFilter.elrhGallery.parentId'];
         };
         body: {
           /** elrhGallery */
-          elrhGallery?: definitions["elrhGallery"];
+          elrhGallery?: definitions['elrhGallery'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1026,43 +1026,43 @@ export interface paths {
       };
     };
   };
-  "/elrh_image": {
+  '/elrh_image': {
     get: {
       parameters: {
         query: {
-          imageId?: parameters["rowFilter.elrh_image.imageId"];
-          dateCreated?: parameters["rowFilter.elrh_image.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_image.dateEdited"];
-          name?: parameters["rowFilter.elrh_image.name"];
-          dscr?: parameters["rowFilter.elrh_image.dscr"];
-          authorId?: parameters["rowFilter.elrh_image.authorId"];
-          image?: parameters["rowFilter.elrh_image.image"];
-          galleryId?: parameters["rowFilter.elrh_image.galleryId"];
-          ord?: parameters["rowFilter.elrh_image.ord"];
-          prevId?: parameters["rowFilter.elrh_image.prevId"];
-          nextId?: parameters["rowFilter.elrh_image.nextId"];
+          imageId?: parameters['rowFilter.elrh_image.imageId'];
+          dateCreated?: parameters['rowFilter.elrh_image.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_image.dateEdited'];
+          name?: parameters['rowFilter.elrh_image.name'];
+          dscr?: parameters['rowFilter.elrh_image.dscr'];
+          authorId?: parameters['rowFilter.elrh_image.authorId'];
+          image?: parameters['rowFilter.elrh_image.image'];
+          galleryId?: parameters['rowFilter.elrh_image.galleryId'];
+          ord?: parameters['rowFilter.elrh_image.ord'];
+          prevId?: parameters['rowFilter.elrh_image.prevId'];
+          nextId?: parameters['rowFilter.elrh_image.nextId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_image"][];
+          schema: definitions['elrh_image'][];
         };
         /** Partial Content */
         206: unknown;
@@ -1072,15 +1072,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_image */
-          elrh_image?: definitions["elrh_image"];
+          elrh_image?: definitions['elrh_image'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1091,21 +1091,21 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          imageId?: parameters["rowFilter.elrh_image.imageId"];
-          dateCreated?: parameters["rowFilter.elrh_image.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_image.dateEdited"];
-          name?: parameters["rowFilter.elrh_image.name"];
-          dscr?: parameters["rowFilter.elrh_image.dscr"];
-          authorId?: parameters["rowFilter.elrh_image.authorId"];
-          image?: parameters["rowFilter.elrh_image.image"];
-          galleryId?: parameters["rowFilter.elrh_image.galleryId"];
-          ord?: parameters["rowFilter.elrh_image.ord"];
-          prevId?: parameters["rowFilter.elrh_image.prevId"];
-          nextId?: parameters["rowFilter.elrh_image.nextId"];
+          imageId?: parameters['rowFilter.elrh_image.imageId'];
+          dateCreated?: parameters['rowFilter.elrh_image.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_image.dateEdited'];
+          name?: parameters['rowFilter.elrh_image.name'];
+          dscr?: parameters['rowFilter.elrh_image.dscr'];
+          authorId?: parameters['rowFilter.elrh_image.authorId'];
+          image?: parameters['rowFilter.elrh_image.image'];
+          galleryId?: parameters['rowFilter.elrh_image.galleryId'];
+          ord?: parameters['rowFilter.elrh_image.ord'];
+          prevId?: parameters['rowFilter.elrh_image.prevId'];
+          nextId?: parameters['rowFilter.elrh_image.nextId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1116,25 +1116,25 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          imageId?: parameters["rowFilter.elrh_image.imageId"];
-          dateCreated?: parameters["rowFilter.elrh_image.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_image.dateEdited"];
-          name?: parameters["rowFilter.elrh_image.name"];
-          dscr?: parameters["rowFilter.elrh_image.dscr"];
-          authorId?: parameters["rowFilter.elrh_image.authorId"];
-          image?: parameters["rowFilter.elrh_image.image"];
-          galleryId?: parameters["rowFilter.elrh_image.galleryId"];
-          ord?: parameters["rowFilter.elrh_image.ord"];
-          prevId?: parameters["rowFilter.elrh_image.prevId"];
-          nextId?: parameters["rowFilter.elrh_image.nextId"];
+          imageId?: parameters['rowFilter.elrh_image.imageId'];
+          dateCreated?: parameters['rowFilter.elrh_image.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_image.dateEdited'];
+          name?: parameters['rowFilter.elrh_image.name'];
+          dscr?: parameters['rowFilter.elrh_image.dscr'];
+          authorId?: parameters['rowFilter.elrh_image.authorId'];
+          image?: parameters['rowFilter.elrh_image.image'];
+          galleryId?: parameters['rowFilter.elrh_image.galleryId'];
+          ord?: parameters['rowFilter.elrh_image.ord'];
+          prevId?: parameters['rowFilter.elrh_image.prevId'];
+          nextId?: parameters['rowFilter.elrh_image.nextId'];
         };
         body: {
           /** elrh_image */
-          elrh_image?: definitions["elrh_image"];
+          elrh_image?: definitions['elrh_image'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1143,45 +1143,45 @@ export interface paths {
       };
     };
   };
-  "/elrhBook": {
+  '/elrhBook': {
     get: {
       parameters: {
         query: {
-          bookId?: parameters["rowFilter.elrhBook.bookId"];
-          categoryId?: parameters["rowFilter.elrhBook.categoryId"];
-          ord?: parameters["rowFilter.elrhBook.ord"];
-          dateCreated?: parameters["rowFilter.elrhBook.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhBook.dateEdited"];
-          writer?: parameters["rowFilter.elrhBook.writer"];
-          name?: parameters["rowFilter.elrhBook.name"];
-          dscr?: parameters["rowFilter.elrhBook.dscr"];
-          url?: parameters["rowFilter.elrhBook.url"];
-          thumb?: parameters["rowFilter.elrhBook.thumb"];
-          review?: parameters["rowFilter.elrhBook.review"];
-          year?: parameters["rowFilter.elrhBook.year"];
-          authorId?: parameters["rowFilter.elrhBook.authorId"];
+          bookId?: parameters['rowFilter.elrhBook.bookId'];
+          categoryId?: parameters['rowFilter.elrhBook.categoryId'];
+          ord?: parameters['rowFilter.elrhBook.ord'];
+          dateCreated?: parameters['rowFilter.elrhBook.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhBook.dateEdited'];
+          writer?: parameters['rowFilter.elrhBook.writer'];
+          name?: parameters['rowFilter.elrhBook.name'];
+          dscr?: parameters['rowFilter.elrhBook.dscr'];
+          url?: parameters['rowFilter.elrhBook.url'];
+          thumb?: parameters['rowFilter.elrhBook.thumb'];
+          review?: parameters['rowFilter.elrhBook.review'];
+          year?: parameters['rowFilter.elrhBook.year'];
+          authorId?: parameters['rowFilter.elrhBook.authorId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhBook"][];
+          schema: definitions['elrhBook'][];
         };
         /** Partial Content */
         206: unknown;
@@ -1191,15 +1191,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhBook */
-          elrhBook?: definitions["elrhBook"];
+          elrhBook?: definitions['elrhBook'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1210,23 +1210,23 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          bookId?: parameters["rowFilter.elrhBook.bookId"];
-          categoryId?: parameters["rowFilter.elrhBook.categoryId"];
-          ord?: parameters["rowFilter.elrhBook.ord"];
-          dateCreated?: parameters["rowFilter.elrhBook.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhBook.dateEdited"];
-          writer?: parameters["rowFilter.elrhBook.writer"];
-          name?: parameters["rowFilter.elrhBook.name"];
-          dscr?: parameters["rowFilter.elrhBook.dscr"];
-          url?: parameters["rowFilter.elrhBook.url"];
-          thumb?: parameters["rowFilter.elrhBook.thumb"];
-          review?: parameters["rowFilter.elrhBook.review"];
-          year?: parameters["rowFilter.elrhBook.year"];
-          authorId?: parameters["rowFilter.elrhBook.authorId"];
+          bookId?: parameters['rowFilter.elrhBook.bookId'];
+          categoryId?: parameters['rowFilter.elrhBook.categoryId'];
+          ord?: parameters['rowFilter.elrhBook.ord'];
+          dateCreated?: parameters['rowFilter.elrhBook.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhBook.dateEdited'];
+          writer?: parameters['rowFilter.elrhBook.writer'];
+          name?: parameters['rowFilter.elrhBook.name'];
+          dscr?: parameters['rowFilter.elrhBook.dscr'];
+          url?: parameters['rowFilter.elrhBook.url'];
+          thumb?: parameters['rowFilter.elrhBook.thumb'];
+          review?: parameters['rowFilter.elrhBook.review'];
+          year?: parameters['rowFilter.elrhBook.year'];
+          authorId?: parameters['rowFilter.elrhBook.authorId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1237,27 +1237,27 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          bookId?: parameters["rowFilter.elrhBook.bookId"];
-          categoryId?: parameters["rowFilter.elrhBook.categoryId"];
-          ord?: parameters["rowFilter.elrhBook.ord"];
-          dateCreated?: parameters["rowFilter.elrhBook.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhBook.dateEdited"];
-          writer?: parameters["rowFilter.elrhBook.writer"];
-          name?: parameters["rowFilter.elrhBook.name"];
-          dscr?: parameters["rowFilter.elrhBook.dscr"];
-          url?: parameters["rowFilter.elrhBook.url"];
-          thumb?: parameters["rowFilter.elrhBook.thumb"];
-          review?: parameters["rowFilter.elrhBook.review"];
-          year?: parameters["rowFilter.elrhBook.year"];
-          authorId?: parameters["rowFilter.elrhBook.authorId"];
+          bookId?: parameters['rowFilter.elrhBook.bookId'];
+          categoryId?: parameters['rowFilter.elrhBook.categoryId'];
+          ord?: parameters['rowFilter.elrhBook.ord'];
+          dateCreated?: parameters['rowFilter.elrhBook.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhBook.dateEdited'];
+          writer?: parameters['rowFilter.elrhBook.writer'];
+          name?: parameters['rowFilter.elrhBook.name'];
+          dscr?: parameters['rowFilter.elrhBook.dscr'];
+          url?: parameters['rowFilter.elrhBook.url'];
+          thumb?: parameters['rowFilter.elrhBook.thumb'];
+          review?: parameters['rowFilter.elrhBook.review'];
+          year?: parameters['rowFilter.elrhBook.year'];
+          authorId?: parameters['rowFilter.elrhBook.authorId'];
         };
         body: {
           /** elrhBook */
-          elrhBook?: definitions["elrhBook"];
+          elrhBook?: definitions['elrhBook'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1266,42 +1266,42 @@ export interface paths {
       };
     };
   };
-  "/elrhArticle": {
+  '/elrhArticle': {
     get: {
       parameters: {
         query: {
-          articleId?: parameters["rowFilter.elrhArticle.articleId"];
-          categoryId?: parameters["rowFilter.elrhArticle.categoryId"];
-          dateCreated?: parameters["rowFilter.elrhArticle.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhArticle.dateEdited"];
-          name?: parameters["rowFilter.elrhArticle.name"];
-          dscr?: parameters["rowFilter.elrhArticle.dscr"];
-          content?: parameters["rowFilter.elrhArticle.content"];
-          thumb?: parameters["rowFilter.elrhArticle.thumb"];
-          authorId?: parameters["rowFilter.elrhArticle.authorId"];
-          galleryId?: parameters["rowFilter.elrhArticle.galleryId"];
+          articleId?: parameters['rowFilter.elrhArticle.articleId'];
+          categoryId?: parameters['rowFilter.elrhArticle.categoryId'];
+          dateCreated?: parameters['rowFilter.elrhArticle.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhArticle.dateEdited'];
+          name?: parameters['rowFilter.elrhArticle.name'];
+          dscr?: parameters['rowFilter.elrhArticle.dscr'];
+          content?: parameters['rowFilter.elrhArticle.content'];
+          thumb?: parameters['rowFilter.elrhArticle.thumb'];
+          authorId?: parameters['rowFilter.elrhArticle.authorId'];
+          galleryId?: parameters['rowFilter.elrhArticle.galleryId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhArticle"][];
+          schema: definitions['elrhArticle'][];
         };
         /** Partial Content */
         206: unknown;
@@ -1311,15 +1311,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhArticle */
-          elrhArticle?: definitions["elrhArticle"];
+          elrhArticle?: definitions['elrhArticle'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1330,20 +1330,20 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          articleId?: parameters["rowFilter.elrhArticle.articleId"];
-          categoryId?: parameters["rowFilter.elrhArticle.categoryId"];
-          dateCreated?: parameters["rowFilter.elrhArticle.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhArticle.dateEdited"];
-          name?: parameters["rowFilter.elrhArticle.name"];
-          dscr?: parameters["rowFilter.elrhArticle.dscr"];
-          content?: parameters["rowFilter.elrhArticle.content"];
-          thumb?: parameters["rowFilter.elrhArticle.thumb"];
-          authorId?: parameters["rowFilter.elrhArticle.authorId"];
-          galleryId?: parameters["rowFilter.elrhArticle.galleryId"];
+          articleId?: parameters['rowFilter.elrhArticle.articleId'];
+          categoryId?: parameters['rowFilter.elrhArticle.categoryId'];
+          dateCreated?: parameters['rowFilter.elrhArticle.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhArticle.dateEdited'];
+          name?: parameters['rowFilter.elrhArticle.name'];
+          dscr?: parameters['rowFilter.elrhArticle.dscr'];
+          content?: parameters['rowFilter.elrhArticle.content'];
+          thumb?: parameters['rowFilter.elrhArticle.thumb'];
+          authorId?: parameters['rowFilter.elrhArticle.authorId'];
+          galleryId?: parameters['rowFilter.elrhArticle.galleryId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1354,24 +1354,24 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          articleId?: parameters["rowFilter.elrhArticle.articleId"];
-          categoryId?: parameters["rowFilter.elrhArticle.categoryId"];
-          dateCreated?: parameters["rowFilter.elrhArticle.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhArticle.dateEdited"];
-          name?: parameters["rowFilter.elrhArticle.name"];
-          dscr?: parameters["rowFilter.elrhArticle.dscr"];
-          content?: parameters["rowFilter.elrhArticle.content"];
-          thumb?: parameters["rowFilter.elrhArticle.thumb"];
-          authorId?: parameters["rowFilter.elrhArticle.authorId"];
-          galleryId?: parameters["rowFilter.elrhArticle.galleryId"];
+          articleId?: parameters['rowFilter.elrhArticle.articleId'];
+          categoryId?: parameters['rowFilter.elrhArticle.categoryId'];
+          dateCreated?: parameters['rowFilter.elrhArticle.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhArticle.dateEdited'];
+          name?: parameters['rowFilter.elrhArticle.name'];
+          dscr?: parameters['rowFilter.elrhArticle.dscr'];
+          content?: parameters['rowFilter.elrhArticle.content'];
+          thumb?: parameters['rowFilter.elrhArticle.thumb'];
+          authorId?: parameters['rowFilter.elrhArticle.authorId'];
+          galleryId?: parameters['rowFilter.elrhArticle.galleryId'];
         };
         body: {
           /** elrhArticle */
-          elrhArticle?: definitions["elrhArticle"];
+          elrhArticle?: definitions['elrhArticle'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1380,36 +1380,36 @@ export interface paths {
       };
     };
   };
-  "/elrh_news": {
+  '/elrh_news': {
     get: {
       parameters: {
         query: {
-          newsId?: parameters["rowFilter.elrh_news.newsId"];
-          content?: parameters["rowFilter.elrh_news.content"];
-          authorId?: parameters["rowFilter.elrh_news.authorId"];
-          dateCreated?: parameters["rowFilter.elrh_news.dateCreated"];
+          newsId?: parameters['rowFilter.elrh_news.newsId'];
+          content?: parameters['rowFilter.elrh_news.content'];
+          authorId?: parameters['rowFilter.elrh_news.authorId'];
+          dateCreated?: parameters['rowFilter.elrh_news.dateCreated'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_news"][];
+          schema: definitions['elrh_news'][];
         };
         /** Partial Content */
         206: unknown;
@@ -1419,15 +1419,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_news */
-          elrh_news?: definitions["elrh_news"];
+          elrh_news?: definitions['elrh_news'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1438,14 +1438,14 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          newsId?: parameters["rowFilter.elrh_news.newsId"];
-          content?: parameters["rowFilter.elrh_news.content"];
-          authorId?: parameters["rowFilter.elrh_news.authorId"];
-          dateCreated?: parameters["rowFilter.elrh_news.dateCreated"];
+          newsId?: parameters['rowFilter.elrh_news.newsId'];
+          content?: parameters['rowFilter.elrh_news.content'];
+          authorId?: parameters['rowFilter.elrh_news.authorId'];
+          dateCreated?: parameters['rowFilter.elrh_news.dateCreated'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1456,18 +1456,18 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          newsId?: parameters["rowFilter.elrh_news.newsId"];
-          content?: parameters["rowFilter.elrh_news.content"];
-          authorId?: parameters["rowFilter.elrh_news.authorId"];
-          dateCreated?: parameters["rowFilter.elrh_news.dateCreated"];
+          newsId?: parameters['rowFilter.elrh_news.newsId'];
+          content?: parameters['rowFilter.elrh_news.content'];
+          authorId?: parameters['rowFilter.elrh_news.authorId'];
+          dateCreated?: parameters['rowFilter.elrh_news.dateCreated'];
         };
         body: {
           /** elrh_news */
-          elrh_news?: definitions["elrh_news"];
+          elrh_news?: definitions['elrh_news'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1476,43 +1476,43 @@ export interface paths {
       };
     };
   };
-  "/elrhImage": {
+  '/elrhImage': {
     get: {
       parameters: {
         query: {
-          imageId?: parameters["rowFilter.elrhImage.imageId"];
-          dateCreated?: parameters["rowFilter.elrhImage.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhImage.dateEdited"];
-          name?: parameters["rowFilter.elrhImage.name"];
-          dscr?: parameters["rowFilter.elrhImage.dscr"];
-          authorId?: parameters["rowFilter.elrhImage.authorId"];
-          image?: parameters["rowFilter.elrhImage.image"];
-          galleryId?: parameters["rowFilter.elrhImage.galleryId"];
-          ord?: parameters["rowFilter.elrhImage.ord"];
-          prevId?: parameters["rowFilter.elrhImage.prevId"];
-          nextId?: parameters["rowFilter.elrhImage.nextId"];
+          imageId?: parameters['rowFilter.elrhImage.imageId'];
+          dateCreated?: parameters['rowFilter.elrhImage.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhImage.dateEdited'];
+          name?: parameters['rowFilter.elrhImage.name'];
+          dscr?: parameters['rowFilter.elrhImage.dscr'];
+          authorId?: parameters['rowFilter.elrhImage.authorId'];
+          image?: parameters['rowFilter.elrhImage.image'];
+          galleryId?: parameters['rowFilter.elrhImage.galleryId'];
+          ord?: parameters['rowFilter.elrhImage.ord'];
+          prevId?: parameters['rowFilter.elrhImage.prevId'];
+          nextId?: parameters['rowFilter.elrhImage.nextId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhImage"][];
+          schema: definitions['elrhImage'][];
         };
         /** Partial Content */
         206: unknown;
@@ -1522,15 +1522,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhImage */
-          elrhImage?: definitions["elrhImage"];
+          elrhImage?: definitions['elrhImage'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1541,21 +1541,21 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          imageId?: parameters["rowFilter.elrhImage.imageId"];
-          dateCreated?: parameters["rowFilter.elrhImage.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhImage.dateEdited"];
-          name?: parameters["rowFilter.elrhImage.name"];
-          dscr?: parameters["rowFilter.elrhImage.dscr"];
-          authorId?: parameters["rowFilter.elrhImage.authorId"];
-          image?: parameters["rowFilter.elrhImage.image"];
-          galleryId?: parameters["rowFilter.elrhImage.galleryId"];
-          ord?: parameters["rowFilter.elrhImage.ord"];
-          prevId?: parameters["rowFilter.elrhImage.prevId"];
-          nextId?: parameters["rowFilter.elrhImage.nextId"];
+          imageId?: parameters['rowFilter.elrhImage.imageId'];
+          dateCreated?: parameters['rowFilter.elrhImage.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhImage.dateEdited'];
+          name?: parameters['rowFilter.elrhImage.name'];
+          dscr?: parameters['rowFilter.elrhImage.dscr'];
+          authorId?: parameters['rowFilter.elrhImage.authorId'];
+          image?: parameters['rowFilter.elrhImage.image'];
+          galleryId?: parameters['rowFilter.elrhImage.galleryId'];
+          ord?: parameters['rowFilter.elrhImage.ord'];
+          prevId?: parameters['rowFilter.elrhImage.prevId'];
+          nextId?: parameters['rowFilter.elrhImage.nextId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1566,25 +1566,25 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          imageId?: parameters["rowFilter.elrhImage.imageId"];
-          dateCreated?: parameters["rowFilter.elrhImage.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhImage.dateEdited"];
-          name?: parameters["rowFilter.elrhImage.name"];
-          dscr?: parameters["rowFilter.elrhImage.dscr"];
-          authorId?: parameters["rowFilter.elrhImage.authorId"];
-          image?: parameters["rowFilter.elrhImage.image"];
-          galleryId?: parameters["rowFilter.elrhImage.galleryId"];
-          ord?: parameters["rowFilter.elrhImage.ord"];
-          prevId?: parameters["rowFilter.elrhImage.prevId"];
-          nextId?: parameters["rowFilter.elrhImage.nextId"];
+          imageId?: parameters['rowFilter.elrhImage.imageId'];
+          dateCreated?: parameters['rowFilter.elrhImage.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhImage.dateEdited'];
+          name?: parameters['rowFilter.elrhImage.name'];
+          dscr?: parameters['rowFilter.elrhImage.dscr'];
+          authorId?: parameters['rowFilter.elrhImage.authorId'];
+          image?: parameters['rowFilter.elrhImage.image'];
+          galleryId?: parameters['rowFilter.elrhImage.galleryId'];
+          ord?: parameters['rowFilter.elrhImage.ord'];
+          prevId?: parameters['rowFilter.elrhImage.prevId'];
+          nextId?: parameters['rowFilter.elrhImage.nextId'];
         };
         body: {
           /** elrhImage */
-          elrhImage?: definitions["elrhImage"];
+          elrhImage?: definitions['elrhImage'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1593,42 +1593,42 @@ export interface paths {
       };
     };
   };
-  "/elrhLink": {
+  '/elrhLink': {
     get: {
       parameters: {
         query: {
-          linkId?: parameters["rowFilter.elrhLink.linkId"];
-          categoryId?: parameters["rowFilter.elrhLink.categoryId"];
-          ord?: parameters["rowFilter.elrhLink.ord"];
-          dateCreated?: parameters["rowFilter.elrhLink.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhLink.dateEdited"];
-          name?: parameters["rowFilter.elrhLink.name"];
-          dscr?: parameters["rowFilter.elrhLink.dscr"];
-          url?: parameters["rowFilter.elrhLink.url"];
-          thumb?: parameters["rowFilter.elrhLink.thumb"];
-          authorId?: parameters["rowFilter.elrhLink.authorId"];
+          linkId?: parameters['rowFilter.elrhLink.linkId'];
+          categoryId?: parameters['rowFilter.elrhLink.categoryId'];
+          ord?: parameters['rowFilter.elrhLink.ord'];
+          dateCreated?: parameters['rowFilter.elrhLink.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhLink.dateEdited'];
+          name?: parameters['rowFilter.elrhLink.name'];
+          dscr?: parameters['rowFilter.elrhLink.dscr'];
+          url?: parameters['rowFilter.elrhLink.url'];
+          thumb?: parameters['rowFilter.elrhLink.thumb'];
+          authorId?: parameters['rowFilter.elrhLink.authorId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhLink"][];
+          schema: definitions['elrhLink'][];
         };
         /** Partial Content */
         206: unknown;
@@ -1638,15 +1638,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhLink */
-          elrhLink?: definitions["elrhLink"];
+          elrhLink?: definitions['elrhLink'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1657,20 +1657,20 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          linkId?: parameters["rowFilter.elrhLink.linkId"];
-          categoryId?: parameters["rowFilter.elrhLink.categoryId"];
-          ord?: parameters["rowFilter.elrhLink.ord"];
-          dateCreated?: parameters["rowFilter.elrhLink.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhLink.dateEdited"];
-          name?: parameters["rowFilter.elrhLink.name"];
-          dscr?: parameters["rowFilter.elrhLink.dscr"];
-          url?: parameters["rowFilter.elrhLink.url"];
-          thumb?: parameters["rowFilter.elrhLink.thumb"];
-          authorId?: parameters["rowFilter.elrhLink.authorId"];
+          linkId?: parameters['rowFilter.elrhLink.linkId'];
+          categoryId?: parameters['rowFilter.elrhLink.categoryId'];
+          ord?: parameters['rowFilter.elrhLink.ord'];
+          dateCreated?: parameters['rowFilter.elrhLink.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhLink.dateEdited'];
+          name?: parameters['rowFilter.elrhLink.name'];
+          dscr?: parameters['rowFilter.elrhLink.dscr'];
+          url?: parameters['rowFilter.elrhLink.url'];
+          thumb?: parameters['rowFilter.elrhLink.thumb'];
+          authorId?: parameters['rowFilter.elrhLink.authorId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1681,24 +1681,24 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          linkId?: parameters["rowFilter.elrhLink.linkId"];
-          categoryId?: parameters["rowFilter.elrhLink.categoryId"];
-          ord?: parameters["rowFilter.elrhLink.ord"];
-          dateCreated?: parameters["rowFilter.elrhLink.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrhLink.dateEdited"];
-          name?: parameters["rowFilter.elrhLink.name"];
-          dscr?: parameters["rowFilter.elrhLink.dscr"];
-          url?: parameters["rowFilter.elrhLink.url"];
-          thumb?: parameters["rowFilter.elrhLink.thumb"];
-          authorId?: parameters["rowFilter.elrhLink.authorId"];
+          linkId?: parameters['rowFilter.elrhLink.linkId'];
+          categoryId?: parameters['rowFilter.elrhLink.categoryId'];
+          ord?: parameters['rowFilter.elrhLink.ord'];
+          dateCreated?: parameters['rowFilter.elrhLink.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrhLink.dateEdited'];
+          name?: parameters['rowFilter.elrhLink.name'];
+          dscr?: parameters['rowFilter.elrhLink.dscr'];
+          url?: parameters['rowFilter.elrhLink.url'];
+          thumb?: parameters['rowFilter.elrhLink.thumb'];
+          authorId?: parameters['rowFilter.elrhLink.authorId'];
         };
         body: {
           /** elrhLink */
-          elrhLink?: definitions["elrhLink"];
+          elrhLink?: definitions['elrhLink'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1707,34 +1707,34 @@ export interface paths {
       };
     };
   };
-  "/elrh_text": {
+  '/elrh_text': {
     get: {
       parameters: {
         query: {
-          key?: parameters["rowFilter.elrh_text.key"];
-          value?: parameters["rowFilter.elrh_text.value"];
+          key?: parameters['rowFilter.elrh_text.key'];
+          value?: parameters['rowFilter.elrh_text.value'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_text"][];
+          schema: definitions['elrh_text'][];
         };
         /** Partial Content */
         206: unknown;
@@ -1744,15 +1744,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_text */
-          elrh_text?: definitions["elrh_text"];
+          elrh_text?: definitions['elrh_text'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1763,12 +1763,12 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          key?: parameters["rowFilter.elrh_text.key"];
-          value?: parameters["rowFilter.elrh_text.value"];
+          key?: parameters['rowFilter.elrh_text.key'];
+          value?: parameters['rowFilter.elrh_text.value'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1779,16 +1779,16 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          key?: parameters["rowFilter.elrh_text.key"];
-          value?: parameters["rowFilter.elrh_text.value"];
+          key?: parameters['rowFilter.elrh_text.key'];
+          value?: parameters['rowFilter.elrh_text.value'];
         };
         body: {
           /** elrh_text */
-          elrh_text?: definitions["elrh_text"];
+          elrh_text?: definitions['elrh_text'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1797,35 +1797,35 @@ export interface paths {
       };
     };
   };
-  "/elrhAuthor": {
+  '/elrhAuthor': {
     get: {
       parameters: {
         query: {
-          authorId?: parameters["rowFilter.elrhAuthor.authorId"];
-          email?: parameters["rowFilter.elrhAuthor.email"];
-          name?: parameters["rowFilter.elrhAuthor.name"];
+          authorId?: parameters['rowFilter.elrhAuthor.authorId'];
+          email?: parameters['rowFilter.elrhAuthor.email'];
+          name?: parameters['rowFilter.elrhAuthor.name'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrhAuthor"][];
+          schema: definitions['elrhAuthor'][];
         };
         /** Partial Content */
         206: unknown;
@@ -1835,15 +1835,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrhAuthor */
-          elrhAuthor?: definitions["elrhAuthor"];
+          elrhAuthor?: definitions['elrhAuthor'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1854,13 +1854,13 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          authorId?: parameters["rowFilter.elrhAuthor.authorId"];
-          email?: parameters["rowFilter.elrhAuthor.email"];
-          name?: parameters["rowFilter.elrhAuthor.name"];
+          authorId?: parameters['rowFilter.elrhAuthor.authorId'];
+          email?: parameters['rowFilter.elrhAuthor.email'];
+          name?: parameters['rowFilter.elrhAuthor.name'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1871,17 +1871,17 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          authorId?: parameters["rowFilter.elrhAuthor.authorId"];
-          email?: parameters["rowFilter.elrhAuthor.email"];
-          name?: parameters["rowFilter.elrhAuthor.name"];
+          authorId?: parameters['rowFilter.elrhAuthor.authorId'];
+          email?: parameters['rowFilter.elrhAuthor.email'];
+          name?: parameters['rowFilter.elrhAuthor.name'];
         };
         body: {
           /** elrhAuthor */
-          elrhAuthor?: definitions["elrhAuthor"];
+          elrhAuthor?: definitions['elrhAuthor'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1890,37 +1890,37 @@ export interface paths {
       };
     };
   };
-  "/elrh_category": {
+  '/elrh_category': {
     get: {
       parameters: {
         query: {
-          categoryId?: parameters["rowFilter.elrh_category.categoryId"];
-          ord?: parameters["rowFilter.elrh_category.ord"];
-          name?: parameters["rowFilter.elrh_category.name"];
-          dscr?: parameters["rowFilter.elrh_category.dscr"];
-          type?: parameters["rowFilter.elrh_category.type"];
+          categoryId?: parameters['rowFilter.elrh_category.categoryId'];
+          ord?: parameters['rowFilter.elrh_category.ord'];
+          name?: parameters['rowFilter.elrh_category.name'];
+          dscr?: parameters['rowFilter.elrh_category.dscr'];
+          type?: parameters['rowFilter.elrh_category.type'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_category"][];
+          schema: definitions['elrh_category'][];
         };
         /** Partial Content */
         206: unknown;
@@ -1930,15 +1930,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_category */
-          elrh_category?: definitions["elrh_category"];
+          elrh_category?: definitions['elrh_category'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1949,15 +1949,15 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          categoryId?: parameters["rowFilter.elrh_category.categoryId"];
-          ord?: parameters["rowFilter.elrh_category.ord"];
-          name?: parameters["rowFilter.elrh_category.name"];
-          dscr?: parameters["rowFilter.elrh_category.dscr"];
-          type?: parameters["rowFilter.elrh_category.type"];
+          categoryId?: parameters['rowFilter.elrh_category.categoryId'];
+          ord?: parameters['rowFilter.elrh_category.ord'];
+          name?: parameters['rowFilter.elrh_category.name'];
+          dscr?: parameters['rowFilter.elrh_category.dscr'];
+          type?: parameters['rowFilter.elrh_category.type'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1968,19 +1968,19 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          categoryId?: parameters["rowFilter.elrh_category.categoryId"];
-          ord?: parameters["rowFilter.elrh_category.ord"];
-          name?: parameters["rowFilter.elrh_category.name"];
-          dscr?: parameters["rowFilter.elrh_category.dscr"];
-          type?: parameters["rowFilter.elrh_category.type"];
+          categoryId?: parameters['rowFilter.elrh_category.categoryId'];
+          ord?: parameters['rowFilter.elrh_category.ord'];
+          name?: parameters['rowFilter.elrh_category.name'];
+          dscr?: parameters['rowFilter.elrh_category.dscr'];
+          type?: parameters['rowFilter.elrh_category.type'];
         };
         body: {
           /** elrh_category */
-          elrh_category?: definitions["elrh_category"];
+          elrh_category?: definitions['elrh_category'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -1989,45 +1989,45 @@ export interface paths {
       };
     };
   };
-  "/elrh_book": {
+  '/elrh_book': {
     get: {
       parameters: {
         query: {
-          bookId?: parameters["rowFilter.elrh_book.bookId"];
-          categoryId?: parameters["rowFilter.elrh_book.categoryId"];
-          ord?: parameters["rowFilter.elrh_book.ord"];
-          dateCreated?: parameters["rowFilter.elrh_book.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_book.dateEdited"];
-          writer?: parameters["rowFilter.elrh_book.writer"];
-          name?: parameters["rowFilter.elrh_book.name"];
-          dscr?: parameters["rowFilter.elrh_book.dscr"];
-          url?: parameters["rowFilter.elrh_book.url"];
-          thumb?: parameters["rowFilter.elrh_book.thumb"];
-          review?: parameters["rowFilter.elrh_book.review"];
-          year?: parameters["rowFilter.elrh_book.year"];
-          authorId?: parameters["rowFilter.elrh_book.authorId"];
+          bookId?: parameters['rowFilter.elrh_book.bookId'];
+          categoryId?: parameters['rowFilter.elrh_book.categoryId'];
+          ord?: parameters['rowFilter.elrh_book.ord'];
+          dateCreated?: parameters['rowFilter.elrh_book.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_book.dateEdited'];
+          writer?: parameters['rowFilter.elrh_book.writer'];
+          name?: parameters['rowFilter.elrh_book.name'];
+          dscr?: parameters['rowFilter.elrh_book.dscr'];
+          url?: parameters['rowFilter.elrh_book.url'];
+          thumb?: parameters['rowFilter.elrh_book.thumb'];
+          review?: parameters['rowFilter.elrh_book.review'];
+          year?: parameters['rowFilter.elrh_book.year'];
+          authorId?: parameters['rowFilter.elrh_book.authorId'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["elrh_book"][];
+          schema: definitions['elrh_book'][];
         };
         /** Partial Content */
         206: unknown;
@@ -2037,15 +2037,15 @@ export interface paths {
       parameters: {
         body: {
           /** elrh_book */
-          elrh_book?: definitions["elrh_book"];
+          elrh_book?: definitions['elrh_book'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -2056,23 +2056,23 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          bookId?: parameters["rowFilter.elrh_book.bookId"];
-          categoryId?: parameters["rowFilter.elrh_book.categoryId"];
-          ord?: parameters["rowFilter.elrh_book.ord"];
-          dateCreated?: parameters["rowFilter.elrh_book.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_book.dateEdited"];
-          writer?: parameters["rowFilter.elrh_book.writer"];
-          name?: parameters["rowFilter.elrh_book.name"];
-          dscr?: parameters["rowFilter.elrh_book.dscr"];
-          url?: parameters["rowFilter.elrh_book.url"];
-          thumb?: parameters["rowFilter.elrh_book.thumb"];
-          review?: parameters["rowFilter.elrh_book.review"];
-          year?: parameters["rowFilter.elrh_book.year"];
-          authorId?: parameters["rowFilter.elrh_book.authorId"];
+          bookId?: parameters['rowFilter.elrh_book.bookId'];
+          categoryId?: parameters['rowFilter.elrh_book.categoryId'];
+          ord?: parameters['rowFilter.elrh_book.ord'];
+          dateCreated?: parameters['rowFilter.elrh_book.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_book.dateEdited'];
+          writer?: parameters['rowFilter.elrh_book.writer'];
+          name?: parameters['rowFilter.elrh_book.name'];
+          dscr?: parameters['rowFilter.elrh_book.dscr'];
+          url?: parameters['rowFilter.elrh_book.url'];
+          thumb?: parameters['rowFilter.elrh_book.thumb'];
+          review?: parameters['rowFilter.elrh_book.review'];
+          year?: parameters['rowFilter.elrh_book.year'];
+          authorId?: parameters['rowFilter.elrh_book.authorId'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -2083,27 +2083,27 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          bookId?: parameters["rowFilter.elrh_book.bookId"];
-          categoryId?: parameters["rowFilter.elrh_book.categoryId"];
-          ord?: parameters["rowFilter.elrh_book.ord"];
-          dateCreated?: parameters["rowFilter.elrh_book.dateCreated"];
-          dateEdited?: parameters["rowFilter.elrh_book.dateEdited"];
-          writer?: parameters["rowFilter.elrh_book.writer"];
-          name?: parameters["rowFilter.elrh_book.name"];
-          dscr?: parameters["rowFilter.elrh_book.dscr"];
-          url?: parameters["rowFilter.elrh_book.url"];
-          thumb?: parameters["rowFilter.elrh_book.thumb"];
-          review?: parameters["rowFilter.elrh_book.review"];
-          year?: parameters["rowFilter.elrh_book.year"];
-          authorId?: parameters["rowFilter.elrh_book.authorId"];
+          bookId?: parameters['rowFilter.elrh_book.bookId'];
+          categoryId?: parameters['rowFilter.elrh_book.categoryId'];
+          ord?: parameters['rowFilter.elrh_book.ord'];
+          dateCreated?: parameters['rowFilter.elrh_book.dateCreated'];
+          dateEdited?: parameters['rowFilter.elrh_book.dateEdited'];
+          writer?: parameters['rowFilter.elrh_book.writer'];
+          name?: parameters['rowFilter.elrh_book.name'];
+          dscr?: parameters['rowFilter.elrh_book.dscr'];
+          url?: parameters['rowFilter.elrh_book.url'];
+          thumb?: parameters['rowFilter.elrh_book.thumb'];
+          review?: parameters['rowFilter.elrh_book.review'];
+          year?: parameters['rowFilter.elrh_book.year'];
+          authorId?: parameters['rowFilter.elrh_book.authorId'];
         };
         body: {
           /** elrh_book */
-          elrh_book?: definitions["elrh_book"];
+          elrh_book?: definitions['elrh_book'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -2634,17 +2634,17 @@ export interface parameters {
    * @description Preference
    * @enum {string}
    */
-  preferParams: "params=single-object";
+  preferParams: 'params=single-object';
   /**
    * @description Preference
    * @enum {string}
    */
-  preferReturn: "return=representation" | "return=minimal" | "return=none";
+  preferReturn: 'return=representation' | 'return=minimal' | 'return=none';
   /**
    * @description Preference
    * @enum {string}
    */
-  preferCount: "count=none";
+  preferCount: 'count=none';
   /** @description Filtering Columns */
   select: string;
   /** @description On Conflict */
@@ -2663,325 +2663,325 @@ export interface parameters {
   /** @description Limiting and Pagination */
   limit: string;
   /** @description elrhContact */
-  "body.elrhContact": definitions["elrhContact"];
+  'body.elrhContact': definitions['elrhContact'];
   /** Format: integer */
-  "rowFilter.elrhContact.contactId": string;
+  'rowFilter.elrhContact.contactId': string;
   /** Format: character varying */
-  "rowFilter.elrhContact.name": string;
+  'rowFilter.elrhContact.name': string;
   /** Format: character varying */
-  "rowFilter.elrhContact.email": string;
+  'rowFilter.elrhContact.email': string;
   /** Format: character varying */
-  "rowFilter.elrhContact.phone": string;
+  'rowFilter.elrhContact.phone': string;
   /** Format: character varying */
-  "rowFilter.elrhContact.fb": string;
+  'rowFilter.elrhContact.fb': string;
   /** @description elrh_article */
-  "body.elrh_article": definitions["elrh_article"];
+  'body.elrh_article': definitions['elrh_article'];
   /** Format: integer */
-  "rowFilter.elrh_article.articleId": string;
+  'rowFilter.elrh_article.articleId': string;
   /** Format: integer */
-  "rowFilter.elrh_article.categoryId": string;
+  'rowFilter.elrh_article.categoryId': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_article.dateCreated": string;
+  'rowFilter.elrh_article.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_article.dateEdited": string;
+  'rowFilter.elrh_article.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrh_article.name": string;
+  'rowFilter.elrh_article.name': string;
   /** Format: character varying */
-  "rowFilter.elrh_article.dscr": string;
+  'rowFilter.elrh_article.dscr': string;
   /** Format: text */
-  "rowFilter.elrh_article.content": string;
+  'rowFilter.elrh_article.content': string;
   /** Format: character varying */
-  "rowFilter.elrh_article.thumb": string;
+  'rowFilter.elrh_article.thumb': string;
   /** Format: integer */
-  "rowFilter.elrh_article.authorId": string;
+  'rowFilter.elrh_article.authorId': string;
   /** Format: integer */
-  "rowFilter.elrh_article.galleryId": string;
+  'rowFilter.elrh_article.galleryId': string;
   /** @description elrh_contact */
-  "body.elrh_contact": definitions["elrh_contact"];
+  'body.elrh_contact': definitions['elrh_contact'];
   /** Format: integer */
-  "rowFilter.elrh_contact.contactId": string;
+  'rowFilter.elrh_contact.contactId': string;
   /** Format: character varying */
-  "rowFilter.elrh_contact.name": string;
+  'rowFilter.elrh_contact.name': string;
   /** Format: character varying */
-  "rowFilter.elrh_contact.email": string;
+  'rowFilter.elrh_contact.email': string;
   /** Format: character varying */
-  "rowFilter.elrh_contact.phone": string;
+  'rowFilter.elrh_contact.phone': string;
   /** Format: character varying */
-  "rowFilter.elrh_contact.fb": string;
+  'rowFilter.elrh_contact.fb': string;
   /** @description elrh_gallery */
-  "body.elrh_gallery": definitions["elrh_gallery"];
+  'body.elrh_gallery': definitions['elrh_gallery'];
   /** Format: integer */
-  "rowFilter.elrh_gallery.galleryId": string;
+  'rowFilter.elrh_gallery.galleryId': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_gallery.dateCreated": string;
+  'rowFilter.elrh_gallery.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_gallery.dateEdited": string;
+  'rowFilter.elrh_gallery.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrh_gallery.name": string;
+  'rowFilter.elrh_gallery.name': string;
   /** Format: text */
-  "rowFilter.elrh_gallery.dscr": string;
+  'rowFilter.elrh_gallery.dscr': string;
   /** Format: integer */
-  "rowFilter.elrh_gallery.authorId": string;
+  'rowFilter.elrh_gallery.authorId': string;
   /** Format: integer */
-  "rowFilter.elrh_gallery.parentId": string;
+  'rowFilter.elrh_gallery.parentId': string;
   /** @description elrhCategory */
-  "body.elrhCategory": definitions["elrhCategory"];
+  'body.elrhCategory': definitions['elrhCategory'];
   /** Format: integer */
-  "rowFilter.elrhCategory.categoryId": string;
+  'rowFilter.elrhCategory.categoryId': string;
   /** Format: integer */
-  "rowFilter.elrhCategory.ord": string;
+  'rowFilter.elrhCategory.ord': string;
   /** Format: character varying */
-  "rowFilter.elrhCategory.name": string;
+  'rowFilter.elrhCategory.name': string;
   /** Format: character varying */
-  "rowFilter.elrhCategory.dscr": string;
+  'rowFilter.elrhCategory.dscr': string;
   /** Format: character varying */
-  "rowFilter.elrhCategory.type": string;
+  'rowFilter.elrhCategory.type': string;
   /** @description elrhNews */
-  "body.elrhNews": definitions["elrhNews"];
+  'body.elrhNews': definitions['elrhNews'];
   /** Format: integer */
-  "rowFilter.elrhNews.newsId": string;
+  'rowFilter.elrhNews.newsId': string;
   /** Format: text */
-  "rowFilter.elrhNews.content": string;
+  'rowFilter.elrhNews.content': string;
   /** Format: integer */
-  "rowFilter.elrhNews.authorId": string;
+  'rowFilter.elrhNews.authorId': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhNews.dateCreated": string;
+  'rowFilter.elrhNews.dateCreated': string;
   /** @description elrh_author */
-  "body.elrh_author": definitions["elrh_author"];
+  'body.elrh_author': definitions['elrh_author'];
   /** Format: integer */
-  "rowFilter.elrh_author.authorId": string;
+  'rowFilter.elrh_author.authorId': string;
   /** Format: character varying */
-  "rowFilter.elrh_author.email": string;
+  'rowFilter.elrh_author.email': string;
   /** Format: character varying */
-  "rowFilter.elrh_author.name": string;
+  'rowFilter.elrh_author.name': string;
   /** @description elrh_link */
-  "body.elrh_link": definitions["elrh_link"];
+  'body.elrh_link': definitions['elrh_link'];
   /** Format: integer */
-  "rowFilter.elrh_link.linkId": string;
+  'rowFilter.elrh_link.linkId': string;
   /** Format: integer */
-  "rowFilter.elrh_link.categoryId": string;
+  'rowFilter.elrh_link.categoryId': string;
   /** Format: integer */
-  "rowFilter.elrh_link.ord": string;
+  'rowFilter.elrh_link.ord': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_link.dateCreated": string;
+  'rowFilter.elrh_link.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_link.dateEdited": string;
+  'rowFilter.elrh_link.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrh_link.name": string;
+  'rowFilter.elrh_link.name': string;
   /** Format: character varying */
-  "rowFilter.elrh_link.dscr": string;
+  'rowFilter.elrh_link.dscr': string;
   /** Format: character varying */
-  "rowFilter.elrh_link.url": string;
+  'rowFilter.elrh_link.url': string;
   /** Format: character varying */
-  "rowFilter.elrh_link.thumb": string;
+  'rowFilter.elrh_link.thumb': string;
   /** Format: integer */
-  "rowFilter.elrh_link.authorId": string;
+  'rowFilter.elrh_link.authorId': string;
   /** @description elrhText */
-  "body.elrhText": definitions["elrhText"];
+  'body.elrhText': definitions['elrhText'];
   /** Format: text */
-  "rowFilter.elrhText.key": string;
+  'rowFilter.elrhText.key': string;
   /** Format: text */
-  "rowFilter.elrhText.value": string;
+  'rowFilter.elrhText.value': string;
   /** @description elrhGallery */
-  "body.elrhGallery": definitions["elrhGallery"];
+  'body.elrhGallery': definitions['elrhGallery'];
   /** Format: integer */
-  "rowFilter.elrhGallery.galleryId": string;
+  'rowFilter.elrhGallery.galleryId': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhGallery.dateCreated": string;
+  'rowFilter.elrhGallery.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhGallery.dateEdited": string;
+  'rowFilter.elrhGallery.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrhGallery.name": string;
+  'rowFilter.elrhGallery.name': string;
   /** Format: text */
-  "rowFilter.elrhGallery.dscr": string;
+  'rowFilter.elrhGallery.dscr': string;
   /** Format: integer */
-  "rowFilter.elrhGallery.authorId": string;
+  'rowFilter.elrhGallery.authorId': string;
   /** Format: integer */
-  "rowFilter.elrhGallery.parentId": string;
+  'rowFilter.elrhGallery.parentId': string;
   /** @description elrh_image */
-  "body.elrh_image": definitions["elrh_image"];
+  'body.elrh_image': definitions['elrh_image'];
   /** Format: integer */
-  "rowFilter.elrh_image.imageId": string;
+  'rowFilter.elrh_image.imageId': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_image.dateCreated": string;
+  'rowFilter.elrh_image.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_image.dateEdited": string;
+  'rowFilter.elrh_image.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrh_image.name": string;
+  'rowFilter.elrh_image.name': string;
   /** Format: text */
-  "rowFilter.elrh_image.dscr": string;
+  'rowFilter.elrh_image.dscr': string;
   /** Format: integer */
-  "rowFilter.elrh_image.authorId": string;
+  'rowFilter.elrh_image.authorId': string;
   /** Format: character varying */
-  "rowFilter.elrh_image.image": string;
+  'rowFilter.elrh_image.image': string;
   /** Format: integer */
-  "rowFilter.elrh_image.galleryId": string;
+  'rowFilter.elrh_image.galleryId': string;
   /** Format: integer */
-  "rowFilter.elrh_image.ord": string;
+  'rowFilter.elrh_image.ord': string;
   /** Format: integer */
-  "rowFilter.elrh_image.prevId": string;
+  'rowFilter.elrh_image.prevId': string;
   /** Format: integer */
-  "rowFilter.elrh_image.nextId": string;
+  'rowFilter.elrh_image.nextId': string;
   /** @description elrhBook */
-  "body.elrhBook": definitions["elrhBook"];
+  'body.elrhBook': definitions['elrhBook'];
   /** Format: integer */
-  "rowFilter.elrhBook.bookId": string;
+  'rowFilter.elrhBook.bookId': string;
   /** Format: integer */
-  "rowFilter.elrhBook.categoryId": string;
+  'rowFilter.elrhBook.categoryId': string;
   /** Format: integer */
-  "rowFilter.elrhBook.ord": string;
+  'rowFilter.elrhBook.ord': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhBook.dateCreated": string;
+  'rowFilter.elrhBook.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhBook.dateEdited": string;
+  'rowFilter.elrhBook.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrhBook.writer": string;
+  'rowFilter.elrhBook.writer': string;
   /** Format: character varying */
-  "rowFilter.elrhBook.name": string;
+  'rowFilter.elrhBook.name': string;
   /** Format: character varying */
-  "rowFilter.elrhBook.dscr": string;
+  'rowFilter.elrhBook.dscr': string;
   /** Format: character varying */
-  "rowFilter.elrhBook.url": string;
+  'rowFilter.elrhBook.url': string;
   /** Format: character varying */
-  "rowFilter.elrhBook.thumb": string;
+  'rowFilter.elrhBook.thumb': string;
   /** Format: character varying */
-  "rowFilter.elrhBook.review": string;
+  'rowFilter.elrhBook.review': string;
   /** Format: character varying */
-  "rowFilter.elrhBook.year": string;
+  'rowFilter.elrhBook.year': string;
   /** Format: integer */
-  "rowFilter.elrhBook.authorId": string;
+  'rowFilter.elrhBook.authorId': string;
   /** @description elrhArticle */
-  "body.elrhArticle": definitions["elrhArticle"];
+  'body.elrhArticle': definitions['elrhArticle'];
   /** Format: integer */
-  "rowFilter.elrhArticle.articleId": string;
+  'rowFilter.elrhArticle.articleId': string;
   /** Format: integer */
-  "rowFilter.elrhArticle.categoryId": string;
+  'rowFilter.elrhArticle.categoryId': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhArticle.dateCreated": string;
+  'rowFilter.elrhArticle.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhArticle.dateEdited": string;
+  'rowFilter.elrhArticle.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrhArticle.name": string;
+  'rowFilter.elrhArticle.name': string;
   /** Format: character varying */
-  "rowFilter.elrhArticle.dscr": string;
+  'rowFilter.elrhArticle.dscr': string;
   /** Format: text */
-  "rowFilter.elrhArticle.content": string;
+  'rowFilter.elrhArticle.content': string;
   /** Format: character varying */
-  "rowFilter.elrhArticle.thumb": string;
+  'rowFilter.elrhArticle.thumb': string;
   /** Format: integer */
-  "rowFilter.elrhArticle.authorId": string;
+  'rowFilter.elrhArticle.authorId': string;
   /** Format: integer */
-  "rowFilter.elrhArticle.galleryId": string;
+  'rowFilter.elrhArticle.galleryId': string;
   /** @description elrh_news */
-  "body.elrh_news": definitions["elrh_news"];
+  'body.elrh_news': definitions['elrh_news'];
   /** Format: integer */
-  "rowFilter.elrh_news.newsId": string;
+  'rowFilter.elrh_news.newsId': string;
   /** Format: text */
-  "rowFilter.elrh_news.content": string;
+  'rowFilter.elrh_news.content': string;
   /** Format: integer */
-  "rowFilter.elrh_news.authorId": string;
+  'rowFilter.elrh_news.authorId': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_news.dateCreated": string;
+  'rowFilter.elrh_news.dateCreated': string;
   /** @description elrhImage */
-  "body.elrhImage": definitions["elrhImage"];
+  'body.elrhImage': definitions['elrhImage'];
   /** Format: integer */
-  "rowFilter.elrhImage.imageId": string;
+  'rowFilter.elrhImage.imageId': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhImage.dateCreated": string;
+  'rowFilter.elrhImage.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhImage.dateEdited": string;
+  'rowFilter.elrhImage.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrhImage.name": string;
+  'rowFilter.elrhImage.name': string;
   /** Format: text */
-  "rowFilter.elrhImage.dscr": string;
+  'rowFilter.elrhImage.dscr': string;
   /** Format: integer */
-  "rowFilter.elrhImage.authorId": string;
+  'rowFilter.elrhImage.authorId': string;
   /** Format: character varying */
-  "rowFilter.elrhImage.image": string;
+  'rowFilter.elrhImage.image': string;
   /** Format: integer */
-  "rowFilter.elrhImage.galleryId": string;
+  'rowFilter.elrhImage.galleryId': string;
   /** Format: integer */
-  "rowFilter.elrhImage.ord": string;
+  'rowFilter.elrhImage.ord': string;
   /** Format: integer */
-  "rowFilter.elrhImage.prevId": string;
+  'rowFilter.elrhImage.prevId': string;
   /** Format: integer */
-  "rowFilter.elrhImage.nextId": string;
+  'rowFilter.elrhImage.nextId': string;
   /** @description elrhLink */
-  "body.elrhLink": definitions["elrhLink"];
+  'body.elrhLink': definitions['elrhLink'];
   /** Format: integer */
-  "rowFilter.elrhLink.linkId": string;
+  'rowFilter.elrhLink.linkId': string;
   /** Format: integer */
-  "rowFilter.elrhLink.categoryId": string;
+  'rowFilter.elrhLink.categoryId': string;
   /** Format: integer */
-  "rowFilter.elrhLink.ord": string;
+  'rowFilter.elrhLink.ord': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhLink.dateCreated": string;
+  'rowFilter.elrhLink.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrhLink.dateEdited": string;
+  'rowFilter.elrhLink.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrhLink.name": string;
+  'rowFilter.elrhLink.name': string;
   /** Format: character varying */
-  "rowFilter.elrhLink.dscr": string;
+  'rowFilter.elrhLink.dscr': string;
   /** Format: character varying */
-  "rowFilter.elrhLink.url": string;
+  'rowFilter.elrhLink.url': string;
   /** Format: character varying */
-  "rowFilter.elrhLink.thumb": string;
+  'rowFilter.elrhLink.thumb': string;
   /** Format: integer */
-  "rowFilter.elrhLink.authorId": string;
+  'rowFilter.elrhLink.authorId': string;
   /** @description elrh_text */
-  "body.elrh_text": definitions["elrh_text"];
+  'body.elrh_text': definitions['elrh_text'];
   /** Format: text */
-  "rowFilter.elrh_text.key": string;
+  'rowFilter.elrh_text.key': string;
   /** Format: text */
-  "rowFilter.elrh_text.value": string;
+  'rowFilter.elrh_text.value': string;
   /** @description elrhAuthor */
-  "body.elrhAuthor": definitions["elrhAuthor"];
+  'body.elrhAuthor': definitions['elrhAuthor'];
   /** Format: integer */
-  "rowFilter.elrhAuthor.authorId": string;
+  'rowFilter.elrhAuthor.authorId': string;
   /** Format: character varying */
-  "rowFilter.elrhAuthor.email": string;
+  'rowFilter.elrhAuthor.email': string;
   /** Format: character varying */
-  "rowFilter.elrhAuthor.name": string;
+  'rowFilter.elrhAuthor.name': string;
   /** @description elrh_category */
-  "body.elrh_category": definitions["elrh_category"];
+  'body.elrh_category': definitions['elrh_category'];
   /** Format: integer */
-  "rowFilter.elrh_category.categoryId": string;
+  'rowFilter.elrh_category.categoryId': string;
   /** Format: integer */
-  "rowFilter.elrh_category.ord": string;
+  'rowFilter.elrh_category.ord': string;
   /** Format: character varying */
-  "rowFilter.elrh_category.name": string;
+  'rowFilter.elrh_category.name': string;
   /** Format: character varying */
-  "rowFilter.elrh_category.dscr": string;
+  'rowFilter.elrh_category.dscr': string;
   /** Format: character varying */
-  "rowFilter.elrh_category.type": string;
+  'rowFilter.elrh_category.type': string;
   /** @description elrh_book */
-  "body.elrh_book": definitions["elrh_book"];
+  'body.elrh_book': definitions['elrh_book'];
   /** Format: integer */
-  "rowFilter.elrh_book.bookId": string;
+  'rowFilter.elrh_book.bookId': string;
   /** Format: integer */
-  "rowFilter.elrh_book.categoryId": string;
+  'rowFilter.elrh_book.categoryId': string;
   /** Format: integer */
-  "rowFilter.elrh_book.ord": string;
+  'rowFilter.elrh_book.ord': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_book.dateCreated": string;
+  'rowFilter.elrh_book.dateCreated': string;
   /** Format: timestamp without time zone */
-  "rowFilter.elrh_book.dateEdited": string;
+  'rowFilter.elrh_book.dateEdited': string;
   /** Format: character varying */
-  "rowFilter.elrh_book.writer": string;
+  'rowFilter.elrh_book.writer': string;
   /** Format: character varying */
-  "rowFilter.elrh_book.name": string;
+  'rowFilter.elrh_book.name': string;
   /** Format: character varying */
-  "rowFilter.elrh_book.dscr": string;
+  'rowFilter.elrh_book.dscr': string;
   /** Format: character varying */
-  "rowFilter.elrh_book.url": string;
+  'rowFilter.elrh_book.url': string;
   /** Format: character varying */
-  "rowFilter.elrh_book.thumb": string;
+  'rowFilter.elrh_book.thumb': string;
   /** Format: character varying */
-  "rowFilter.elrh_book.review": string;
+  'rowFilter.elrh_book.review': string;
   /** Format: character varying */
-  "rowFilter.elrh_book.year": string;
+  'rowFilter.elrh_book.year': string;
   /** Format: integer */
-  "rowFilter.elrh_book.authorId": string;
+  'rowFilter.elrh_book.authorId': string;
 }
 
 export interface operations {}

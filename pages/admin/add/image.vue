@@ -1,5 +1,5 @@
 <template>
-    <div>
-        Add new image
-    </div>
+  <div>
+    Add new image
+  </div>
 </template>

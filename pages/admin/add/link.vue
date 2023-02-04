@@ -1,5 +1,5 @@
 <template>
-    <div>
-        Add new link
-    </div>
+  <div>
+    Add new link
+  </div>
 </template>

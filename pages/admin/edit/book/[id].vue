@@ -1,5 +1,5 @@
 <template>
-    <div>
-        Edit book <strong>{{  useRoute().params.id }}</strong>
-    </div>
+  <div>
+    Edit book <strong>{{ useRoute().params.id }}</strong>
+  </div>
 </template>

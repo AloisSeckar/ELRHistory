@@ -1,5 +1,5 @@
 <template>
-    <div>
-        Index of the admin-edit section
-    </div>
+  <div>
+    Index of the admin-edit section
+  </div>
 </template>

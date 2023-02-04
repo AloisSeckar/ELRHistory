@@ -1,19 +1,19 @@
-import { Author } from '@/database/types'
 import { SupabaseClient } from '@supabase/supabase-js'
+import { Author } from '@/database/types'
 
-const tableName = "elrhAuthor"
+const tableName = 'elrhAuthor'
 
 export const useAuthorStore = defineStore({
   id: tableName + '-store',
   state: () => {
     return {
       loaded: false,
-      items: [] as Author[],
+      items: [] as Author[]
     }
   },
   actions: {
-    async fill() {
-      fillStore(tableName, this, getItems)
+    async fill () {
+      await fillStore(tableName, this, getItems)
     }
   },
   getters: {
@@ -25,7 +25,7 @@ export const useAuthorStore = defineStore({
   }
 })
 
-async function getItems(supabase: SupabaseClient) {
-  const query = `authorId, email, name`
-  return fetchSupabase(supabase, tableName, query, 'name', {})
+async function getItems (supabase: SupabaseClient) {
+  const query = 'authorId, email, name'
+  return await fetchSupabase(supabase, tableName, query, 'name', {})
 }

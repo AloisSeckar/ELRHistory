@@ -1,20 +1,23 @@
 <template>
-    <div>
-        <FormKit
-            type="text" name="thumb" id="thumb"
-            label="Thumb:" validation="required"
-            v-model="imgSrc" @change="$emit('change', imgSrc)" />
-        <img :src="imgSrc" />
-    </div>
+  <div>
+    <FormKit
+      id="thumb"
+      v-model="imgSrc"
+      type="text"
+      name="thumb"
+      label="Thumb:"
+      validation="required"
+      @change="$emit('change', imgSrc)"
+    />
+    <img :src="imgSrc">
+  </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps({
-    source: { type: String, default: "" }
+  source: { type: String, default: '' }
 })
-defineEmits<{
-  (e: 'change', path: string): void
-}>()
+defineEmits<{(e: 'change', path: string): void}>()
 
 const imgSrc = ref(props.source)
 </script>
