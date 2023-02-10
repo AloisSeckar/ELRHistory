@@ -3,6 +3,7 @@
     "extends": [
         "@nuxtjs/eslint-config-typescript"
     ],
+    "ignorePatterns": ["**/_api.ts"],
     "rules": {
         // TODO get rid of native console
         "no-console": "off", 
