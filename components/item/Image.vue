@@ -4,13 +4,7 @@
       <div class="box-header">
         <BaseIcon icon="image" size="1.125rem" css-class="mb-1.5" />&nbsp;
         {{ item.name }}
-        <div v-if="user" class="inline pl-2">
-          <NuxtLink :to="{ path: '/admin/edit/image/' + item.imageId }">
-            <span title="Edit image">
-              <BaseIcon icon="wrench" size="1.875rem" css-class="text-green-500 hover:text-yellow-400" />
-            </span>
-          </NuxtLink>
-        </div>
+        <AdminEditLink v-if="user" :link="'image/' + item.imageId" item="image" />
         <span class="float-right pr-1 text-base font-normal">
           <NuxtLink :to="{ path: '/gallery/' + item.galleryId?.galleryId }">
             <strong>{{ item.galleryId?.name }}</strong>

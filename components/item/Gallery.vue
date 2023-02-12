@@ -6,13 +6,7 @@
         <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
           {{ item.name }}
         </NuxtLink>
-        <div v-if="user" class="inline pl-2">
-          <NuxtLink :to="{ path: '/admin/edit/gallery/' + item.galleryId }">
-            <span title="Edit gallery">
-              <BaseIcon icon="wrench" size="1.875rem" css-class="text-green-500 hover:text-yellow-400" />
-            </span>
-          </NuxtLink>
-        </div>
+        <AdminEditLink v-if="user" :link="'gallery/' + item.galleryId" item="gallery" />
         <span class="float-right pr-1 text-base font-normal">
           <strong>{{ parent ? parent : 'Index' }}</strong> | {{ item.elrhAuthor?.name }} |
           <em>{{ item.dateCreated?.split('T')[0] }}</em>

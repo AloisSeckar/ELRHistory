@@ -4,13 +4,7 @@
       <div class="box-header">
         <BaseIcon icon="cap" size="1.5rem" css-class="mb-1.5" />&nbsp;
         {{ item.name }}
-        <div v-if="user" class="inline pl-2">
-          <NuxtLink :to="{ path: '/admin/edit/article/' + item.articleId }">
-            <span title="Edit article">
-              <BaseIcon icon="wrench" size="1.875rem" css-class="text-green-500 hover:text-yellow-400" />
-            </span>
-          </NuxtLink>
-        </div>
+        <AdminEditLink v-if="user" :link="'article/' + item.articleId" item="article" />
         <span class="float-right pr-1 text-base font-normal">
           <strong>{{ item.elrhCategory?.name }}</strong> | {{ item.elrhAuthor?.name }} |
           <em>{{ item.dateCreated?.split('T')[0] }}</em>
