@@ -2,11 +2,13 @@
   <div>
     <div v-if="item.name" class="box">
       <div class="box-header">
-        <fa icon="image" />&nbsp;
+        <BaseIcon icon="image" size="1.125rem" css-class="mb-1.5" />&nbsp;
         {{ item.name }}
         <div v-if="user" class="inline pl-2">
           <NuxtLink :to="{ path: '/admin/edit/image/' + item.imageId }">
-            <fa class="text-green-500 hover:text-yellow-400" icon="wrench" title="Edit image" />
+            <span title="Edit image">
+              <BaseIcon icon="wrench" size="1.875rem" css-class="text-green-500 hover:text-yellow-400" />
+            </span>
           </NuxtLink>
         </div>
         <span class="float-right pr-1 text-base font-normal">

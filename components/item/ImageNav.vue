@@ -2,30 +2,30 @@
   <div class="text-2xl">
     <div v-if="editable" class="inline-block">
       <NuxtLink v-if="item.prevId" :to="{ path: '/image/' + item.prevId }" title="Move image forward">
-        <fa class="mx-4 text-green-500 hover:text-yellow-400" icon="backward" />
+        <BaseIcon icon="backward" css-class="mx-4 text-green-500 hover:text-yellow-400" />
       </NuxtLink>
-      <fa v-else class="mx-4 text-gray-400" icon="backward" />
+      <BaseIcon v-else icon="backward" css-class="mx-4 text-gray-400" />
     </div>
 
     <NuxtLink v-if="item.prevId" :to="{ path: '/image/' + item.prevId }" title="Previous">
-      <fa class="mx-1" icon="arrow-left" />
+      <BaseIcon icon="arrow-left" css-class="mx-1" />
     </NuxtLink>
-    <fa v-else class="mx-1 text-gray-400" icon="arrow-left" />
+    <BaseIcon v-else icon="arrow-left" css-class="mx-1 text-gray-400" />
 
     <NuxtLink :to="{ path: '/gallery/' + item.galleryId?.galleryId }" title="Parent gallery">
-      <fa class="mx-1" icon="square" />
+      <BaseIcon icon="square" css-class="mx-1" />
     </NuxtLink>
 
     <NuxtLink v-if="item.nextId" :to="{ path: '/image/' + item.nextId }" title="Next">
-      <fa class="mx-1" icon="arrow-right" />
+      <BaseIcon icon="arrow-right" css-class="mx-1" />
     </NuxtLink>
-    <fa v-else class="mx-1 text-gray-400" icon="arrow-right" />
+    <BaseIcon v-else icon="arrow-right" css-class="mx-1 text-gray-400" />
 
     <div v-if="editable" class="inline-block">
       <NuxtLink v-if="item.nextId" :to="{ path: '/image/' + item.nextId }" title="Next">
-        <fa class="mx-4 text-green-500 hover:text-yellow-400" icon="forward" />
+        <BaseIcon icon="forward" css-class="mx-4 text-green-500 hover:text-yellow-400" />
       </NuxtLink>
-      <fa v-else class="mx-4 text-gray-400" icon="forward" />
+      <BaseIcon v-else icon="forward" css-class="mx-4 text-gray-400" />
     </div>
   </div>
 </template>

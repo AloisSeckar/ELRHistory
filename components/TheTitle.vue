@@ -3,7 +3,9 @@
     {{ title }}
     <div v-if="adminLink" class="inline text-3xl text-green-500 hover:text-yellow-400">
       <NuxtLink :to="{ path: '/admin/add/' + adminLink.link }">
-        <fa icon="plus" :title="adminLink.text" />
+        <span :title="adminLink.text">
+          <BaseIcon icon="plus" size="1.875rem" />
+        </span>
       </NuxtLink>
     </div>
   </h1>

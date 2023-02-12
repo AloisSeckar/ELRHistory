@@ -5,7 +5,7 @@
     |
     <span class="pl-1 text-xs">
       <NuxtLink to="/login">
-        <fa icon="key" />
+        <BaseIcon icon="key" size="1rem" />
       </NuxtLink>
       <div v-if="user" class="inline">
         &nbsp;{{ user }}

@@ -11,7 +11,7 @@
     </div>
     <div class="grow">
       <NuxtLink :to="item.fb" :external="true" :title=" item.name + ' - Facebook'" class="text-xl">
-        <fa icon="fab fa-facebook-square" />
+        <BaseIcon icon="facebook" size="1.25rem" css-class="mb-1.5" />
       </NuxtLink>
     </div>
   </div>

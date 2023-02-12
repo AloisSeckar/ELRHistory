@@ -2,7 +2,7 @@
   <div>
     <div v-for="category in useCategoryStore().getByType('l')" :key="category.categoryId" class="box">
       <div class="box-header">
-        <fa icon="globe" />&nbsp;&nbsp;{{ category.name }}
+        <BaseIcon icon="globe" size="1.125rem" css-class="mb-1.5 mr-1" /> {{ category.name }}
       </div>
       <div class="box-content">
         <div>{{ category.dscr }}</div>

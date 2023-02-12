@@ -1,19 +1,19 @@
 <template>
   <div class="py-1 bg-navy text-lg text-silver text-center space-x-8">
     <NuxtLink to="/">
-      <fa icon="home" /> {{ text.getKey('menu-index') }}
+      <BaseIcon icon="home" size="1.5rem" css-class="mb-1.5" /> {{ text.getKey('menu-index') }}
     </NuxtLink>
     <NuxtLink to="/articles">
-      <fa icon="graduation-cap" /> {{ text.getKey('menu-articles') }}
+      <BaseIcon icon="cap" size="1.5rem" css-class="mb-1.5" /> {{ text.getKey('menu-articles') }}
     </NuxtLink>
     <NuxtLink to="/galleries">
-      <fa icon="image" /> {{ text.getKey('menu-galleries') }}
+      <BaseIcon icon="image" size="1.125rem" css-class="mb-1.5" /> {{ text.getKey('menu-galleries') }}
     </NuxtLink>
     <NuxtLink to="/books">
-      <fa icon="book" /> {{ text.getKey('menu-books') }}
+      <BaseIcon icon="book" size="1.5rem" css-class="mb-1.5" /> {{ text.getKey('menu-books') }}
     </NuxtLink>
     <NuxtLink to="/links">
-      <fa icon="globe" /> {{ text.getKey('menu-links') }}
+      <BaseIcon icon="globe" size="1.125rem" css-class="mb-1.5" /> {{ text.getKey('menu-links') }}
     </NuxtLink>
   </div>
 </template>

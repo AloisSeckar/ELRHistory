@@ -2,11 +2,13 @@
   <div>
     <div v-if="item.name" class="box">
       <div class="box-header">
-        <fa icon="graduation-cap" />&nbsp;
+        <BaseIcon icon="cap" size="1.5rem" css-class="mb-1.5" />&nbsp;
         {{ item.name }}
         <div v-if="user" class="inline pl-2">
           <NuxtLink :to="{ path: '/admin/edit/article/' + item.articleId }">
-            <fa class="text-green-500 hover:text-yellow-400" icon="wrench" title="Edit article" />
+            <span title="Edit article">
+              <BaseIcon icon="wrench" size="1.875rem" css-class="text-green-500 hover:text-yellow-400" />
+            </span>
           </NuxtLink>
         </div>
         <span class="float-right pr-1 text-base font-normal">

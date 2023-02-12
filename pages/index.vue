@@ -2,13 +2,13 @@
   <div>
     <div class="box">
       <div class="box-header">
-        <fa icon="home" />&nbsp;&nbsp;{{ text.getKey('index-about') }}
+        <BaseIcon icon="home" size="1.5rem" css-class="mb-1.5" /> {{ text.getKey('index-about') }}
       </div>
       <div class="box-content" v-html="text.getKey('index-welcome')" />
     </div>
     <div class="box">
       <div class="box-header">
-        <fa icon="envelope" />&nbsp;&nbsp;{{ text.getKey('index-contacts') }}
+        <BaseIcon icon="envelope" size="1.125rem" css-class="mb-1.5 mr-1" /> {{ text.getKey('index-contacts') }}
       </div>
       <div class="box-content">
         <div v-for="item in useContactStore().items" :key="item.contactId">
@@ -18,7 +18,7 @@
     </div>
     <div class="box">
       <div class="box-header">
-        <fa icon="bullhorn" />&nbsp;&nbsp;{{ text.getKey('index-news') }}
+        <BaseIcon icon="bullhorn" size="1.125rem" css-class="mb-1.5 mr-1" /> {{ text.getKey('index-news') }}
       </div>
       <div class="box-content">
         <div v-for="item in useNewsStore().getTopItems" :key="item.newsId">

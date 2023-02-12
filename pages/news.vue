@@ -2,7 +2,7 @@
   <div>
     <div class="box">
       <div class="box-header">
-        <fa icon="bullhorn" /> {{ text.getKey('news-title') }}
+        <BaseIcon icon="bullhorn" size="1.125rem" css-class="mb-1.5 mr-1" /> {{ text.getKey('news-title') }}
       </div>
       <div class="box-content">
         <div v-for="item in news.getItems" :key="item.newsId">
