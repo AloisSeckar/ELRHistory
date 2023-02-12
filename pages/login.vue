@@ -32,13 +32,13 @@
 </template>
 
 <script setup lang="ts">
-const email = ''
-const password = ''
+const email = ref('')
+const password = ref('')
 
 const user = computed(() => useLoginStore().user)
 
 async function attemptLogin () {
-  await useLoginStore().login(email, password)
+  await useLoginStore().login(email.value, password.value)
 }
 async function attemptLogout () {
   await useLoginStore().logout()
