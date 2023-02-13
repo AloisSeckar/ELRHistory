@@ -1,4 +1,3 @@
-import { SupabaseClient } from '@supabase/supabase-js'
 import { Link } from '@/database/types'
 
 const tableName = 'elrhLink'
@@ -13,19 +12,21 @@ export const useLinkStore = defineStore({
   },
   actions: {
     async fill () {
-      await fillStore(tableName, this, getItems)
+      await fillStore({
+        supabaseClient: useSupabaseClient(),
+        tableName,
+        storeData: this,
+        selectQuery: 'categoryId, name, dscr, url, thumb',
+        orderQuery: 'ord',
+        orderOpts: {}
+      })
     }
   },
   getters: {
     getItems: state => state.items,
     getCount: state => state.items.length,
     getByCategory: (state) => {
-      return (categoryId: number) => state.items.filter(i => i.categoryId === categoryId)
+      return (categoryId: number) => state.items.filter((i: Link) => i.categoryId === categoryId)
     }
   }
 })
-
-async function getItems (supabase: SupabaseClient) {
-  const query = 'categoryId, name, dscr, url, thumb'
-  return await fetchSupabase(supabase, tableName, query, 'ord', {})
-}

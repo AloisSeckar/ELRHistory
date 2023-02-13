@@ -1,4 +1,4 @@
-import { SupabaseClient } from '@supabase/supabase-js'
+import { StoreData } from './storeHelpers'
 import { Article, ArticleDB } from '@/database/types'
 
 const tableName = 'elrhArticle'
@@ -9,11 +9,18 @@ export const useArticleStore = defineStore({
     return {
       loaded: false,
       items: [] as Article[]
-    }
+    } as StoreData
   },
   actions: {
     async fill () {
-      await fillStore(tableName, this, getItems)
+      await fillStore({
+        supabaseClient: useSupabaseClient(),
+        tableName,
+        storeData: this,
+        selectQuery: 'articleId, elrhCategory(categoryId, name), dateCreated, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)',
+        orderQuery: 'dateCreated',
+        orderOpts: { ascending: false }
+      })
     },
     async create (newItem: ArticleDB): Promise<boolean> {
       treatInput(newItem)
@@ -24,7 +31,7 @@ export const useArticleStore = defineStore({
 
       if (data) {
         console.debug('new article saved into Supabase')
-        fillStore(tableName, this, getItems) // TODO can we just load the new one?
+        this.fill() // TODO can we just load the new one?
         return true
       } else {
         console.error('failed to save new article into Supabase')
@@ -42,7 +49,7 @@ export const useArticleStore = defineStore({
 
       if (data) {
         console.debug('new article saved into Supabase')
-        fillStore(tableName, this, getItems) // TODO can we just load the new one?
+        this.fill() // TODO can we just load the new one?
         return true
       } else {
         console.error('failed to save new article into Supabase')
@@ -55,11 +62,11 @@ export const useArticleStore = defineStore({
     getItems: state => state.items,
     getCount: state => state.items.length,
     getByCategory: (state) => {
-      return (categoryId: number) => state.items.filter(i => i.categoryId === categoryId)
+      return (categoryId: number) => state.items.filter((i: Article) => i.categoryId === categoryId)
     },
     getById: (state) => {
       return (articleId: number) => {
-        const article = state.items.find(i => i.articleId === articleId)
+        const article = state.items.find((i: Article) => i.articleId === articleId)
         return article || { articleId: 0 } as Article
       }
     },
@@ -79,11 +86,6 @@ export const useArticleStore = defineStore({
     }
   }
 })
-
-async function getItems (supabase: SupabaseClient) {
-  const query = 'articleId, elrhCategory(categoryId, name), dateCreated, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)'
-  return await fetchSupabase(supabase, tableName, query, 'dateCreated', { ascending: false })
-}
 
 function treatInput (input: ArticleDB) {
   input.dateEdited = new Date().toISOString()

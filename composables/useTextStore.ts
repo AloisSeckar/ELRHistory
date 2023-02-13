@@ -1,4 +1,3 @@
-import { SupabaseClient } from '@supabase/supabase-js'
 import { Text } from '@/database/types'
 
 const tableName = 'elrhText'
@@ -13,13 +12,20 @@ export const useTextStore = defineStore({
   },
   actions: {
     async fill () {
-      await fillStore(tableName, this, getItems)
+      await fillStore({
+        supabaseClient: useSupabaseClient(),
+        tableName,
+        storeData: this,
+        selectQuery: 'key, value',
+        orderQuery: 'key',
+        orderOpts: {}
+      })
     }
   },
   getters: {
     getKey: (state) => {
       return (key: string) => {
-        const match = state.items.find(i => i.key === key)
+        const match = state.items.find((i: Text) => i.key === key)
         if (match) {
           return match.value
         } else {
@@ -29,8 +35,3 @@ export const useTextStore = defineStore({
     }
   }
 })
-
-async function getItems (supabase: SupabaseClient) {
-  const query = 'key, value'
-  return await fetchSupabase(supabase, tableName, query, 'key', { })
-}

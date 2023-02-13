@@ -1,4 +1,3 @@
-import { SupabaseClient } from '@supabase/supabase-js'
 import { News } from '@/database/types'
 
 const tableName = 'elrhNews'
@@ -13,7 +12,14 @@ export const useNewsStore = defineStore({
   },
   actions: {
     async fill () {
-      await fillStore(tableName, this, getItems)
+      await fillStore({
+        supabaseClient: useSupabaseClient(),
+        tableName,
+        storeData: this,
+        selectQuery: 'dateCreated, content, elrhAuthor(authorId, name)',
+        orderQuery: 'dateCreated',
+        orderOpts: { ascending: false }
+      })
     }
   },
   getters: {
@@ -22,8 +28,3 @@ export const useNewsStore = defineStore({
     getCount: state => state.items.length
   }
 })
-
-async function getItems (supabase: SupabaseClient) {
-  const query = 'dateCreated, content, elrhAuthor(authorId, name)'
-  return await fetchSupabase(supabase, tableName, query, 'dateCreated', { ascending: false })
-}

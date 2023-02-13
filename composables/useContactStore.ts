@@ -1,4 +1,3 @@
-import { SupabaseClient } from '@supabase/supabase-js'
 import { Contact } from '@/database/types'
 
 const tableName = 'elrhContact'
@@ -13,14 +12,16 @@ export const useContactStore = defineStore({
   },
   actions: {
     async fill () {
-      await fillStore(tableName, this, getItems)
+      await fillStore({
+        supabaseClient: useSupabaseClient(),
+        tableName,
+        storeData: this,
+        selectQuery: 'name, email, phone, fb',
+        orderQuery: 'name',
+        orderOpts: {}
+      })
     }
   },
   getters: {
   }
 })
-
-async function getItems (supabase: SupabaseClient) {
-  const query = 'name, email, phone, fb'
-  return await fetchSupabase(supabase, tableName, query, 'name', { })
-}
