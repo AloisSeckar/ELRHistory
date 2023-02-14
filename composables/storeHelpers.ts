@@ -1,4 +1,5 @@
 import { SupabaseClient } from '@supabase/supabase-js'
+import { Article, ArticleDB, Book } from '~~/database/types'
 
 export interface OrderOpts {
   ascending?: boolean
@@ -10,7 +11,7 @@ export interface StoreData {
 }
 
 export interface StoreConfig {
-  supabaseClient: SupabaseClient
+  supabaseClient: SupabaseClient<Article> | SupabaseClient<Book>
   tableName: string,
   storeData: StoreData,
   selectQuery: string,
@@ -39,4 +40,45 @@ export async function fetchSupabase (config: StoreConfig) {
     .from(config.tableName)
     .select(config.selectQuery)
     .order(config.orderQuery, config.orderOpts)
+}
+
+export interface UpdateConfig {
+  supabaseClient: SupabaseClient<ArticleDB>
+  tableName: string,
+  itemData: ArticleDB,
+  itemId?: number,
+  itemKey: string
+}
+
+export async function doCreate (config: UpdateConfig): Promise<boolean> {
+  const { data, error } = await config.supabaseClient
+    .from(config.tableName)
+    .insert(config.itemData)
+    .select()
+
+  if (data) {
+    console.debug('new article saved into Supabase')
+    return true
+  } else {
+    console.error('failed to save new article into Supabase')
+    console.error(error?.message)
+    return false
+  }
+}
+
+export async function doUpdate (config: UpdateConfig): Promise<boolean> {
+  const { data, error } = await config.supabaseClient
+    .from(config.tableName)
+    .update(config.itemData)
+    .eq(config.itemKey, config.itemId)
+    .select()
+
+  if (data) {
+    console.debug('new article saved into Supabase')
+    return true
+  } else {
+    console.error('failed to save new article into Supabase')
+    console.error(error?.message)
+    return false
+  }
 }

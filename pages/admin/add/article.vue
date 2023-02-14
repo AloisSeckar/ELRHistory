@@ -9,7 +9,7 @@
 import { ArticleDB } from '@/database/types'
 
 const save = async (article: ArticleDB) => {
-  const result = await useArticleStore().create(JSON.parse(JSON.stringify(article)))
+  const result = await useArticleStore().update(JSON.parse(JSON.stringify(article)))
   if (result) {
     useModalStore().showModal('Item saved', 'Article was successfully created')
     return navigateTo('/articles')

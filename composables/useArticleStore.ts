@@ -1,4 +1,4 @@
-import { StoreData } from './storeHelpers'
+import { StoreData, UpdateConfig } from './storeHelpers'
 import { Article, ArticleDB } from '@/database/types'
 
 const tableName = 'elrhArticle'
@@ -14,7 +14,7 @@ export const useArticleStore = defineStore({
   actions: {
     async fill () {
       await fillStore({
-        supabaseClient: useSupabaseClient(),
+        supabaseClient: useSupabaseClient<Article>(),
         tableName,
         storeData: this,
         selectQuery: 'articleId, elrhCategory(categoryId, name), dateCreated, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)',
@@ -22,40 +22,29 @@ export const useArticleStore = defineStore({
         orderOpts: { ascending: false }
       })
     },
-    async create (newItem: ArticleDB): Promise<boolean> {
-      treatInput(newItem)
-      const { data, error } = await useSupabaseClient<ArticleDB>()
-        .from(tableName)
-        .insert(newItem)
-        .select()
+    async update (itemData: ArticleDB, itemId?: number): Promise<boolean> {
+      treatInput(itemData)
 
-      if (data) {
-        console.debug('new article saved into Supabase')
-        this.fill() // TODO can we just load the new one?
-        return true
-      } else {
-        console.error('failed to save new article into Supabase')
-        console.error(error?.message)
-        return false
+      const config: UpdateConfig = {
+        supabaseClient: useSupabaseClient<ArticleDB>(),
+        tableName,
+        itemKey: 'articleId',
+        itemId,
+        itemData
       }
-    },
-    async update (itemId: Number, editedItem: ArticleDB): Promise<boolean> {
-      treatInput(editedItem)
-      const { data, error } = await useSupabaseClient<ArticleDB>()
-        .from(tableName)
-        .update(editedItem)
-        .eq('articleId', itemId)
-        .select()
 
-      if (data) {
-        console.debug('new article saved into Supabase')
-        this.fill() // TODO can we just load the new one?
-        return true
+      let ret: boolean
+      if (itemId) {
+        ret = await doUpdate(config)
       } else {
-        console.error('failed to save new article into Supabase')
-        console.error(error?.message)
-        return false
+        ret = await doCreate(config)
       }
+
+      if (ret) {
+        this.fill() // TODO can we just load the new one?
+      }
+
+      return ret
     }
   },
   getters: {
