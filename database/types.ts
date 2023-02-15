@@ -1,6 +1,7 @@
 import type { definitions } from './_api'
 
 export type ArticleRaw = definitions['elrhArticle']
+export type BookRaw = definitions['elrhBook']
 export type GalleryRaw = definitions['elrhGallery']
 
 export type Category = definitions['elrhCategory']
@@ -13,7 +14,8 @@ export type Article = ArticleRaw & {
   elrhGallery?: Pick<GalleryRaw, 'galleryId' | 'name'>
 }
 
-export type Book = definitions['elrhBook'] & {
+export type BookDB = Omit<BookRaw, 'bookId'>
+export type Book = BookRaw & {
   elrhAuthor: Author
   elrhCategory: Category
 }

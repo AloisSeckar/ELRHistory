@@ -1,5 +1,5 @@
 import { SupabaseClient } from '@supabase/supabase-js'
-import { Article, ArticleDB, Book } from '~~/database/types'
+import { Article, ArticleDB, Book, BookDB } from '~~/database/types'
 
 export interface OrderOpts {
   ascending?: boolean
@@ -43,9 +43,9 @@ export async function fetchSupabase (config: StoreConfig) {
 }
 
 export interface UpdateConfig {
-  supabaseClient: SupabaseClient<ArticleDB>
+  supabaseClient: SupabaseClient<ArticleDB> | SupabaseClient<BookDB>
   tableName: string,
-  itemData: ArticleDB,
+  itemData: ArticleDB | BookDB,
   itemId?: number,
   itemKey: string
 }
