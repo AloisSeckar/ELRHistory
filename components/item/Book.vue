@@ -9,6 +9,7 @@
       <a :href="item.url" :title="item.name">
         <strong>{{ item.name }}</strong>
       </a>
+      <AdminEditLink v-if="user" :link="'book/' + item.bookId" item="book" />
       <br>
       <strong><em>{{ item.writer }}, {{ item.year }}</em></strong>
       <span v-if="item.review">&nbsp;&nbsp;<strong>[<a href="{{ item.review }}" title="Recenze díla">{{ text.getKey('book-review') }}</a>]</strong></span>
@@ -27,4 +28,5 @@ defineProps({
 })
 
 const text = useTextStore()
+const user = computed(() => useLoginStore().user)
 </script>

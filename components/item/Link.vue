@@ -9,6 +9,7 @@
       <a :href="item.url" :title="item.url">
         <strong>{{ item.name }}</strong>
       </a>
+      <AdminEditLink v-if="user" :link="'link/' + item.linkId" item="link" />
       <br>
       {{ item.dscr }}
     </div>
@@ -22,4 +23,6 @@ import type { Link } from '@/database/types'
 defineProps({
   item: { type: Object as PropType<Link>, required: true }
 })
+
+const user = computed(() => useLoginStore().user)
 </script>

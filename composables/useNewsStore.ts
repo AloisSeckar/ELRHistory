@@ -16,7 +16,7 @@ export const useNewsStore = defineStore({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
-        selectQuery: 'dateCreated, content, elrhAuthor(authorId, name)',
+        selectQuery: 'newsId, dateCreated, content, elrhAuthor(authorId, name)',
         orderQuery: 'dateCreated',
         orderOpts: { ascending: false }
       })

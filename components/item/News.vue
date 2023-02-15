@@ -1,6 +1,7 @@
 <template>
   <div class="flex">
-    <div class="flex-none w-44">
+    <AdminEditLink v-if="user" :link="'news/' + item.newsId" item="news" />
+    <div class="flex-none w-44 ml-2">
       <strong>{{ toDate(item.dateCreated) }}</strong> {{ item.elrhAuthor?.name }}
     </div>
     <div class="grow pl-4">
@@ -16,4 +17,6 @@ import type { News } from '@/database/types'
 defineProps({
   item: { type: Object as PropType<News>, required: true }
 })
+
+const user = computed(() => useLoginStore().user)
 </script>

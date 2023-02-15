@@ -16,7 +16,7 @@ export const useLinkStore = defineStore({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
-        selectQuery: 'categoryId, name, dscr, url, thumb',
+        selectQuery: 'linkId, categoryId, name, dscr, url, thumb',
         orderQuery: 'ord',
         orderOpts: {}
       })
