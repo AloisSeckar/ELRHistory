@@ -11,9 +11,9 @@
     "@nuxtjs/supabase": "0.3.1",
     "@nuxtjs/tailwindcss": "6.4.1",
     "eslint": "8.35.0",
-    "nuxt": "3.2.2",
+    "nuxt": "3.2.3",
     "openapi-typescript": "5.4.1",
-    "supabase": "1.38.7",
+    "supabase": "1.41.6",
     "tailwindcss": "3.2.7"
   },
   "dependencies": {
