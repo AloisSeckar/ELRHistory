@@ -10,16 +10,16 @@
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@nuxtjs/supabase": "0.3.1",
     "@nuxtjs/tailwindcss": "6.4.1",
-    "eslint": "8.35.0",
+    "eslint": "8.36.0",
     "nuxt": "3.2.3",
     "openapi-typescript": "5.4.1",
-    "supabase": "1.42.0",
+    "supabase": "1.42.5",
     "tailwindcss": "3.2.7"
   },
   "dependencies": {
     "@formkit/nuxt": "1.0.0-beta.15",
     "@pinia/nuxt": "0.4.7",
-    "pinia": "2.0.32"
+    "pinia": "2.0.33"
   },
   "overrides": {
     "vue": "latest"
