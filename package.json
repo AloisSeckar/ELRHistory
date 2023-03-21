@@ -9,7 +9,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@nuxtjs/supabase": "0.3.1",
-    "@nuxtjs/tailwindcss": "6.4.1",
+    "@nuxtjs/tailwindcss": "6.6.0",
     "eslint": "8.36.0",
     "nuxt": "3.3.1",
     "openapi-typescript": "5.4.1",
