@@ -17,7 +17,7 @@
     "tailwindcss": "3.2.7"
   },
   "dependencies": {
-    "@formkit/nuxt": "1.0.0-beta.15",
+    "@formkit/nuxt": "1.0.0-220222.4d97af0",
     "@pinia/nuxt": "0.4.7",
     "pinia": "2.0.33"
   },
