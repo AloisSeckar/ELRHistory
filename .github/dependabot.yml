@@ -9,8 +9,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "monday"
-      time: "06:00"
-      timezone: "Europe/Prague"
+      time: "05:00"
     commit-message:
       prefix: "npm"
     commit-message:
