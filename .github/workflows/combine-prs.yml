@@ -48,7 +48,7 @@ jobs:
             for (const pull of pulls) {
               const branch = pull['head']['ref'];
               console.log('Pull for branch: ' + branch);
-              if (branch.startsWith('${{ github.event.inputs.branchPrefix || "dependabot" }}')) {
+              if (branch.startsWith('${{ github.event.inputs.branchPrefix || 'dependabot' }}')) {
                 console.log('Branch matched prefix: ' + branch);
                 let statusOK = true;
                 if(${{ github.event.inputs.mustBeGreen || false }}) {
@@ -97,7 +97,7 @@ jobs:
                 for(const label of labels) {
                   const labelName = label['name'];
                   console.log('Checking label: ' + labelName);
-                  if(labelName == '${{ github.event.inputs.ignoreLabel || "nocombine" }}') {
+                  if(labelName == '${{ github.event.inputs.ignoreLabel || 'nocombine' }}') {
                     console.log('Discarding ' + branch + ' with label ' + labelName);
                     statusOK = false;
                   }
@@ -119,7 +119,7 @@ jobs:
               await github.rest.git.createRef({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                ref: 'refs/heads/' + '${{ github.event.inputs.combineBranchName || "tech-update" }}',
+                ref: 'refs/heads/' + '${{ github.event.inputs.combineBranchName || 'tech-update' }}',
                 sha: baseBranchSHA
               });
             } catch (error) {
@@ -135,7 +135,7 @@ jobs:
                 await github.rest.repos.merge({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  base: '${{ github.event.inputs.combineBranchName || "tech-update" }}',
+                  base: '${{ github.event.inputs.combineBranchName || 'tech-update' }}',
                   head: branch,
                 });
                 console.log('Merged branch ' + branch);
@@ -157,7 +157,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: 'Combined PR',
-              head: '${{ github.event.inputs.combineBranchName || "tech-update" }}',
+              head: '${{ github.event.inputs.combineBranchName || 'tech-update' }}',
               base: baseBranch,
               body: body
             });
