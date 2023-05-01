@@ -14,7 +14,7 @@
     "nuxt": "3.4.2",
     "openapi-typescript": "5.4.1",
     "supabase": "1.50.11",
-    "tailwindcss": "3.3.1"
+    "tailwindcss": "3.3.2"
   },
   "dependencies": {
     "@formkit/nuxt": "0.16.4",
