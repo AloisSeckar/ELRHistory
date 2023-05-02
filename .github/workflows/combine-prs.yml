@@ -3,7 +3,7 @@ name: "Combine PRs"
 # Controls when the action will run
 on:
   schedule:
-    - cron: '0 6 * * 1'
+    - cron: '0 6 1 * *'
   workflow_dispatch:
     inputs:
       branchPrefix:
