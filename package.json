@@ -10,14 +10,14 @@
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@nuxtjs/supabase": "0.3.5",
     "@nuxtjs/tailwindcss": "6.6.7",
-    "eslint": "8.44.0",
-    "nuxt": "3.6.1",
+    "eslint": "8.46.0",
+    "nuxt": "3.6.5",
     "openapi-typescript": "5.4.1",
-    "supabase": "1.75.2",
-    "tailwindcss": "3.3.2"
+    "supabase": "1.82.2",
+    "tailwindcss": "3.3.3"
   },
   "dependencies": {
-    "@formkit/nuxt": "0.17.4",
+    "@formkit/nuxt": "0.17.5",
     "@pinia/nuxt": "0.4.11",
     "pinia": "2.0.35"
   }
