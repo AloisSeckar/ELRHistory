@@ -3,6 +3,7 @@ import type { definitions } from './_api'
 export type ArticleRaw = definitions['elrhArticle']
 export type BookRaw = definitions['elrhBook']
 export type GalleryRaw = definitions['elrhGallery']
+export type NewsRaw = definitions['elrhNews']
 
 export type Category = definitions['elrhCategory']
 export type Author = definitions['elrhAuthor']
@@ -38,7 +39,8 @@ export type Link = definitions['elrhLink'] & {
   elrhCategory: Category
 }
 
-export type News = definitions['elrhNews'] & {
+export type NewsDB = Omit<NewsRaw, 'newsId'>
+export type News = NewsRaw & {
   elrhAuthor: Author
 }
 
