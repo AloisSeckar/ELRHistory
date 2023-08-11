@@ -1,5 +1,5 @@
 import { SupabaseClient } from '@supabase/supabase-js'
-import { Article, ArticleDB, Book, BookDB, News, NewsDB } from '~~/database/types'
+import { Article, ArticleDB, Book, BookDB, News, NewsDB } from '@/database/types'
 
 export interface OrderOpts {
   ascending?: boolean
@@ -24,12 +24,12 @@ export async function fillStore (config: StoreConfig) {
   await fetchSupabase(config)
     .then((x: any) => {
       console.log(typeof x)
-      console.debug(config.tableName + ' loaded from Supabase')
+      console.debug(`${config.tableName} loaded from Supabase`)
       config.storeData.items = x.data
       config.storeData.loaded = true
     }).catch((x: any) => {
       console.log(typeof x)
-      console.error('failed to load ' + config.tableName + ' from Supabase')
+      console.error(`failed to load ${config.tableName} from Supabase`)
       console.error(x.error ? x.error : x)
       config.storeData.loaded = false
     })
@@ -57,10 +57,10 @@ export async function doCreate (config: UpdateConfig): Promise<boolean> {
     .select()
 
   if (data) {
-    console.debug('new article saved into Supabase')
+    console.debug(`new item saved into ${config.tableName} in Supabase`)
     return true
   } else {
-    console.error('failed to save new article into Supabase')
+    console.error(`failed to save new item into ${config.tableName} in Supabase`)
     console.error(error?.message)
     return false
   }
@@ -74,10 +74,10 @@ export async function doUpdate (config: UpdateConfig): Promise<boolean> {
     .select()
 
   if (data) {
-    console.debug('new article saved into Supabase')
+    console.debug(`updated item in ${config.tableName} in Supabase`)
     return true
   } else {
-    console.error('failed to save new article into Supabase')
+    console.error(`failed to update item in ${config.tableName} in Supabase`)
     console.error(error?.message)
     return false
   }
