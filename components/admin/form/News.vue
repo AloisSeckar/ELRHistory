@@ -27,6 +27,12 @@
         label="Content:"
         validation="required"
       />
+      <FormKit
+        id="dateCreated"
+        v-model="news.dateCreated"
+        name="dateCreated"
+        type="hidden"
+      />
     </FormKit>
   </div>
 </template>
@@ -45,6 +51,8 @@ if (props.newsId > 0) {
   label = 'Edit'
   const { newsId, ...currentNews } = useNewsStore().getById(props.newsId)
   news = reactive(JSON.parse(JSON.stringify(currentNews)))
+  console.warn(currentNews)
+  console.warn(news)
 } else {
   label = 'Add'
   news = reactive(JSON.parse(JSON.stringify(useNewsStore().getEmpty)))

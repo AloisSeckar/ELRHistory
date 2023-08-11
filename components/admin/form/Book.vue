@@ -68,6 +68,12 @@
         name="review"
         label="Review:"
       />
+      <FormKit
+        id="dateCreated"
+        v-model="book.dateCreated"
+        name="dateCreated"
+        type="hidden"
+      />
     </FormKit>
   </div>
 </template>

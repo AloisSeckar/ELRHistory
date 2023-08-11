@@ -53,6 +53,12 @@
         label="Related gallery:"
         :options="galleries"
       />
+      <FormKit
+        id="dateCreated"
+        v-model="article.dateCreated"
+        name="dateCreated"
+        type="hidden"
+      />
     </FormKit>
   </div>
 </template>
