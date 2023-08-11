@@ -8,7 +8,7 @@
         <div v-for="item in news.getItems" :key="item.newsId">
           <ItemNews :item="item" />
         </div>
-        <div v-if="news.items.length < 1" class="p-2">
+        <div v-if="news.items?.length < 1" class="p-2">
           {{ text.getKey('news-none') }}
         </div>
       </div>

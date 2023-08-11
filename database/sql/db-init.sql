@@ -81,9 +81,11 @@ CREATE TABLE "elrhLink" (
 
 CREATE TABLE "elrhNews" (
 	"newsId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	"dateCreated"	timestamp NOT NULL,
+	"dateEdited"	timestamp NOT NULL,
+	"title"	varchar(100) NOT NULL,
 	"content"	text NOT NULL,
-	"authorId"	integer NOT NULL,
-	"dateCreated"	timestamp NOT NULL
+	"authorId"	integer NOT NULL
 );
 
 CREATE TABLE "elrhGallery" (

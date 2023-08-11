@@ -18,11 +18,11 @@ const newsOptions = [] as FormKitOptionsItem[]
 let currentNewsName: string
 for (let i = 0; i < useNewsStore().items.length; i++) {
   const item: News = useNewsStore().items[i]
-  newsOptions.push({ value: item.newsId, label: item.content.substring(0, 50) + '[...]' })
+  newsOptions.push({ value: item.newsId, label: item.title })
   if (item.newsId === newsId) {
     selected.value = item.newsId
-    selected.label = item.content.substring(0, 50) + '[...]'
-    currentNewsName = item.content.substring(0, 50) + '[...]'
+    selected.label = item.title
+    currentNewsName = item.title
   }
 }
 

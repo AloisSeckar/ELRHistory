@@ -5,7 +5,7 @@
       <strong>{{ toDate(item.dateCreated) }}</strong> {{ item.elrhAuthor?.name }}
     </div>
     <div class="grow pl-4">
-      {{ item.content }}
+      <strong>{{ item.title }}</strong> - {{ item.content }}
     </div>
   </div>
 </template>

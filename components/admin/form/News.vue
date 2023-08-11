@@ -12,6 +12,14 @@
         :options="authors"
       />
       <FormKit
+        id="title"
+        v-model="news.title"
+        type="text"
+        name="title"
+        label="Title:"
+        validation="required"
+      />
+      <FormKit
         id="content"
         v-model="news.content"
         type="textarea"

@@ -17,7 +17,7 @@ export const useNewsStore = defineStore({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
-        selectQuery: 'newsId, dateCreated, content, elrhAuthor(authorId, name)',
+        selectQuery: 'newsId, dateCreated, dateEdited, title, content, elrhAuthor(authorId, name)',
         orderQuery: 'dateCreated',
         orderOpts: { ascending: false }
       })
@@ -59,8 +59,10 @@ export const useNewsStore = defineStore({
     },
     getEmpty: (): NewsDB => {
       const emptyItem: NewsDB = {
-        content: '',
         dateCreated: new Date().toISOString(),
+        dateEdited: new Date().toISOString(),
+        title: '',
+        content: '',
         authorId: 0
       }
       return emptyItem
@@ -69,7 +71,7 @@ export const useNewsStore = defineStore({
 })
 
 function treatInput (input: NewsDB) {
-  // input.dateEdited = new Date().toISOString()
+  input.dateEdited = new Date().toISOString()
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()
   }
