@@ -17,7 +17,7 @@ export const useBookStore = defineStore({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
-        selectQuery: 'bookId, categoryId, name, dscr, url, thumb, writer, review, year',
+        selectQuery: 'bookId, categoryId, dateCreated, dateEdited, name, dscr, url, thumb, writer, review, year',
         orderQuery: 'ord',
         orderOpts: {}
       })

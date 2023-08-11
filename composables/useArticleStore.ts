@@ -17,7 +17,7 @@ export const useArticleStore = defineStore({
         supabaseClient: useSupabaseClient<Article>(),
         tableName,
         storeData: this,
-        selectQuery: 'articleId, elrhCategory(categoryId, name), dateCreated, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)',
+        selectQuery: 'articleId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)',
         orderQuery: 'dateCreated',
         orderOpts: { ascending: false }
       })
