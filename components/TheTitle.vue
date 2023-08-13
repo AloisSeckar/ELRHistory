@@ -1,8 +1,8 @@
 <template>
   <h1 class="ml-32 mb-2 font-bold text-4xl text-navy">
-    {{ title }}
-    <div v-if="adminLink" class="inline text-3xl text-green-500 hover:text-yellow-400">
-      <NuxtLink :to="{ path: '/admin/add/' + adminLink.link }">
+    {{ baseTitle + (titleData.page ? " - " + titleData.page : "") }}
+    <div v-if="useLoginStore().user && titleData.link" class="inline text-3xl text-green-500 hover:text-yellow-400">
+      <NuxtLink :to="{ path: '/admin/add/' + titleData.link }">
         <BaseIcon icon="plus" size="3rem" css-class="mb-2" />
       </NuxtLink>
     </div>
@@ -10,43 +10,47 @@
 </template>
 
 <script setup lang="ts">
-const title = useRuntimeConfig().public.textTitle
+const baseTitle = useRuntimeConfig().public.textTitle
 
-const adminLink = computed(() => {
-  if (useLoginStore().user) {
-    if (useRoute().path.includes('article')) {
-      return {
-        link: 'article',
-        text: 'Add article'
-      }
-    } else if (useRoute().path.includes('galler')) {
-      return {
-        link: 'gallery',
-        text: 'Add gallery'
-      }
-    } else if (useRoute().path.includes('image')) {
-      return {
-        link: 'image',
-        text: 'Add image'
-      }
-    } else if (useRoute().path.includes('book')) {
-      return {
-        link: 'book',
-        text: 'Add book'
-      }
-    } else if (useRoute().path.includes('link')) {
-      return {
-        link: 'link',
-        text: 'Add link'
-      }
-    } else if (useRoute().path.includes('news')) {
-      return {
-        link: 'news',
-        text: 'Add news'
-      }
+const titleData = computed(() => {
+  if (useRoute().path.includes('article')) {
+    return {
+      page: 'Articles',
+      link: 'article',
+      text: 'Add article'
+    }
+  } else if (useRoute().path.includes('galler')) {
+    return {
+      page: 'Galleries',
+      link: 'gallery',
+      text: 'Add gallery'
+    }
+  } else if (useRoute().path.includes('image')) {
+    return {
+      page: 'Images',
+      link: 'image',
+      text: 'Add image'
+    }
+  } else if (useRoute().path.includes('book')) {
+    return {
+      page: 'Books',
+      link: 'book',
+      text: 'Add book'
+    }
+  } else if (useRoute().path.includes('link')) {
+    return {
+      page: 'Links',
+      link: 'link',
+      text: 'Add link'
+    }
+  } else if (useRoute().path.includes('news')) {
+    return {
+      page: 'News',
+      link: 'news',
+      text: 'Add news'
     }
   } else {
-    return null
+    return {}
   }
 })
 </script>
