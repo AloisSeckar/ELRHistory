@@ -39,6 +39,11 @@ const adminLink = computed(() => {
         link: 'link',
         text: 'Add link'
       }
+    } else if (useRoute().path.includes('news')) {
+      return {
+        link: 'news',
+        text: 'Add news'
+      }
     }
   } else {
     return null
