@@ -48,18 +48,15 @@ export const useBookStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items,
-    getCount: state => state.items.length,
+    getItems: state => state.items || [] as Book[],
+    getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (bookId: number) => {
-        const book = state.items.find((i: Book) => i.bookId === bookId)
-        return book || { bookId: 0 } as Book
-      }
+      return (bookId: number) => state.items?.find((i: Book) => i.bookId === bookId) || { bookId: 0 } as Book
     },
     getByCategory: (state) => {
-      return (categoryId: number) => state.items.filter((i: Book) => i.categoryId === categoryId)
+      return (categoryId: number) => state.items?.filter((i: Book) => i.categoryId === categoryId) || [] as Book[]
     },
-    getEmpty: (): BookDB => {
+    getEmpty: () => {
       const newBook: BookDB = {
         categoryId: 0,
         ord: 0,

@@ -23,12 +23,13 @@ export const useCategoryStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items,
+    getItems: state => state.items || [] as Category[],
+    getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (categoryId: number) => state.items.find((i: Category) => i.categoryId === categoryId)
+      return (categoryId: number) => state.items?.find((i: Category) => i.categoryId === categoryId) || { categoryId: 0 } as Category
     },
     getByType: (state) => {
-      return (type: string) => state.items.filter((i: Category) => i.type === type)
+      return (type: string) => state.items?.filter((i: Category) => i.type === type) || [] as Category[]
     }
   }
 })

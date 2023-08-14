@@ -23,16 +23,16 @@ export const useImageStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items,
-    getCount: state => state.items.length,
+    getItems: state => state.items || [] as Image[],
+    getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (imageId: number) => state.items.find((i: Image) => i.imageId === imageId)
+      return (imageId: number) => state.items?.find((i: Image) => i.imageId === imageId) || { imageId: 0 } as Image
     },
     getByGallery: (state) => {
-      return (galleryId: number, limit?: number) => state.items.filter((i: Image) => i.galleryId?.galleryId === galleryId).slice(0, limit)
+      return (galleryId: number, limit?: number) => state.items?.filter((i: Image) => i.galleryId?.galleryId === galleryId).slice(0, limit) || [] as Image[]
     },
     getCountByGallery: (state) => {
-      return (galleryId: number) => state.items.filter((i: Image) => i.galleryId?.galleryId === galleryId).length
+      return (galleryId: number) => state.items?.filter((i: Image) => i.galleryId?.galleryId === galleryId).length || 0
     }
   }
 })

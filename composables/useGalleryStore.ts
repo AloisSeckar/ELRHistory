@@ -23,13 +23,13 @@ export const useGalleryStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items,
-    getCount: state => state.items.length,
+    getItems: state => state.items || [] as Gallery[],
+    getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (galleryId: number) => state.items.find((i: Gallery) => i.galleryId === galleryId)
+      return (galleryId: number) => state.items?.find((i: Gallery) => i.galleryId === galleryId) || { galleryId: 0 } as Gallery
     },
     getByParent: (state) => {
-      return (parentId?: number) => state.items.filter((i: Gallery) => i.parentId?.galleryId === parentId)
+      return (parentId?: number) => state.items?.filter((i: Gallery) => i.parentId?.galleryId === parentId) || [] as Gallery[]
     }
   }
 })

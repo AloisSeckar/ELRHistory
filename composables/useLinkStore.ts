@@ -48,18 +48,15 @@ export const useLinkStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items,
-    getCount: state => state.items.length,
-    getByCategory: (state) => {
-      return (categoryId: number) => state.items.filter((i: Link) => i.categoryId === categoryId)
-    },
+    getItems: state => state.items || [] as Link[],
+    getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (linkId: number) => {
-        const link = state.items.find((i: Link) => i.linkId === linkId)
-        return link || { linkId: 0 } as Link
-      }
+      return (linkId: number) => state.items?.find((i: Link) => i.linkId === linkId) || { linkId: 0 } as Link
     },
-    getEmpty: (): LinkDB => {
+    getByCategory: (state) => {
+      return (categoryId: number) => state.items?.filter((i: Link) => i.categoryId === categoryId) || [] as Link[]
+    },
+    getEmpty: () => {
       const emptyItem: LinkDB = {
         categoryId: 0,
         ord: 0,

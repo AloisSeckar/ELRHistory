@@ -48,16 +48,13 @@ export const useNewsStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items,
-    getTopItems: state => state.items.slice(0, 5),
-    getCount: state => state.items.length,
+    getItems: state => state.items || [] as News[],
+    getTopItems: state => state.items?.slice(0, 5) || [] as News[],
+    getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (newsId: number) => {
-        const news = state.items.find((i: News) => i.newsId === newsId)
-        return news || { newsId: 0 } as News
-      }
+      return (newsId: number) => state.items?.find((i: News) => i.newsId === newsId) || { newsId: 0 } as News
     },
-    getEmpty: (): NewsDB => {
+    getEmpty: () => {
       const emptyItem: NewsDB = {
         dateCreated: new Date().toISOString(),
         dateEdited: new Date().toISOString(),
