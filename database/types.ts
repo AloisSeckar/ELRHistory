@@ -4,6 +4,7 @@ export type ArticleRaw = definitions['elrhArticle']
 export type BookRaw = definitions['elrhBook']
 export type GalleryRaw = definitions['elrhGallery']
 export type NewsRaw = definitions['elrhNews']
+export type LinkRaw = definitions['elrhLink']
 
 export type Category = definitions['elrhCategory']
 export type Author = definitions['elrhAuthor']
@@ -34,7 +35,8 @@ export type Image = definitions['elrhImage'] & {
   galleryId: Gallery
 }
 
-export type Link = definitions['elrhLink'] & {
+export type LinkDB = Omit<LinkRaw, 'linkId'>
+export type Link = LinkRaw & {
   elrhAuthor: Author
   elrhCategory: Category
 }
