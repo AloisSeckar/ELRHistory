@@ -68,8 +68,6 @@ if (props.linkId > 0) {
   label = 'Edit'
   const { linkId, ...currentLink } = useLinkStore().getById(props.linkId)
   link = reactive(JSON.parse(JSON.stringify(currentLink)))
-  console.warn(currentLink)
-  console.warn(link)
 } else {
   label = 'Add'
   link = reactive(JSON.parse(JSON.stringify(useLinkStore().getEmpty)))
@@ -84,7 +82,6 @@ const setThumb = (path: string) => {
 }
 
 const saveForm = (values: any) => {
-  console.log(typeof values)
   emit('save', JSON.parse(JSON.stringify(values)))
 }
 

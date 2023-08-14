@@ -116,7 +116,6 @@ const setThumb = (path: string) => {
 }
 
 const saveForm = (values: any) => {
-  console.log(typeof values)
   emit('save', JSON.parse(JSON.stringify(values)))
 }
 

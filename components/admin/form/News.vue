@@ -51,8 +51,6 @@ if (props.newsId > 0) {
   label = 'Edit'
   const { newsId, ...currentNews } = useNewsStore().getById(props.newsId)
   news = reactive(JSON.parse(JSON.stringify(currentNews)))
-  console.warn(currentNews)
-  console.warn(news)
 } else {
   label = 'Add'
   news = reactive(JSON.parse(JSON.stringify(useNewsStore().getEmpty)))
@@ -62,7 +60,6 @@ if (props.newsId > 0) {
 const authors = useAuthorStore().getItems.map(author => ({ value: author.authorId, label: author.name }))
 
 const saveForm = (values: any) => {
-  console.log(typeof values)
   emit('save', JSON.parse(JSON.stringify(values)))
 }
 
