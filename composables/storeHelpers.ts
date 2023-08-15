@@ -1,17 +1,16 @@
-import { SupabaseClient } from '@supabase/supabase-js'
-import { Article, ArticleDB, Book, BookDB, News, NewsDB, Link, LinkDB } from '@/database/types'
+import { SupabaseStoreClient, SupabaseUpdateClient, SupabaseUpdateData } from '@/database/types'
 
 export interface OrderOpts {
   ascending?: boolean
 }
 
 export interface StoreData {
-  items: any[],
+  items: any[], // TODO how to use 'SupabaseStoreData' type?
   loaded: boolean
 }
 
 export interface StoreConfig {
-  supabaseClient: SupabaseClient<Article> | SupabaseClient<Book> | SupabaseClient<News> | SupabaseClient<Link>
+  supabaseClient: SupabaseStoreClient
   tableName: string,
   storeData: StoreData,
   selectQuery: string,
@@ -41,9 +40,9 @@ export async function fetchSupabase (config: StoreConfig) {
 }
 
 export interface UpdateConfig {
-  supabaseClient: SupabaseClient<ArticleDB> | SupabaseClient<BookDB> | SupabaseClient<NewsDB> | SupabaseClient<LinkDB>
+  supabaseClient: SupabaseUpdateClient
   tableName: string,
-  itemData: ArticleDB | BookDB | NewsDB | LinkDB,
+  itemData: SupabaseUpdateData,
   itemId?: number,
   itemKey: string
 }

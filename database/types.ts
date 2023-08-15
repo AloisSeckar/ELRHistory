@@ -1,3 +1,4 @@
+import { SupabaseClient } from '@supabase/supabase-js'
 import type { definitions } from './_api'
 
 export type ArticleRaw = definitions['elrhArticle']
@@ -47,3 +48,9 @@ export type News = NewsRaw & {
 }
 
 export type Text = definitions['elrhText']
+
+export type SupabaseStoreClient = SupabaseClient<Article> | SupabaseClient<Book> | SupabaseClient<News> | SupabaseClient<Link>
+export type SupabaseUpdateClient = SupabaseClient<ArticleDB> | SupabaseClient<BookDB> | SupabaseClient<NewsDB> | SupabaseClient<LinkDB>
+
+export type SupabaseStoreData = Article[] | BookDB[] | NewsDB[] | LinkDB[]
+export type SupabaseUpdateData = ArticleDB | BookDB | NewsDB | LinkDB
