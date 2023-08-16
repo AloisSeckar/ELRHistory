@@ -48,13 +48,13 @@ export const useArticleStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items || [] as Article[],
+    getItems: state => (state.items || []) as Article[],
     getCount: state => state.items?.length || 0,
     getByCategory: (state) => {
-      return (categoryId: number) => state.items?.filter((i: Article) => i.categoryId === categoryId) || { articleId: 0 } as Article
+      return (categoryId: number) => getStoreItems<Article>(state).filter(i => i.categoryId === categoryId) || { articleId: 0 } as Article
     },
     getById: (state) => {
-      return (articleId: number) => state.items?.find((i: Article) => i.articleId === articleId) || { articleId: 0 } as Article
+      return (articleId: number) => getStoreItems<Article>(state).find(i => i.articleId === articleId) || { articleId: 0 } as Article
     },
     getEmpty: () => {
       const newArticle: ArticleDB = {

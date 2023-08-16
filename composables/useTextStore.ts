@@ -1,3 +1,4 @@
+import { StoreData } from './storeHelpers'
 import { Text } from '@/database/types'
 
 const tableName = 'elrhText'
@@ -8,7 +9,7 @@ export const useTextStore = defineStore({
     return {
       loaded: false,
       items: [] as Text[]
-    }
+    } as StoreData
   },
   actions: {
     async fill () {
@@ -25,7 +26,7 @@ export const useTextStore = defineStore({
   getters: {
     getKey: (state) => {
       return (key: string) => {
-        const match = state.items.find((i: Text) => i.key === key)
+        const match = getStoreItems<Text>(state).find((i: Text) => i.key === key)
         if (match) {
           return match.value
         } else {

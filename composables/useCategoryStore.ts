@@ -1,3 +1,4 @@
+import { StoreData } from './storeHelpers'
 import { Category } from '@/database/types'
 
 const tableName = 'elrhCategory'
@@ -8,7 +9,7 @@ export const useCategoryStore = defineStore({
     return {
       loaded: false,
       items: [] as Category[]
-    }
+    } as StoreData
   },
   actions: {
     async fill () {
@@ -23,13 +24,13 @@ export const useCategoryStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items || [] as Category[],
+    getItems: state => (state.items || []) as Category[],
     getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (categoryId: number) => state.items?.find((i: Category) => i.categoryId === categoryId) || { categoryId: 0 } as Category
+      return (categoryId: number) => getStoreItems<Category>(state).find(i => i.categoryId === categoryId) || { categoryId: 0 } as Category
     },
     getByType: (state) => {
-      return (type: string) => state.items?.filter((i: Category) => i.type === type) || [] as Category[]
+      return (type: string) => getStoreItems<Category>(state).filter(i => i.type === type) || [] as Category[]
     }
   }
 })

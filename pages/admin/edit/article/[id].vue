@@ -17,7 +17,7 @@ const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const articleOptions = [] as FormKitOptionsItem[]
 let currentArticleName: string
 for (let i = 0; i < useArticleStore().items.length; i++) {
-  const item: Article = useArticleStore().items[i]
+  const item: Article = useArticleStore().items[i] as Article
   articleOptions.push({ value: item.articleId, label: item.name })
   if (item.articleId === articleId) {
     selected.value = item.articleId

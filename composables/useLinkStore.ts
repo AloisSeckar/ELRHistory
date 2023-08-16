@@ -1,4 +1,4 @@
-import { UpdateConfig } from './storeHelpers'
+import { StoreData, UpdateConfig } from './storeHelpers'
 import { Link, LinkDB } from '@/database/types'
 
 const tableName = 'elrhLink'
@@ -9,7 +9,7 @@ export const useLinkStore = defineStore({
     return {
       loaded: false,
       items: [] as Link[]
-    }
+    } as StoreData
   },
   actions: {
     async fill () {
@@ -48,13 +48,13 @@ export const useLinkStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items || [] as Link[],
+    getItems: state => (state.items || []) as Link[],
     getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (linkId: number) => state.items?.find((i: Link) => i.linkId === linkId) || { linkId: 0 } as Link
+      return (linkId: number) => getStoreItems<Link>(state).find(i => i.linkId === linkId) || { linkId: 0 } as Link
     },
     getByCategory: (state) => {
-      return (categoryId: number) => state.items?.filter((i: Link) => i.categoryId === categoryId) || [] as Link[]
+      return (categoryId: number) => getStoreItems<Link>(state).filter(i => i.categoryId === categoryId) || [] as Link[]
     },
     getEmpty: () => {
       const emptyItem: LinkDB = {

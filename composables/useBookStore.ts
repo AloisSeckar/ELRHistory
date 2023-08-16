@@ -1,4 +1,4 @@
-import { UpdateConfig } from './storeHelpers'
+import { StoreData, UpdateConfig } from './storeHelpers'
 import { Book, BookDB } from '@/database/types'
 
 const tableName = 'elrhBook'
@@ -9,7 +9,7 @@ export const useBookStore = defineStore({
     return {
       loaded: false,
       items: [] as Book[]
-    }
+    } as StoreData
   },
   actions: {
     async fill () {
@@ -48,13 +48,13 @@ export const useBookStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items || [] as Book[],
+    getItems: state => (state.items || []) as Book[],
     getCount: state => state.items?.length || 0,
-    getById: (state) => {
-      return (bookId: number) => state.items?.find((i: Book) => i.bookId === bookId) || { bookId: 0 } as Book
-    },
     getByCategory: (state) => {
-      return (categoryId: number) => state.items?.filter((i: Book) => i.categoryId === categoryId) || [] as Book[]
+      return (categoryId: number) => getStoreItems<Book>(state).filter(i => i.categoryId === categoryId) || [] as Book[]
+    },
+    getById: (state) => {
+      return (bookId: number) => getStoreItems<Book>(state).find(i => i.bookId === bookId) || { bookId: 0 } as Book
     },
     getEmpty: () => {
       const newBook: BookDB = {

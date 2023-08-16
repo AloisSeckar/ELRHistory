@@ -17,7 +17,7 @@ const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const linkOptions = [] as FormKitOptionsItem[]
 let currentLinkName: string
 for (let i = 0; i < useLinkStore().items.length; i++) {
-  const item: Link = useLinkStore().items[i]
+  const item: Link = useLinkStore().items[i] as Link
   linkOptions.push({ value: item.linkId, label: item.name })
   if (item.linkId === linkId) {
     selected.value = item.linkId

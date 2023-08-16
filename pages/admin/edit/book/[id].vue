@@ -17,7 +17,7 @@ const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const bookOptions = [] as FormKitOptionsItem[]
 let currentBookName: string
 for (let i = 0; i < useBookStore().items.length; i++) {
-  const item: Book = useBookStore().items[i]
+  const item: Book = useBookStore().items[i] as Book
   bookOptions.push({ value: item.bookId, label: item.name })
   if (item.bookId === bookId) {
     selected.value = item.bookId

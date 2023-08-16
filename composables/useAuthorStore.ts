@@ -24,10 +24,10 @@ export const useAuthorStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items || [] as Author[],
+    getItems: state => (state.items || []) as Author[],
     getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (authorId: number) => state.items?.find((i: Author) => i.authorId === authorId) || { authorId: 0 } as Author
+      return (authorId: number) => getStoreItems<Author>(state).find(i => i.authorId === authorId) || { authorId: 0 } as Author
     }
   }
 })

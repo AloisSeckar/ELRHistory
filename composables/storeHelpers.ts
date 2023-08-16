@@ -1,11 +1,11 @@
-import { SupabaseStoreClient, SupabaseUpdateClient, SupabaseUpdateData } from '@/database/types'
+import { SupabaseStoreClient, SupabaseUpdateClient, SupabaseStoreData, SupabaseUpdateData } from '@/database/types'
 
 export interface OrderOpts {
   ascending?: boolean
 }
 
 export interface StoreData {
-  items: any[], // TODO how to use 'SupabaseStoreData' type?
+  items: SupabaseStoreData,
   loaded: boolean
 }
 

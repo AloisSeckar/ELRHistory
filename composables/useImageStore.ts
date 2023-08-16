@@ -1,3 +1,4 @@
+import { StoreData } from './storeHelpers'
 import { Image } from '@/database/types'
 
 const tableName = 'elrhImage'
@@ -8,7 +9,7 @@ export const useImageStore = defineStore({
     return {
       loaded: false,
       items: [] as Image[]
-    }
+    } as StoreData
   },
   actions: {
     async fill () {
@@ -23,16 +24,16 @@ export const useImageStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items || [] as Image[],
+    getItems: state => (state.items || []) as Image[],
     getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (imageId: number) => state.items?.find((i: Image) => i.imageId === imageId) || { imageId: 0 } as Image
+      return (imageId: number) => getStoreItems<Image>(state).find(i => i.imageId === imageId) || { imageId: 0 } as Image
     },
     getByGallery: (state) => {
-      return (galleryId: number, limit?: number) => state.items?.filter((i: Image) => i.galleryId?.galleryId === galleryId).slice(0, limit) || [] as Image[]
+      return (galleryId: number, limit?: number) => getStoreItems<Image>(state).filter(i => i.galleryId?.galleryId === galleryId)?.slice(0, limit) || [] as Image[]
     },
     getCountByGallery: (state) => {
-      return (galleryId: number) => state.items?.filter((i: Image) => i.galleryId?.galleryId === galleryId).length || 0
+      return (galleryId: number) => getStoreItems<Image>(state).filter(i => i.galleryId?.galleryId === galleryId).length || 0
     }
   }
 })

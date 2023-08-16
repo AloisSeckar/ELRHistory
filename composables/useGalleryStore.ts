@@ -1,3 +1,4 @@
+import { StoreData } from './storeHelpers'
 import { Gallery } from '@/database/types'
 
 const tableName = 'elrhGallery'
@@ -8,7 +9,7 @@ export const useGalleryStore = defineStore({
     return {
       loaded: false,
       items: [] as Gallery[]
-    }
+    } as StoreData
   },
   actions: {
     async fill () {
@@ -23,13 +24,13 @@ export const useGalleryStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items || [] as Gallery[],
+    getItems: state => (state.items || []) as Gallery[],
     getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (galleryId: number) => state.items?.find((i: Gallery) => i.galleryId === galleryId) || { galleryId: 0 } as Gallery
+      return (galleryId: number) => getStoreItems<Gallery>(state).find(i => i.galleryId === galleryId) || { galleryId: 0 } as Gallery
     },
     getByParent: (state) => {
-      return (parentId?: number) => state.items?.filter((i: Gallery) => i.parentId?.galleryId === parentId) || [] as Gallery[]
+      return (parentId?: number) => getStoreItems<Gallery>(state).filter(i => i.parentId?.galleryId === parentId) || [] as Gallery[]
     }
   }
 })

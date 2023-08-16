@@ -1,4 +1,4 @@
-import { UpdateConfig } from './storeHelpers'
+import { StoreData, UpdateConfig } from './storeHelpers'
 import { News, NewsDB } from '@/database/types'
 
 const tableName = 'elrhNews'
@@ -9,7 +9,7 @@ export const useNewsStore = defineStore({
     return {
       loaded: false,
       items: [] as News[]
-    }
+    } as StoreData
   },
   actions: {
     async fill () {
@@ -48,11 +48,11 @@ export const useNewsStore = defineStore({
     }
   },
   getters: {
-    getItems: state => state.items || [] as News[],
-    getTopItems: state => state.items?.slice(0, 5) || [] as News[],
+    getItems: state => (state.items || []) as News[],
+    getTopItems: state => (state.items?.slice(0, 5) || []) as News[],
     getCount: state => state.items?.length || 0,
     getById: (state) => {
-      return (newsId: number) => state.items?.find((i: News) => i.newsId === newsId) || { newsId: 0 } as News
+      return (newsId: number) => getStoreItems<News>(state).find(i => i.newsId === newsId) || { newsId: 0 } as News
     },
     getEmpty: () => {
       const emptyItem: NewsDB = {

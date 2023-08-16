@@ -1,3 +1,4 @@
+import { StoreData } from './storeHelpers'
 import { Contact } from '@/database/types'
 
 const tableName = 'elrhContact'
@@ -8,7 +9,7 @@ export const useContactStore = defineStore({
     return {
       loaded: false,
       items: [] as Contact[]
-    }
+    } as StoreData
   },
   actions: {
     async fill () {

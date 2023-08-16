@@ -17,7 +17,7 @@ const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const newsOptions = [] as FormKitOptionsItem[]
 let currentNewsName: string
 for (let i = 0; i < useNewsStore().items.length; i++) {
-  const item: News = useNewsStore().items[i]
+  const item: News = useNewsStore().items[i] as News
   newsOptions.push({ value: item.newsId, label: item.title })
   if (item.newsId === newsId) {
     selected.value = item.newsId
