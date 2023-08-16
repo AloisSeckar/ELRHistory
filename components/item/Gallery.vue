@@ -8,7 +8,7 @@
         </NuxtLink>
         <AdminEditLink v-if="user" :link="'gallery/' + item.galleryId" item="gallery" />
         <span class="float-right pr-1 text-base font-normal">
-          <strong>{{ parent ? parent : 'Index' }}</strong> | {{ item.elrhAuthor?.name }} |
+          <strong>{{ parent?.name ? parent.name : 'Index' }}</strong> | {{ item.elrhAuthor?.name }} |
           <em>{{ item.dateCreated?.split('T')[0] }}</em>
         </span>
       </div>
@@ -109,7 +109,7 @@ const id = ref(props.item.galleryId)
 const images = computed(() => useImageStore().getCountByGallery(id.value))
 const thumbs = computed(() => useImageStore().getByGallery(id.value, props.detail ? undefined : 5))
 const children = computed(() => useGalleryStore().getByParent(id.value))
-const parent = computed(() => 'Index') // TODO
+const parent = computed(() => useGalleryStore().getById(props.item?.parentId || 0))
 const articles = computed(() => props.item.elrhArticle)
 const longDscr = computed(() => props.item.dscr ? props.item.dscr.length > 200 : false)
 </script>
