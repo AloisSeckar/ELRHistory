@@ -11,7 +11,7 @@
         <BaseIcon icon="envelope" size="1.125rem" css-class="mb-1.5 mr-1" /> {{ $t('index.contacts') }}
       </div>
       <div class="box-content">
-        <div v-for="item in (useContactStore().items)" :key="item.contactId">
+        <div v-for="item in (useContactStore().items as Contact[])" :key="item.contactId">
           <ItemContact :item="item" />
         </div>
       </div>
@@ -33,3 +33,7 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { Contact } from '@/database/types'
+</script>
