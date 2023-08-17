@@ -13,7 +13,6 @@ DROP TABLE IF EXISTS "elrhArticle";
 DROP TABLE IF EXISTS "elrhGallery";
 DROP TABLE IF EXISTS "elrhCategory";
 DROP TABLE IF EXISTS "elrhAuthor";
-DROP TABLE IF EXISTS "elrhText";
 
 CREATE TABLE "elrhArticle" (
 	"articleId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -110,12 +109,6 @@ CREATE TABLE "elrhImage" (
 	"ord"	integer NOT NULL CHECK("ord" >= 0),
 	"prevId"	integer,
 	"nextId"	integer
-);
-
-CREATE TABLE "elrhText" (
-	"key"	text NOT NULL,
-	"value"	text NOT NULL,
-	PRIMARY KEY ("key")
 );
 
 ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");

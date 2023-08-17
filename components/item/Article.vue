@@ -21,12 +21,12 @@
           <div v-if="detail" class="pt-1" v-html="item.content" />
           <div v-else class="pt-1">
             [ <NuxtLink :to="{ path: '/article/' + item.articleId }">
-              {{ text.getKey('article-read') }}
+              {{ $t('articles.read') }}
             </NuxtLink> ]
           </div>
           <div v-if="detail && item.elrhGallery" class="pt-1">
             [ <NuxtLink :to="{ path: '/gallery/' + item.elrhGallery.galleryId }">
-              {{ text.getKey('article-gallery') }}
+              {{ $t('articles.gallery') }}
             </NuxtLink> ]
           </div>
         </div>
@@ -45,6 +45,5 @@ defineProps({
   detail: { type: Boolean, default: false }
 })
 
-const text = useTextStore()
 const user = computed(() => useLoginStore().user)
 </script>

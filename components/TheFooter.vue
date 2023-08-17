@@ -1,6 +1,6 @@
 <template>
   <div class="fixed bottom-0 w-full py-1 bg-navy text-center text-sm text-silver">
-    © {{ year }} <strong>{{ title }}</strong> by <span v-html="author" />
+    © {{ year }} <strong>{{ title }}</strong> by <span v-html="$t('web.author')" />
     powered by <a href="https://nuxt.com/">Nuxt3</a>
     |
     <span class="pl-1 text-xs">
@@ -16,7 +16,6 @@
 
 <script setup lang="ts">
 const title = useRuntimeConfig().public.textTitle
-const author = computed(() => useTextStore().getKey('web-author'))
 const year = new Date().getFullYear()
 const user = computed(() => useLoginStore().user)
 </script>

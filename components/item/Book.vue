@@ -12,7 +12,7 @@
       <AdminEditLink v-if="user" :link="'book/' + item.bookId" item="book" />
       <br>
       <strong><em>{{ item.writer }}, {{ item.year }}</em></strong>
-      <span v-if="item.review">&nbsp;&nbsp;<strong>[<a href="{{ item.review }}" title="Recenze díla">{{ text.getKey('book-review') }}</a>]</strong></span>
+      <span v-if="item.review">&nbsp;&nbsp;<strong>[<a href="{{ item.review }}" title="Recenze díla">{{ $t('books.review') }}</a>]</strong></span>
       <br>
       {{ item.dscr }}
     </div>
@@ -27,6 +27,5 @@ defineProps({
   item: { type: Object as PropType<Book>, required: true }
 })
 
-const text = useTextStore()
 const user = computed(() => useLoginStore().user)
 </script>

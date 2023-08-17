@@ -10,16 +10,12 @@
           <ItemBook :item="book" />
         </div>
         <div v-if="useBookStore().getByCategory(category.categoryId).length < 1" class="p-2">
-          {{ text.getKey('books-none') }}
+          {{ $t('books.none') }}
         </div>
       </div>
     </div>
     <div class="-mt-2 text-lg">
-      {{ text.getKey('books-total') }}: <strong>{{ useBookStore().getCount }}</strong>
+      {{ $t('books.total') }}: <strong>{{ useBookStore().getCount }}</strong>
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const text = useTextStore()
-</script>

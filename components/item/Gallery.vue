@@ -19,11 +19,11 @@
           <span v-else v-html="item.dscr" />
           <span v-if="longDscr">
             [ <NuxtLink v-if="longDscr" :to="{ path: '/gallery/' + item.galleryId }">
-              {{ text.getKey('gallery-read-more') }}</NuxtLink> ]
+              {{ $t('galleries.read-more') }}</NuxtLink> ]
           </span>
         </div>
         <div>
-          <strong>{{ text.getKey('gallery-images') }}</strong>
+          <strong>{{ $t('galleries.images') }}</strong>
           <div class="flex flex-wrap">
             <div v-for="image in thumbs" :key="image.imageId">
               <NuxtLink :to="{ path: '/image/' + image.imageId }">
@@ -33,27 +33,27 @@
             <div v-if="(!detail && images > 5)" class="thumb leading-6">
               <br>
               [ <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
-                {{ text.getKey('gallery-see-more') }}
+                {{ $t('galleries.see-more') }}
               </NuxtLink> ]
             </div>
           </div>
         </div>
         <div>
           <span v-if="images > 0">
-            {{ text.getKey('gallery-images-1') }}
+            {{ $t('galleries.images-1') }}
             <strong>{{ useImageStore().getCountByGallery(item.galleryId) }}</strong>
-            {{ text.getKey('gallery-images-2') }}
+            {{ $t('galleries.images-2') }}
           </span>
           <span v-else>
-            {{ text.getKey('gallery-images-none') }}
+            {{ $t('galleries.images-none') }}
           </span>
           <span v-if="!detail">
             [ <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
-              {{ text.getKey('gallery-images-view') }}</NuxtLink> ]
+              {{ $t('galleries.images-view') }}</NuxtLink> ]
           </span>
         </div>
         <div v-if="detail">
-          <strong>{{ text.getKey('gallery-parent') }}</strong>
+          <strong>{{ $t('galleries.parent') }}</strong>
           <div v-if="item.parentId">
             &#9656;&nbsp;<NuxtLink :to="{ path: '/gallery/' + item.parentId.galleryId }">
               {{ item.parentId.name }}
@@ -61,30 +61,30 @@
           </div>
           <div v-else>
             &#9656;&nbsp;<NuxtLink :to="{ path: '/galleries' }">
-              {{ text.getKey('gallery-parent-index') }}
+              {{ $t('galleries.parent-index') }}
             </NuxtLink>
           </div>
         </div>
         <div>
-          <strong>{{ text.getKey('gallery-sub') }}</strong>
+          <strong>{{ $t('galleries.sub') }}</strong>
           <div v-for="gallery in children" :key="gallery.galleryId">
             &#9656;&nbsp;<NuxtLink :to="{ path: '/gallery/' + gallery.galleryId }">
               {{ gallery.name }}
             </NuxtLink>
           </div>
           <div v-if="children.length === 0">
-            {{ text.getKey('gallery-sub-none') }}
+            {{ $t('galleries.sub-none') }}
           </div>
         </div>
         <div>
-          <strong>{{ text.getKey('gallery-articles') }}</strong>
+          <strong>{{ $t('galleries.articles') }}</strong>
           <div v-for="article in articles" :key="article.articleId">
             &#9656;&nbsp;<NuxtLink :to="{ path: '/article/' + article.articleId }">
               {{ article.name }}
             </NuxtLink> [ {{ article.elrhAuthor?.name }} ]<br>
           </div>
           <div v-if="articles ? articles.length === 0 : true">
-            {{ text.getKey('gallery-articles-none') }}
+            {{ $t('galleries.articles-none') }}
           </div>
         </div>
       </div>
@@ -102,7 +102,6 @@ const props = defineProps({
   item: { type: Object as PropType<Gallery>, required: true }
 })
 
-const text = useTextStore()
 const user = computed(() => useLoginStore().user)
 
 const id = ref(props.item.galleryId)

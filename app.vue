@@ -28,7 +28,6 @@ useHead({
 // TODO improve
 // TODO also there is a problem that gallery info doesn't load on time
 //   when starting directly at /gallery/[id]
-await useTextStore().fill()
 await useAuthorStore().fill()
 await useContactStore().fill()
 await useNewsStore().fill()

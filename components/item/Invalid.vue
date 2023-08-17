@@ -1,10 +1,10 @@
 <template>
   <div class="box">
     <div class="box-header">
-      {{ text.getKey('invalid-' + item) }}
+      {{ $t('invalid.' + item) }}
     </div>
     <div class="box-content flex">
-      {{ text.getKey('invalid-content') }}
+      {{ $t('invalid.content') }}
     </div>
   </div>
 </template>
@@ -13,5 +13,4 @@
 defineProps({
   item: { type: String, default: 'item' }
 })
-const text = useTextStore()
 </script>

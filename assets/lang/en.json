@@ -1,0 +1,63 @@
+{
+    "web" : {
+        "author" : "<a href=\"http://alois-seckar.cz/\">Alois Sečkár</a>"
+    },
+    "menu" : {
+        "index" : "Index",
+        "articles" : "Articles",
+        "galleries" : "Galleries",
+        "books" : "Books",
+        "links" : "Links"
+    },
+    "index" : {
+        "welcome" : "This is a welcome text displayed on the index page.<br /><br />It can be <strong>HTML <span style=\"color: red\">formatted</span></strong>.",
+        "about" : "About",
+        "contacts" : "Contacts",
+        "news" : "News",
+        "news-all" : "All news"
+    },
+    "articles" : {
+        "total" : "Total articles",
+        "read" : "Read article",
+        "gallery" : "View gallery"
+    },
+    "galleries" : {
+        "total" : "Total galleries",
+        "read-more" : "Read more...",
+        "see-more" : "See more...",
+        "images" : "Images in gallery:",
+        "images-1" : "This gallery contains",
+        "images-2" : "images in total",
+        "images-none" : "This gallery has no images",
+        "images-view" : "View gallery",
+        "parent" : "Parent gallery:",
+        "parent-index" : "Index",
+        "sub" : "Sub-galleries:",
+        "sub-none" : "No sub-galleries",
+        "articles" : "Related articles:",
+        "articles-none" : "No related articles"
+    },
+    "images" : {
+        "total" : "Total images"
+    },
+    "books" : {
+        "total" : "Total books",
+        "none" : "No books yet",
+        "review" : "Review"
+    },
+    "links" : {
+        "total" : "Total links",
+        "none" : "No links yet"
+    },
+    "news" : {
+        "title" : "News",
+        "total" : "Total news",
+        "none" : "No news yet"
+    },
+    "invalid" : {
+        "content" : "Data doesn't exist or cannot be loaded",
+        "article" : "Invalid article ID",
+        "gallery" : "Invalid gallery ID",
+        "image" : "Invalid image ID"
+    }
+}

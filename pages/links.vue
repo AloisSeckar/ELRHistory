@@ -10,16 +10,12 @@
           <ItemLink :item="link" />
         </div>
         <div v-if="useLinkStore().getByCategory(category.categoryId).length < 1" class="p-2">
-          {{ text.getKey('links-none') }}
+          {{ $t('links.none') }}
         </div>
       </div>
     </div>
     <div class="-mt-2 text-lg">
-      {{ text.getKey('links-total') }}: <strong>{{ useLinkStore().getCount }}</strong>
+      {{ $t('links.total') }}: <strong>{{ useLinkStore().getCount }}</strong>
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const text = useTextStore()
-</script>

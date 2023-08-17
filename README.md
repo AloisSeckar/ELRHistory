@@ -3,10 +3,11 @@ Website designed for photos/pictures and information about random historical top
 
 Originally a new version of [StaraKrc Python project](https://github.com/AloisSeckar/StaraKrc), this time in [Nuxt3](https://v3.nuxtjs.org/). However, my current goal is to make it customizable for possible re-use for other city parts etc.
 
-## Attributions
-- Nuxt 3 framework
+## Tech stack
+- Nuxt 3 framework + VueUse + nuxt/i18n
 - Tailwind CSS
 - Supabase DB
+- Formkit
 - Icons made possible by [FortAwesome](https://github.com/FortAwesome/vue-fontawesome)
 - Test images by [Unsplash](https://unsplash.com/)
 
@@ -33,7 +34,7 @@ To connect the application to your own Supabase, you need to provide unique `SUP
 
 ### Text
 
-Static texts are stored in `elrhText` database table. They are organized as `key - value` pair. Texts are being retrieved using Pinia store instance defined in `composables/useTextStore`. The getter designed for retrieving the values is `getKey(key_name)`. The method either fetches given key from underlying `Supabase` DB or returns `UNDEFINED {'key_name'}` if nothing found (or the DB or the table cannot be accessed).
+Static texts are served via [nuxt/i18n](https://v8.i18n.nuxtjs.org/). TODO
 
 List of texts, that also allow HTML:
 * `web-author` - name and possible link to author's website
