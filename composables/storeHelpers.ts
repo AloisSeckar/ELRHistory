@@ -19,8 +19,8 @@ export interface StoreConfig {
 }
 
 // TODO should be named "fillStoreIfNeeded" because it is not re-loading
-export async function fillStore (config: StoreConfig) {
-  if (!config.storeData?.loaded) {
+export async function fillStore (config: StoreConfig, force?: boolean) {
+  if (!config.storeData?.loaded || force) {
     console.debug('getting ' + config.tableName + ' from Supabase')
     await fetchSupabase(config)
       .then((x: any) => {

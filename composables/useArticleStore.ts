@@ -12,7 +12,7 @@ export const useArticleStore = defineStore({
     } as StoreData
   },
   actions: {
-    async fill () {
+    async fill (force?: boolean) {
       await fillStore({
         supabaseClient: useSupabaseClient<Article>(),
         tableName,
@@ -20,7 +20,7 @@ export const useArticleStore = defineStore({
         selectQuery: 'articleId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)',
         orderQuery: 'dateCreated',
         orderOpts: { ascending: false }
-      })
+      }, force)
     },
     async update (itemData: ArticleDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)
@@ -41,7 +41,7 @@ export const useArticleStore = defineStore({
       }
 
       if (ret) {
-        this.fill() // TODO can we just load the new one?
+        this.fill(true) // TODO can we just load the new one?
       }
 
       return ret
