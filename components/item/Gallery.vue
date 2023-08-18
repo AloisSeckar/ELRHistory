@@ -81,7 +81,7 @@
           <div v-for="article in articles" :key="article.articleId">
             &#9656;&nbsp;<NuxtLink :to="{ path: '/article/' + article.articleId }">
               {{ article.name }}
-            </NuxtLink> [ {{ article.elrhAuthor?.name }} ]<br>
+            </NuxtLink> [ {{ article.elrhAuthor?.name }} ]<br> <!-- TODO author name not showing -->
           </div>
           <div v-if="articles ? articles.length === 0 : true">
             {{ $t('galleries.articles-none') }}
@@ -105,6 +105,7 @@ const props = defineProps({
 const user = computed(() => useLoginStore().user)
 
 const id = ref(props.item.galleryId)
+// TODO data not loading properly when routing from /gallery/{id}
 const images = computed(() => useImageStore().getCountByGallery(id.value))
 const thumbs = computed(() => useImageStore().getByGallery(id.value, props.detail ? undefined : 5))
 const children = computed(() => useGalleryStore().getByParent(id.value))

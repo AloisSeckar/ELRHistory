@@ -17,4 +17,10 @@ const save = async (article: ArticleDB) => {
     useModalStore().showModal('Error', "Article wasn't created")
   }
 }
+
+onBeforeMount(async () => {
+  await useArticleStore().fill()
+  await useAuthorStore().fill()
+  await useCategoryStore().fill()
+})
 </script>

@@ -21,4 +21,8 @@
 
 <script setup lang="ts">
 const news = useNewsStore()
+
+onBeforeMount(async () => {
+  await useNewsStore().fill()
+})
 </script>

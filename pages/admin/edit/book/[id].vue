@@ -35,7 +35,14 @@ const save = async (book: BookDB) => {
     useModalStore().showModal('Error', "Book wasn't updated")
   }
 }
+
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/book/' + calback)
 }
+
+onBeforeMount(async () => {
+  await useBookStore().fill()
+  await useAuthorStore().fill()
+  await useCategoryStore().fill()
+})
 </script>

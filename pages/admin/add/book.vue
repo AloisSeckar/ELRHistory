@@ -18,4 +18,9 @@ const save = async (book: BookDB) => {
     // TODO preserve input if error occured
   }
 }
+onBeforeMount(async () => {
+  await useBookStore().fill()
+  await useAuthorStore().fill()
+  await useCategoryStore().fill()
+})
 </script>

@@ -35,7 +35,14 @@ const save = async (news: NewsDB) => {
     useModalStore().showModal('Error', "News wasn't updated")
   }
 }
+
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/news/' + calback)
 }
+
+onBeforeMount(async () => {
+  await useNewsStore().fill()
+  await useAuthorStore().fill()
+  await useCategoryStore().fill()
+})
 </script>

@@ -36,4 +36,9 @@
 
 <script setup lang="ts">
 import { Contact } from '@/database/types'
+
+onBeforeMount(async () => {
+  await useContactStore().fill()
+  await useNewsStore().fill()
+})
 </script>

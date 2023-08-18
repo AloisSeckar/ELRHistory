@@ -18,4 +18,9 @@ const item = computed(() => {
   }
   return {} as Gallery
 })
+
+onBeforeMount(async () => {
+  await useGalleryStore().fill()
+  await useImageStore().fill()
+})
 </script>

@@ -18,4 +18,8 @@ const item = computed(() => {
   }
   return {} as Image
 })
+
+onBeforeMount(async () => {
+  await useImageStore().fill()
+})
 </script>

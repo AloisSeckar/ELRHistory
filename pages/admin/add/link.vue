@@ -18,4 +18,10 @@ const save = async (link: LinkDB) => {
     // TODO preserve input if error occured
   }
 }
+
+onBeforeMount(async () => {
+  await useLinkStore().fill()
+  await useAuthorStore().fill()
+  await useCategoryStore().fill()
+})
 </script>

@@ -18,4 +18,8 @@ const item = computed(() => {
   }
   return {} as Article
 })
+
+onBeforeMount(async () => {
+  await useArticleStore().fill()
+})
 </script>

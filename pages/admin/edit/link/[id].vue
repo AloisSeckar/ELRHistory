@@ -35,7 +35,14 @@ const save = async (link: LinkDB) => {
     useModalStore().showModal('Error', "Link wasn't updated")
   }
 }
+
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/link/' + calback)
 }
+
+onBeforeMount(async () => {
+  await useLinkStore().fill()
+  await useAuthorStore().fill()
+  await useCategoryStore().fill()
+})
 </script>

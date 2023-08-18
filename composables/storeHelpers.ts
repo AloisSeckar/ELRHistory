@@ -18,18 +18,23 @@ export interface StoreConfig {
   orderOpts: OrderOpts
 }
 
+// TODO should be named "fillStoreIfNeeded" because it is not re-loading
 export async function fillStore (config: StoreConfig) {
-  console.debug('getting ' + config.tableName + ' from Supabase')
-  await fetchSupabase(config)
-    .then((x: any) => {
-      console.debug(`${config.tableName} loaded from Supabase`)
-      config.storeData.items = x.data
-      config.storeData.loaded = true
-    }).catch((x: any) => {
-      console.error(`failed to load ${config.tableName} from Supabase`)
-      console.error(x.error ? x.error : x)
-      config.storeData.loaded = false
-    })
+  if (!config.storeData?.loaded) {
+    console.debug('getting ' + config.tableName + ' from Supabase')
+    await fetchSupabase(config)
+      .then((x: any) => {
+        console.debug(`${config.tableName} loaded from Supabase`)
+        config.storeData.items = x.data
+        config.storeData.loaded = true
+      }).catch((x: any) => {
+        console.error(`failed to load ${config.tableName} from Supabase`)
+        console.error(x.error ? x.error : x)
+        config.storeData.loaded = false
+      })
+  } else {
+    console.debug(config.tableName + ' already loaded')
+  }
 }
 
 export async function fetchSupabase (config: StoreConfig) {
