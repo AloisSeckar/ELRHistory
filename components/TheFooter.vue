@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-const title = useRuntimeConfig().public.textTitle
+const title = useAppConfig().textTitle
 const year = new Date().getFullYear()
 const user = computed(() => useLoginStore().user)
 </script>

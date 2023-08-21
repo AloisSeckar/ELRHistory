@@ -15,7 +15,7 @@
 import './assets/css/tailwind.css'
 
 useHead({
-  title: useRuntimeConfig().public.textTitle,
+  title: useAppConfig().textTitle,
   bodyAttrs: {
     id: 'main'
   },
