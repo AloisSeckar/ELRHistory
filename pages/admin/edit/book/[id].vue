@@ -27,13 +27,7 @@ for (let i = 0; i < useBookStore().items.length; i++) {
 }
 
 const save = async (book: BookDB) => {
-  const result = await useBookStore().update(JSON.parse(JSON.stringify(book)), bookId)
-  if (result) {
-    useModalStore().showModal('Item saved', 'Book was successfully updated')
-    return navigateTo('/books')
-  } else {
-    useModalStore().showModal('Error', "Book wasn't updated")
-  }
+  await useUpdateItem(useBookStore(), book, bookId, 'book', '/books')
 }
 
 const changeItem = (calback: String) => {

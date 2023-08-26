@@ -51,6 +51,7 @@ export type Text = definitions['elrhText']
 
 export type SupabaseStoreData = Article[] | Author[] | Book[] | Category[] | Contact[] | Gallery[] | Image[] | Link[] | News[] | Text[]
 export type SupabaseUpdateData = ArticleDB | BookDB | LinkDB | NewsDB
+export type SupabaseItemType = 'article' | 'book' | 'link' | 'news'
 
 export type SupabaseStoreClient = SupabaseClient<Article> | SupabaseClient<Book> | SupabaseClient<News> | SupabaseClient<Link>
 export type SupabaseUpdateClient = SupabaseClient<ArticleDB> | SupabaseClient<BookDB> | SupabaseClient<NewsDB> | SupabaseClient<LinkDB>

@@ -27,13 +27,7 @@ for (let i = 0; i < useLinkStore().items.length; i++) {
 }
 
 const save = async (link: LinkDB) => {
-  const result = await useLinkStore().update(JSON.parse(JSON.stringify(link)), linkId)
-  if (result) {
-    useModalStore().showModal('Item saved', 'Link was successfully updated')
-    return navigateTo('/links')
-  } else {
-    useModalStore().showModal('Error', "Link wasn't updated")
-  }
+  await useUpdateItem(useLinkStore(), link, linkId, 'link', '/links')
 }
 
 const changeItem = (calback: String) => {

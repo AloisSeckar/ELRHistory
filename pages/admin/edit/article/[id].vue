@@ -27,13 +27,7 @@ for (let i = 0; i < useArticleStore().items.length; i++) {
 }
 
 const save = async (article: ArticleDB) => {
-  const result = await useArticleStore().update(JSON.parse(JSON.stringify(article)), articleId)
-  if (result) {
-    useModalStore().showModal('Item saved', 'Article was successfully updated')
-    return navigateTo('/article/' + articleId)
-  } else {
-    useModalStore().showModal('Error', "Article wasn't updated")
-  }
+  await useUpdateItem(useArticleStore(), article, articleId, 'article', `/article/${articleId}`)
 }
 
 const changeItem = (calback: String) => {

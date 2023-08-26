@@ -27,13 +27,7 @@ for (let i = 0; i < useNewsStore().items.length; i++) {
 }
 
 const save = async (news: NewsDB) => {
-  const result = await useNewsStore().update(JSON.parse(JSON.stringify(news)), newsId)
-  if (result) {
-    useModalStore().showModal('Item saved', 'News was successfully updated')
-    return navigateTo('/news')
-  } else {
-    useModalStore().showModal('Error', "News wasn't updated")
-  }
+  await useUpdateItem(useNewsStore(), news, newsId, 'news', '/news')
 }
 
 const changeItem = (calback: String) => {
