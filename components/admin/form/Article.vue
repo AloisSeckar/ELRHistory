@@ -93,10 +93,13 @@ if (props.articleId > 0) {
   article.galleryId = undefined
 }
 
-const authors = useAuthorStore().getItems.map(author => ({ value: author.authorId, label: author.name }))
-const categories = useCategoryStore().getByType('a').map(cat => ({ value: cat.categoryId, label: cat.name }))
-const galleries = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery.galleryId, label: gallery.name }))
-galleries.unshift({ value: -1, label: '' })
+const authors = computed(() => useAuthorStore().getItems.map(author => ({ value: author.authorId, label: author.name })))
+const categories = computed(() => useCategoryStore().getByType('a').map(cat => ({ value: cat.categoryId, label: cat.name })))
+const galleries = computed(() => {
+  const ret = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery.galleryId, label: gallery.name }))
+  ret.unshift({ value: -1, label: '' })
+  return ret
+})
 
 const setThumb = (path: string) => {
   article.thumb = path

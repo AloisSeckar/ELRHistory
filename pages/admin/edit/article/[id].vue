@@ -38,5 +38,6 @@ onBeforeMount(async () => {
   await useArticleStore().fill()
   await useAuthorStore().fill()
   await useCategoryStore().fill()
+  await useGalleryStore().fill()
 })
 </script>

@@ -106,10 +106,8 @@ if (props.bookId > 0) {
   book.categoryId = useCategoryStore().getByType('b')?.[0]?.categoryId
 }
 
-const authors = useAuthorStore().getItems.map(author => ({ value: author.authorId, label: author.name }))
-const categories = useCategoryStore().getByType('b').map(cat => ({ value: cat.categoryId, label: cat.name }))
-const galleries = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery.galleryId, label: gallery.name }))
-galleries.unshift({ value: -1, label: '' })
+const authors = computed(() => useAuthorStore().getItems.map(author => ({ value: author.authorId, label: author.name })))
+const categories = computed(() => useCategoryStore().getByType('b').map(cat => ({ value: cat.categoryId, label: cat.name })))
 
 const setThumb = (path: string) => {
   book.thumb = path
