@@ -9,14 +9,7 @@
 import { LinkDB } from '@/database/types'
 
 const save = async (link: LinkDB) => {
-  const result = await useLinkStore().update(JSON.parse(JSON.stringify(link)))
-  if (result) {
-    useModalStore().showModal('Item saved', 'Link was successfully created')
-    return navigateTo('/links')
-  } else {
-    useModalStore().showModal('Error', "Link wasn't created")
-    // TODO preserve input if error occured
-  }
+  await useUpdateItem(useLinkStore(), 'link', '/links', link)
 }
 
 onBeforeMount(async () => {

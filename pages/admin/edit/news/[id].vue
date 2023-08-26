@@ -27,7 +27,7 @@ for (let i = 0; i < useNewsStore().items.length; i++) {
 }
 
 const save = async (news: NewsDB) => {
-  await useUpdateItem(useNewsStore(), news, newsId, 'news', '/news')
+  await useUpdateItem(useNewsStore(), 'news', '/news', news, newsId)
 }
 
 const changeItem = (calback: String) => {

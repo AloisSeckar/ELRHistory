@@ -27,7 +27,7 @@ for (let i = 0; i < useLinkStore().items.length; i++) {
 }
 
 const save = async (link: LinkDB) => {
-  await useUpdateItem(useLinkStore(), link, linkId, 'link', '/links')
+  await useUpdateItem(useLinkStore(), 'link', '/links', link, linkId)
 }
 
 const changeItem = (calback: String) => {

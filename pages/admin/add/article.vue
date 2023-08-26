@@ -9,13 +9,7 @@
 import { ArticleDB } from '@/database/types'
 
 const save = async (article: ArticleDB) => {
-  const result = await useArticleStore().update(JSON.parse(JSON.stringify(article)))
-  if (result) {
-    useModalStore().showModal('Item saved', 'Article was successfully created')
-    return navigateTo('/articles')
-  } else {
-    useModalStore().showModal('Error', "Article wasn't created")
-  }
+  await useUpdateItem(useArticleStore(), 'article', '/articles', article)
 }
 
 onBeforeMount(async () => {

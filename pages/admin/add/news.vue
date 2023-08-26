@@ -9,13 +9,7 @@
 import { NewsDB } from '@/database/types'
 
 const save = async (news: NewsDB) => {
-  const result = await useNewsStore().update(JSON.parse(JSON.stringify(news)))
-  if (result) {
-    useModalStore().showModal('Item saved', 'News was successfully created')
-    return navigateTo('/news')
-  } else {
-    useModalStore().showModal('Error', "News wasn't created")
-  }
+  await useUpdateItem(useLinkStore(), 'news', '/news', news)
 }
 
 onBeforeMount(async () => {
