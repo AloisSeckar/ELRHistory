@@ -74,7 +74,7 @@ if (props.linkId > 0) {
   link.authorId = useAuthorStore().getItems?.[0]?.authorId
 }
 
-const authors = computed(() => useAuthorStore().getItems.map(author => ({ value: author.authorId, label: author.name })))
+const authors = computed(() => useAuthorStore().getAuthorList)
 const categories = computed(() => useCategoryStore().getByType('l').map(cat => ({ value: cat.categoryId, label: cat.name })))
 
 const setThumb = (path: string) => {

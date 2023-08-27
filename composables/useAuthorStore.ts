@@ -1,5 +1,6 @@
-import { StoreData } from './storeHelpers'
-import { Author } from '@/database/types'
+import type { StoreData } from '@/composables/storeHelpers'
+import type { Author } from '@/database/types'
+import type { FormkitValue } from '@/utils/typeUtils'
 
 const tableName = 'elrhAuthor'
 
@@ -28,6 +29,10 @@ export const useAuthorStore = defineStore({
     getCount: state => state.items?.length || 0,
     getById: (state) => {
       return (authorId: number) => getStoreItems<Author>(state).find(i => i.authorId === authorId) || { authorId: 0 } as Author
+    },
+    getAuthorList: (state): FormkitValue[] => {
+      const items = (state.items || []) as Author[]
+      return items.map(author => ({ value: author.authorId, label: author.name }))
     }
   }
 })

@@ -106,7 +106,7 @@ if (props.bookId > 0) {
   book.categoryId = useCategoryStore().getByType('b')?.[0]?.categoryId
 }
 
-const authors = computed(() => useAuthorStore().getItems.map(author => ({ value: author.authorId, label: author.name })))
+const authors = computed(() => useAuthorStore().getAuthorList)
 const categories = computed(() => useCategoryStore().getByType('b').map(cat => ({ value: cat.categoryId, label: cat.name })))
 
 const setThumb = (path: string) => {
