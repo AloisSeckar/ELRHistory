@@ -1,5 +1,6 @@
 import { StoreData } from './storeHelpers'
 import { Category } from '@/database/types'
+import type { FormkitValue } from '@/utils/typeUtils'
 
 const tableName = 'elrhCategory'
 
@@ -31,6 +32,12 @@ export const useCategoryStore = defineStore({
     },
     getByType: (state) => {
       return (type: string) => getStoreItems<Category>(state).filter(i => i.type === type) || [] as Category[]
+    },
+    getCategoryList: (state) => {
+      return (type: string): FormkitValue[] => {
+        const filteredItems = getStoreItems<Category>(state).filter(i => i.type === type) || [] as Category[]
+        return filteredItems.map(cat => ({ value: cat.categoryId, label: cat.name }))
+      }
     }
   }
 })

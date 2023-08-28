@@ -94,7 +94,7 @@ if (props.articleId > 0) {
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)
-const categories = computed(() => useCategoryStore().getByType('a').map(cat => ({ value: cat.categoryId, label: cat.name })))
+const categories = computed(() => useCategoryStore().getCategoryList('a'))
 const galleries = computed(() => {
   const ret = useGalleryStore().getItems.sort((a, b) => a.name.localeCompare(b.name)).map(gallery => ({ value: gallery.galleryId, label: gallery.name }))
   ret.unshift({ value: -1, label: '' })

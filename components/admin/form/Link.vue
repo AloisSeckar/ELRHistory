@@ -75,7 +75,7 @@ if (props.linkId > 0) {
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)
-const categories = computed(() => useCategoryStore().getByType('l').map(cat => ({ value: cat.categoryId, label: cat.name })))
+const categories = computed(() => useCategoryStore().getCategoryList('l'))
 
 const setThumb = (path: string) => {
   link.thumb = path
