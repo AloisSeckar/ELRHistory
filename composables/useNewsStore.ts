@@ -1,5 +1,5 @@
-import { StoreData, UpdateConfig } from './storeHelpers'
-import { News, NewsDB } from '@/database/types'
+import type { StoreData, UpdateConfig } from '@/composables/storeHelpers'
+import type { News, NewsDB } from '@/database/types'
 
 const tableName = 'elrhNews'
 
@@ -48,11 +48,11 @@ export const useNewsStore = defineStore({
     }
   },
   getters: {
-    getItems: state => (state.items || []) as News[],
-    getTopItems: state => (state.items?.slice(0, 5) || []) as News[],
-    getCount: state => state.items?.length || 0,
+    getItems: state => get(state),
+    getCount: state => get(state).length,
+    getTopItems: state => get(state).slice(0, 5) || [] as News[],
     getById: (state) => {
-      return (newsId: number) => getStoreItems<News>(state).find(i => i.newsId === newsId) || { newsId: 0 } as News
+      return (newsId: number) => get(state).find(i => i.newsId === newsId) || { newsId: 0 } as News
     },
     getEmpty: () => {
       const emptyItem: NewsDB = {
@@ -66,6 +66,10 @@ export const useNewsStore = defineStore({
     }
   }
 })
+
+function get (state: StoreData) {
+  return getStoreItems<News>(state)
+}
 
 function treatInput (input: NewsDB) {
   input.dateEdited = new Date().toISOString()

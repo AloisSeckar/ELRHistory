@@ -1,5 +1,5 @@
-import { StoreData } from './storeHelpers'
-import { Contact } from '@/database/types'
+import type { StoreData } from '@/composables/storeHelpers'
+import type { Contact } from '@/database/types'
 
 const tableName = 'elrhContact'
 

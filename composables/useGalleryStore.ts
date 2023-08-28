@@ -1,5 +1,5 @@
-import { StoreData } from './storeHelpers'
-import { Gallery } from '@/database/types'
+import type { StoreData } from '@/composables/storeHelpers'
+import type { Gallery } from '@/database/types'
 
 const tableName = 'elrhGallery'
 
@@ -24,13 +24,17 @@ export const useGalleryStore = defineStore({
     }
   },
   getters: {
-    getItems: state => (state.items || []) as Gallery[],
-    getCount: state => state.items?.length || 0,
+    getItems: state => get(state),
+    getCount: state => get(state).length,
     getById: (state) => {
-      return (galleryId: number) => getStoreItems<Gallery>(state).find(i => i.galleryId === galleryId) || { galleryId: 0 } as Gallery
+      return (galleryId: number) => get(state).find(i => i.galleryId === galleryId) || { galleryId: 0 } as Gallery
     },
     getByParent: (state) => {
-      return (parentId?: number) => getStoreItems<Gallery>(state).filter(i => i.parentId?.galleryId === parentId) || [] as Gallery[]
+      return (parentId?: number) => get(state).filter(i => i.parentId?.galleryId === parentId) || [] as Gallery[]
     }
   }
 })
+
+function get (state: StoreData) {
+  return getStoreItems<Gallery>(state)
+}

@@ -1,15 +1,15 @@
 import { SupabaseStoreClient, SupabaseUpdateClient, SupabaseStoreData, SupabaseUpdateData } from '@/database/types'
 
-export interface OrderOpts {
+export type OrderOpts = {
   ascending?: boolean
 }
 
-export interface StoreData {
+export type StoreData = {
   items: SupabaseStoreData,
   loaded: boolean
 }
 
-export interface StoreConfig {
+export type StoreConfig = {
   supabaseClient: SupabaseStoreClient
   tableName: string,
   storeData: StoreData,
@@ -44,7 +44,7 @@ export async function fetchSupabase (config: StoreConfig) {
     .order(config.orderQuery, config.orderOpts)
 }
 
-export interface UpdateConfig {
+export type UpdateConfig = {
   supabaseClient: SupabaseUpdateClient
   tableName: string,
   itemData: SupabaseUpdateData,

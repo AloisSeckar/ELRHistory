@@ -1,4 +1,4 @@
-import { StoreData, UpdateConfig } from './storeHelpers'
+import { StoreData, UpdateConfig } from '@/composables/storeHelpers'
 import { Book, BookDB } from '@/database/types'
 
 const tableName = 'elrhBook'
@@ -48,13 +48,13 @@ export const useBookStore = defineStore({
     }
   },
   getters: {
-    getItems: state => (state.items || []) as Book[],
-    getCount: state => state.items?.length || 0,
+    getItems: state => get(state),
+    getCount: state => get(state).length,
     getByCategory: (state) => {
-      return (categoryId: number) => getStoreItems<Book>(state).filter(i => i.categoryId === categoryId) || [] as Book[]
+      return (categoryId: number) => get(state).filter(i => i.categoryId === categoryId) || [] as Book[]
     },
     getById: (state) => {
-      return (bookId: number) => getStoreItems<Book>(state).find(i => i.bookId === bookId) || { bookId: 0 } as Book
+      return (bookId: number) => get(state).find(i => i.bookId === bookId) || { bookId: 0 } as Book
     },
     getEmpty: () => {
       const newBook: BookDB = {
@@ -74,6 +74,10 @@ export const useBookStore = defineStore({
     }
   }
 })
+
+function get (state: StoreData) {
+  return getStoreItems<Book>(state)
+}
 
 function treatInput (input: BookDB) {
   input.dateEdited = new Date().toISOString()

@@ -1,5 +1,5 @@
-import { StoreData, UpdateConfig } from './storeHelpers'
-import { Article, ArticleDB } from '@/database/types'
+import type { StoreData, UpdateConfig } from '@/composables/storeHelpers'
+import type { Article, ArticleDB } from '@/database/types'
 
 const tableName = 'elrhArticle'
 
@@ -48,13 +48,13 @@ export const useArticleStore = defineStore({
     }
   },
   getters: {
-    getItems: state => (state.items || []) as Article[],
-    getCount: state => state.items?.length || 0,
+    getItems: state => get(state),
+    getCount: state => get(state).length,
     getByCategory: (state) => {
-      return (categoryId: number) => getStoreItems<Article>(state).filter(i => i.categoryId === categoryId) || { articleId: 0 } as Article
+      return (categoryId: number) => get(state).filter(i => i.categoryId === categoryId) || { articleId: 0 } as Article
     },
     getById: (state) => {
-      return (articleId: number) => getStoreItems<Article>(state).find(i => i.articleId === articleId) || { articleId: 0 } as Article
+      return (articleId: number) => get(state).find(i => i.articleId === articleId) || { articleId: 0 } as Article
     },
     getEmpty: () => {
       const newArticle: ArticleDB = {
@@ -72,6 +72,10 @@ export const useArticleStore = defineStore({
     }
   }
 })
+
+function get (state: StoreData) {
+  return getStoreItems<Article>(state)
+}
 
 function treatInput (input: ArticleDB) {
   input.dateEdited = new Date().toISOString()

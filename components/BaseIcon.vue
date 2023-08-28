@@ -27,7 +27,7 @@ const props = defineProps({
 const svgDefinition = getSVGDef(props.icon)
 const viewBox = `0 0 ${svgDefinition.dim} ${svgDefinition.dim}`
 
-interface IconDefinition {
+type IconDefinition = {
   id: string,
   dim: number,
   paths: string[]

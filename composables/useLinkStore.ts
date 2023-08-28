@@ -1,5 +1,5 @@
-import { StoreData, UpdateConfig } from './storeHelpers'
-import { Link, LinkDB } from '@/database/types'
+import type { StoreData, UpdateConfig } from '@/composables/storeHelpers'
+import type { Link, LinkDB } from '@/database/types'
 
 const tableName = 'elrhLink'
 
@@ -48,13 +48,13 @@ export const useLinkStore = defineStore({
     }
   },
   getters: {
-    getItems: state => (state.items || []) as Link[],
-    getCount: state => state.items?.length || 0,
+    getItems: state => get(state),
+    getCount: state => get(state).length,
     getById: (state) => {
-      return (linkId: number) => getStoreItems<Link>(state).find(i => i.linkId === linkId) || { linkId: 0 } as Link
+      return (linkId: number) => get(state).find(i => i.linkId === linkId) || { linkId: 0 } as Link
     },
     getByCategory: (state) => {
-      return (categoryId: number) => getStoreItems<Link>(state).filter(i => i.categoryId === categoryId) || [] as Link[]
+      return (categoryId: number) => get(state).filter(i => i.categoryId === categoryId) || [] as Link[]
     },
     getEmpty: () => {
       const emptyItem: LinkDB = {
@@ -72,6 +72,10 @@ export const useLinkStore = defineStore({
     }
   }
 })
+
+function get (state: StoreData) {
+  return getStoreItems<Link>(state)
+}
 
 function treatInput (input: LinkDB) {
   input.dateEdited = new Date().toISOString()

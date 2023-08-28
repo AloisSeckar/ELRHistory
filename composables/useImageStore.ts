@@ -1,5 +1,5 @@
-import { StoreData } from './storeHelpers'
-import { Image } from '@/database/types'
+import type { StoreData } from '@/composables/storeHelpers'
+import type { Image } from '@/database/types'
 
 const tableName = 'elrhImage'
 
@@ -24,16 +24,20 @@ export const useImageStore = defineStore({
     }
   },
   getters: {
-    getItems: state => (state.items || []) as Image[],
-    getCount: state => state.items?.length || 0,
+    getItems: state => get(state),
+    getCount: state => get(state).length,
     getById: (state) => {
-      return (imageId: number) => getStoreItems<Image>(state).find(i => i.imageId === imageId) || { imageId: 0 } as Image
+      return (imageId: number) => get(state).find(i => i.imageId === imageId) || { imageId: 0 } as Image
     },
     getByGallery: (state) => {
-      return (galleryId: number, limit?: number) => getStoreItems<Image>(state).filter(i => i.galleryId?.galleryId === galleryId)?.slice(0, limit) || [] as Image[]
+      return (galleryId: number, limit?: number) => get(state).filter(i => i.galleryId?.galleryId === galleryId)?.slice(0, limit) || [] as Image[]
     },
     getCountByGallery: (state) => {
-      return (galleryId: number) => getStoreItems<Image>(state).filter(i => i.galleryId?.galleryId === galleryId).length || 0
+      return (galleryId: number) => get(state).filter(i => i.galleryId?.galleryId === galleryId).length || 0
     }
   }
 })
+
+function get (state: StoreData) {
+  return getStoreItems<Image>(state)
+}
