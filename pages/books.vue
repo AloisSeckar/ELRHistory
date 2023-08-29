@@ -25,7 +25,7 @@ const categories = computed(() => useCategoryStore().getByType('b'))
 const books = useBookStore()
 
 onBeforeMount(async () => {
-  await useCategoryStore().fill()
-  await useBookStore().fill()
+  await useCategoryStore().init()
+  await useBookStore().init()
 })
 </script>

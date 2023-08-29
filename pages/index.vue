@@ -38,7 +38,7 @@
 import { Contact } from '@/database/types'
 
 onBeforeMount(async () => {
-  await useContactStore().fill()
-  await useNewsStore().fill()
+  await useContactStore().init()
+  await useNewsStore().init()
 })
 </script>

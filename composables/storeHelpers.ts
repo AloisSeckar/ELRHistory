@@ -18,8 +18,7 @@ export type StoreConfig = {
   orderOpts: OrderOpts
 }
 
-// TODO should be named "fillStoreIfNeeded" because it is not re-loading
-export async function fillStore (config: StoreConfig, force?: boolean) {
+export async function fillStoreIfNeeded (config: StoreConfig, force?: boolean) {
   if (!config.storeData?.loaded || force) {
     console.debug('getting ' + config.tableName + ' from Supabase')
     await fetchSupabase(config)

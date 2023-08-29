@@ -13,8 +13,8 @@ const save = async (article: ArticleDB) => {
 }
 
 onBeforeMount(async () => {
-  await useArticleStore().fill()
-  await useAuthorStore().fill()
-  await useCategoryStore().fill()
+  await useArticleStore().init()
+  await useAuthorStore().init()
+  await useCategoryStore().init()
 })
 </script>

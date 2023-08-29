@@ -12,8 +12,8 @@ export const useContactStore = defineStore({
     } as StoreData
   },
   actions: {
-    async fill () {
-      await fillStore({
+    async init () {
+      await fillStoreIfNeeded({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,

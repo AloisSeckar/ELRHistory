@@ -35,7 +35,7 @@ const changeItem = (calback: String) => {
 }
 
 onBeforeMount(async () => {
-  await useNewsStore().fill()
-  await useAuthorStore().fill()
+  await useNewsStore().init()
+  await useAuthorStore().init()
 })
 </script>

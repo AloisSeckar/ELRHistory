@@ -13,8 +13,8 @@ const save = async (news: NewsDB) => {
 }
 
 onBeforeMount(async () => {
-  await useNewsStore().fill()
-  await useAuthorStore().fill()
-  await useCategoryStore().fill()
+  await useNewsStore().init()
+  await useAuthorStore().init()
+  await useCategoryStore().init()
 })
 </script>

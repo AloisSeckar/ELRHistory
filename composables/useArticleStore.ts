@@ -12,8 +12,8 @@ export const useArticleStore = defineStore({
     } as StoreData
   },
   actions: {
-    async fill (force?: boolean) {
-      await fillStore({
+    async init (force?: boolean) {
+      await fillStoreIfNeeded({
         supabaseClient: useSupabaseClient<Article>(),
         tableName,
         storeData: this,
@@ -41,7 +41,7 @@ export const useArticleStore = defineStore({
       }
 
       if (ret) {
-        this.fill(true) // TODO can we just load the new one?
+        this.init(true) // TODO can we just load the new one?
       }
 
       return ret

@@ -13,6 +13,6 @@ import { Article } from '@/database/types'
 const articles = useArticleStore()
 
 onBeforeMount(async () => {
-  await useArticleStore().fill()
+  await useArticleStore().init()
 })
 </script>

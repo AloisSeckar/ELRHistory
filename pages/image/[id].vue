@@ -20,6 +20,6 @@ const item = computed(() => {
 })
 
 onBeforeMount(async () => {
-  await useImageStore().fill()
+  await useImageStore().init()
 })
 </script>

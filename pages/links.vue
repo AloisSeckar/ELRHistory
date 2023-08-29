@@ -25,7 +25,7 @@ const categories = computed(() => useCategoryStore().getByType('l'))
 const links = useLinkStore()
 
 onBeforeMount(async () => {
-  await useCategoryStore().fill()
-  await useLinkStore().fill()
+  await useCategoryStore().init()
+  await useLinkStore().init()
 })
 </script>

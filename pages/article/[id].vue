@@ -20,6 +20,6 @@ const item = computed(() => {
 })
 
 onBeforeMount(async () => {
-  await useArticleStore().fill()
+  await useArticleStore().init()
 })
 </script>

@@ -20,7 +20,7 @@ const item = computed(() => {
 })
 
 onBeforeMount(async () => {
-  await useGalleryStore().fill()
-  await useImageStore().fill()
+  await useGalleryStore().init()
+  await useImageStore().init()
 })
 </script>

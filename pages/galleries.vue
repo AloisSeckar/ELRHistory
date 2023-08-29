@@ -13,7 +13,7 @@ const galleries = useGalleryStore()
 const images = useImageStore()
 
 onBeforeMount(async () => {
-  await useGalleryStore().fill()
-  await useImageStore().fill()
+  await useGalleryStore().init()
+  await useImageStore().init()
 })
 </script>

@@ -13,8 +13,8 @@ const save = async (book: BookDB) => {
 }
 
 onBeforeMount(async () => {
-  await useBookStore().fill()
-  await useAuthorStore().fill()
-  await useCategoryStore().fill()
+  await useBookStore().init()
+  await useAuthorStore().init()
+  await useCategoryStore().init()
 })
 </script>

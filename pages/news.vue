@@ -23,6 +23,6 @@
 const news = useNewsStore()
 
 onBeforeMount(async () => {
-  await useNewsStore().fill()
+  await useNewsStore().init()
 })
 </script>

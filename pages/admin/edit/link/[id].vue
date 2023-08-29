@@ -35,8 +35,8 @@ const changeItem = (calback: String) => {
 }
 
 onBeforeMount(async () => {
-  await useLinkStore().fill()
-  await useAuthorStore().fill()
-  await useCategoryStore().fill()
+  await useLinkStore().init()
+  await useAuthorStore().init()
+  await useCategoryStore().init()
 })
 </script>
