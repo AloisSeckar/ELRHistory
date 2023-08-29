@@ -2,7 +2,8 @@ export const useLoginStore = defineStore({
   id: 'login-store',
   state: () => {
     return {
-      user: ''
+      user: '',
+      callbackUrl: ''
     }
   },
   actions: {

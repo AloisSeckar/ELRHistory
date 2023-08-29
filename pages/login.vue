@@ -39,6 +39,11 @@ const user = computed(() => useLoginStore().user)
 
 async function attemptLogin () {
   await useLoginStore().login(email.value, password.value)
+  const callbackUrl = useLoginStore().callbackUrl
+  if (useLoginStore().user && callbackUrl) {
+    useLoginStore().callbackUrl = ''
+    return navigateTo(callbackUrl)
+  }
 }
 async function attemptLogout () {
   await useLoginStore().logout()
