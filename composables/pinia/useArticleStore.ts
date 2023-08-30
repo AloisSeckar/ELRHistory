@@ -1,4 +1,4 @@
-import type { StoreData, UpdateConfig } from '@/composables/storeHelpers'
+import type { StoreData, UpdateConfig } from '@/composables/usePiniaHelpers'
 import type { Article, ArticleDB } from '@/database/types'
 
 const tableName = 'elrhArticle'
@@ -13,7 +13,7 @@ export const useArticleStore = defineStore({
   },
   actions: {
     async init (force?: boolean) {
-      await fillStoreIfNeeded({
+      await useStoreInit({
         supabaseClient: useSupabaseClient<Article>(),
         tableName,
         storeData: this,
@@ -35,9 +35,9 @@ export const useArticleStore = defineStore({
 
       let ret: boolean
       if (itemId) {
-        ret = await doUpdate(config)
+        ret = await useDBUpdate(config)
       } else {
-        ret = await doCreate(config)
+        ret = await useDBCreate(config)
       }
 
       if (ret) {

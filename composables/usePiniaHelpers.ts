@@ -1,4 +1,4 @@
-import { SupabaseStoreClient, SupabaseUpdateClient, SupabaseStoreData, SupabaseUpdateData } from '@/database/types'
+import { SupabaseStoreClient, SupabaseUpdateClient, SupabaseStoreData, SupabaseUpdateData, SupabaseItemType } from '@/database/types'
 
 export type OrderOpts = {
   ascending?: boolean
@@ -18,7 +18,7 @@ export type StoreConfig = {
   orderOpts: OrderOpts
 }
 
-export async function fillStoreIfNeeded (config: StoreConfig, force?: boolean) {
+export async function useStoreInit (config: StoreConfig, force?: boolean) {
   if (!config.storeData?.loaded || force) {
     console.debug('getting ' + config.tableName + ' from Supabase')
     await fetchSupabase(config)
@@ -36,11 +36,24 @@ export async function fillStoreIfNeeded (config: StoreConfig, force?: boolean) {
   }
 }
 
-export async function fetchSupabase (config: StoreConfig) {
+async function fetchSupabase (config: StoreConfig) {
   return await config.supabaseClient
     .from(config.tableName)
     .select(config.selectQuery)
     .order(config.orderQuery, config.orderOpts)
+}
+
+// TODO replace "store: any" with proper TS definition
+export async function useUpdateItem (store: any, itemType: SupabaseItemType, redirect: string, item: SupabaseUpdateData, itemId?: number) {
+  const action = itemId ? 'updated' : 'saved'
+  const result = await store.update(JSON.parse(JSON.stringify(item)), itemId)
+  if (result) {
+    useModalStore().showModal('Item saved', `Current ${itemType} was successfully ${action}`)
+    return navigateTo(redirect)
+  } else {
+    useModalStore().showModal('Error', `Current ${itemType} wasn't ${action}`)
+    // TODO preserve input if error occured
+  }
 }
 
 export type UpdateConfig = {
@@ -51,7 +64,7 @@ export type UpdateConfig = {
   itemKey: string
 }
 
-export async function doCreate (config: UpdateConfig): Promise<boolean> {
+export async function useDBCreate (config: UpdateConfig): Promise<boolean> {
   const { data, error } = await config.supabaseClient
     .from(config.tableName)
     .insert(config.itemData)
@@ -67,7 +80,7 @@ export async function doCreate (config: UpdateConfig): Promise<boolean> {
   }
 }
 
-export async function doUpdate (config: UpdateConfig): Promise<boolean> {
+export async function useDBUpdate (config: UpdateConfig): Promise<boolean> {
   const { data, error } = await config.supabaseClient
     .from(config.tableName)
     .update(config.itemData)

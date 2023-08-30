@@ -1,4 +1,4 @@
-import type { StoreData } from '@/composables/storeHelpers'
+import type { StoreData } from '@/composables/usePiniaHelpers'
 import type { Contact } from '@/database/types'
 
 const tableName = 'elrhContact'
@@ -13,7 +13,7 @@ export const useContactStore = defineStore({
   },
   actions: {
     async init () {
-      await fillStoreIfNeeded({
+      await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,

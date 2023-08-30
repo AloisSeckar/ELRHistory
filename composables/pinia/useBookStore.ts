@@ -1,4 +1,4 @@
-import { StoreData, UpdateConfig } from '@/composables/storeHelpers'
+import { StoreData, UpdateConfig } from '@/composables/usePiniaHelpers'
 import { Book, BookDB } from '@/database/types'
 
 const tableName = 'elrhBook'
@@ -13,7 +13,7 @@ export const useBookStore = defineStore({
   },
   actions: {
     async init (force?: boolean) {
-      await fillStoreIfNeeded({
+      await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
@@ -35,9 +35,9 @@ export const useBookStore = defineStore({
 
       let ret: boolean
       if (itemId) {
-        ret = await doUpdate(config)
+        ret = await useDBUpdate(config)
       } else {
-        ret = await doCreate(config)
+        ret = await useDBCreate(config)
       }
 
       if (ret) {
