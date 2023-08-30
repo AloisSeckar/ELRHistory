@@ -12,7 +12,7 @@ export const useNewsStore = defineStore({
     } as StoreData
   },
   actions: {
-    async init (force?: boolean) {
+    async init (forceReload?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
@@ -20,7 +20,7 @@ export const useNewsStore = defineStore({
         selectQuery: 'newsId, dateCreated, dateEdited, title, content, elrhAuthor(authorId, name)',
         orderQuery: 'dateCreated',
         orderOpts: { ascending: false }
-      }, force)
+      }, forceReload)
     },
     async update (itemData: NewsDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)

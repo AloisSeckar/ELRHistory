@@ -12,7 +12,7 @@ export const useLinkStore = defineStore({
     } as StoreData
   },
   actions: {
-    async init (force?: boolean) {
+    async init (forceReload?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
@@ -20,7 +20,7 @@ export const useLinkStore = defineStore({
         selectQuery: 'linkId, categoryId, dateCreated, dateEdited, name, dscr, url, thumb',
         orderQuery: 'ord',
         orderOpts: {}
-      }, force)
+      }, forceReload)
     },
     async update (itemData: LinkDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)

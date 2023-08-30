@@ -18,8 +18,8 @@ export type StoreConfig = {
   orderOpts: OrderOpts
 }
 
-export async function useStoreInit (config: StoreConfig, force?: boolean) {
-  if (!config.storeData?.loaded || force) {
+export async function useStoreInit (config: StoreConfig, forceReload?: boolean) {
+  if (!config.storeData?.loaded || forceReload) {
     console.debug('getting ' + config.tableName + ' from Supabase')
     await fetchSupabase(config)
       .then((x: any) => {

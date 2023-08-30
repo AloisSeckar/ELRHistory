@@ -12,7 +12,7 @@ export const useBookStore = defineStore({
     } as StoreData
   },
   actions: {
-    async init (force?: boolean) {
+    async init (forceReload?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
@@ -20,7 +20,7 @@ export const useBookStore = defineStore({
         selectQuery: 'bookId, categoryId, dateCreated, dateEdited, name, dscr, url, thumb, writer, review, year',
         orderQuery: 'ord',
         orderOpts: {}
-      }, force)
+      }, forceReload)
     },
     async update (itemData: BookDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)
