@@ -9,7 +9,7 @@
 import { NewsDB } from '@/database/types'
 
 const save = async (news: NewsDB) => {
-  await useUpdateItem(useLinkStore(), 'news', '/news', news)
+  await useUpdateItem(useNewsStore(), 'news', '/news', news)
 }
 
 onBeforeMount(async () => {
