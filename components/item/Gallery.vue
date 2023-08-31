@@ -81,7 +81,7 @@
           <div v-for="article in articles" :key="article.articleId">
             &#9656;&nbsp;<NuxtLink :to="{ path: '/article/' + article.articleId }">
               {{ article.name }}
-            </NuxtLink> [ {{ article.elrhAuthor?.name }} ]<br> <!-- TODO author name not showing -->
+            </NuxtLink> [ {{ article.elrhAuthor?.name }} ]<br>
           </div>
           <div v-if="articles ? articles.length === 0 : true">
             {{ $t('galleries.articles-none') }}
