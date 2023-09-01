@@ -13,7 +13,7 @@
     "@nuxtjs/tailwindcss": "6.6.7",
     "@vueuse/core": "10.3.0",
     "@vueuse/nuxt": "10.3.0",
-    "eslint": "8.46.0",
+    "eslint": "8.48.0",
     "nuxt": "3.6.5",
     "openapi-typescript": "5.4.1",
     "supabase": "1.82.2",
