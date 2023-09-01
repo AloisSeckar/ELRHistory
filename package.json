@@ -22,6 +22,6 @@
   "dependencies": {
     "@formkit/nuxt": "0.17.5",
     "@pinia/nuxt": "0.4.11",
-    "pinia": "2.0.35"
+    "pinia": "2.1.6"
   }
 }
