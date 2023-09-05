@@ -16,6 +16,9 @@ import './assets/css/tailwind.css'
 
 useHead({
   title: useAppConfig().textTitle,
+  htmlAttrs: {
+    lang: useAppConfig().lang
+  },
   bodyAttrs: {
     id: 'main'
   },
