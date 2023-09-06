@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   ssr: false,
   modules: [
     '@vueuse/nuxt',
-    // '@nuxtjs/html-validator', // TODO figure out how to use SSR + i18n correctly
     '@nuxtjs/i18n',
     '@nuxtjs/supabase',
     '@nuxtjs/tailwindcss',
