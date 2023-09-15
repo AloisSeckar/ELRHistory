@@ -27,7 +27,7 @@
           <div class="flex flex-wrap">
             <div v-for="image in thumbs" :key="image.imageId">
               <NuxtLink :to="{ path: '/image/' + image.imageId }">
-                <img class="thumb" :src="image.image" :alt="image.name" :title="image.name">
+                <NuxtImg class="thumb" :src="image.image" :alt="image.name" :title="image.name" />
               </NuxtLink>
             </div>
             <div v-if="(!detail && images > 5)" class="thumb leading-6">
