@@ -15,11 +15,11 @@
 
 <script setup lang="ts">
 const props = defineProps({
-  source: { type: String, default: '' }
+  source: { type: String, default: '/blank.jpg' }
 })
 defineEmits<{(e: 'change', path: string): void}>()
 
-const imgSrc = ref(props.source)
+const imgSrc = ref(props.source ? props.source : '/blank.jpg')
 </script>
 
 <style scoped>
