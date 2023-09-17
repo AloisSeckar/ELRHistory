@@ -15,5 +15,15 @@ export default defineNuxtConfig({
   },
   image: {
     // configuration for NuxtImage modules
+    presets: {
+      thumb: {
+        modifiers: {
+          fit: 'cover',
+          format: 'jpg',
+          width: 120,
+          height: 80
+        }
+      }
+    }
   }
 })

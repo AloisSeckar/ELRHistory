@@ -12,7 +12,7 @@
       </div>
       <div class="box-content flex">
         <div class="flex-none pr-2">
-          <NuxtImg class="thumb" :src="item.thumb" :alt="item.name" :title="item.name" />
+          <NuxtImg preset="thumb" :src="item.thumb" :alt="item.name" :title="item.name" />
         </div>
         <div class="flex-1">
           <div class="pb-1">

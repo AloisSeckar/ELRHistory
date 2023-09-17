@@ -27,10 +27,10 @@
           <div class="flex flex-wrap">
             <div v-for="image in thumbs" :key="image.imageId">
               <NuxtLink :to="{ path: '/image/' + image.imageId }">
-                <NuxtImg class="thumb" :src="image.image" :alt="image.name" :title="image.name" />
+                <NuxtImg preset="thumb" class="m-1" :src="image.image" :alt="image.name" :title="image.name" />
               </NuxtLink>
             </div>
-            <div v-if="(!detail && images > 5)" class="thumb leading-6">
+            <div v-if="(!detail && images > 5)" class="m-1 leading-6">
               <br>
               [ <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
                 {{ $t('galleries.see-more') }}
