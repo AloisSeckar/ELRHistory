@@ -102,8 +102,8 @@ if (props.bookId > 0) {
 } else {
   label = 'Add'
   book = reactive(JSON.parse(JSON.stringify(useBookStore().getEmpty)))
-  book.authorId = useAuthorStore().getItems?.[0]?.authorId
-  book.categoryId = useCategoryStore().getByType('b')?.[0]?.categoryId
+  book.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
+  book.categoryId = useCategoryStore().getByType('b')?.[0]?.categoryId || -1
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

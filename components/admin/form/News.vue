@@ -54,7 +54,7 @@ if (props.newsId > 0) {
 } else {
   label = 'Add'
   news = reactive(JSON.parse(JSON.stringify(useNewsStore().getEmpty)))
-  news.authorId = useAuthorStore().getItems?.[0]?.authorId
+  news.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

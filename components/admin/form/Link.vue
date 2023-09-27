@@ -71,7 +71,7 @@ if (props.linkId > 0) {
 } else {
   label = 'Add'
   link = reactive(JSON.parse(JSON.stringify(useLinkStore().getEmpty)))
-  link.authorId = useAuthorStore().getItems?.[0]?.authorId
+  link.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

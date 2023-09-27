@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FormKit type="form" submit-label="Edit" @submit="$emit('selectItem', option)">
+    <FormKit type="form" submit-label="Edit" @submit="$emit('selectItem', option?.value as string)">
       <FormKit
         id="selectItem"
         v-model="option"
@@ -23,7 +23,7 @@ const props = defineProps({
   options: { type: Array as PropType<FormKitOptionsItem[]>, required: true },
   selected: { type: Object as PropType<FormKitOptionsItem>, required: true }
 })
-defineEmits<{(e: 'selectItem', option: String): void}>()
+defineEmits<{(e: 'selectItem', option: string): void}>()
 
 const option = ref(props.selected)
 </script>

@@ -88,8 +88,8 @@ if (props.articleId > 0) {
 } else {
   label = 'Add'
   article = reactive(JSON.parse(JSON.stringify(useArticleStore().getEmpty)))
-  article.authorId = useAuthorStore().getItems?.[0]?.authorId
-  article.categoryId = useCategoryStore().getByType('a')?.[0]?.categoryId
+  article.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
+  article.categoryId = useCategoryStore().getByType('a')?.[0]?.categoryId || -1
   article.galleryId = undefined
 }
 
