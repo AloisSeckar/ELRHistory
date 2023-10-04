@@ -65,7 +65,8 @@ export const useGalleryStore = defineStore({
         authorId: 0
       }
       return newGallery
-    }
+    },
+    getGalleryList: (state): FormkitValue[] => get(state).map(gallery => ({ value: gallery.galleryId, label: gallery.name }))
   }
 })
 

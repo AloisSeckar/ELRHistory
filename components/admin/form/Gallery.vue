@@ -28,6 +28,15 @@
         validation="required"
       />
       <FormKit
+        id="parentId"
+        v-model="gallery.parentId"
+        type="select"
+        name="parentId"
+        label="Parent gallery:"
+        validation="required"
+        :options="galleries"
+      />
+      <FormKit
         id="dateCreated"
         v-model="gallery.dateCreated"
         name="dateCreated"
@@ -38,8 +47,6 @@
 </template>
 
 <script setup lang="ts">
-// TODO possible parent gallery
-
 import type { GalleryDB } from '@/database/types'
 
 const props = defineProps({
@@ -64,6 +71,12 @@ if (props.galleryId > 0) {
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)
+const galleries = computed(() => {
+  const fullList = useGalleryStore().getGalleryList
+  const fixedList = fullList?.filter(g => g.value !== props.galleryId)
+  fixedList.unshift({ value: null, label: '' })
+  return fixedList
+})
 
 const saveForm = (values: any) => {
   emit('save', JSON.parse(JSON.stringify(values)))

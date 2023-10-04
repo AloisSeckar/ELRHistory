@@ -5,6 +5,6 @@ export function getStoreItems<T> (data: StoreData): T[] {
 }
 
 export type FormkitValue = {
-  value: number,
+  value: number | null,
   label: string
 }
