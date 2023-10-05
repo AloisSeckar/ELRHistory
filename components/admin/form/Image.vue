@@ -27,7 +27,7 @@
         label="Description:"
         validation="required"
       />
-      <AdminFormSelectImage :source="image.image" @change="setImage" />
+      <AdminFormSelectImage name="image" :source="image.image" @change="setImage" />
       <FormKit
         id="galleryId"
         v-model="image.galleryId"
@@ -74,8 +74,8 @@ if (props.imageId > 0) {
 const authors = computed(() => useAuthorStore().getAuthorList)
 const galleries = computed(() => useGalleryStore().getGalleryList)
 
+// TODO probably not working?
 const setImage = (path: string) => {
-  console.log(path)
   image.image = path
 }
 

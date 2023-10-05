@@ -1,11 +1,11 @@
 <template>
   <div>
     <FormKit
-      id="thumb"
+      :id="name"
       v-model="imgSrc"
       type="text"
-      name="thumb"
-      label="Thumb:"
+      :name="name"
+      :label="label"
       validation="required"
       @change="$emit('change', imgSrc)"
     />
@@ -15,11 +15,14 @@
 
 <script setup lang="ts">
 const props = defineProps({
+  name: { type: String, default: 'thumb' },
   source: { type: String, default: '/blank.jpg' }
 })
 defineEmits<{(e: 'change', path: string): void}>()
 
 const imgSrc = ref(props.source ? props.source : '/blank.jpg')
+
+const label = props.name[0]?.toUpperCase() + props.name?.substring(1) + ':'
 </script>
 
 <style scoped>
