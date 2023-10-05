@@ -1,5 +1,5 @@
 import type { StoreData } from '@/composables/usePiniaHelpers'
-import type { Image } from '@/database/types'
+import type { Image, ImageDB } from '@/database/types'
 
 const tableName = 'elrhImage'
 
@@ -12,7 +12,7 @@ export const useImageStore = defineStore({
     } as StoreData
   },
   actions: {
-    async init () {
+    async init (force?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
@@ -20,7 +20,33 @@ export const useImageStore = defineStore({
         selectQuery: 'imageId, dateCreated, name, dscr, elrhAuthor(authorId, name), image, galleryId(galleryId, name), ord, prevId, nextId',
         orderQuery: 'ord',
         orderOpts: {}
-      })
+      }, force)
+    },
+    async update (itemData: ImageDB, itemId?: number): Promise<boolean> {
+      treatInput(itemData)
+
+      const config: UpdateConfig = {
+        supabaseClient: useSupabaseClient<ImageDB>(),
+        tableName,
+        itemKey: 'imageId',
+        itemId,
+        itemData
+      }
+
+      console.log(itemData)
+
+      let ret: boolean
+      if (itemId) {
+        ret = await useDBUpdate(config)
+      } else {
+        ret = await useDBCreate(config)
+      }
+
+      if (ret) {
+        this.init(true) // TODO can we just load the new one?
+      }
+
+      return ret
     }
   },
   getters: {
@@ -34,10 +60,30 @@ export const useImageStore = defineStore({
     },
     getCountByGallery: (state) => {
       return (galleryId: number) => get(state).filter(i => i.galleryId?.galleryId === galleryId).length || 0
+    },
+    getEmpty: () => {
+      const newImage: ImageDB = {
+        dateCreated: new Date().toISOString(),
+        dateEdited: new Date().toISOString(),
+        name: '',
+        dscr: '',
+        authorId: 0,
+        image: '',
+        galleryId: 0,
+        ord: 0
+      }
+      return newImage
     }
   }
 })
 
 function get (state: StoreData) {
   return getStoreItems<Image>(state)
+}
+
+function treatInput (input: ImageDB) {
+  input.dateEdited = new Date().toISOString()
+  if (input.dateCreated === undefined) {
+    input.dateCreated = new Date().toISOString()
+  }
 }

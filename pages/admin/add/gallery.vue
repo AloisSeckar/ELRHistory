@@ -9,6 +9,7 @@
 import { GalleryDB } from '@/database/types'
 
 const save = async (gallery: GalleryDB) => {
+  // TODO link to gallery
   await useUpdateItem(useGalleryStore(), 'gallery', '/galleries', gallery)
 }
 

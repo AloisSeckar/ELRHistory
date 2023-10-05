@@ -31,6 +31,7 @@ const save = async (gallery: GalleryDB) => {
 }
 
 const changeItem = (calback: String) => {
+  // TODO link to gallery
   navigateTo('/admin/edit/gallery/' + calback)
 }
 

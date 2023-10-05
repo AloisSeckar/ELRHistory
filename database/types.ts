@@ -33,7 +33,7 @@ export type Gallery = GalleryRaw & {
   parentId?: Gallery
 }
 
-export type ImageDB = Omit<ImageRaw, 'galleryId'>
+export type ImageDB = Omit<ImageRaw, 'imageId'>
 export type Image = ImageRaw & {
   elrhAuthor: Author
   galleryId: Gallery
