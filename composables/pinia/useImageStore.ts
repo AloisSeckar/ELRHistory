@@ -86,4 +86,5 @@ function treatInput (input: ImageDB) {
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()
   }
+  input.ord = 1 // TODO allow proper ordering
 }
