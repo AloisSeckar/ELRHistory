@@ -27,11 +27,10 @@ for (let i = 0; i < useGalleryStore().items.length; i++) {
 }
 
 const save = async (gallery: GalleryDB) => {
-  await useUpdateItem(useGalleryStore(), 'gallery', '/galleries', gallery, galleryId)
+  await useUpdateItem(useGalleryStore(), 'gallery', `/gallery/${galleryId}`, gallery, galleryId)
 }
 
 const changeItem = (calback: String) => {
-  // TODO link to gallery
   navigateTo('/admin/edit/gallery/' + calback)
 }
 

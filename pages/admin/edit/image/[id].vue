@@ -27,8 +27,7 @@ for (let i = 0; i < useImageStore().items.length; i++) {
 }
 
 const save = async (image: ImageDB) => {
-  // TODO link to gallery
-  await useUpdateItem(useImageStore(), 'image', '/galleries', image, imageId)
+  await useUpdateItem(useImageStore(), 'image', `/image/${imageId}`, image, imageId)
 }
 
 const changeItem = (calback: String) => {

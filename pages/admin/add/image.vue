@@ -9,8 +9,7 @@
 import { ImageDB } from '@/database/types'
 
 const save = async (image: ImageDB) => {
-  // TODO link to gallery
-  await useUpdateItem(useImageStore(), 'image', '/galleries', image)
+  await useUpdateItem(useImageStore(), 'image', `/gallery/${image.galleryId}`, image)
 }
 
 onBeforeMount(async () => {
