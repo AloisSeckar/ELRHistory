@@ -10,7 +10,7 @@
             <strong>{{ item.galleryId?.name }}</strong>
           </NuxtLink>|
           {{ item.elrhAuthor?.name }} |
-          <em>{{ item.dateCreated?.split('T')[0] }}</em>
+          <em>{{ toDate(item.dateCreated) }}</em>
         </span>
       </div>
       <div class="box-content text-center">

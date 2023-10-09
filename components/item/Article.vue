@@ -7,7 +7,7 @@
         <AdminEditLink v-if="user" :link="'article/' + item.articleId" item="article" />
         <span class="float-right pr-1 text-base font-normal">
           <strong>{{ item.elrhCategory?.name }}</strong> | {{ item.elrhAuthor?.name }} |
-          <em>{{ item.dateCreated?.split('T')[0] }}</em>
+          <em>{{ toDate(item.dateCreated) }}</em>
         </span>
       </div>
       <div class="box-content flex">

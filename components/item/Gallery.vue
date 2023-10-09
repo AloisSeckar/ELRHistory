@@ -9,7 +9,7 @@
         <AdminEditLink v-if="user" :link="'gallery/' + item.galleryId" item="gallery" />
         <span class="float-right pr-1 text-base font-normal">
           <strong>{{ parent?.name ? parent.name : 'Index' }}</strong> | {{ item.elrhAuthor?.name }} |
-          <em>{{ item.dateCreated?.split('T')[0] }}</em>
+          <em>{{ toDate(item.dateCreated) }}</em>
         </span>
       </div>
       <div class="box-content">
