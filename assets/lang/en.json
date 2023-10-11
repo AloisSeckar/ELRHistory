@@ -19,7 +19,8 @@
     "articles" : {
         "total" : "Total articles",
         "read" : "Read article",
-        "gallery" : "View gallery"
+        "gallery" : "View gallery",
+        "back" : "Back to articles"
     },
     "galleries" : {
         "total" : "Total galleries",
