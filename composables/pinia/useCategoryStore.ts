@@ -36,7 +36,9 @@ export const useCategoryStore = defineStore({
     getCategoryList: (state) => {
       return (type: string): FormkitValue[] => {
         const filteredItems = get(state).filter(i => i.type === type) || [] as Category[]
-        return filteredItems.map(cat => ({ value: cat.categoryId, label: cat.name }))
+        const categories = filteredItems.map(cat => ({ value: cat.categoryId, label: cat.name }))
+        categories.unshift({ value: -1, label: '' })
+        return categories
       }
     }
   }

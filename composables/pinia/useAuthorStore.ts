@@ -30,7 +30,11 @@ export const useAuthorStore = defineStore({
     getById: (state) => {
       return (authorId: number) => get(state).find(i => i.authorId === authorId) || { authorId: 0 } as Author
     },
-    getAuthorList: (state): FormkitValue[] => get(state).map(author => ({ value: author.authorId, label: author.name }))
+    getAuthorList: (state): FormkitValue[] => {
+      const authors = get(state).map(author => ({ value: author.authorId, label: author.name }))
+      authors.unshift({ value: -1, label: '' })
+      return authors
+    }
   }
 })
 
