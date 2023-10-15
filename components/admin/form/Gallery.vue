@@ -54,14 +54,17 @@ let gallery: GalleryDB
 if (props.galleryId > 0) {
   label = 'Edit'
   const { galleryId, ...currentGallery } = useGalleryStore().getById(props.galleryId)
-  gallery = reactive(JSON.parse(JSON.stringify(currentGallery)))
-
-  if (currentGallery.elrhAuthor) {
-    gallery.authorId = currentGallery.elrhAuthor.authorId
-  }
+  gallery = reactive({
+    dateCreated: currentGallery.dateCreated,
+    dateEdited: currentGallery.dateEdited,
+    name: currentGallery.name,
+    dscr: currentGallery.dscr,
+    authorId: currentGallery.elrhAuthor?.authorId || -1,
+    parentId: currentGallery.parentId
+  })
 } else {
   label = 'Add'
-  gallery = reactive(JSON.parse(JSON.stringify(useGalleryStore().getEmpty)))
+  gallery = reactive(useGalleryStore().getEmpty)
   gallery.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }
 

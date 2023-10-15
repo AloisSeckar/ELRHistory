@@ -69,18 +69,20 @@ let article: ArticleDB
 if (props.articleId > 0) {
   label = 'Edit'
   const { articleId, ...currentArticle } = useArticleStore().getById(props.articleId)
-  article = reactive(JSON.parse(JSON.stringify(currentArticle)))
-
-  if (currentArticle.elrhAuthor) {
-    article.authorId = currentArticle.elrhAuthor.authorId
-  }
-  if (currentArticle.elrhCategory) {
-    article.categoryId = currentArticle.elrhCategory.categoryId
-  }
-  article.galleryId = currentArticle?.elrhGallery?.galleryId
+  article = reactive({
+    categoryId: currentArticle.elrhCategory?.categoryId || -1,
+    dateCreated: currentArticle.dateCreated,
+    dateEdited: currentArticle.dateEdited,
+    name: currentArticle.name,
+    dscr: currentArticle.dscr,
+    content: currentArticle.content,
+    thumb: currentArticle.thumb,
+    authorId: currentArticle.elrhAuthor?.authorId || -1,
+    galleryId: currentArticle?.elrhGallery?.galleryId
+  })
 } else {
   label = 'Add'
-  article = reactive(JSON.parse(JSON.stringify(useArticleStore().getEmpty)))
+  article = reactive(useArticleStore().getEmpty)
   article.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
   article.categoryId = useCategoryStore().getByType('a')?.[0]?.categoryId || -1
   article.galleryId = undefined

@@ -82,17 +82,23 @@ let book: BookDB
 if (props.bookId > 0) {
   label = 'Edit'
   const { bookId, ...currentBook } = useBookStore().getById(props.bookId)
-  book = reactive(JSON.parse(JSON.stringify(currentBook)))
-
-  if (currentBook.elrhAuthor) {
-    book.authorId = currentBook.elrhAuthor.authorId
-  }
-  if (currentBook.elrhCategory) {
-    book.categoryId = currentBook.elrhCategory.categoryId
-  }
+  book = reactive({
+    categoryId: currentBook.elrhCategory?.categoryId || -1,
+    ord: currentBook.ord,
+    dateCreated: currentBook.dateCreated,
+    dateEdited: currentBook.dateEdited,
+    writer: currentBook.writer,
+    name: currentBook.name,
+    dscr: currentBook.dscr,
+    url: currentBook.url,
+    thumb: currentBook.thumb,
+    review: currentBook.review,
+    year: currentBook.year,
+    authorId: currentBook.elrhAuthor?.authorId || -1
+  })
 } else {
   label = 'Add'
-  book = reactive(JSON.parse(JSON.stringify(useBookStore().getEmpty)))
+  book = reactive(useBookStore().getEmpty)
   book.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
   book.categoryId = useCategoryStore().getByType('b')?.[0]?.categoryId || -1
 }

@@ -61,10 +61,20 @@ let link: LinkDB
 if (props.linkId > 0) {
   label = 'Edit'
   const { linkId, ...currentLink } = useLinkStore().getById(props.linkId)
-  link = reactive(JSON.parse(JSON.stringify(currentLink)))
+  link = reactive({
+    categoryId: currentLink.elrhCategory?.categoryId || -1,
+    ord: currentLink.ord,
+    dateCreated: currentLink.dateCreated,
+    dateEdited: currentLink.dateEdited,
+    name: currentLink.name,
+    dscr: currentLink.dscr,
+    url: currentLink.url,
+    thumb: currentLink.thumb,
+    authorId: currentLink.elrhAuthor?.authorId || -1
+  })
 } else {
   label = 'Add'
-  link = reactive(JSON.parse(JSON.stringify(useLinkStore().getEmpty)))
+  link = reactive(useLinkStore().getEmpty)
   link.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }
 

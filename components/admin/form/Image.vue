@@ -55,14 +55,25 @@ let image: ImageDB
 if (props.imageId > 0) {
   label = 'Edit'
   const { imageId, ...currentImage } = useImageStore().getById(props.imageId)
-  image = reactive(JSON.parse(JSON.stringify(currentImage)))
+  image = reactive({
+    dateCreated: currentImage.dateCreated,
+    dateEdited: currentImage.dateEdited,
+    name: currentImage.name,
+    dscr: currentImage.dscr,
+    authorId: currentImage.elrhAuthor?.authorId || -1,
+    image: currentImage.image,
+    galleryId: currentImage.galleryId,
+    ord: currentImage.ord,
+    prevId: currentImage.prevId,
+    nextId: currentImage.nextId
+  })
 
   if (currentImage.elrhAuthor) {
     image.authorId = currentImage.elrhAuthor.authorId
   }
 } else {
   label = 'Add'
-  image = reactive(JSON.parse(JSON.stringify(useImageStore().getEmpty)))
+  image = reactive(useImageStore().getEmpty)
   image.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }
 

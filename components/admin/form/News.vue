@@ -46,10 +46,16 @@ let news: NewsDB
 if (props.newsId > 0) {
   label = 'Edit'
   const { newsId, ...currentNews } = useNewsStore().getById(props.newsId)
-  news = reactive(JSON.parse(JSON.stringify(currentNews)))
+  news = reactive({
+    dateCreated: currentNews.dateCreated,
+    dateEdited: currentNews.dateEdited,
+    title: currentNews.title,
+    content: currentNews.content,
+    authorId: currentNews.elrhAuthor?.authorId || -1
+  })
 } else {
   label = 'Add'
-  news = reactive(JSON.parse(JSON.stringify(useNewsStore().getEmpty)))
+  news = reactive(useNewsStore().getEmpty)
   news.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }
 
