@@ -1,10 +1,9 @@
 <template>
   <div>
-    <FormKit v-slot="{ value }" type="form" :submit-label="label" @submit="saveForm">
+    <FormKit v-slot="{ value }" type="form" :value="gallery" :submit-label="label" @submit="saveForm">
       <pre>{{ value }}</pre>
       <FormKit
         id="authorId"
-        v-model="gallery.authorId"
         type="select"
         name="authorId"
         label="Author:"
@@ -13,7 +12,6 @@
       />
       <FormKit
         id="name"
-        v-model="gallery.name"
         type="text"
         name="name"
         label="Name:"
@@ -21,7 +19,6 @@
       />
       <FormKit
         id="dscr"
-        v-model="gallery.dscr"
         type="text"
         name="dscr"
         label="Description:"
@@ -29,7 +26,6 @@
       />
       <FormKit
         id="parentId"
-        v-model="gallery.parentId"
         type="select"
         name="parentId"
         label="Parent gallery:"
@@ -38,7 +34,6 @@
       />
       <FormKit
         id="dateCreated"
-        v-model="gallery.dateCreated"
         name="dateCreated"
         type="hidden"
       />

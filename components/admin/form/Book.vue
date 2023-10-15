@@ -1,10 +1,9 @@
 <template>
   <div>
-    <FormKit v-slot="{ value }" type="form" :submit-label="label" @submit="saveForm">
+    <FormKit v-slot="{ value }" type="form" :value="book" :submit-label="label" @submit="saveForm">
       <pre>{{ value }}</pre>
       <FormKit
         id="authorId"
-        v-model="book.authorId"
         type="select"
         name="authorId"
         label="Author:"
@@ -13,7 +12,6 @@
       />
       <FormKit
         id="categoryId"
-        v-model="book.categoryId"
         type="select"
         name="categoryId"
         label="Category:"
@@ -22,7 +20,6 @@
       />
       <FormKit
         id="year"
-        v-model="book.year"
         type="number"
         name="year"
         label="Published:"
@@ -30,7 +27,6 @@
       />
       <FormKit
         id="name"
-        v-model="book.name"
         type="text"
         name="name"
         label="Name:"
@@ -38,7 +34,6 @@
       />
       <FormKit
         id="writer"
-        v-model="book.writer"
         type="text"
         name="writer"
         label="Writer:"
@@ -46,7 +41,6 @@
       />
       <FormKit
         id="dscr"
-        v-model="book.dscr"
         type="text"
         name="dscr"
         label="Description:"
@@ -55,7 +49,6 @@
       <AdminFormSelectImage :source="book.thumb" @change="setThumb" />
       <FormKit
         id="url"
-        v-model="book.url"
         type="text"
         name="url"
         label="URL:"
@@ -63,14 +56,12 @@
       />
       <FormKit
         id="review"
-        v-model="book.review"
         type="text"
         name="review"
         label="Review:"
       />
       <FormKit
         id="dateCreated"
-        v-model="book.dateCreated"
         name="dateCreated"
         type="hidden"
       />

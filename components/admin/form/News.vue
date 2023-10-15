@@ -1,10 +1,9 @@
 <template>
   <div>
-    <FormKit v-slot="{ value }" type="form" :submit-label="label" @submit="saveForm">
+    <FormKit v-slot="{ value }" type="form" :value="news" :submit-label="label" @submit="saveForm">
       <pre>{{ value }}</pre>
       <FormKit
         id="authorId"
-        v-model="news.authorId"
         type="select"
         name="authorId"
         label="Author:"
@@ -13,7 +12,6 @@
       />
       <FormKit
         id="title"
-        v-model="news.title"
         type="text"
         name="title"
         label="Title:"
@@ -21,7 +19,6 @@
       />
       <FormKit
         id="content"
-        v-model="news.content"
         type="textarea"
         name="content"
         label="Content:"
@@ -29,7 +26,6 @@
       />
       <FormKit
         id="dateCreated"
-        v-model="news.dateCreated"
         name="dateCreated"
         type="hidden"
       />

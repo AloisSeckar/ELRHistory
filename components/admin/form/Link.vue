@@ -1,10 +1,9 @@
 <template>
   <div>
-    <FormKit v-slot="{ value }" type="form" :submit-label="label" @submit="saveForm">
+    <FormKit v-slot="{ value }" type="form" :value="link" :submit-label="label" @submit="saveForm">
       <pre>{{ value }}</pre>
       <FormKit
         id="authorId"
-        v-model="link.authorId"
         type="select"
         name="authorId"
         label="Author:"
@@ -12,7 +11,6 @@
         :options="authors"
       /><FormKit
         id="categoryId"
-        v-model="link.categoryId"
         type="select"
         name="categoryId"
         label="Category:"
@@ -21,7 +19,6 @@
       />
       <FormKit
         id="name"
-        v-model="link.name"
         type="text"
         name="name"
         label="Name:"
@@ -29,7 +26,6 @@
       />
       <FormKit
         id="dscr"
-        v-model="link.dscr"
         type="textarea"
         name="dscr"
         label="Description:"
@@ -38,7 +34,6 @@
       <AdminFormSelectImage :source="link.thumb" @change="setThumb" />
       <FormKit
         id="url"
-        v-model="link.url"
         type="text"
         name="url"
         label="URL:"
@@ -46,7 +41,6 @@
       />
       <FormKit
         id="dateCreated"
-        v-model="link.dateCreated"
         name="dateCreated"
         type="hidden"
       />
