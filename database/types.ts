@@ -1,27 +1,34 @@
 import { SupabaseClient } from '@supabase/supabase-js'
 import type { definitions } from './_api'
 
+export type Author = definitions['elrhAuthor']
+export type AuthorLink = Pick<Author, 'authorId' | 'name'>
+
+export type Category = definitions['elrhCategory']
+export type CategoryLink = Pick<Category, 'categoryId' | 'name'>
+
 export type ArticleRaw = definitions['elrhArticle']
-export type BookRaw = definitions['elrhBook']
+export type ArticleLink = Pick<ArticleRaw, 'articleId' | 'name'>
+
 export type GalleryRaw = definitions['elrhGallery']
+export type GalleryLink = Pick<GalleryRaw, 'galleryId' | 'name'>
+
+export type BookRaw = definitions['elrhBook']
 export type ImageRaw = definitions['elrhImage']
 export type NewsRaw = definitions['elrhNews']
 export type LinkRaw = definitions['elrhLink']
 
-export type Category = definitions['elrhCategory']
-export type Author = definitions['elrhAuthor']
-
 export type ArticleDB = Omit<ArticleRaw, 'articleId'>
 export type Article = ArticleRaw & {
-  elrhAuthor?: Pick<Author, 'authorId' | 'name'>
-  elrhCategory?: Pick<Category, 'categoryId' | 'name'>
-  elrhGallery?: Pick<GalleryRaw, 'galleryId' | 'name'>
+  elrhAuthor: AuthorLink
+  elrhCategory: CategoryLink
+  elrhGallery?: GalleryLink
 }
 
 export type BookDB = Omit<BookRaw, 'bookId'>
 export type Book = BookRaw & {
-  elrhAuthor: Author
-  elrhCategory: Category
+  elrhAuthor: AuthorLink
+  elrhCategory: Pick<Category, 'categoryId' | 'name'>
 }
 
 export type Contact = definitions['elrhContact']
@@ -29,25 +36,25 @@ export type Contact = definitions['elrhContact']
 export type GalleryDB = Omit<GalleryRaw, 'galleryId'>
 export type Gallery = GalleryRaw & {
   elrhArticle?: Article[]
-  elrhAuthor: Author
-  parentId?: Gallery
+  elrhAuthor: AuthorLink
+  parentId?: GalleryLink
 }
 
 export type ImageDB = Omit<ImageRaw, 'imageId'>
 export type Image = ImageRaw & {
-  elrhAuthor: Author
-  galleryId: Gallery
+  elrhAuthor: AuthorLink
+  galleryId: GalleryLink
 }
 
 export type LinkDB = Omit<LinkRaw, 'linkId'>
 export type Link = LinkRaw & {
-  elrhAuthor: Author
-  elrhCategory: Category
+  elrhAuthor: AuthorLink
+  elrhCategory: CategoryLink
 }
 
 export type NewsDB = Omit<NewsRaw, 'newsId'>
 export type News = NewsRaw & {
-  elrhAuthor: Author
+  elrhAuthor: AuthorLink
 }
 
 export type SupabaseStoreData = Article[] | Author[] | Book[] | Category[] | Contact[] | Gallery[] | Image[] | Link[] | News[]
