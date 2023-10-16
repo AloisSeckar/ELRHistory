@@ -54,7 +54,7 @@ export const useLinkStore = defineStore({
       return (linkId: number) => get(state).find(i => i.linkId === linkId) || { linkId: 0 } as Link
     },
     getByCategory: (state) => {
-      return (categoryId: number) => get(state).filter(i => i.categoryId === categoryId) || [] as Link[]
+      return (categoryId: number) => get(state).filter(i => i.elrhCategory.categoryId === categoryId) || [] as Link[]
     },
     getEmpty: () => {
       const emptyItem: LinkDB = {

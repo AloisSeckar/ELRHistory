@@ -51,7 +51,7 @@ export const useBookStore = defineStore({
     getItems: state => get(state),
     getCount: state => get(state).length,
     getByCategory: (state) => {
-      return (categoryId: number) => get(state).filter(i => i.categoryId === categoryId) || [] as Book[]
+      return (categoryId: number) => get(state).filter(i => i.elrhCategory.categoryId === categoryId) || [] as Book[]
     },
     getById: (state) => {
       return (bookId: number) => get(state).find(i => i.bookId === bookId) || { bookId: 0 } as Book

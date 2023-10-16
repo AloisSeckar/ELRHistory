@@ -51,7 +51,7 @@ export const useArticleStore = defineStore({
     getItems: state => get(state),
     getCount: state => get(state).length,
     getByCategory: (state) => {
-      return (categoryId: number) => get(state).filter(i => i.categoryId === categoryId) || { articleId: 0 } as Article
+      return (categoryId: number) => get(state).filter(i => i.elrhCategory.categoryId === categoryId) || [] as Article[]
     },
     getById: (state) => {
       return (articleId: number) => get(state).find(i => i.articleId === articleId) || { articleId: 0 } as Article
