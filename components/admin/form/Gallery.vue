@@ -60,7 +60,7 @@ if (props.galleryId > 0) {
     name: currentGallery.name,
     dscr: currentGallery.dscr,
     authorId: currentGallery.elrhAuthor?.authorId || -1,
-    parentId: currentGallery.parentId
+    parentId: currentGallery.parentId?.galleryId
   })
 } else {
   label = 'Add'

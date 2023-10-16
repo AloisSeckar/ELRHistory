@@ -67,7 +67,7 @@ export const useGalleryStore = defineStore({
       return newGallery
     },
     getGalleryList: (state): FormkitValue[] => {
-      const galleries = get(state).map(gallery => ({ value: gallery.authorId, label: gallery.name }))
+      const galleries = get(state).map(gallery => ({ value: gallery.galleryId, label: gallery.name }))
       galleries.unshift({ value: -1, label: '' })
       return galleries
     }

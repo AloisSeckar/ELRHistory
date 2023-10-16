@@ -17,7 +17,7 @@ export const useLinkStore = defineStore({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
-        selectQuery: 'linkId, categoryId, dateCreated, dateEdited, name, dscr, url, thumb',
+        selectQuery: 'linkId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, url, thumb, elrhAuthor(authorId, name)',
         orderQuery: 'ord',
         orderOpts: {}
       }, forceReload)

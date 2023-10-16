@@ -62,15 +62,11 @@ if (props.imageId > 0) {
     dscr: currentImage.dscr,
     authorId: currentImage.elrhAuthor?.authorId || -1,
     image: currentImage.image,
-    galleryId: currentImage.galleryId,
+    galleryId: currentImage.galleryId.galleryId,
     ord: currentImage.ord,
     prevId: currentImage.prevId,
     nextId: currentImage.nextId
   })
-
-  if (currentImage.elrhAuthor) {
-    image.authorId = currentImage.elrhAuthor.authorId
-  }
 } else {
   label = 'Add'
   image = reactive(useImageStore().getEmpty)
