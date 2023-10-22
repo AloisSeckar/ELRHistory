@@ -1,7 +1,14 @@
 <template>
-  <div ref="timeline" style="border: 1px solid black; height: 180px; overflow: auto;">
-    <div v-for="item in timelineData" :key="item.id">
-      {{ item }}
+  <div ref="timeline" class="timeline-wrapper">
+    <div v-for="(item, index) in timelineData" :key="item.id">
+      <div class="timeline-item" :class="index % 2 === 0 ? 'left' : 'right'">
+        <div class="text-2xl font-bold">
+          {{ item.date }}
+        </div>
+        <div class="text-lg" :title="item.tooltip">
+          {{ item.title }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -66,3 +73,34 @@ function getMoreData (start: number, batch: number) {
   return []
 }
 </script>
+
+<style scoped>
+.timeline-wrapper {
+    height: 180px;
+    overflow: auto;
+}
+.timeline-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+.timeline-wrapper {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.timeline-item {
+    width: 50%;
+    text-align: center;
+}
+.left {
+    margin-left: 0;
+    margin-right: auto;
+    border-right: 3px solid black;
+    padding-left: 25%;
+}
+.right {
+    margin-right: 0;
+    margin-left: auto;
+    border-left: 3px solid black;
+    padding-right: 25%;
+}
+</style>

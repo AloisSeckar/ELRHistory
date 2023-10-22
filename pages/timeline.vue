@@ -16,7 +16,7 @@ import type { InfiniTimelineItem } from '@/components/InfiniTimeline.vue'
 
 const data = [] as InfiniTimelineItem[]
 for (let id = 1; id < 100; id++) {
-  data.push({ id, date: '2023', title: 'First event' })
+  data.push({ id, date: '2023', title: 'First event', tooltip: 'More info about event' })
 }
 
 const supplier = {
