@@ -88,19 +88,26 @@ function getMoreData (start: number, batch: number) {
 }
 
 .timeline-item {
-    width: 50%;
+    width: calc(50% + 1px);
     text-align: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: auto 32px;
 }
 .left {
     margin-left: 0;
     margin-right: auto;
     border-right: 3px solid black;
     padding-left: 25%;
+    background-image: url('/left.svg');
+    background-position-x: right;
 }
 .right {
     margin-right: 0;
     margin-left: auto;
     border-left: 3px solid black;
     padding-right: 25%;
+    background-image: url('/right.svg');
+    background-position-x: left;
 }
 </style>
