@@ -9,6 +9,9 @@
     <NuxtLink to="/galleries">
       <BaseIcon icon="image" size="1.125rem" css-class="mb-1.5" /> {{ $t('menu.galleries') }}
     </NuxtLink>
+    <NuxtLink to="/timeline">
+      <BaseIcon icon="timeline" size="1.125rem" css-class="mb-1.5" /> {{ $t('menu.timeline') }}
+    </NuxtLink>
     <NuxtLink to="/books">
       <BaseIcon icon="book" size="1.5rem" css-class="mb-1.5" /> {{ $t('menu.books') }}
     </NuxtLink>

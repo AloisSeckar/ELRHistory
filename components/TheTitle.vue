@@ -12,6 +12,7 @@
 <script setup lang="ts">
 const baseTitle = useAppConfig().textTitle
 
+// TODO i18n translate
 const titleData = computed(() => {
   if (useRoute().path.includes('article')) {
     return {
@@ -48,6 +49,12 @@ const titleData = computed(() => {
       page: 'News',
       link: 'news',
       text: 'Add news'
+    }
+  } else if (useRoute().path.includes('timeline')) {
+    return {
+      page: 'Timeline',
+      link: 'timeline',
+      text: 'Add timeline item'
     }
   } else {
     return {}

@@ -6,6 +6,7 @@
         "index" : "Index",
         "articles" : "Articles",
         "galleries" : "Galleries",
+        "timeline" : "Timeline",
         "books" : "Books",
         "links" : "Links"
     },

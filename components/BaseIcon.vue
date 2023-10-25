@@ -63,6 +63,8 @@ function getSVGDef (icon: string): IconDefinition {
       return icones.key
     case 'plus':
       return icones.plus
+    case 'timeline':
+      return icones.timeline
     case 'square':
       return icones.square
     case 'wrench':
