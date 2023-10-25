@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="m-4 h-[300px] border border-black">
-      <InfiniTimeline :chunk-size="10" :data-array="data" />
+      <InfiniTimeline :data-array="data" css-text-color="#000033" />
     </div>
   </div>
 </template>
