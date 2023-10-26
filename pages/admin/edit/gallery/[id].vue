@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { FormKitOptionsItem } from '@formkit/inputs'
+import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Gallery, GalleryDB } from '@/database/types'
 
 const idString = useRoute().params.id as string

@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { GalleryDB } from '@/database/types'
+import type { GalleryDB } from '@/database/types'
 
 const save = async (gallery: GalleryDB) => {
   await useUpdateItem(useGalleryStore(), 'gallery', '/galleries', gallery)

@@ -94,7 +94,7 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
+import type { PropType } from 'vue'
 import type { Gallery } from '@/database/types'
 
 const props = defineProps({

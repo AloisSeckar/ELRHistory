@@ -1,4 +1,7 @@
-import { SupabaseStoreClient, SupabaseUpdateClient, SupabaseStoreData, SupabaseUpdateData, SupabaseItemType } from '@/database/types'
+import type {
+  SupabaseStoreClient, SupabaseUpdateClient,
+  SupabaseStoreData, SupabaseUpdateData, SupabaseItemType
+} from '@/database/types'
 
 export type OrderOpts = {
   ascending?: boolean

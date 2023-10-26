@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { BookDB } from '@/database/types'
+import type { BookDB } from '@/database/types'
 
 const save = async (book: BookDB) => {
   await useUpdateItem(useBookStore(), 'book', '/books', book)

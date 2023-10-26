@@ -1,4 +1,4 @@
-import { StoreData } from '@/composables/usePiniaHelpers'
+import type { StoreData } from '@/composables/usePiniaHelpers'
 
 export function getStoreItems<T> (data: StoreData): T[] {
   return data?.items as T[] || [] as T[]

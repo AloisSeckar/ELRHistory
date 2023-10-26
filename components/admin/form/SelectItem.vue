@@ -15,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
-import { FormKitOptionsItem } from '@formkit/inputs'
+import type { PropType } from 'vue'
+import type { FormKitOptionsItem } from '@formkit/inputs'
 
 const props = defineProps({
   label: { type: String, required: true },

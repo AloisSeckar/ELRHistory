@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { Image } from '@/database/types'
+import type { Image } from '@/database/types'
 
 const item = computed(() => {
   let id = null

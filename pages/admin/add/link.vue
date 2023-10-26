@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { LinkDB } from '@/database/types'
+import type { LinkDB } from '@/database/types'
 
 const save = async (link: LinkDB) => {
   await useUpdateItem(useLinkStore(), 'link', '/links', link)
