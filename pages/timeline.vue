@@ -1,16 +1,31 @@
 <template>
   <div>
     <div class="m-4 h-[300px] border border-black">
-      <InfiniTimeline :data-array="data" css-text-color="#000033" />
+      <InfiniTimeline :data-supplier="supplier" css-text-color="#000033" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { InfiniTimelineItem } from 'infinitimeline'
+import type { InfiniTimelineSupplier } from 'infinitimeline'
 
-const data = [] as InfiniTimelineItem[]
-for (let id = 1; id <= 100; id++) {
-  data.push({ id, title: '2023', content: 'Event no. ' + id, tooltip: 'More info about event' })
+const supplier: InfiniTimelineSupplier = {
+  getTotal () {
+    return useTimelineStore().getCount
+  },
+  get (startIndex: number, chunkSize: number) {
+    return useTimelineStore().getBatch(startIndex, chunkSize).map((i) => {
+      return {
+        id: i.timelineId,
+        title: i.title,
+        content: i.content,
+        tooltip: i.tooltip
+      }
+    })
+  }
 }
+
+onBeforeMount(async () => {
+  await useTimelineStore().init()
+})
 </script>

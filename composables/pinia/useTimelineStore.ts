@@ -53,6 +53,9 @@ export const useTimelineStore = defineStore({
     getById: (state) => {
       return (timelineId: number) => get(state).find(i => i.timelineId === timelineId) || { timelineId: 0 } as Timeline
     },
+    getBatch: (state) => {
+      return (from: number, chunkSize?: number) => get(state).slice(from, from + (chunkSize || 10)) || [] as Timeline[]
+    },
     getEmpty: () => {
       const emptyItem: TimelineDB = {
         // TODO dates in db model
