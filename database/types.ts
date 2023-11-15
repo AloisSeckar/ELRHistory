@@ -17,6 +17,7 @@ export type BookRaw = definitions['elrhBook']
 export type ImageRaw = definitions['elrhImage']
 export type NewsRaw = definitions['elrhNews']
 export type LinkRaw = definitions['elrhLink']
+export type TimelineRaw = definitions['elrhTimeline']
 
 export type ArticleDB = Omit<ArticleRaw, 'articleId'>
 export type Article = ArticleRaw & {
@@ -57,9 +58,14 @@ export type News = NewsRaw & {
   elrhAuthor: AuthorLink
 }
 
-export type SupabaseStoreData = Article[] | Author[] | Book[] | Category[] | Contact[] | Gallery[] | Image[] | Link[] | News[]
-export type SupabaseUpdateData = ArticleDB | BookDB | GalleryDB | Image | LinkDB | NewsDB
-export type SupabaseItemType = 'article' | 'book' | 'gallery' | 'image' | 'link' | 'news'
+export type TimelineDB = Omit<TimelineRaw, 'timelineId'>
+export type Timeline = TimelineRaw & {
+  elrhAuthor: AuthorLink
+}
 
-export type SupabaseStoreClient = SupabaseClient<Article> | SupabaseClient<Book> | SupabaseClient<Gallery> | SupabaseClient<Image> | SupabaseClient<Link> | SupabaseClient<News>
-export type SupabaseUpdateClient = SupabaseClient<ArticleDB> | SupabaseClient<BookDB> | SupabaseClient<GalleryDB> | SupabaseClient<ImageDB> | SupabaseClient<LinkDB> | SupabaseClient<NewsDB>
+export type SupabaseStoreData = Article[] | Author[] | Book[] | Category[] | Contact[] | Gallery[] | Image[] | Link[] | News[] | Timeline[]
+export type SupabaseUpdateData = ArticleDB | BookDB | GalleryDB | Image | LinkDB | NewsDB | TimelineDB
+export type SupabaseItemType = 'article' | 'book' | 'gallery' | 'image' | 'link' | 'news' | 'timeline'
+
+export type SupabaseStoreClient = SupabaseClient<Article> | SupabaseClient<Book> | SupabaseClient<Gallery> | SupabaseClient<Image> | SupabaseClient<Link> | SupabaseClient<News> | SupabaseClient<Timeline>
+export type SupabaseUpdateClient = SupabaseClient<ArticleDB> | SupabaseClient<BookDB> | SupabaseClient<GalleryDB> | SupabaseClient<ImageDB> | SupabaseClient<LinkDB> | SupabaseClient<NewsDB> | SupabaseClient<TimelineDB>
