@@ -72,3 +72,27 @@ UPDATE "elrhImage" SET "prevId" = 7 WHERE "imageId" = 8;
 INSERT INTO "elrhImage"("dateCreated", "dateEdited", "name", "dscr", "authorId", "image", "galleryId", "ord") VALUES  
     (now(), now(),'Image 09','This is a test image',1,'/image/09.jpg',2,1),
     (now(), now(),'Image 10','This is a test image',1,'/image/10.jpg',4,1);
+
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2023', 'Event #01', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2022', 'Event #02', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2021', 'Event #03', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2020', 'Event #04', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2019', 'Event #05', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2018', 'Event #06', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2017', 'Event #07', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2016', 'Event #08', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2015', 'Event #09', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2014', 'Event #10', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2013', 'Event #11', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2012', 'Event #12', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2011', 'Event #13', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2010', 'Event #14', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2009', 'Event #15', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2008', 'Event #16', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2007', 'Event #17', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2006', 'Event #18', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2005', 'Event #19', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2004', 'Event #20', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2003', 'Event #21', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2002', 'Event #22', 'Text appearing on hover', 1);
+INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2001', 'Event #23', 'Text appearing on hover', 1);

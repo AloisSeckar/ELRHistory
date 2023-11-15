@@ -111,6 +111,14 @@ CREATE TABLE "elrhImage" (
 	"nextId"	integer
 );
 
+CREATE TABLE "elrhTimeline" (
+	"timelineId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	"title"	varchar(100) NOT NULL,
+	"content"	varchar(255) NOT NULL,
+	"tooltip"	text,
+	"authorId"	integer NOT NULL
+);
+
 ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
 ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_category" FOREIGN KEY ("categoryId") REFERENCES "elrhCategory"("categoryId");
 ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrhGallery"("galleryId");
@@ -125,5 +133,6 @@ ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_author" FOREIGN KEY ("authorId"
 ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrhGallery"("galleryId");
 ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_prev" FOREIGN KEY ("prevId") REFERENCES "elrhImage"("imageId");
 ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_next" FOREIGN KEY ("nextId") REFERENCES "elrhImage"("imageId");
+ALTER TABLE "elrhTimeline" ADD CONSTRAINT "fk_timeline_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
 
 COMMIT;
