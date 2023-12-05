@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-0 w-full py-1 bg-navy text-center text-sm text-silver">
+  <div class="fixed bottom-0 h-10 w-full pt-1 bg-navy text-center text-sm text-silver">
     © {{ year }} <strong>{{ title }}</strong> by <span v-html="$t('web.author')" />
     powered by <a href="https://nuxt.com/">Nuxt3</a>
     |
