@@ -40,6 +40,11 @@
                 Add new news
               </NuxtLink>
             </li>
+            <li>
+              <NuxtLink to="/admin/add/timeline">
+                Add new timeline item
+              </NuxtLink>
+            </li>
           </ul>
         </div>
         <div class="inline w-32" />
