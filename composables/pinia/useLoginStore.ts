@@ -1,10 +1,15 @@
+type UserInfo = {
+  user: string | null,
+  callbackUrl: string | null
+}
+
 export const useLoginStore = defineStore({
   id: 'login-store',
   state: () => {
     return {
-      user: '',
-      callbackUrl: ''
-    }
+      user: null,
+      callbackUrl: null
+    } as UserInfo
   },
   actions: {
     async login (email: string, password: string) {
@@ -12,6 +17,8 @@ export const useLoginStore = defineStore({
       if (data) {
         if (data.user?.email) {
           this.user = data.user.email
+          const ses = useSessionStorage('elrh-user', data.user.email, { mergeDefaults: true })
+          console.warn(ses.value)
         } else {
           console.error('User undefined!')
         }
@@ -20,7 +27,12 @@ export const useLoginStore = defineStore({
       }
     },
     logout () {
-      this.user = ''
+      this.user = null
+    },
+    checkLogin () {
+      const user = useSessionStorage('elrh-user', this.user)
+      this.user = user.value
+      return !!user.value
     }
   },
   getters: {

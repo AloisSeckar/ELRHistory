@@ -45,7 +45,8 @@ async function attemptLogin () {
     return navigateTo(callbackUrl)
   }
 }
-async function attemptLogout () {
-  await useLoginStore().logout()
+
+function attemptLogout () {
+  useLoginStore().logout()
 }
 </script>
