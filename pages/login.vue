@@ -25,6 +25,7 @@
           name="password"
           label="Password:"
           validation="required"
+          :autocomplete="true"
         />
       </FormKit>
     </div>
