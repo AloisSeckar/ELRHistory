@@ -17,8 +17,7 @@ export const useLoginStore = defineStore({
       if (data) {
         if (data.user?.email) {
           this.user = data.user.email
-          const ses = useSessionStorage('elrh-user', data.user.email, { mergeDefaults: true })
-          console.warn(ses.value)
+          useSessionStorage('elrh-user', data.user.email, { mergeDefaults: true })
         } else {
           console.error('User undefined!')
         }
@@ -27,7 +26,8 @@ export const useLoginStore = defineStore({
       }
     },
     logout () {
-      this.user = null
+      const user = useSessionStorage('elrh-user', null)
+      user.value = this.user = null
     },
     checkLogin () {
       const user = useSessionStorage('elrh-user', this.user)
