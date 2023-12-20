@@ -1,7 +1,13 @@
 <template>
   <div class="fixed bottom-0 h-10 w-full pt-1 bg-navy text-center text-sm text-silver">
-    © {{ year }} <strong>{{ title }}</strong> by <span v-html="$t('web.author')" />
-    powered by <a href="https://nuxt.com/">Nuxt3</a>
+    © {{ year }} <strong>{{ title }}</strong> by
+    <NuxtLink :to="$t('web.link')" extrnal no-prefetch>
+      {{ $t('web.author') }}
+    </NuxtLink>
+    powered by
+    <NuxtLink to="https://nuxt.com/">
+      Nuxt3
+    </NuxtLink>
     |
     <span class="pl-1 text-xs">
       <NuxtLink to="/login">

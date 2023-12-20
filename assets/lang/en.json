@@ -1,6 +1,7 @@
 {
     "web" : {
-        "author" : "<a href=\"http://alois-seckar.cz/\">Alois Sečkár</a>"
+        "author" : "Alois Sečkár",
+        "link" : "http://alois-seckar.cz/"
     },
     "menu" : {
         "index" : "Index",
