@@ -10,6 +10,12 @@
 import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { News, NewsDB } from '@/database/types'
 
+const initStores = async () => {
+  await useNewsStore().init()
+  await useAuthorStore().init()
+}
+await initStores()
+
 const idString = useRoute().params.id as string
 const newsId = idString === 'first' ? useNewsStore().getFirstId : parseInt(idString)
 
@@ -33,9 +39,4 @@ const save = async (news: NewsDB) => {
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/news/' + calback)
 }
-
-onBeforeMount(async () => {
-  await useNewsStore().init()
-  await useAuthorStore().init()
-})
 </script>

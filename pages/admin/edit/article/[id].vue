@@ -10,6 +10,14 @@
 import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Article, ArticleDB } from '@/database/types'
 
+const initStores = async () => {
+  await useArticleStore().init()
+  await useAuthorStore().init()
+  await useCategoryStore().init()
+  await useGalleryStore().init()
+}
+await initStores()
+
 const idString = useRoute().params.id as string
 const articleId = idString === 'first' ? useArticleStore().getFirstId : parseInt(idString)
 
@@ -33,11 +41,4 @@ const save = async (article: ArticleDB) => {
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/article/' + calback)
 }
-
-onBeforeMount(async () => {
-  await useArticleStore().init()
-  await useAuthorStore().init()
-  await useCategoryStore().init()
-  await useGalleryStore().init()
-})
 </script>

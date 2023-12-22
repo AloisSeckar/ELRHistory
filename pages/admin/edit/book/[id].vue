@@ -10,6 +10,13 @@
 import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Book, BookDB } from '@/database/types'
 
+const initStores = async () => {
+  await useBookStore().init()
+  await useAuthorStore().init()
+  await useCategoryStore().init()
+}
+await initStores()
+
 const idString = useRoute().params.id as string
 const bookId = idString === 'first' ? useBookStore().getFirstId : parseInt(idString)
 
@@ -33,10 +40,4 @@ const save = async (book: BookDB) => {
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/book/' + calback)
 }
-
-onBeforeMount(async () => {
-  await useBookStore().init()
-  await useAuthorStore().init()
-  await useCategoryStore().init()
-})
 </script>

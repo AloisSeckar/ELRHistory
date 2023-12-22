@@ -10,6 +10,13 @@
 import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Image, ImageDB } from '@/database/types'
 
+const initStores = async () => {
+  await useAuthorStore().init()
+  await useGalleryStore().init()
+  await useImageStore().init()
+}
+await initStores()
+
 const idString = useRoute().params.id as string
 const imageId = idString === 'first' ? useImageStore().getFirstId : parseInt(idString)
 
@@ -33,10 +40,4 @@ const save = async (image: ImageDB) => {
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/image/' + calback)
 }
-
-onBeforeMount(async () => {
-  await useAuthorStore().init()
-  await useGalleryStore().init()
-  await useImageStore().init()
-})
 </script>

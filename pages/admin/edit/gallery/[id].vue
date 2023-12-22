@@ -10,6 +10,13 @@
 import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Gallery, GalleryDB } from '@/database/types'
 
+const initStores = async () => {
+  await useAuthorStore().init()
+  await useGalleryStore().init()
+  await useImageStore().init()
+}
+await initStores()
+
 const idString = useRoute().params.id as string
 const galleryId = idString === 'first' ? useGalleryStore().getFirstId : parseInt(idString)
 
@@ -33,10 +40,4 @@ const save = async (gallery: GalleryDB) => {
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/gallery/' + calback)
 }
-
-onBeforeMount(async () => {
-  await useAuthorStore().init()
-  await useGalleryStore().init()
-  await useImageStore().init()
-})
 </script>

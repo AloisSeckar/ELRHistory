@@ -10,6 +10,13 @@
 import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Link, LinkDB } from '@/database/types'
 
+const initStores = async () => {
+  await useLinkStore().init()
+  await useAuthorStore().init()
+  await useCategoryStore().init()
+}
+await initStores()
+
 const idString = useRoute().params.id as string
 const linkId = idString === 'first' ? useLinkStore().getFirstId : parseInt(idString)
 
@@ -33,10 +40,4 @@ const save = async (link: LinkDB) => {
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/link/' + calback)
 }
-
-onBeforeMount(async () => {
-  await useLinkStore().init()
-  await useAuthorStore().init()
-  await useCategoryStore().init()
-})
 </script>

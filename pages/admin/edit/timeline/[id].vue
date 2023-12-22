@@ -10,6 +10,12 @@
 import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Timeline, TimelineDB } from '@/database/types'
 
+const initStores = async () => {
+  await useAuthorStore().init()
+  await useTimelineStore().init()
+}
+await initStores()
+
 const idString = useRoute().params.id as string
 const timelineId = idString === 'first' ? useTimelineStore().getFirstId : parseInt(idString)
 
@@ -33,9 +39,4 @@ const save = async (timeline: TimelineDB) => {
 const changeItem = (calback: String) => {
   navigateTo('/admin/edit/timeline/' + calback)
 }
-
-onBeforeMount(async () => {
-  await useAuthorStore().init()
-  await useTimelineStore().init()
-})
 </script>
