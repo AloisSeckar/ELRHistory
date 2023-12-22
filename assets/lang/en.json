@@ -62,5 +62,26 @@
         "article" : "Invalid article ID",
         "gallery" : "Invalid gallery ID",
         "image" : "Invalid image ID"
+    },
+    "admin" : {
+        "user" : "Authorized user:",
+        "add" : {
+            "article" : "Add new article",
+            "book" : "Add new book",
+            "gallery" : "Add new gallery",
+            "image" : "Add new image",
+            "link" : "Add new link",
+            "news" : "Add new news",
+            "timeline" : "Add new timeline item"
+        },
+        "edit" : {
+            "article" : "Edit articles",
+            "book" : "Edit books",
+            "gallery" : "Edit galleries",
+            "image" : "Edit images",
+            "link" : "Edit links",
+            "news" : "Edit news",
+            "timeline" : "Edit timeline items"
+        }
     }
 }

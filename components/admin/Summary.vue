@@ -2,7 +2,7 @@
   <div>
     <div v-if="user">
       <div class="text-xl font-bold">
-        Authorized user:
+        {{ $t('admin.user') }}
       </div>
       <div class="mb-4">
         {{ user }}
@@ -12,65 +12,65 @@
           <ul class="list-disc ml-6 mb-2">
             <li>
               <NuxtLink to="/admin/add/article">
-                Add new article
+                {{ $t('admin.add.article') }}
               </NuxtLink>
               /
               <NuxtLink to="/admin/edit/article/first">
-                Edit articles
+                {{ $t('admin.edit.article') }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/admin/add/book">
-                Add new book
+                {{ $t('admin.add.book') }}
               </NuxtLink>
               /
               <NuxtLink to="/admin/edit/book/first">
-                Edit books
+                {{ $t('admin.edit.book') }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/admin/add/gallery">
-                Add new gallery
+                {{ $t('admin.add.gallery') }}
               </NuxtLink>
               /
               <NuxtLink to="/admin/edit/gallery/first">
-                Edit galleries
+                {{ $t('admin.edit.gallery') }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/admin/add/image">
-                Add new image
+                {{ $t('admin.add.image') }}
               </NuxtLink>
               /
               <NuxtLink to="/admin/edit/image/first">
-                Edit images
+                {{ $t('admin.edit.image') }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/admin/add/link">
-                Add new link
+                {{ $t('admin.add.link') }}
               </NuxtLink>
               /
               <NuxtLink to="/admin/edit/link/first">
-                Edit links
+                {{ $t('admin.edit.link') }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/admin/add/news">
-                Add new news
+                {{ $t('admin.add.news') }}
               </NuxtLink>
               /
               <NuxtLink to="/admin/edit/news/first">
-                Edit news
+                {{ $t('admin.edit.news') }}
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/admin/add/timeline">
-                Add new timeline item
+                {{ $t('admin.add.timeline') }}
               </NuxtLink>
               /
               <NuxtLink to="/admin/edit/timeline/first">
-                Edit timeline items
+                {{ $t('admin.edit.timeline') }}
               </NuxtLink>
             </li>
           </ul>
