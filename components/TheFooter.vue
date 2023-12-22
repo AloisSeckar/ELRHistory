@@ -10,7 +10,7 @@
     </NuxtLink>
     |
     <span class="pl-1 text-xs">
-      <NuxtLink to="/login">
+      <NuxtLink to="/admin">
         <BaseIcon icon="key" size="1rem" />
       </NuxtLink>
       <div v-if="user" class="inline">
