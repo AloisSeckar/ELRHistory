@@ -11,7 +11,7 @@ import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Book, BookDB } from '@/database/types'
 
 const idString = useRoute().params.id as string
-const bookId = parseInt(idString)
+const bookId = idString === 'first' ? useBookStore().getFirstId : parseInt(idString)
 
 const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const bookOptions = [] as FormKitOptionsItem[]

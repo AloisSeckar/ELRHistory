@@ -73,6 +73,9 @@ export const useImageStore = defineStore({
         ord: 0
       }
       return newImage
+    },
+    getFirstId: (state) => {
+      return get(state).at(0)?.imageId || 0
     }
   }
 })

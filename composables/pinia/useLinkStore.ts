@@ -69,6 +69,9 @@ export const useLinkStore = defineStore({
         authorId: 0
       }
       return emptyItem
+    },
+    getFirstId: (state) => {
+      return get(state).at(0)?.linkId || 0
     }
   }
 })

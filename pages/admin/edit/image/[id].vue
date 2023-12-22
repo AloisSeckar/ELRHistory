@@ -11,7 +11,7 @@ import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Image, ImageDB } from '@/database/types'
 
 const idString = useRoute().params.id as string
-const imageId = parseInt(idString)
+const imageId = idString === 'first' ? useImageStore().getFirstId : parseInt(idString)
 
 const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const imageOptions = [] as FormKitOptionsItem[]

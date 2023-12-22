@@ -71,6 +71,9 @@ export const useBookStore = defineStore({
         authorId: 0
       }
       return newBook
+    },
+    getFirstId: (state) => {
+      return get(state).at(0)?.bookId || 0
     }
   }
 })

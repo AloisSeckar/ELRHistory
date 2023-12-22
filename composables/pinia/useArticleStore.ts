@@ -69,6 +69,9 @@ export const useArticleStore = defineStore({
         galleryId: undefined
       }
       return newArticle
+    },
+    getFirstId: (state) => {
+      return get(state).at(0)?.articleId || 0
     }
   }
 })

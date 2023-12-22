@@ -70,6 +70,9 @@ export const useGalleryStore = defineStore({
       const galleries = get(state).map(gallery => ({ value: gallery.galleryId, label: gallery.name }))
       galleries.unshift({ value: -1, label: '' })
       return galleries
+    },
+    getFirstId: (state) => {
+      return get(state).at(0)?.galleryId || 0
     }
   }
 })

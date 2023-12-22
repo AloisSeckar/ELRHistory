@@ -11,7 +11,7 @@ import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Gallery, GalleryDB } from '@/database/types'
 
 const idString = useRoute().params.id as string
-const galleryId = parseInt(idString)
+const galleryId = idString === 'first' ? useGalleryStore().getFirstId : parseInt(idString)
 
 const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const galleryOptions = [] as FormKitOptionsItem[]

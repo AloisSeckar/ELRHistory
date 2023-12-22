@@ -11,7 +11,7 @@ import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Timeline, TimelineDB } from '@/database/types'
 
 const idString = useRoute().params.id as string
-const timelineId = parseInt(idString)
+const timelineId = idString === 'first' ? useTimelineStore().getFirstId : parseInt(idString)
 
 const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const timelineOptions = [] as FormKitOptionsItem[]

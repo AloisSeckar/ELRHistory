@@ -11,7 +11,7 @@ import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { News, NewsDB } from '@/database/types'
 
 const idString = useRoute().params.id as string
-const newsId = parseInt(idString)
+const newsId = idString === 'first' ? useNewsStore().getFirstId : parseInt(idString)
 
 const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const newsOptions = [] as FormKitOptionsItem[]

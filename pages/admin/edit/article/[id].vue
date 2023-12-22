@@ -11,7 +11,7 @@ import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Article, ArticleDB } from '@/database/types'
 
 const idString = useRoute().params.id as string
-const articleId = parseInt(idString)
+const articleId = idString === 'first' ? useArticleStore().getFirstId : parseInt(idString)
 
 const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const articleOptions = [] as FormKitOptionsItem[]

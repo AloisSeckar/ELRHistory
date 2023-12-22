@@ -11,7 +11,7 @@ import type { FormKitOptionsItem } from '@formkit/inputs'
 import type { Link, LinkDB } from '@/database/types'
 
 const idString = useRoute().params.id as string
-const linkId = parseInt(idString)
+const linkId = idString === 'first' ? useLinkStore().getFirstId : parseInt(idString)
 
 const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
 const linkOptions = [] as FormKitOptionsItem[]

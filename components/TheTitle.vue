@@ -56,6 +56,10 @@ const titleData = computed(() => {
       link: 'timeline',
       text: 'Add timeline item'
     }
+  } else if (useRoute().path.includes('admin')) {
+    return {
+      page: 'Administration'
+    }
   } else {
     return {}
   }

@@ -67,6 +67,9 @@ export const useTimelineStore = defineStore({
         authorId: 0
       }
       return emptyItem
+    },
+    getFirstId: (state) => {
+      return get(state).at(0)?.timelineId || 0
     }
   }
 })
