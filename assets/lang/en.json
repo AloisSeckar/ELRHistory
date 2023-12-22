@@ -41,6 +41,7 @@
         "articles-none" : "No related articles"
     },
     "images" : {
+        "title" : "Images",
         "total" : "Total images"
     },
     "books" : {
@@ -64,15 +65,16 @@
         "image" : "Invalid image ID"
     },
     "admin" : {
+        "index" : "Administration",
         "user" : "Authorized user:",
         "add" : {
-            "article" : "Add new article",
-            "book" : "Add new book",
-            "gallery" : "Add new gallery",
-            "image" : "Add new image",
-            "link" : "Add new link",
-            "news" : "Add new news",
-            "timeline" : "Add new timeline item"
+            "article" : "Add article",
+            "book" : "Add book",
+            "gallery" : "Add gallery",
+            "image" : "Add image",
+            "link" : "Add link",
+            "news" : "Add news",
+            "timeline" : "Add timeline item"
         },
         "edit" : {
             "article" : "Edit articles",

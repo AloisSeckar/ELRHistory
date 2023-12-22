@@ -2,7 +2,7 @@
   <h1 class="ml-32 mb-2 font-bold text-4xl text-navy">
     {{ baseTitle + (titleData.page ? " - " + titleData.page : "") }}
     <div v-if="useLoginStore().user && titleData.link" class="inline text-3xl text-green-500 hover:text-yellow-400">
-      <NuxtLink :to="{ path: '/admin/add/' + titleData.link }">
+      <NuxtLink :to="{ path: '/admin/add/' + titleData.link }" :title="titleData.text">
         <BaseIcon icon="plus" size="3rem" css-class="mb-2" />
       </NuxtLink>
     </div>
@@ -12,53 +12,52 @@
 <script setup lang="ts">
 const baseTitle = useAppConfig().textTitle
 
-// TODO i18n translate
 const titleData = computed(() => {
   if (useRoute().path.includes('article')) {
     return {
-      page: 'Articles',
       link: 'article',
-      text: 'Add article'
+      page: useT('menu.articles'),
+      text: useT('admin.add.article')
     }
   } else if (useRoute().path.includes('galler')) {
     return {
-      page: 'Galleries',
       link: 'gallery',
-      text: 'Add gallery'
+      page: useT('menu.galleries'),
+      text: useT('admin.add.gallery')
     }
   } else if (useRoute().path.includes('image')) {
     return {
-      page: 'Images',
       link: 'image',
-      text: 'Add image'
+      page: useT('images.title'),
+      text: useT('admin.add.image')
     }
   } else if (useRoute().path.includes('book')) {
     return {
-      page: 'Books',
       link: 'book',
-      text: 'Add book'
+      page: useT('menu.books'),
+      text: useT('admin.add.book')
     }
   } else if (useRoute().path.includes('link')) {
     return {
-      page: 'Links',
       link: 'link',
-      text: 'Add link'
+      page: useT('menu.links'),
+      text: useT('admin.add.link')
     }
   } else if (useRoute().path.includes('news')) {
     return {
-      page: 'News',
       link: 'news',
-      text: 'Add news'
+      page: useT('news.title'),
+      text: useT('admin.add.news')
     }
   } else if (useRoute().path.includes('timeline')) {
     return {
-      page: 'Timeline',
       link: 'timeline',
-      text: 'Add timeline item'
+      page: useT('menu.timeline'),
+      text: useT('admin.add.timeline')
     }
   } else if (useRoute().path.includes('admin')) {
     return {
-      page: 'Administration'
+      page: useT('admin.index')
     }
   } else {
     return {}
