@@ -1,12 +1,11 @@
 <template>
   <div>
     <div v-if="user">
-      <div class="text-xl font-bold">
-        {{ $t('admin.user') }}
-      </div>
+      <h2>{{ $t('admin.user') }}</h2>
       <div class="mb-4">
         {{ user }}
       </div>
+      <h2>{{ $t('admin.content') }}</h2>
       <div>
         <div class="inline-block w-48">
           <ul class="list-disc ml-6 mb-2">

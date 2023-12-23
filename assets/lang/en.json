@@ -66,7 +66,8 @@
     },
     "admin" : {
         "index" : "Administration",
-        "user" : "Authorized user:",
+        "user" : "Authorized user",
+        "content" : "Manage content",
         "add" : {
             "article" : "Add article",
             "book" : "Add book",
