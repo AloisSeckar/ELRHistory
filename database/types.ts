@@ -66,6 +66,7 @@ export type Timeline = TimelineRaw & {
 export type SupabaseStoreData = Article[] | Author[] | Book[] | Category[] | Contact[] | Gallery[] | Image[] | Link[] | News[] | Timeline[]
 export type SupabaseUpdateData = ArticleDB | BookDB | GalleryDB | ImageDB | LinkDB | NewsDB | TimelineDB
 export type SupabaseItemType = 'article' | 'book' | 'gallery' | 'image' | 'link' | 'news' | 'timeline'
+export type SupabaseActionType = 'add' | 'edit'
 
 export type SupabaseStoreClient = SupabaseClient<Article> | SupabaseClient<Book> | SupabaseClient<Gallery> | SupabaseClient<Image> | SupabaseClient<Link> | SupabaseClient<News> | SupabaseClient<Timeline>
 export type SupabaseUpdateClient = SupabaseClient<ArticleDB> | SupabaseClient<BookDB> | SupabaseClient<GalleryDB> | SupabaseClient<ImageDB> | SupabaseClient<LinkDB> | SupabaseClient<NewsDB> | SupabaseClient<TimelineDB>

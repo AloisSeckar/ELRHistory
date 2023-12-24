@@ -7,13 +7,11 @@
 </template>
 
 <script setup lang="ts">
-
-type Action = 'add' | 'edit'
-type Item = 'article' | 'book' | 'gallery' | 'image' | 'link' | 'news' | 'timeline'
+import type { SupabaseActionType, SupabaseItemType } from '@/database/types'
 
 const props = defineProps<{
-  action: Action
-  item: Item
+  action: SupabaseActionType
+  item: SupabaseItemType
 }>()
 
 const link = `/admin/${props.action}/${props.item}` + (props.action === 'edit' ? '/first' : '')
