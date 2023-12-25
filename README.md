@@ -24,7 +24,11 @@ Later I plan to optimize the project for Netlify auto-deployment via GitHub Acti
 Some site-related values are defined as [Nuxt 3 runtime config](https://v3.nuxtjs.org/guide/going-further/runtime-config) variables. To tailor them the to your needs, use `.env` file.
 
 List of variables:
-* **NUXT_PUBLIC_TEXT_TITLE** - displayed as page title in browser tab + H1 on index page + in footer
+* **NUXT_PUBLIC_LANG** - locale for [i18n messages](https://i18n.nuxtjs.org/) (currently supported either `en` or `cs`)
+* **NUXT_PUBLIC_WEB_TITLE** - website name, displayed as page title in browser tab + H1 on index page + in footer
+* **NUXT_PUBLIC_WEB_ABOUT** - website description, displayed on index page in the `About` section
+* **NUXT_PUBLIC_WEB_AUTHOR** - website author/currator, displayed in the footer
+* **NUXT_PUBLIC_WEB_LINK** - link to author's website, links from author's name in the footer (if not blank)
 
 ### Database
 
@@ -34,11 +38,7 @@ To connect the application to your own Supabase, you need to provide unique `SUP
 
 ### Text
 
-Static texts are served via [nuxt/i18n](https://v8.i18n.nuxtjs.org/). TODO
-
-List of texts, that also allow HTML:
-* `web-author` - name and possible link to author's website
-* `index-welcome` - text to be displayed at the index page to describe the site and greet the visitors
+Static texts are served via [nuxt/i18n](https://v8.i18n.nuxtjs.org/). Translation files are served from `/assets/lang/` directory. Currently `en` and `cs` messages are available.
 
 ### Form validation
 
@@ -53,6 +53,4 @@ List of customizable images:
 * **favicon.png** - favicon displayed in browser tab
 
 ### CSS
-
 TODO
-
