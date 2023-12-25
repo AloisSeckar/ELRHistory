@@ -1,8 +1,4 @@
 {
-    "web" : {
-        "author" : "Alois Sečkár",
-        "link" : "http://alois-seckar.cz/"
-    },
     "menu" : {
         "index" : "Index",
         "articles" : "Články",
@@ -12,7 +8,6 @@
         "links" : "Odkazy"
     },
     "index" : {
-        "welcome" : "Toto je uvítací text zobrazený na úvodní obrazovce.<br /><br />Může být <strong>HTML <span style=\"color: red\">CSS stylován</span></strong>.",
         "about" : "O webu",
         "contacts" : "Kontakty",
         "news" : "Novinky",

@@ -1,8 +1,8 @@
 <template>
   <div class="fixed bottom-0 h-10 w-full pt-1 bg-navy text-center text-sm text-silver">
     © {{ year }} <strong>{{ title }}</strong> by
-    <NuxtLink :to="$t('web.link')" extrnal no-prefetch>
-      {{ $t('web.author') }}
+    <NuxtLink :to="useAppConfig().footerLink" extrnal no-prefetch>
+      {{ useAppConfig().footerAuthor }}
     </NuxtLink>
     powered by
     <NuxtLink to="https://nuxt.com/">
@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-const title = useAppConfig().textTitle
+const title = useAppConfig().webTitle
 const year = new Date().getFullYear()
 const user = computed(() => useLoginStore().user)
 </script>

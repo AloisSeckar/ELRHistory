@@ -4,7 +4,7 @@
       <div class="box-header">
         <BaseIcon icon="home" size="1.5rem" css-class="mb-1.5" /> {{ $t('index.about') }}
       </div>
-      <div class="box-content" v-html="$t('index.welcome')" />
+      <div class="box-content" v-html="useAppConfig().webAbout" />
     </div>
     <div class="box">
       <div class="box-header">

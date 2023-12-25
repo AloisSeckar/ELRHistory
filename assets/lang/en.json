@@ -1,8 +1,4 @@
 {
-    "web" : {
-        "author" : "Alois Sečkár",
-        "link" : "http://alois-seckar.cz/"
-    },
     "menu" : {
         "index" : "Index",
         "articles" : "Articles",
@@ -12,7 +8,6 @@
         "links" : "Links"
     },
     "index" : {
-        "welcome" : "This is a welcome text displayed on the index page.<br /><br />It can be <strong>HTML <span style=\"color: red\">formatted</span></strong>.",
         "about" : "About",
         "contacts" : "Contacts",
         "news" : "News",

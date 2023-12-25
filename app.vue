@@ -15,7 +15,7 @@
 import './assets/css/tailwind.css'
 
 useHead({
-  title: useAppConfig().textTitle,
+  title: useAppConfig().webTitle,
   htmlAttrs: {
     lang: useAppConfig().lang
   },
