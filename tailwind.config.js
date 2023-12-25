@@ -1,3 +1,5 @@
+// TODO tailwind plugin w/o require?
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
