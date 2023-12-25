@@ -1,9 +1,14 @@
 <template>
   <div class="fixed bottom-0 h-10 w-full pt-1 bg-navy text-center text-sm text-silver">
     © {{ year }} <strong>{{ title }}</strong> by
-    <NuxtLink :to="useRuntimeConfig().public.webLink" extrnal no-prefetch>
-      {{ useRuntimeConfig().public.webAuthor }}
-    </NuxtLink>
+    <span v-if="link">
+      <NuxtLink :to="link" extrnal no-prefetch>
+        {{ author }}
+      </NuxtLink>
+    </span>
+    <span v-else>
+      {{ author }}
+    </span>
     powered by
     <NuxtLink to="https://nuxt.com/">
       Nuxt3
@@ -22,6 +27,8 @@
 
 <script setup lang="ts">
 const title = useRuntimeConfig().public.webTitle
+const author = useRuntimeConfig().public.webAuthor
+const link = useRuntimeConfig().public.webLink
 const year = new Date().getFullYear()
 const user = computed(() => useLoginStore().user)
 </script>
