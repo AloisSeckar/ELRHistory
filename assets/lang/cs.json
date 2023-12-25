@@ -1,0 +1,90 @@
+{
+    "web" : {
+        "author" : "Alois Sečkár",
+        "link" : "http://alois-seckar.cz/"
+    },
+    "menu" : {
+        "index" : "Index",
+        "articles" : "Články",
+        "galleries" : "Galerie",
+        "timeline" : "Časová osa",
+        "books" : "Knihy",
+        "links" : "Odkazy"
+    },
+    "index" : {
+        "welcome" : "Toto je uvítací text zobrazený na úvodní obrazovce.<br /><br />Může být <strong>HTML <span style=\"color: red\">CSS stylován</span></strong>.",
+        "about" : "O webu",
+        "contacts" : "Kontakty",
+        "news" : "Novinky",
+        "news-all" : "Všechny novinky"
+    },
+    "articles" : {
+        "total" : "Celkem článků",
+        "read" : "Přečíst článek",
+        "gallery" : "Zobrazit galerii",
+        "back" : "Zpět na článek"
+    },
+    "galleries" : {
+        "total" : "Celkem galerií",
+        "read-more" : "Číst více...",
+        "see-more" : "Zobrazit více...",
+        "images" : "Obrázků v galerii:",
+        "images-1" : "Tato galerie obsahuje celkem",
+        "images-2" : "obrázky",
+        "images-none" : "Tato galerie neobsahuje žádné obrázky",
+        "images-view" : "Zobrazit galerii",
+        "parent" : "Nadřazená galerie:",
+        "parent-index" : "Index",
+        "sub" : "Podkategorie:",
+        "sub-none" : "Žádné podkategorie",
+        "articles" : "Související články:",
+        "articles-none" : "Žádné související články"
+    },
+    "images" : {
+        "title" : "Obrázky",
+        "total" : "Celkem obrázků"
+    },
+    "books" : {
+        "total" : "Celkem knih",
+        "none" : "Zatím žádné knihy",
+        "review" : "Recenze"
+    },
+    "links" : {
+        "total" : "Celkem odkazů",
+        "none" : "Zatím žádné odkazy"
+    },
+    "news" : {
+        "title" : "Novinky",
+        "total" : "Celkem novinek",
+        "none" : "Zatím žádné novinky"
+    },
+    "invalid" : {
+        "content" : "Data neexistují nebo je nelze načíst",
+        "article" : "Neplatné ID článku",
+        "gallery" : "Neplatné ID galerie",
+        "image" : "Neplatné ID obrázku"
+    },
+    "admin" : {
+        "index" : "Administrace",
+        "user" : "Autorizovaný uživatel",
+        "content" : "Spravovat obsah",
+        "add" : {
+            "article" : "Přidat článek",
+            "book" : "Přidat knihu",
+            "gallery" : "Přidat galerii",
+            "image" : "Přidat obrázek",
+            "link" : "Přidat odkaz",
+            "news" : "Přidat novinku",
+            "timeline" : "Přidat prvek časové osy"
+        },
+        "edit" : {
+            "article" : "Upravit články",
+            "book" : "Upravit knihy",
+            "gallery" : "Upravit galerie",
+            "image" : "Upravit obrázky",
+            "link" : "Upravit odkazy",
+            "news" : "Upravit novinky",
+            "timeline" : "Upravit prvky časové osy"
+        }
+    }
+}
