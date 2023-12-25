@@ -1,8 +1,8 @@
 <template>
   <div class="fixed bottom-0 h-10 w-full pt-1 bg-navy text-center text-sm text-silver">
     © {{ year }} <strong>{{ title }}</strong> by
-    <NuxtLink :to="useRuntimeConfig().public.footerLink" extrnal no-prefetch>
-      {{ useRuntimeConfig().public.footerAuthor }}
+    <NuxtLink :to="useRuntimeConfig().public.webLink" extrnal no-prefetch>
+      {{ useRuntimeConfig().public.webAuthor }}
     </NuxtLink>
     powered by
     <NuxtLink to="https://nuxt.com/">
