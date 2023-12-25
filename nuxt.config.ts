@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/guide/directory-structure/nuxt.config
 export default defineNuxtConfig({
   ssr: false,
   devtools: {
@@ -14,10 +13,16 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
   runtimeConfig: {
-    // here goes defaults for runtime env variables
+    public: {
+      lang: 'en',
+      // TODO allow following to be admin-edited
+      webTitle: 'ELRHistory',
+      webAbout: 'This is a welcome text displayed on the index page.<br /><br />It can be <strong>HTML <span style="color: red">formatted</span></strong>.',
+      footerAuthor: 'Alois Sečkár',
+      footerLink: 'https://alois-seckar.cz/'
+    }
   },
   image: {
-    // configuration for NuxtImage modules
     presets: {
       thumb: {
         modifiers: {

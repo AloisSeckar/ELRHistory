@@ -3,8 +3,8 @@ import en from '@/assets/lang/en.json'
 
 export default defineI18nConfig(() => ({
   legacy: false,
-  locale: useAppConfig().lang,
-  fallbackLocale: useAppConfig().lang,
+  locale: useRuntimeConfig().public.lang,
+  fallbackLocale: useRuntimeConfig().public.lang,
   messages: { cs, en },
   warnHtmlMessage: false
 }))

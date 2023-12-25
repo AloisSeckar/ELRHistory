@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-const baseTitle = useAppConfig().webTitle
+const baseTitle = useRuntimeConfig().public.webTitle
 
 const titleData = computed(() => {
   if (useRoute().path.includes('article')) {
