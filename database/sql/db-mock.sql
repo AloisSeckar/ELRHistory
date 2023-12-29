@@ -1,11 +1,12 @@
 -- DB mock data for ELRHistory 1.0
 -- use to populate your DB with some values for testing
--- last revision: 2023-02-02
+-- last revision: 2023-12-29
 
 INSERT INTO "elrhAuthor"("email", "name") VALUES ('alois.seckar@gmail.com', 'ELRHistory');
 INSERT INTO "elrhAuthor"("email", "name") VALUES ('ellrohir@seznam.com', 'ELRHistory2');
 
 INSERT INTO "elrhContact"("name", "email", "phone", "fb") VALUES ('ELRHistory', 'alois.seckar@gmail.com', '123 456 789', 'https://www.facebook.com/');
+INSERT INTO "elrhContact"("name", "email", "phone") VALUES ('ELRHistory2', 'alois.seckar@gmail.com', '987 654 321');
 
 INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "authorId") VALUES (now() - INTERVAL '6 hour', now() - INTERVAL '6 hour', 'Test news #1', 'Some text of the news', 1);
 INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "authorId") VALUES (now() - INTERVAL '5 hour', now() - INTERVAL '5 hour', 'Test news #2', 'Some text of the news', 1);

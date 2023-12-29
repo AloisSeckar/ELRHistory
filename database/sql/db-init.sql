@@ -1,6 +1,6 @@
 -- DB scheme for ELRHistory 1.0
 -- syntax is valid for PostgreSQL
--- last revision: 2023-02-02
+-- last revision: 2023-12-29
 
 BEGIN TRANSACTION;
 
@@ -62,7 +62,7 @@ CREATE TABLE "elrhContact" (
 	"name"	varchar(50) NOT NULL,
 	"email"	varchar(255) NOT NULL,
 	"phone"	varchar(16) NOT NULL,
-	"fb"	varchar(100) NOT NULL
+	"fb"	varchar(100)
 );
 
 CREATE TABLE "elrhLink" (

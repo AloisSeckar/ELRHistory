@@ -1348,7 +1348,7 @@ export interface definitions {
     /** Format: character varying */
     phone: string;
     /** Format: character varying */
-    fb: string;
+    fb?: string;
   };
 }
 
