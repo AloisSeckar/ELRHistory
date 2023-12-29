@@ -1,10 +1,13 @@
 <template>
-  <div class="flex">
+  <div class="flex flex-row flex-wrap">
     <AdminEditLink v-if="user" :link="'news/' + item.newsId" item="news" />
-    <div class="flex-none w-44 ml-2">
-      <strong>{{ toDate(item.dateCreated) }}</strong> {{ item.elrhAuthor?.name }}
+    <div class="w-20">
+      <strong>{{ toDate(item.dateCreated) }}</strong>
     </div>
-    <div class="grow pl-4">
+    <div class="w-36 text-center">
+      {{ item.elrhAuthor?.name }}
+    </div>
+    <div class="grow">
       <strong>{{ item.title }}</strong> - {{ item.content }}
     </div>
   </div>

@@ -1,15 +1,15 @@
 <template>
-  <div class="flex">
-    <div class="grow">
+  <div class="flex flex-row flex-wrap">
+    <div class="w-[30%]">
       <strong>{{ item.name }}</strong>
     </div>
-    <div class="grow">
+    <div class="w-[30%]">
       {{ item.email }}
     </div>
-    <div class="grow">
+    <div class="w-[30%]">
       {{ item.phone }}
     </div>
-    <div class="grow">
+    <div class="w-[10%]">
       <NuxtLink :to="item.fb" :external="true" :title=" item.name + ' - Facebook'" class="text-xl">
         <BaseIcon icon="facebook" size="1.25rem" css-class="mb-1.5" />
       </NuxtLink>
