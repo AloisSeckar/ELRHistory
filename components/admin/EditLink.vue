@@ -1,5 +1,5 @@
 <template>
-  <div class="inline pl-2">
+  <div class="inline-block px-2">
     <NuxtLink :to="{ path: '/admin/edit/' + link }">
       <span :title="'Edit ' + item">
         <BaseIcon icon="wrench" size="1.125rem" css-class="mb-1.5 text-green-500 hover:text-yellow-400" />
