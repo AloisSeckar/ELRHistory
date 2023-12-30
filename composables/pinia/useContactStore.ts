@@ -18,8 +18,7 @@ export const useContactStore = defineStore({
         tableName,
         storeData: this,
         selectQuery: 'name, email, phone, fb',
-        orderQuery: 'name',
-        orderOpts: {}
+        orderQuery: 'name'
       })
     }
   },

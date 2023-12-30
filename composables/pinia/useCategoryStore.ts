@@ -19,8 +19,7 @@ export const useCategoryStore = defineStore({
         tableName,
         storeData: this,
         selectQuery: 'categoryId, ord, name, dscr, type',
-        orderQuery: 'ord',
-        orderOpts: {}
+        orderQuery: 'ord'
       })
     }
   },

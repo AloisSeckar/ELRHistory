@@ -19,8 +19,7 @@ export const useAuthorStore = defineStore({
         tableName,
         storeData: this,
         selectQuery: 'authorId, email, name',
-        orderQuery: 'name',
-        orderOpts: {}
+        orderQuery: 'name'
       })
     }
   },

@@ -19,7 +19,6 @@ export const useLinkStore = defineStore({
         storeData: this,
         selectQuery: 'linkId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, url, thumb, elrhAuthor(authorId, name)',
         orderQuery: 'ord',
-        orderOpts: {},
         preventSingleLetterOrphans: ['dscr']
       }, forceReload)
     },

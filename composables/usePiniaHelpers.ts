@@ -18,7 +18,7 @@ export type StoreConfig = {
   storeData: StoreData,
   selectQuery: string,
   orderQuery: string,
-  orderOpts: OrderOpts,
+  orderOpts?: OrderOpts,
   preventSingleLetterOrphans?: string[]
 }
 
@@ -56,7 +56,7 @@ async function fetchSupabase (config: StoreConfig) {
   return await config.supabaseClient
     .from(config.tableName)
     .select(config.selectQuery)
-    .order(config.orderQuery, config.orderOpts)
+    .order(config.orderQuery, config.orderOpts ? config.orderOpts : {})
 }
 
 // TODO replace "store: any" with proper TS definition
