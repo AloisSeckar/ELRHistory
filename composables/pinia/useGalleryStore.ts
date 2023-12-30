@@ -19,7 +19,8 @@ export const useGalleryStore = defineStore({
         storeData: this,
         selectQuery: 'galleryId, dateCreated, name, dscr, elrhAuthor(authorId, name), parentId(galleryId, name), elrhArticle(articleId, name, elrhAuthor(authorId, name), galleryId)',
         orderQuery: 'name',
-        orderOpts: {}
+        orderOpts: {},
+        preventSingleLetterOrphans: ['dscr']
       }, forceReload)
     },
     async update (itemData: GalleryDB, itemId?: number): Promise<boolean> {

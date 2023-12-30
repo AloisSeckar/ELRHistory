@@ -19,7 +19,8 @@ export const useNewsStore = defineStore({
         storeData: this,
         selectQuery: 'newsId, dateCreated, dateEdited, title, content, url, elrhAuthor(authorId, name)',
         orderQuery: 'dateCreated',
-        orderOpts: { ascending: false }
+        orderOpts: { ascending: false },
+        preventSingleLetterOrphans: ['content']
       }, forceReload)
     },
     async update (itemData: NewsDB, itemId?: number): Promise<boolean> {

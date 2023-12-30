@@ -19,7 +19,8 @@ export const useTimelineStore = defineStore({
         storeData: this,
         selectQuery: 'timelineId, title, content, tooltip, elrhAuthor(authorId, name)',
         orderQuery: 'title',
-        orderOpts: { ascending: false }
+        orderOpts: { ascending: false },
+        preventSingleLetterOrphans: ['title', 'content', 'tooltip']
       }, forceReload)
     },
     async update (itemData: TimelineDB, itemId?: number): Promise<boolean> {

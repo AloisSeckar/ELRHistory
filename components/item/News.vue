@@ -12,7 +12,7 @@
       <NuxtLink v-if="item.url" :to="item.url">
         <BaseIcon icon="goto" css-class="h-4" />
       </NuxtLink>
-      - {{ item.content }}
+      -&nbsp;{{ item.content }}
     </div>
   </div>
 </template>

@@ -18,7 +18,8 @@ export type StoreConfig = {
   storeData: StoreData,
   selectQuery: string,
   orderQuery: string,
-  orderOpts: OrderOpts
+  orderOpts: OrderOpts,
+  preventSingleLetterOrphans?: string[]
 }
 
 export async function useStoreInit (config: StoreConfig, forceReload?: boolean) {
@@ -27,6 +28,18 @@ export async function useStoreInit (config: StoreConfig, forceReload?: boolean) 
     await fetchSupabase(config)
       .then((x: any) => {
         console.debug(`${config.tableName} loaded from Supabase`)
+
+        // prevent single-letter orpans in texts
+        if (config.preventSingleLetterOrphans) {
+          config.preventSingleLetterOrphans.forEach((column) => {
+            x.data?.forEach((data: any) => {
+              if (data[column]) {
+                data[column] = preventSingleLetterOrphans(data[column])
+              }
+            })
+          })
+        }
+
         config.storeData.items = x.data
         config.storeData.loaded = true
       }).catch((x: any) => {

@@ -19,7 +19,8 @@ export const useImageStore = defineStore({
         storeData: this,
         selectQuery: 'imageId, dateCreated, name, dscr, elrhAuthor(authorId, name), image, galleryId(galleryId, name), ord, prevId, nextId',
         orderQuery: 'ord',
-        orderOpts: {}
+        orderOpts: {},
+        preventSingleLetterOrphans: ['dscr']
       }, force)
     },
     async update (itemData: ImageDB, itemId?: number): Promise<boolean> {

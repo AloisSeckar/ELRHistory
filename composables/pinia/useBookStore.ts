@@ -19,7 +19,8 @@ export const useBookStore = defineStore({
         storeData: this,
         selectQuery: 'bookId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, url, thumb, writer, review, year, elrhAuthor(authorId, name)',
         orderQuery: 'ord',
-        orderOpts: {}
+        orderOpts: {},
+        preventSingleLetterOrphans: ['dscr']
       }, forceReload)
     },
     async update (itemData: BookDB, itemId?: number): Promise<boolean> {
