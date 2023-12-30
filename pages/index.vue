@@ -4,7 +4,7 @@
       <div class="box-header">
         <BaseIcon icon="home" size="1.5rem" css-class="mb-1.5" /> {{ $t('index.about') }}
       </div>
-      <div class="box-content" v-html="preventSingleLetterOrphans(useRuntimeConfig().public.webAbout)" />
+      <div class="box-content" v-html="about" />
     </div>
     <div class="box">
       <div class="box-header">
@@ -35,7 +35,10 @@
 </template>
 
 <script setup lang="ts">
+import { preventSingleLetterOrphans } from 'elrh-utils/src/main'
 import type { Contact } from '@/database/types'
+
+const about = preventSingleLetterOrphans(useRuntimeConfig().public.webAbout)
 
 onBeforeMount(async () => {
   await useContactStore().init()
