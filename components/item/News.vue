@@ -1,14 +1,18 @@
 <template>
-  <div class="flex flex-row flex-wrap">
-    <AdminEditLink v-if="user" :link="'news/' + item.newsId" item="news" />
-    <div class="w-20">
+  <div class="flex flex-wrap">
+    <div class="flex-none w-20">
       <strong>{{ toDate(item.dateCreated) }}</strong>
     </div>
-    <div class="w-36 text-center">
+    <div class="px-4 flex-none text-nowrap text-center">
       {{ item.elrhAuthor?.name }}
     </div>
-    <div class="grow">
-      <strong>{{ item.title }}</strong> - {{ item.content }}
+    <div class="flex-1">
+      <AdminEditLink v-if="user" :link="'news/' + item.newsId" item="news" />
+      <strong>{{ item.title }}</strong>
+      <NuxtLink v-if="item.url" :to="item.url">
+        <BaseIcon icon="goto" css-class="h-4" />
+      </NuxtLink>
+      - {{ item.content }}
     </div>
   </div>
 </template>
@@ -23,3 +27,15 @@ defineProps({
 
 const user = computed(() => useLoginStore().user)
 </script>
+
+<style scoped>
+.fit {
+  width: calc(100% - 230px);
+}
+.centered-element {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+</style>

@@ -135,6 +135,7 @@ export interface paths {
           dateEdited?: parameters["rowFilter.elrhNews.dateEdited"];
           title?: parameters["rowFilter.elrhNews.title"];
           content?: parameters["rowFilter.elrhNews.content"];
+          url?: parameters["rowFilter.elrhNews.url"];
           authorId?: parameters["rowFilter.elrhNews.authorId"];
           /** Filtering Columns */
           select?: parameters["select"];
@@ -191,6 +192,7 @@ export interface paths {
           dateEdited?: parameters["rowFilter.elrhNews.dateEdited"];
           title?: parameters["rowFilter.elrhNews.title"];
           content?: parameters["rowFilter.elrhNews.content"];
+          url?: parameters["rowFilter.elrhNews.url"];
           authorId?: parameters["rowFilter.elrhNews.authorId"];
         };
         header: {
@@ -211,6 +213,7 @@ export interface paths {
           dateEdited?: parameters["rowFilter.elrhNews.dateEdited"];
           title?: parameters["rowFilter.elrhNews.title"];
           content?: parameters["rowFilter.elrhNews.content"];
+          url?: parameters["rowFilter.elrhNews.url"];
           authorId?: parameters["rowFilter.elrhNews.authorId"];
         };
         body: {
@@ -1129,11 +1132,9 @@ export interface definitions {
     title: string;
     /** Format: text */
     content: string;
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Foreign Key to `elrhAuthor.authorId`.<fk table='elrhAuthor' column='authorId'/>
-     */
+    /** Format: character varying */
+    url?: string;
+    /** Format: integer */
     authorId: number;
   };
   elrhImage: {
@@ -1429,6 +1430,8 @@ export interface parameters {
   "rowFilter.elrhNews.title": string;
   /** Format: text */
   "rowFilter.elrhNews.content": string;
+  /** Format: character varying */
+  "rowFilter.elrhNews.url": string;
   /** Format: integer */
   "rowFilter.elrhNews.authorId": string;
   /** @description elrhImage */

@@ -55,6 +55,8 @@ function getSVGDef (icon: string): IconDefinition {
       return icones.forward
     case 'globe':
       return icones.globe
+    case 'goto':
+      return icones.goto
     case 'home':
       return icones.home
     case 'image':

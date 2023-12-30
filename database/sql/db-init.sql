@@ -84,6 +84,7 @@ CREATE TABLE "elrhNews" (
 	"dateEdited"	timestamp NOT NULL,
 	"title"	varchar(100) NOT NULL,
 	"content"	text NOT NULL,
+	"url"	varchar(100),
 	"authorId"	integer NOT NULL
 );
 

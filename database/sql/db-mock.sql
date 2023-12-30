@@ -8,9 +8,9 @@ INSERT INTO "elrhAuthor"("email", "name") VALUES ('ellrohir@seznam.com', 'ELRHis
 INSERT INTO "elrhContact"("name", "email", "phone", "fb") VALUES ('ELRHistory', 'alois.seckar@gmail.com', '123 456 789', 'https://www.facebook.com/');
 INSERT INTO "elrhContact"("name", "email", "phone") VALUES ('ELRHistory2', 'alois.seckar@gmail.com', '987 654 321');
 
-INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "authorId") VALUES (now() - INTERVAL '6 hour', now() - INTERVAL '6 hour', 'Test news #1', 'Some text of the news', 1);
-INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "authorId") VALUES (now() - INTERVAL '5 hour', now() - INTERVAL '5 hour', 'Test news #2', 'Some text of the news', 1);
-INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "authorId") VALUES (now() - INTERVAL '4 hour', now() - INTERVAL '4 hour', 'Test news #3', 'Some text of the news', 1);
+INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "url", "authorId") VALUES (now() - INTERVAL '6 hour', now() - INTERVAL '6 hour', 'Test news #1', 'Some text of the news', '/', 1);
+INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "url", "authorId") VALUES (now() - INTERVAL '5 hour', now() - INTERVAL '5 hour', 'Test news #2', 'Some text of the news', '/gallery/1', 1);
+INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "url", "authorId") VALUES (now() - INTERVAL '4 hour', now() - INTERVAL '4 hour', 'Test news #3', 'Some text of the news', 'http://www.google.com', 1);
 INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "authorId") VALUES (now() - INTERVAL '3 hour', now() - INTERVAL '3 hour', 'Test news #4', 'Some text of the news', 2);
 INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "authorId") VALUES (now() - INTERVAL '2 hour', now() - INTERVAL '2 hour', 'Test news #5', 'Some text of the news', 2);
 INSERT INTO "elrhNews"("dateCreated", "dateEdited", "title", "content", "authorId") VALUES (now() - INTERVAL '1 hour', now() - INTERVAL '1 hour', 'Test news #6', 'Some text of the news', 2);
