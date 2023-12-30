@@ -1,18 +1,20 @@
 <template>
   <div class="flex flex-wrap">
-    <div class="flex-none w-20">
+    <div class="flex-none w-24">
       <strong>{{ toDate(item.dateCreated) }}</strong>
     </div>
-    <div class="px-4 flex-none text-nowrap text-center">
+    <div class="flex-none w-32 px-4 text-nowrap text-center">
       {{ item.elrhAuthor?.name }}
     </div>
     <div class="flex-1">
-      <AdminEditLink v-if="user" :link="'news/' + item.newsId" item="news" />
-      <strong>{{ item.title }}</strong>
-      <NuxtLink v-if="item.url" :to="item.url">
-        <BaseIcon icon="goto" css-class="h-4" />
-      </NuxtLink>
-      -&nbsp;{{ item.content }}
+      <div>
+        <AdminEditLink v-if="user" :link="'news/' + item.newsId" item="news" />
+        <strong>{{ item.title }}</strong>
+        <NuxtLink v-if="item.url" :to="item.url">
+          <BaseIcon icon="goto" css-class="h-4" />
+        </NuxtLink>
+      </div>
+      {{ item.content }}
     </div>
   </div>
 </template>
