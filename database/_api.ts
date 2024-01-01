@@ -1134,7 +1134,11 @@ export interface definitions {
     content: string;
     /** Format: character varying */
     url?: string;
-    /** Format: integer */
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhAuthor.authorId`.<fk table='elrhAuthor' column='authorId'/>
+     */
     authorId: number;
   };
   elrhImage: {

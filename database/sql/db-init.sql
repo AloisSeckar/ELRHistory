@@ -22,7 +22,7 @@ CREATE TABLE "elrhArticle" (
 	"name"	varchar(50) NOT NULL,
 	"dscr"	varchar(255) NOT NULL,
 	"content"	text NOT NULL,
-	"thumb"	varchar(100) NOT NULL,
+	"thumb"	varchar(255) NOT NULL,
 	"authorId"	integer NOT NULL,
 	"galleryId"	integer
 );
@@ -43,7 +43,7 @@ CREATE TABLE "elrhBook" (
 	"name"	varchar(100) NOT NULL,
 	"dscr"	varchar(255) NOT NULL,
 	"url"	varchar(255) NOT NULL,
-	"thumb"	varchar(100) NOT NULL,
+	"thumb"	varchar(255) NOT NULL,
 	"review"	varchar(255),
 	"year"	varchar(4) NOT NULL,
 	"authorId"	integer NOT NULL
@@ -74,7 +74,7 @@ CREATE TABLE "elrhLink" (
 	"name"	varchar(100) NOT NULL,
 	"dscr"	varchar(255) NOT NULL,
 	"url"	varchar(255) NOT NULL,
-	"thumb"	varchar(100) NOT NULL,
+	"thumb"	varchar(255) NOT NULL,
 	"authorId"	integer NOT NULL
 );
 
