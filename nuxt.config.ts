@@ -23,6 +23,9 @@ export default defineNuxtConfig({
     }
   },
   image: {
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/dxn3gzvtm/image/upload/'
+    },
     presets: {
       thumb: {
         modifiers: {
