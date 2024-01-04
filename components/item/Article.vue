@@ -16,7 +16,14 @@
       <div class="box-content flex">
         <div class="flex-none pr-4">
           <NuxtLink :to="{ path: articlePath }">
-            <NuxtImg preset="thumb" :src="item.thumb" :alt="item.name" :title="item.name" />
+            <NuxtImg
+              provider="cloudinary"
+              width="120"
+              height="80"
+              :src="item.thumb"
+              :alt="item.name"
+              :title="item.name"
+            />
           </NuxtLink>
         </div>
         <div class="flex-1">

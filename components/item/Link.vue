@@ -2,7 +2,14 @@
   <div class="flex">
     <div class="flex-none w-32 p-2">
       <a :href="item.url" :title="item.url">
-        <NuxtImg provider="cloudinary" :src="item.thumb" :alt="item.name" :title="item.name" />
+        <NuxtImg
+          provider="cloudinary"
+          width="120"
+          height="80"
+          :src="item.thumb"
+          :alt="item.name"
+          :title="item.name"
+        />
       </a>
     </div>
     <div class="grow p-2 pl-4 self-center">
