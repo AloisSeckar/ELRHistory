@@ -19,7 +19,13 @@
         </div>
         <hr class="mb-2">
         <ItemImageNav :item="item" :editable="editable" />
-        <NuxtImg class="m-2 inline-block max-w-[96%]" :src="item.image" :alt="item.name" :title="item.name" />
+        <NuxtImg
+          class="m-2 inline-block max-w-[96%] border"
+          provider="cloudinary"
+          :src="item.image"
+          :alt="item.name"
+          :title="item.name"
+        />
         <ItemImageNav :item="item" :editable="editable" />
       </div>
     </div>
