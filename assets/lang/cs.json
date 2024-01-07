@@ -69,33 +69,15 @@
         "index" : "Administrace",
         "user" : "Autorizovaný uživatel",
         "content" : "Spravovat obsah",
-        "select1" : "Vybrat",
-        "add" : {
-            "article" : "Přidat článek",
-            "book" : "Přidat knihu",
-            "gallery" : "Přidat galerii",
-            "image" : "Přidat obrázek",
-            "link" : "Přidat odkaz",
-            "news" : "Přidat novinku",
-            "timeline" : "Přidat prvek časové osy"
-        },
-        "edit" : {
-            "article" : "Upravit články",
-            "book" : "Upravit knihy",
-            "gallery" : "Upravit galerie",
-            "image" : "Upravit obrázky",
-            "link" : "Upravit odkazy",
-            "news" : "Upravit novinky",
-            "timeline" : "Upravit prvky časové osy"
-        },
-        "select" : {
-            "article" : "Vybrat článek:",
-            "book" : "Vybrat knihu:",
-            "gallery" : "Vybrat galerii:",
-            "image" : "Vybrat obrázek:",
-            "link" : "Vybrat odkaz:",
-            "news" : "Vybrat novinku:",
-            "timeline" : "Vybrat prvek časové osy:"
-        }
+        "add" : "Přidat",
+        "edit" : "Upravit",
+        "select" : "Vybrat",
+        "article" : "článek",
+        "book" : "knihu",
+        "gallery" : "galerii",
+        "image" : "obrázek",
+        "link" : "odkaz",
+        "news" : "novinku",
+        "timeline" : "prvek časové osy"
     }
 }

@@ -69,33 +69,15 @@
         "index" : "Administration",
         "user" : "Authorized user",
         "content" : "Manage content",
-        "select1" : "Select",
-        "add" : {
-            "article" : "Add article",
-            "book" : "Add book",
-            "gallery" : "Add gallery",
-            "image" : "Add image",
-            "link" : "Add link",
-            "news" : "Add news",
-            "timeline" : "Add timeline item"
-        },
-        "edit" : {
-            "article" : "Edit articles",
-            "book" : "Edit books",
-            "gallery" : "Edit galleries",
-            "image" : "Edit images",
-            "link" : "Edit links",
-            "news" : "Edit news",
-            "timeline" : "Edit timeline items"
-        },
-        "select" : {
-            "article" : "Select article:",
-            "book" : "Select book:",
-            "gallery" : "Select gallery:",
-            "image" : "Select image:",
-            "link" : "Select link:",
-            "news" : "Select news:",
-            "timeline" : "Select timeline item:"
-        }
+        "add" : "Add",
+        "edit" : "Edit",
+        "select" : "Select",
+        "article" : "article",
+        "book" : "book",
+        "gallery" : "gallery",
+        "image" : "image",
+        "link" : "link",
+        "news" : "news",
+        "timeline" : "timeline item"
     }
 }

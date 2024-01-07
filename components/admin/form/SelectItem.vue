@@ -15,7 +15,7 @@
       <div class="inline-block px-2 w-1/4">
         <FormKit
           type="button"
-          :label="useT('admin.select1')"
+          :label="useT('admin.select')"
           @click="$emit('selectItem', option)"
         />
       </div>

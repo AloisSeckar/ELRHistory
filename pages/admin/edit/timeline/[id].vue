@@ -1,7 +1,7 @@
 <template>
   <div>
-    <AdminFormSelectItem :label="useT('admin.select.timeline')" :options="timelineOptions" :selected="selected" @select-item="changeItem" />
-    <h2>{{ $t('admin.edit.article') }}: <strong>{{ currentTimelineName }}</strong></h2>
+    <AdminFormSelectItem :label="useTAdminSelect('timeline')" :options="timelineOptions" :selected="selected" @select-item="changeItem" />
+    <h2>{{ useTAdminEdit('timeline') }}: <strong>{{ currentTimelineName }}</strong></h2>
     <AdminFormTimeline :timeline-id="timelineId" @save="save" />
   </div>
 </template>

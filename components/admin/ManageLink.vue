@@ -15,5 +15,5 @@ const props = defineProps<{
 }>()
 
 const link = `/admin/${props.action}/${props.item}` + (props.action === 'edit' ? '/first' : '')
-const text = `admin.${props.action}.${props.item}`
+const text = props.action === 'edit' ? useTAdminEdit(props.item) : useTAdminAdd(props.item)
 </script>

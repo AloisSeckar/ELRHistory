@@ -1,7 +1,7 @@
 <template>
   <div>
-    <AdminFormSelectItem :label="useT('admin.select.link')" :options="linkOptions" :selected="selected" @select-item="changeItem" />
-    <h2>{{ $t('admin.edit.article') }}: <strong>{{ currentLinkName }}</strong></h2>
+    <AdminFormSelectItem :label="useTAdminSelect('link')" :options="linkOptions" :selected="selected" @select-item="changeItem" />
+    <h2>{{ useTAdminEdit('link') }}: <strong>{{ currentLinkName }}</strong></h2>
     <AdminFormLink :link-id="linkId" @save="save" />
   </div>
 </template>

@@ -17,43 +17,43 @@ const titleData = computed(() => {
     return {
       link: 'article',
       page: useT('menu.articles'),
-      text: useT('admin.add.article')
+      text: useTAdminAdd('article')
     }
   } else if (useRoute().path.includes('galler')) {
     return {
       link: 'gallery',
       page: useT('menu.galleries'),
-      text: useT('admin.add.gallery')
+      text: useTAdminAdd('gallery')
     }
   } else if (useRoute().path.includes('image')) {
     return {
       link: 'image',
       page: useT('images.title'),
-      text: useT('admin.add.image')
+      text: useTAdminAdd('image')
     }
   } else if (useRoute().path.includes('book')) {
     return {
       link: 'book',
       page: useT('menu.books'),
-      text: useT('admin.add.book')
+      text: useTAdminAdd('book')
     }
   } else if (useRoute().path.includes('link')) {
     return {
       link: 'link',
       page: useT('menu.links'),
-      text: useT('admin.add.link')
+      text: useTAdminAdd('link')
     }
   } else if (useRoute().path.includes('news')) {
     return {
       link: 'news',
       page: useT('news.title'),
-      text: useT('admin.add.news')
+      text: useTAdminAdd('news')
     }
   } else if (useRoute().path.includes('timeline')) {
     return {
       link: 'timeline',
       page: useT('menu.timeline'),
-      text: useT('admin.add.timeline')
+      text: useTAdminAdd('timeline')
     }
   } else if (useRoute().path.includes('admin')) {
     return {

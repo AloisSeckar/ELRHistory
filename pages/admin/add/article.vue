@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ $t('admin.add.article') }}</h2>
+    <h2>{{ useTAdminAdd('article') }}</h2>
     <AdminFormArticle :article-id="-1" @save="save" />
   </div>
 </template>
