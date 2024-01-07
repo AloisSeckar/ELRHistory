@@ -26,7 +26,7 @@
     }
 
     .formkit-input {
-        @apply mb-2 w-full h-8;
+        @apply mb-1 w-full h-10;
     }
 
     textarea.formkit-input {

@@ -7,7 +7,7 @@
       </div>
       <h2>{{ $t('admin.content') }}</h2>
       <div>
-        <div class="inline-block w-52">
+        <div class="inline-block w-60">
           <ul class="list-disc ml-6 mb-2">
             <AdminManageLink action="add" item="article" />
             <AdminManageLink action="add" item="book" />
@@ -18,7 +18,7 @@
             <AdminManageLink action="add" item="timeline" />
           </ul>
         </div>
-        <div class="inline-block w-52">
+        <div class="inline-block w-60">
           <ul class="list-disc ml-6 mb-2">
             <AdminManageLink action="edit" item="article" />
             <AdminManageLink action="edit" item="book" />
