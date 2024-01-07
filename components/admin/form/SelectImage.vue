@@ -10,6 +10,7 @@
       @change="$emit('change', imgSrc)"
     />
     <NuxtImg
+      v-if="imgSrc"
       class="w-48 h-32 border"
       provider="cloudinary"
       :src="imgSrc"
