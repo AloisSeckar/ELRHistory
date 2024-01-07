@@ -52,7 +52,7 @@ const emit = defineEmits<{(e: 'save', article: GalleryDB): void }>()
 let label: string
 let gallery: GalleryDB
 if (props.galleryId > 0) {
-  label = 'Edit'
+  label = useT('admin.edit')
   const { galleryId, ...currentGallery } = useGalleryStore().getById(props.galleryId)
   gallery = reactive({
     dateCreated: currentGallery.dateCreated,
@@ -63,7 +63,7 @@ if (props.galleryId > 0) {
     parentId: currentGallery.parentId?.galleryId
   })
 } else {
-  label = 'Add'
+  label = useT('admin.add')
   gallery = reactive(useGalleryStore().getEmpty)
   gallery.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }

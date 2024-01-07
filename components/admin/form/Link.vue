@@ -59,7 +59,7 @@ const emit = defineEmits<{(e: 'save', link: LinkDB): void }>()
 let label: string
 let link: LinkDB
 if (props.linkId > 0) {
-  label = 'Edit'
+  label = useT('admin.edit')
   const { linkId, ...currentLink } = useLinkStore().getById(props.linkId)
   link = reactive({
     categoryId: currentLink.elrhCategory?.categoryId || -1,
@@ -73,7 +73,7 @@ if (props.linkId > 0) {
     authorId: currentLink.elrhAuthor?.authorId || -1
   })
 } else {
-  label = 'Add'
+  label = useT('admin.add')
   link = reactive(useLinkStore().getEmpty)
   link.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }

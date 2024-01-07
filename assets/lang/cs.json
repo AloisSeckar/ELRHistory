@@ -63,7 +63,8 @@
         "title" : "Pro přístup do administrace se musíte přihlásit:",
         "email" : "E-mail:",
         "pass" : "Heslo:",
-        "login" : "Přihlásit se"
+        "login" : "Přihlásit se",
+        "logout" : "Odhlásit se"
     },
     "admin" : {
         "index" : "Administrace",

@@ -45,7 +45,7 @@ const emit = defineEmits<{(e: 'save', timeline: TimelineDB): void }>()
 let label: string
 let timeline: TimelineDB
 if (props.timelineId > 0) {
-  label = 'Edit'
+  label = useT('admin.edit')
   const { timelineId, ...currentTimeline } = useTimelineStore().getById(props.timelineId)
   timeline = reactive({
     title: currentTimeline.title,
@@ -54,7 +54,7 @@ if (props.timelineId > 0) {
     authorId: currentTimeline.elrhAuthor?.authorId || -1
   })
 } else {
-  label = 'Add'
+  label = useT('admin.add')
   timeline = reactive(useTimelineStore().getEmpty)
   timeline.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }

@@ -67,7 +67,7 @@ const emit = defineEmits<{(e: 'save', article: ArticleDB): void }>()
 let label: string
 let article: ArticleDB
 if (props.articleId > 0) {
-  label = 'Edit'
+  label = useT('admin.edit')
   const { articleId, ...currentArticle } = useArticleStore().getById(props.articleId)
   article = reactive({
     categoryId: currentArticle.elrhCategory?.categoryId || -1,
@@ -81,7 +81,7 @@ if (props.articleId > 0) {
     galleryId: currentArticle?.elrhGallery?.galleryId
   })
 } else {
-  label = 'Add'
+  label = useT('admin.add')
   article = reactive(useArticleStore().getEmpty)
   article.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
   article.categoryId = useCategoryStore().getByType('a')?.[0]?.categoryId || -1

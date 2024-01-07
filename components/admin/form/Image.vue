@@ -53,7 +53,7 @@ const emit = defineEmits<{(e: 'save', article: ImageDB): void }>()
 let label: string
 let image: ImageDB
 if (props.imageId > 0) {
-  label = 'Edit'
+  label = useT('admin.edit')
   const { imageId, ...currentImage } = useImageStore().getById(props.imageId)
   image = reactive({
     dateCreated: currentImage.dateCreated,
@@ -68,7 +68,7 @@ if (props.imageId > 0) {
     nextId: currentImage.nextId
   })
 } else {
-  label = 'Add'
+  label = useT('admin.add')
   image = reactive(useImageStore().getEmpty)
   image.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }

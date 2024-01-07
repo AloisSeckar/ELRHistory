@@ -63,7 +63,8 @@
         "title" : "Login to access admin section:",
         "email" : "E-mail:",
         "pass" : "Password:",
-        "login" : "Login"
+        "login" : "Login",
+        "logout" : "Logout"
     },
     "admin" : {
         "index" : "Administration",

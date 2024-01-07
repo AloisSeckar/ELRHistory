@@ -44,7 +44,7 @@ const emit = defineEmits<{(e: 'save', news: NewsDB): void }>()
 let label: string
 let news: NewsDB
 if (props.newsId > 0) {
-  label = 'Edit'
+  label = useT('admin.edit')
   const { newsId, ...currentNews } = useNewsStore().getById(props.newsId)
   news = reactive({
     dateCreated: currentNews.dateCreated,
@@ -54,7 +54,7 @@ if (props.newsId > 0) {
     authorId: currentNews.elrhAuthor?.authorId || -1
   })
 } else {
-  label = 'Add'
+  label = useT('admin.add')
   news = reactive(useNewsStore().getEmpty)
   news.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
 }

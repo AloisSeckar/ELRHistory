@@ -80,7 +80,7 @@ const emit = defineEmits<{(e: 'save', article: BookDB): void }>()
 let label: string
 let book: BookDB
 if (props.bookId > 0) {
-  label = 'Edit'
+  label = useT('admin.edit')
   const { bookId, ...currentBook } = useBookStore().getById(props.bookId)
   book = reactive({
     categoryId: currentBook.elrhCategory?.categoryId || -1,
@@ -97,7 +97,7 @@ if (props.bookId > 0) {
     authorId: currentBook.elrhAuthor?.authorId || -1
   })
 } else {
-  label = 'Add'
+  label = useT('admin.add')
   book = reactive(useBookStore().getEmpty)
   book.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
   book.categoryId = useCategoryStore().getByType('b')?.[0]?.categoryId || -1

@@ -1,7 +1,7 @@
 <template>
   <div>
     <AdminSummary />
-    <FormKit type="form" submit-label="Logout" @submit="attemptLogout" />
+    <FormKit type="form" :submit-label="useT('login.logout')" @submit="attemptLogout" />
   </div>
 </template>
 
