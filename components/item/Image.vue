@@ -8,7 +8,7 @@
         <span class="float-right pr-1 text-base font-normal">
           <NuxtLink :to="{ path: '/gallery/' + item.galleryId?.galleryId }">
             <strong>{{ item.galleryId?.name }}</strong>
-          </NuxtLink>|
+          </NuxtLink> |
           {{ item.elrhAuthor?.name }} |
           <em>{{ toDate(item.dateCreated) }}</em>
         </span>
