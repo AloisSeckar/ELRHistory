@@ -9,7 +9,13 @@
       validation="required"
       @change="$emit('change', imgSrc)"
     />
-    <img :src="imgSrc">
+    <NuxtImg
+      class="w-48 h-32 border"
+      provider="cloudinary"
+      :src="imgSrc"
+      :alt="name"
+      :title="name"
+    />
   </div>
 </template>
 
