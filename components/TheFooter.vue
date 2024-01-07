@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-0 h-10 w-full pt-1 bg-navy text-center text-sm text-silver">
+  <div class="fixed bottom-0 h-8 w-full pt-1 bg-navy text-center text-sm text-silver">
     © {{ year }} <strong>{{ title }}</strong> by
     <span v-if="link">
       <NuxtLink :to="link" extrnal no-prefetch>

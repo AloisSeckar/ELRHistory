@@ -7,6 +7,14 @@ module.exports = {
     'app.vue'
   ],
   theme: {
+    fontSize: {
+      xs: '0.8rem',
+      sm: '0.95rem',
+      base: '1.2rem',
+      lg: '1.3rem',
+      xl: '1.5rem',
+      '2xl': '2rem'
+    },
     extend: {
       colors: {
         navy: '#000033',

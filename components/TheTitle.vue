@@ -1,7 +1,7 @@
 <template>
-  <h1 class="ml-32 mb-2 font-bold text-4xl text-navy">
+  <h1 class="ml-32 mb-2 font-bold text-2xl text-navy">
     {{ baseTitle + (titleData.page ? " - " + titleData.page : "") }}
-    <div v-if="useLoginStore().user && titleData.link" class="inline text-3xl text-green-500 hover:text-yellow-400">
+    <div v-if="useLoginStore().user && titleData.link" class="inline text-xl text-green-500 hover:text-yellow-400">
       <NuxtLink :to="{ path: '/admin/add/' + titleData.link }" :title="titleData.text">
         <BaseIcon icon="plus" size="3rem" css-class="mb-2" />
       </NuxtLink>

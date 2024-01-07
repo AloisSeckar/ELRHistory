@@ -1,5 +1,5 @@
 <template>
-  <div class="text-2xl">
+  <div class="text-xl">
     <div v-if="editable" class="inline-block">
       <NuxtLink v-if="item.prevId" :to="{ path: '/image/' + item.prevId }" title="Move image forward">
         <BaseIcon icon="backward" css-class="mx-4 text-green-500 hover:text-yellow-400" />

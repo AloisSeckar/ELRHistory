@@ -5,7 +5,7 @@
 @layer components {
 
     #main {
-        @apply bg-orange-100 font-sans text-justify text-pretty;
+        @apply bg-orange-100 font-sans text-justify text-pretty text-base;
     }
 
     .box {
