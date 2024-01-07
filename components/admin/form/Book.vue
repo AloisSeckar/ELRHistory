@@ -1,7 +1,7 @@
 <template>
   <div>
     <FormKit v-slot="{ value }" type="form" :value="book" :submit-label="label" @submit="saveForm">
-      <pre>{{ value }}</pre>
+      <pre v-if="useRuntimeConfig().public.debug">{{ value }}</pre>
       <FormKit
         id="authorId"
         type="select"

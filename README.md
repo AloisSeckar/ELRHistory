@@ -25,6 +25,7 @@ Some site-related values are defined as [Nuxt 3 runtime config](https://v3.nuxtj
 
 List of variables:
 * **NUXT_PUBLIC_LANG** - locale for [i18n messages](https://i18n.nuxtjs.org/) (currently supported either `en` or `cs`)
+* **NUXT_PUBLIC_DEBUG** - if `true`, exdented information and logs are available (not meant for production - defaults to `false`)
 * **NUXT_PUBLIC_WEB_TITLE** - website name, displayed as page title in browser tab + H1 on index page + in footer
 * **NUXT_PUBLIC_WEB_ABOUT** - website description, displayed on index page in the `About` section
 * **NUXT_PUBLIC_WEB_AUTHOR** - website author/currator, displayed in the footer
