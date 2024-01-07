@@ -59,6 +59,12 @@
         "gallery" : "Neplatné ID galerie",
         "image" : "Neplatné ID obrázku"
     },
+    "login" : {
+        "title" : "Pro přístup do administrace se musíte přihlásit:",
+        "email" : "E-mail:",
+        "pass" : "Heslo:",
+        "login" : "Přihlásit se"
+    },
     "admin" : {
         "index" : "Administrace",
         "user" : "Autorizovaný uživatel",

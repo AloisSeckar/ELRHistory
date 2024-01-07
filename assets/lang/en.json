@@ -59,6 +59,12 @@
         "gallery" : "Invalid gallery ID",
         "image" : "Invalid image ID"
     },
+    "login" : {
+        "title" : "Login to access admin section:",
+        "email" : "E-mail:",
+        "pass" : "Password:",
+        "login" : "Login"
+    },
     "admin" : {
         "index" : "Administration",
         "user" : "Authorized user",

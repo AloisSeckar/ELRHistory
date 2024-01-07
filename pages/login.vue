@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="text-xl font-bold">
-      Přihlásit:
+      {{ $t("login.title") }}
     </div>
-    <FormKit type="form" submit-label="Login" @submit="attemptLogin">
+    <FormKit type="form" :submit-label="useT('login.login')" @submit="attemptLogin">
       <FormKit
         id="email"
         v-model="email"
         type="text"
         name="email"
-        label="E-mail:"
+        :label="useT('login.email')"
         validation="required"
       />
       <FormKit
@@ -17,7 +17,7 @@
         v-model="password"
         type="password"
         name="password"
-        label="Password:"
+        :label="useT('login.pass')"
         validation="required"
         :autocomplete="true"
       />
