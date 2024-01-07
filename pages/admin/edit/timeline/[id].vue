@@ -1,7 +1,7 @@
 <template>
   <div>
     <AdminFormSelectItem :label="'Select timeline:'" :options="timelineOptions" :selected="selected" @select-item="changeItem" />
-    Edit timeline <strong>{{ currentTimelineName }}</strong>
+    <h2>Edit timeline <strong>{{ currentTimelineName }}</strong></h2>
     <AdminFormTimeline :timeline-id="timelineId" @save="save" />
   </div>
 </template>

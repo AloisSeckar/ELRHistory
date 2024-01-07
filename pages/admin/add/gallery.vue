@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Add new gallery</h1>
+    <h2>Add new gallery</h2>
     <AdminFormGallery :gallery-id="-1" @save="save" />
   </div>
 </template>

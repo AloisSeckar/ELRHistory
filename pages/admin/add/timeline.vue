@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Add timeline item</h1>
+    <h2>Add timeline item</h2>
     <AdminFormTimeline :timeline-id="-1" @save="save" />
   </div>
 </template>

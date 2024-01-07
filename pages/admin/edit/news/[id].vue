@@ -1,7 +1,7 @@
 <template>
   <div>
     <AdminFormSelectItem :label="'Select news:'" :options="newsOptions" :selected="selected" @select-item="changeItem" />
-    Edit news <strong>{{ currentNewsName }}</strong>
+    <h2>Edit news <strong>{{ currentNewsName }}</strong></h2>
     <AdminFormNews :news-id="newsId" @save="save" />
   </div>
 </template>

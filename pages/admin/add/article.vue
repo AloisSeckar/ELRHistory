@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Add new article</h1>
+    <h2>Add new article</h2>
     <AdminFormArticle :article-id="-1" @save="save" />
   </div>
 </template>

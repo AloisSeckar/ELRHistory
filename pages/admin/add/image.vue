@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Add new image</h1>
+    <h2>Add new image</h2>
     <AdminFormImage :image-id="-1" @save="save" />
   </div>
 </template>

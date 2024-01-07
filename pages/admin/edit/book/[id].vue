@@ -1,7 +1,7 @@
 <template>
   <div>
     <AdminFormSelectItem :label="'Select book:'" :options="bookOptions" :selected="selected" @select-item="changeItem" />
-    Edit book <strong>{{ currentBookName }}</strong>
+    <h2>Edit book <strong>{{ currentBookName }}</strong></h2>
     <AdminFormBook :book-id="bookId" @save="save" />
   </div>
 </template>

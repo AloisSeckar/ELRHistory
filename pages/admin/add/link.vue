@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Add new link</h1>
+    <h2>Add new link</h2>
     <AdminFormLink :link-id="-1" @save="save" />
   </div>
 </template>

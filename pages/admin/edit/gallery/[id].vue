@@ -1,7 +1,7 @@
 <template>
   <div>
     <AdminFormSelectItem :label="'Select gallery:'" :options="galleryOptions" :selected="selected" @select-item="changeItem" />
-    Edit gallery <strong>{{ currentGalleryName }}</strong>
+    <h2>Edit gallery <strong>{{ currentGalleryName }}</strong></h2>
     <AdminFormGallery :gallery-id="galleryId" @save="save" />
   </div>
 </template>
