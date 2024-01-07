@@ -20,7 +20,7 @@ await initStores()
 const idString = useRoute().params.id as string
 const imageId = idString === 'first' ? useImageStore().getFirstId : parseInt(idString)
 
-const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
+const selected = ref(0)
 const imageOptions = [] as FormKitOptionsItem[]
 let currentImageName: string
 for (let i = 0; i < useImageStore().items.length; i++) {
@@ -28,7 +28,6 @@ for (let i = 0; i < useImageStore().items.length; i++) {
   imageOptions.push({ value: item.imageId, label: item.name })
   if (item.imageId === imageId) {
     selected.value = item.imageId
-    selected.label = item.name
     currentImageName = item.name
   }
 }
@@ -37,7 +36,7 @@ const save = async (image: ImageDB) => {
   await useUpdateItem(useImageStore(), 'image', `/image/${imageId}`, image, imageId)
 }
 
-const changeItem = (calback: String) => {
-  navigateTo('/admin/edit/image/' + calback)
+const changeItem = (callback: number) => {
+  navigateTo('/admin/edit/image/' + callback)
 }
 </script>

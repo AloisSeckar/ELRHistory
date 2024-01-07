@@ -20,7 +20,7 @@ await initStores()
 const idString = useRoute().params.id as string
 const galleryId = idString === 'first' ? useGalleryStore().getFirstId : parseInt(idString)
 
-const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
+const selected = ref(0)
 const galleryOptions = [] as FormKitOptionsItem[]
 let currentGalleryName: string
 for (let i = 0; i < useGalleryStore().items.length; i++) {
@@ -28,7 +28,6 @@ for (let i = 0; i < useGalleryStore().items.length; i++) {
   galleryOptions.push({ value: item.galleryId, label: item.name })
   if (item.galleryId === galleryId) {
     selected.value = item.galleryId
-    selected.label = item.name
     currentGalleryName = item.name
   }
 }
@@ -37,7 +36,7 @@ const save = async (gallery: GalleryDB) => {
   await useUpdateItem(useGalleryStore(), 'gallery', `/gallery/${galleryId}`, gallery, galleryId)
 }
 
-const changeItem = (calback: String) => {
-  navigateTo('/admin/edit/gallery/' + calback)
+const changeItem = (callback: number) => {
+  navigateTo('/admin/edit/gallery/' + callback)
 }
 </script>

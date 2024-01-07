@@ -19,7 +19,7 @@ await initStores()
 const idString = useRoute().params.id as string
 const newsId = idString === 'first' ? useNewsStore().getFirstId : parseInt(idString)
 
-const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
+const selected = ref(0)
 const newsOptions = [] as FormKitOptionsItem[]
 let currentNewsName: string
 for (let i = 0; i < useNewsStore().items.length; i++) {
@@ -27,7 +27,6 @@ for (let i = 0; i < useNewsStore().items.length; i++) {
   newsOptions.push({ value: item.newsId, label: item.title })
   if (item.newsId === newsId) {
     selected.value = item.newsId
-    selected.label = item.title
     currentNewsName = item.title
   }
 }
@@ -36,7 +35,7 @@ const save = async (news: NewsDB) => {
   await useUpdateItem(useNewsStore(), 'news', '/news', news, newsId)
 }
 
-const changeItem = (calback: String) => {
-  navigateTo('/admin/edit/news/' + calback)
+const changeItem = (callback: number) => {
+  navigateTo('/admin/edit/news/' + callback)
 }
 </script>

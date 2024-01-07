@@ -20,7 +20,7 @@ await initStores()
 const idString = useRoute().params.id as string
 const bookId = idString === 'first' ? useBookStore().getFirstId : parseInt(idString)
 
-const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
+const selected = ref(0)
 const bookOptions = [] as FormKitOptionsItem[]
 let currentBookName: string
 for (let i = 0; i < useBookStore().items.length; i++) {
@@ -28,7 +28,6 @@ for (let i = 0; i < useBookStore().items.length; i++) {
   bookOptions.push({ value: item.bookId, label: item.name })
   if (item.bookId === bookId) {
     selected.value = item.bookId
-    selected.label = item.name
     currentBookName = item.name
   }
 }
@@ -37,7 +36,7 @@ const save = async (book: BookDB) => {
   await useUpdateItem(useBookStore(), 'book', '/books', book, bookId)
 }
 
-const changeItem = (calback: String) => {
-  navigateTo('/admin/edit/book/' + calback)
+const changeItem = (callback: number) => {
+  navigateTo('/admin/edit/book/' + callback)
 }
 </script>

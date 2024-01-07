@@ -21,7 +21,7 @@ await initStores()
 const idString = useRoute().params.id as string
 const articleId = idString === 'first' ? useArticleStore().getFirstId : parseInt(idString)
 
-const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
+const selected = ref(0)
 const articleOptions = [] as FormKitOptionsItem[]
 let currentArticleName: string
 for (let i = 0; i < useArticleStore().items.length; i++) {
@@ -29,7 +29,6 @@ for (let i = 0; i < useArticleStore().items.length; i++) {
   articleOptions.push({ value: item.articleId, label: item.name })
   if (item.articleId === articleId) {
     selected.value = item.articleId
-    selected.label = item.name
     currentArticleName = item.name
   }
 }
@@ -38,7 +37,7 @@ const save = async (article: ArticleDB) => {
   await useUpdateItem(useArticleStore(), 'article', `/article/${articleId}`, article, articleId)
 }
 
-const changeItem = (calback: String) => {
-  navigateTo('/admin/edit/article/' + calback)
+const changeItem = (callback: number) => {
+  navigateTo('/admin/edit/article/' + callback)
 }
 </script>

@@ -20,7 +20,7 @@ await initStores()
 const idString = useRoute().params.id as string
 const linkId = idString === 'first' ? useLinkStore().getFirstId : parseInt(idString)
 
-const selected: FormKitOptionsItem = reactive({ value: '', label: '' })
+const selected = ref(0)
 const linkOptions = [] as FormKitOptionsItem[]
 let currentLinkName: string
 for (let i = 0; i < useLinkStore().items.length; i++) {
@@ -28,7 +28,6 @@ for (let i = 0; i < useLinkStore().items.length; i++) {
   linkOptions.push({ value: item.linkId, label: item.name })
   if (item.linkId === linkId) {
     selected.value = item.linkId
-    selected.label = item.name
     currentLinkName = item.name
   }
 }
@@ -37,7 +36,7 @@ const save = async (link: LinkDB) => {
   await useUpdateItem(useLinkStore(), 'link', '/links', link, linkId)
 }
 
-const changeItem = (calback: String) => {
-  navigateTo('/admin/edit/link/' + calback)
+const changeItem = (callback: number) => {
+  navigateTo('/admin/edit/link/' + callback)
 }
 </script>
