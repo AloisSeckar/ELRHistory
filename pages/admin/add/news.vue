@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Add news</h2>
+    <h2>{{ $t('admin.add.news') }}</h2>
     <AdminFormNews :news-id="-1" @save="save" />
   </div>
 </template>

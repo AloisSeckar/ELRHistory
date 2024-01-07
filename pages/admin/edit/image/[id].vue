@@ -1,7 +1,7 @@
 <template>
   <div>
-    <AdminFormSelectItem :label="'Select image:'" :options="imageOptions" :selected="selected" @select-item="changeItem" />
-    <h2>Edit image <strong>{{ currentImageName }}</strong></h2>
+    <AdminFormSelectItem :label="useT('admin.select.image')" :options="imageOptions" :selected="selected" @select-item="changeItem" />
+    <h2>{{ $t('admin.edit.article') }}: <strong>{{ currentImageName }}</strong></h2>
     <AdminFormImage :image-id="imageId" @save="save" />
   </div>
 </template>

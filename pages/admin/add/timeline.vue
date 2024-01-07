@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Add timeline item</h2>
+    <h2>{{ $t('admin.add.timeline') }}</h2>
     <AdminFormTimeline :timeline-id="-1" @save="save" />
   </div>
 </template>

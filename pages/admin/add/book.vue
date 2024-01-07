@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Add new book</h2>
+    <h2>{{ $t('admin.add.book') }}</h2>
     <AdminFormBook :book-id="-1" @save="save" />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <AdminFormSelectItem :label="'Select book:'" :options="bookOptions" :selected="selected" @select-item="changeItem" />
-    <h2>Edit book <strong>{{ currentBookName }}</strong></h2>
+    <AdminFormSelectItem :label="useT('admin.select.book')" :options="bookOptions" :selected="selected" @select-item="changeItem" />
+    <h2>{{ $t('admin.edit.article') }}: <strong>{{ currentBookName }}</strong></h2>
     <AdminFormBook :book-id="bookId" @save="save" />
   </div>
 </template>

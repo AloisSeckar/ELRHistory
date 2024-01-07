@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Add new image</h2>
+    <h2>{{ $t('admin.add.image') }}</h2>
     <AdminFormImage :image-id="-1" @save="save" />
   </div>
 </template>

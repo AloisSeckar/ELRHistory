@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Add new link</h2>
+    <h2>{{ $t('admin.add.link') }}</h2>
     <AdminFormLink :link-id="-1" @save="save" />
   </div>
 </template>

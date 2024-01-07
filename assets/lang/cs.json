@@ -69,6 +69,7 @@
         "index" : "Administrace",
         "user" : "Autorizovaný uživatel",
         "content" : "Spravovat obsah",
+        "select1" : "Vybrat",
         "add" : {
             "article" : "Přidat článek",
             "book" : "Přidat knihu",
@@ -86,6 +87,15 @@
             "link" : "Upravit odkazy",
             "news" : "Upravit novinky",
             "timeline" : "Upravit prvky časové osy"
+        },
+        "select" : {
+            "article" : "Vybrat článek:",
+            "book" : "Vybrat knihu:",
+            "gallery" : "Vybrat galerii:",
+            "image" : "Vybrat obrázek:",
+            "link" : "Vybrat odkaz:",
+            "news" : "Vybrat novinku:",
+            "timeline" : "Vybrat prvek časové osy:"
         }
     }
 }

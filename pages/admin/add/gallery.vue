@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Add new gallery</h2>
+    <h2>{{ $t('admin.add.gallery') }}</h2>
     <AdminFormGallery :gallery-id="-1" @save="save" />
   </div>
 </template>
