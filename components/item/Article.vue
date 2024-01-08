@@ -14,7 +14,7 @@
         </span>
       </div>
       <div class="box-content flex">
-        <div class="flex-none pr-4">
+        <div v-if="!detail" class="flex-none pr-4">
           <NuxtLink :to="{ path: articlePath }">
             <NuxtImg
               class="w-40 h-28 border"
@@ -26,8 +26,19 @@
           </NuxtLink>
         </div>
         <div class="flex-1">
-          <div :class="[detail ? 'pb-2 border-b-2 italic' : 'pb-1']">
-            {{ item.dscr }}
+          <div :class="[detail ? 'w-full pb-2 border-b-2 italic inline-flex' : 'pb-1']">
+            <div v-if="detail" class="w-52 flex-none">
+              <NuxtImg
+                class="mx-auto w-48 h-36 mr-4 border"
+                provider="cloudinary"
+                :src="item.thumb"
+                :alt="item.name"
+                :title="item.name"
+              />
+            </div>
+            <div>
+              {{ item.dscr }}
+            </div>
           </div>
           <div class="html-content">
             <div v-if="detail" class="py-2" v-html="item.content" />
