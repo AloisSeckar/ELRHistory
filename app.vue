@@ -4,7 +4,7 @@
     <TheHeader />
     <TheMenu />
     <TheTitle />
-    <div class="mx-32 mb-12">
+    <div class="mx-2 md:mx-8 lg:mx-16 xl:mx-32 mb-12">
       <NuxtPage />
     </div>
     <TheFooter />
