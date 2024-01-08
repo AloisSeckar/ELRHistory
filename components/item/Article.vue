@@ -47,8 +47,8 @@
       </div>
     </div>
     <ItemInvalid v-else item="article" />
-    <div v-if="detail" class="text-center m-[-12px]">
-      <NuxtLink :to="{ path: '/articles' }">
+    <div v-if="detail" class="m-[-12px] text-center">
+      <NuxtLink :to="{ path: '/articles' }" class="hover:text-sky-500">
         {{ $t('articles.back') }}
       </NuxtLink>
     </div>
