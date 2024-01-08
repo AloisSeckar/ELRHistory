@@ -18,6 +18,12 @@
         @apply px-3 py-2 text-navy;
     }
 
+    .html-content {
+        & a {
+            @apply text-amber-500 underline;
+        } 
+    } 
+
     a:hover, a:active {
         @apply text-amber-300;
     }

@@ -30,16 +30,18 @@
           <div :class="[detail ? 'pb-2 border-b-2 italic' : 'pb-1']">
             {{ item.dscr }}
           </div>
-          <div v-if="detail" class="py-2" v-html="item.content" />
-          <div v-else class="pt-1">
-            [ <NuxtLink :to="{ path: articlePath }">
-              {{ $t('articles.read') }}
-            </NuxtLink> ]
-          </div>
-          <div v-if="detail && item.elrhGallery" class="mt-2 pt-1 border-t-2">
-            [ <NuxtLink :to="{ path: '/gallery/' + item.elrhGallery.galleryId }">
-              {{ $t('articles.gallery') }}
-            </NuxtLink> ]
+          <div class="html-content">
+            <div v-if="detail" class="py-2" v-html="item.content" />
+            <div v-else class="pt-1">
+              [ <NuxtLink :to="{ path: articlePath }">
+                {{ $t('articles.read') }}
+              </NuxtLink> ]
+            </div>
+            <div v-if="detail && item.elrhGallery" class="mt-2 pt-1 border-t-2">
+              [ <NuxtLink :to="{ path: '/gallery/' + item.elrhGallery.galleryId }">
+                {{ $t('articles.gallery') }}
+              </NuxtLink> ]
+            </div>
           </div>
         </div>
       </div>
