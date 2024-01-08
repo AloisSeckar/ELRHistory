@@ -9,7 +9,10 @@
         </NuxtLink>
         <AdminEditLink v-if="user" :link="articlePath.slice(1)" item="article" />
         <span class="float-right pr-1 text-base font-normal">
-          <strong>{{ item.elrhCategory?.name }}</strong> | {{ item.elrhAuthor?.name }} |
+          <NuxtLink to="/articles">
+            <strong>{{ item.elrhCategory?.name }}</strong>
+          </NuxtLink>
+          | {{ item.elrhAuthor?.name }} |
           <em>{{ toDate(item.dateCreated) }}</em>
         </span>
       </div>
