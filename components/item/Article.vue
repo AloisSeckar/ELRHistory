@@ -17,9 +17,8 @@
         <div class="flex-none pr-4">
           <NuxtLink :to="{ path: articlePath }">
             <NuxtImg
+              class="w-40 h-28 border"
               provider="cloudinary"
-              width="120"
-              height="80"
               :src="item.thumb"
               :alt="item.name"
               :title="item.name"

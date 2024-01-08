@@ -1,11 +1,10 @@
 <template>
   <div class="flex">
-    <div class="flex-none w-32 p-2">
+    <div class="flex-none w-44 p-2">
       <a :href="item.url" :title="item.url">
         <NuxtImg
+          class="mx-auto w-40 h-28 border"
           provider="cloudinary"
-          width="120"
-          height="80"
           :src="item.thumb"
           :alt="item.name"
           :title="item.name"
