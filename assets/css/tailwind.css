@@ -22,6 +22,9 @@
         & a {
             @apply text-amber-500 underline;
         } 
+        & p {
+            @apply mt-1 mb-4;
+        }
     } 
 
     a:hover, a:active {
