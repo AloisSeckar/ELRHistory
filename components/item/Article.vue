@@ -5,10 +5,12 @@
         <BaseIcon icon="cap" size="1.5rem" css-class="mb-1.5" />
         &nbsp;
         <NuxtLink :to="{ path: articlePath }">
-          {{ item.name }}
+          <h2 class="inline">
+            {{ item.name }}
+          </h2>
         </NuxtLink>
         <AdminEditLink v-if="user" :link="articlePath.slice(1)" item="article" />
-        <span class="float-right pr-1 text-base font-normal">
+        <span class="float-right mt-1 pr-1 text-base font-normal">
           <NuxtLink to="/articles">
             <strong>{{ item.elrhCategory?.name }}</strong>
           </NuxtLink>

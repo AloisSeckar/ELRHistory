@@ -2,13 +2,19 @@
   <div>
     <div class="box">
       <div class="box-header">
-        <BaseIcon icon="home" size="1.5rem" css-class="mb-1.5" /> {{ $t('index.about') }}
+        <BaseIcon icon="home" size="1.5rem" css-class="mb-1.5" />
+        <h2 class="inline ml-2">
+          {{ $t('index.about') }}
+        </h2>
       </div>
       <div class="box-content" v-html="about" />
     </div>
     <div class="box">
       <div class="box-header">
-        <BaseIcon icon="envelope" size="1.125rem" css-class="mb-1.5 mr-1" /> {{ $t('index.contacts') }}
+        <BaseIcon icon="envelope" size="1.125rem" css-class="mb-1.5 mr-1" />
+        <h2 class="inline ml-2">
+          {{ $t('index.contacts') }}
+        </h2>
       </div>
       <div class="box-content">
         <div v-for="item in (useContactStore().items as Contact[])" :key="item.contactId">
@@ -18,7 +24,10 @@
     </div>
     <div class="box">
       <div class="box-header">
-        <BaseIcon icon="bullhorn" size="1.125rem" css-class="mb-1.5 mr-1" /> {{ $t('index.news') }}
+        <BaseIcon icon="bullhorn" size="1.125rem" css-class="mb-1.5 mr-1" />
+        <h2 class="inline ml-2">
+          {{ $t('index.news') }}
+        </h2>
       </div>
       <div class="box-content">
         <div v-for="item in useNewsStore().getTopItems" :key="item.newsId">

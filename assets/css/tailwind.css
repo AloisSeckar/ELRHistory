@@ -15,7 +15,7 @@
         @apply p-1 pl-3 bg-navy text-lg text-silver font-bold;
     }
     .box-content {
-        @apply px-3 py-2 text-navy;
+        @apply my-1 px-3 py-2 text-navy;
     }
 
     .html-content {
@@ -52,6 +52,10 @@
 
     h2 {
         @apply text-xl font-bold mb-1;
+    }
+
+    h3 {
+        @apply text-lg font-bold mt-4 mb-1;
     }
 
   }

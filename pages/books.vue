@@ -2,7 +2,10 @@
   <div>
     <div v-for="category in categories" :key="category.categoryId" class="box">
       <div class="box-header">
-        <BaseIcon icon="book" size="1.5rem" css-class="mb-1.5" /> {{ category.name }}
+        <BaseIcon icon="book" size="1.5rem" css-class="mb-1.5" />
+        <h2 class="inline ml-2">
+          {{ category.name }}
+        </h2>
       </div>
       <div class="box-content">
         <div>{{ category.dscr }}</div>

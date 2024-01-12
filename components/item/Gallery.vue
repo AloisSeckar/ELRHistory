@@ -4,10 +4,12 @@
       <div class="box-header">
         <BaseIcon icon="image" size="1.125rem" css-class="mb-1.5" />&nbsp;
         <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
-          {{ item.name }}
+          <h2 class="inline">
+            {{ item.name }}
+          </h2>
         </NuxtLink>
         <AdminEditLink v-if="user" :link="'gallery/' + item.galleryId" item="gallery" />
-        <span class="float-right pr-1 text-base font-normal">
+        <span class="float-right mt-1 pr-1 text-base font-normal">
           <NuxtLink :to="{ path: parent?.galleryId > 0 ? '/gallery/' + parent?.galleryId : '/galleries' }">
             <strong>{{ parent?.name ? parent.name : 'Index' }}</strong>
           </NuxtLink>
@@ -15,7 +17,7 @@
           <em>{{ toDate(item.dateCreated) }}</em>
         </span>
       </div>
-      <div class="box-content">
+      <div class="box-content html-content">
         <div v-if="detail" v-html="item.dscr" />
         <div v-else>
           <span v-if="longDscr" v-html="item.dscr?.substring(0, 200) + '...'" />
@@ -26,7 +28,7 @@
           </span>
         </div>
         <div>
-          <strong>{{ $t('galleries.images') }}</strong>
+          <h3>{{ $t('galleries.images') }}</h3>
           <div class="flex flex-wrap">
             <div v-for="image in thumbs" :key="image.imageId">
               <NuxtLink :to="{ path: '/image/' + image.imageId }">
@@ -62,7 +64,7 @@
           </span>
         </div>
         <div v-if="detail">
-          <strong>{{ $t('galleries.parent') }}</strong>
+          <h3>{{ $t('galleries.parent') }}</h3>
           <div v-if="item.parentId">
             &#9656;&nbsp;<NuxtLink :to="{ path: '/gallery/' + item.parentId.galleryId }">
               {{ item.parentId.name }}
@@ -75,7 +77,7 @@
           </div>
         </div>
         <div>
-          <strong>{{ $t('galleries.sub') }}</strong>
+          <h3>{{ $t('galleries.sub') }}</h3>
           <div v-for="gallery in children" :key="gallery.galleryId">
             &#9656;&nbsp;<NuxtLink :to="{ path: '/gallery/' + gallery.galleryId }">
               {{ gallery.name }}
@@ -86,7 +88,7 @@
           </div>
         </div>
         <div>
-          <strong>{{ $t('galleries.articles') }}</strong>
+          <h3>{{ $t('galleries.articles') }}</h3>
           <div v-for="article in articles" :key="article.articleId">
             &#9656;&nbsp;<NuxtLink :to="{ path: '/article/' + article.articleId }">
               {{ article.name }}
