@@ -19,7 +19,7 @@
       />
       <FormKit
         id="dscr"
-        type="text"
+        type="textarea"
         name="dscr"
         label="Description:"
         validation="required"
@@ -29,7 +29,6 @@
         type="select"
         name="parentId"
         label="Parent gallery:"
-        validation="required"
         :options="galleries"
       />
       <FormKit

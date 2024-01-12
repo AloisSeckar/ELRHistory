@@ -23,6 +23,8 @@
         name="content"
         label="Content:"
         validation="required"
+        :maxlength="255"
+        input-class="ta-small"
       />
       <FormKit
         id="tooltip"

@@ -35,11 +35,15 @@
     }
 
     .formkit-input {
-        @apply mb-1 w-full h-10;
+        @apply mb-1 px-1 w-full h-10;
     }
 
     textarea.formkit-input {
-        @apply h-24;
+        @apply h-80;
+    }
+
+    textarea.ta-small {
+        @apply h-32;
     }
 
     button.formkit-input {

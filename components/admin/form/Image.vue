@@ -19,10 +19,11 @@
       />
       <FormKit
         id="dscr"
-        type="text"
+        type="textarea"
         name="dscr"
         label="Description:"
         validation="required"
+        :rows="10"
       />
       <AdminFormSelectImage name="image" :source="image.image" @change="setImage" />
       <FormKit

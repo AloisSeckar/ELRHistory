@@ -41,10 +41,12 @@
       />
       <FormKit
         id="dscr"
-        type="text"
+        type="textarea"
         name="dscr"
         label="Description:"
         validation="required"
+        :maxlength="255"
+        input-class="ta-small"
       />
       <AdminFormSelectImage :source="book.thumb" @change="setThumb" />
       <FormKit
