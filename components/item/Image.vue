@@ -14,7 +14,7 @@
         </span>
       </div>
       <div class="box-content text-center">
-        <div v-if="item.dscr" class="text-justify mb-2" v-html="item.dscr" />
+        <div v-if="item.dscr" class="mb-2 text-justify html-content" v-html="item.dscr" />
         <div v-else class="text-justify mb-2 italic">
           {{ $t('images.no-dscr') }}
         </div>
