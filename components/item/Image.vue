@@ -21,7 +21,7 @@
         <hr class="mb-2">
         <ItemImageNav :item="item" :editable="editable" />
         <NuxtImg
-          class="m-2 inline-block max-w-[96%] border"
+          class="my-2 inline-block w-full h-auto border"
           provider="cloudinary"
           :src="item.image"
           :alt="item.name"
