@@ -1,4 +1,4 @@
-import { preventSingleLetterOrphans } from 'elrh-utils/src/main'
+import { preventSingleLetterOrphans } from 'elrh-pslo/src/main'
 import type {
   SupabaseStoreClient, SupabaseUpdateClient,
   SupabaseStoreData, SupabaseUpdateData, SupabaseItemType

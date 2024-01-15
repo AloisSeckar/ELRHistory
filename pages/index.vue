@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { preventSingleLetterOrphans } from 'elrh-utils/src/main'
+import { preventSingleLetterOrphans } from 'elrh-pslo/src/main'
 import type { Contact } from '@/database/types'
 
 const about = preventSingleLetterOrphans(useRuntimeConfig().public.webAbout)
