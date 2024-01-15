@@ -37,7 +37,8 @@
     },
     "images" : {
         "title" : "Obrázky",
-        "total" : "Celkem obrázků"
+        "total" : "Celkem obrázků",
+        "no-dscr" : "Popis není k dispozici..."
     },
     "books" : {
         "total" : "Celkem knih",
