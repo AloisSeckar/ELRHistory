@@ -6,14 +6,14 @@
         id="authorId"
         type="select"
         name="authorId"
-        label="Author:"
+        :label="useT('admin.form.author')"
         validation="required"
         :options="authors"
       /><FormKit
         id="categoryId"
         type="select"
         name="categoryId"
-        label="Category:"
+        :label="useT('admin.form.category')"
         validation="required"
         :options="categories"
       />
@@ -21,24 +21,24 @@
         id="name"
         type="text"
         name="name"
-        label="Name:"
+        :label="useT('admin.form.name')"
         validation="required"
       />
       <FormKit
         id="dscr"
         type="textarea"
         name="dscr"
-        label="Description:"
+        :label="useT('admin.form.dscr')"
         validation="required"
         :maxlength="255"
         input-class="ta-small"
       />
-      <AdminFormSelectImage :source="link.thumb" @change="setThumb" />
+      <AdminFormSelectImage :source="link.thumb" :label="useT('admin.form.thumb')" @change="setThumb" />
       <FormKit
         id="url"
         type="text"
         name="url"
-        label="URL:"
+        :label="useT('admin.form.url')"
         validation="required"
       />
       <FormKit

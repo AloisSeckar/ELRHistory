@@ -80,6 +80,24 @@
         "image" : "obrázek",
         "link" : "odkaz",
         "news" : "novinku",
-        "timeline" : "prvek časové osy"
+        "timeline" : "prvek časové osy",
+        "form" : {
+            "author" : "Autor:",
+            "category" : "Kategorie:",
+            "content" : "Obsah:",
+            "dscr" : "Popis:",
+            "gallery": "Galerie:",
+            "name": "Jméno:",
+            "image": "Obrázek:",
+            "parent": "Nadřazená galerie:",
+            "related": "Související galerie:",
+            "review": "Recenze:",
+            "thumb" : "Obrázek:",
+            "title" : "Titulek:",
+            "tooltip" : "Tooltip:",
+            "url" : "Odkaz:",
+            "writer" : "Napsal:",
+            "year" : "Rok vydání:"
+        }
     }
 }

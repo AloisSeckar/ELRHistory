@@ -23,13 +23,12 @@
 <script setup lang="ts">
 const props = defineProps({
   name: { type: String, default: 'thumb' },
+  label: { type: String, default: 'Thumb:' },
   source: { type: String, default: '/blank.jpg' }
 })
 defineEmits<{(e: 'change', path: string): void}>()
 
 const imgSrc = ref(props.source ? props.source : '/blank.jpg')
-
-const label = props.name[0]?.toUpperCase() + props.name?.substring(1) + ':'
 </script>
 
 <style scoped>

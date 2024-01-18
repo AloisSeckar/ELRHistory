@@ -6,7 +6,7 @@
         id="authorId"
         type="select"
         name="authorId"
-        label="Author:"
+        :label="useT('admin.form.author')"
         validation="required"
         :options="authors"
       />
@@ -14,23 +14,23 @@
         id="name"
         type="text"
         name="name"
-        label="Name:"
+        :label="useT('admin.form.name')"
         validation="required"
       />
       <FormKit
         id="dscr"
         type="textarea"
         name="dscr"
-        label="Description:"
+        :label="useT('admin.form.dscr')"
         validation="required"
         :rows="10"
       />
-      <AdminFormSelectImage name="image" :source="image.image" @change="setImage" />
+      <AdminFormSelectImage name="image" :label="useT('admin.form.image')" :source="image.image" @change="setImage" />
       <FormKit
         id="galleryId"
         type="select"
         name="galleryId"
-        label="Gallery:"
+        :label="useT('admin.form.gallery')"
         validation="required"
         :options="galleries"
       />

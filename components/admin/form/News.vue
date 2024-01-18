@@ -6,7 +6,7 @@
         id="authorId"
         type="select"
         name="authorId"
-        label="Author:"
+        :label="useT('admin.form.author')"
         validation="required"
         :options="authors"
       />
@@ -14,14 +14,14 @@
         id="title"
         type="text"
         name="title"
-        label="Title:"
+        :label="useT('admin.form.title')"
         validation="required"
       />
       <FormKit
         id="content"
         type="textarea"
         name="content"
-        label="Content:"
+        :label="useT('admin.form.content')"
         validation="required"
       />
       <FormKit

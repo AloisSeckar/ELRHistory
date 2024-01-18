@@ -6,7 +6,7 @@
         id="authorId"
         type="select"
         name="authorId"
-        label="Author:"
+        :label="useT('admin.form.author')"
         validation="required"
         :options="authors"
       />
@@ -14,7 +14,7 @@
         id="categoryId"
         type="select"
         name="categoryId"
-        label="Category:"
+        :label="useT('admin.form.category')"
         validation="required"
         :options="categories"
       />
@@ -22,45 +22,45 @@
         id="year"
         type="number"
         name="year"
-        label="Published:"
+        :label="useT('admin.form.year')"
         validation="required"
       />
       <FormKit
         id="name"
         type="text"
         name="name"
-        label="Name:"
+        :label="useT('admin.form.name')"
         validation="required"
       />
       <FormKit
         id="writer"
         type="text"
         name="writer"
-        label="Writer:"
+        :label="useT('admin.form.writer')"
         validation="required"
       />
       <FormKit
         id="dscr"
         type="textarea"
         name="dscr"
-        label="Description:"
+        :label="useT('admin.form.dscr')"
         validation="required"
         :maxlength="255"
         input-class="ta-small"
       />
-      <AdminFormSelectImage :source="book.thumb" @change="setThumb" />
+      <AdminFormSelectImage :source="book.thumb" :label="useT('admin.form.thumb')" @change="setThumb" />
       <FormKit
         id="url"
         type="text"
         name="url"
-        label="URL:"
+        :label="useT('admin.form.url')"
         validation="required"
       />
       <FormKit
         id="review"
         type="text"
         name="review"
-        label="Review:"
+        :label="useT('admin.form.review')"
       />
       <FormKit
         id="dateCreated"

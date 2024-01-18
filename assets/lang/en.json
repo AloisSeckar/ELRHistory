@@ -80,6 +80,24 @@
         "image" : "image",
         "link" : "link",
         "news" : "news",
-        "timeline" : "timeline item"
+        "timeline" : "timeline item",
+        "form" : {
+            "author" : "Author:",
+            "category" : "Category:",
+            "content" : "Content:",
+            "dscr" : "Description:",
+            "gallery": "Gallery:",
+            "image": "Image:",
+            "name": "Name:",
+            "parent": "Parent gallery:",
+            "related": "Related gallery:",
+            "review": "Review:",
+            "thumb" : "Thumb:",
+            "title" : "Title:",
+            "tooltip" : "Tooltip:",
+            "url" : "URL:",
+            "writer" : "Writter:",
+            "year" : "Year:"
+        }
     }
 }

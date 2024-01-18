@@ -6,7 +6,7 @@
         id="authorId"
         type="select"
         name="authorId"
-        label="Author:"
+        :label="useT('admin.form.author')"
         validation="required"
         :options="authors"
       />
@@ -14,21 +14,21 @@
         id="name"
         type="text"
         name="name"
-        label="Name:"
+        :label="useT('admin.form.name')"
         validation="required"
       />
       <FormKit
         id="dscr"
         type="textarea"
         name="dscr"
-        label="Description:"
+        :label="useT('admin.form.dscr')"
         validation="required"
       />
       <FormKit
         id="parentId"
         type="select"
         name="parentId"
-        label="Parent gallery:"
+        :label="useT('admin.form.parent')"
         :options="galleries"
       />
       <FormKit
