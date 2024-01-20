@@ -102,7 +102,6 @@ if (props.bookId > 0) {
   label = useT('admin.add')
   book = reactive(useBookStore().getEmpty)
   book.authorId = useAuthorStore().getCurrent
-  book.categoryId = useCategoryStore().getByType('b')?.[0]?.categoryId || -1
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

@@ -86,8 +86,6 @@ if (props.articleId > 0) {
   label = useT('admin.add')
   article = reactive(useArticleStore().getEmpty)
   article.authorId = useAuthorStore().getCurrent
-  article.categoryId = useCategoryStore().getByType('a')?.[0]?.categoryId || -1
-  article.galleryId = undefined
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

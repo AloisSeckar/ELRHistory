@@ -67,7 +67,7 @@ export const useBookStore = defineStore({
         thumb: '',
         writer: '',
         url: '',
-        year: '2023',
+        year: '',
         authorId: 0
       }
       return newBook
