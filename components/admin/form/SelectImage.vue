@@ -42,7 +42,7 @@
           />
         </CldUploadWidget>
       </div>
-      <div class="inline-block w-36 ml-8">
+      <div class="inline-block w-36 ml-2">
         <NuxtImg
           v-if="imgSrc"
           class="mx-auto w-48 h-32 border"
