@@ -5,7 +5,7 @@
         <NuxtImg
           class="mx-auto w-28 h-36 border"
           provider="cloudinary"
-          :src="item.thumb"
+          :src="useRuntimeConfig().public.cloudinary.folder + item.thumb"
           :alt="item.name"
           :title="item.name"
         />

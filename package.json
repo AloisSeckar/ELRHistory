@@ -11,6 +11,7 @@
   "devDependencies": {
     "@formkit/nuxt": "1.5.1",
     "@nuxt/image": "1.2.0",
+    "@nuxtjs/cloudinary": "2.5.2",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "@nuxtjs/i18n": "8.0.0",
     "@nuxtjs/supabase": "1.1.5",
@@ -18,6 +19,7 @@
     "@pinia/nuxt": "0.5.1",
     "@vueuse/core": "10.7.2",
     "@vueuse/nuxt": "10.7.2",
+    "cloudinary": "1.41.3",
     "elrh-pslo": "1.0.1",
     "eslint": "8.56.0",
     "infinitimeline": "0.4.2",
@@ -28,6 +30,7 @@
     "tailwindcss": "3.4.1"
   },
   "overrides": {
-    "vite" : "^5.0.12"
+    "npm" : "^10.0.0",
+    "vite": "^5.0.12"
   }
 }

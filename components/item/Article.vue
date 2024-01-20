@@ -24,7 +24,7 @@
             <NuxtImg
               class="w-40 h-28 border"
               provider="cloudinary"
-              :src="item.thumb"
+              :src="useRuntimeConfig().public.cloudinary.folder + item.thumb"
               :alt="item.name"
               :title="item.name"
             />
@@ -36,7 +36,7 @@
               <NuxtImg
                 class="mx-auto w-48 h-36 mr-4 border"
                 provider="cloudinary"
-                :src="item.thumb"
+                :src="useRuntimeConfig().public.cloudinary.folder + item.thumb"
                 :alt="item.name"
                 :title="item.name"
               />

@@ -74,6 +74,7 @@
         "add" : "Add",
         "edit" : "Edit",
         "select" : "Select",
+        "upload" : "Upload new image",
         "article" : "article",
         "book" : "book",
         "gallery" : "gallery",

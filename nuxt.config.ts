@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
     '@nuxt/image',
+    '@nuxtjs/cloudinary',
     '@nuxtjs/i18n',
     '@nuxtjs/supabase',
     '@nuxtjs/tailwindcss',
@@ -16,6 +17,10 @@ export default defineNuxtConfig({
     public: {
       lang: 'en',
       debug: false,
+      cloudinary: {
+        preset: 'elrhistory',
+        folder: 'elrhistory'
+      },
       // TODO allow following to be admin-edited
       webTitle: 'ELRHistory',
       webAbout: 'This is a welcome text displayed on the index page.<br /><br />It can be <strong>HTML <span style="color: red">formatted</span></strong>.',

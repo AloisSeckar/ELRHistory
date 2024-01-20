@@ -25,7 +25,7 @@
         validation="required"
         :rows="10"
       />
-      <AdminFormSelectImage name="image" :label="useT('admin.form.image')" :source="image.image" @change="setImage" />
+      <AdminFormSelectImage name="image" :label="useT('admin.form.image')" :source="image.image" folder="image" @change="setImage" />
       <FormKit
         id="galleryId"
         type="select"

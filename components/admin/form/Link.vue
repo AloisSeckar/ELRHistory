@@ -33,7 +33,7 @@
         :maxlength="255"
         input-class="ta-small"
       />
-      <AdminFormSelectImage :source="link.thumb" :label="useT('admin.form.thumb')" @change="setThumb" />
+      <AdminFormSelectImage :source="link.thumb" :label="useT('admin.form.thumb')" folder="link" @change="setThumb" />
       <FormKit
         id="url"
         type="text"

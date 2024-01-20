@@ -35,7 +35,7 @@
                 <NuxtImg
                   class="m-1 w-40 h-24 border"
                   provider="cloudinary"
-                  :src="image.image"
+                  :src="useRuntimeConfig().public.cloudinary.folder + image.image"
                   :alt="image.name"
                   :title="image.name"
                 />

@@ -23,7 +23,7 @@
         <NuxtImg
           class="my-2 inline-block w-full h-auto border"
           provider="cloudinary"
-          :src="item.image"
+          :src="useRuntimeConfig().public.cloudinary.folder + item.image"
           :alt="item.name"
           :title="item.name"
         />

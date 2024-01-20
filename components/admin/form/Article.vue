@@ -41,7 +41,7 @@
         :label="useT('admin.form.content')"
         validation="required"
       />
-      <AdminFormSelectImage :source="article.thumb" :label="useT('admin.form.thumb')" @change="setThumb" />
+      <AdminFormSelectImage :source="article.thumb" :label="useT('admin.form.thumb')" folder="article" @change="setThumb" />
       <FormKit
         id="galleryId"
         type="select"
