@@ -101,7 +101,7 @@ if (props.bookId > 0) {
 } else {
   label = useT('admin.add')
   book = reactive(useBookStore().getEmpty)
-  book.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
+  book.authorId = useAuthorStore().getCurrent
   book.categoryId = useCategoryStore().getByType('b')?.[0]?.categoryId || -1
 }
 

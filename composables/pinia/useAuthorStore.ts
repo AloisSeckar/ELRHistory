@@ -33,6 +33,9 @@ export const useAuthorStore = defineStore({
       const authors = get(state).map(author => ({ value: author.authorId, label: author.name }))
       authors.unshift({ value: -1, label: '' })
       return authors
+    },
+    getCurrent: (state) => {
+      return get(state).filter(a => a.email === useLoginStore().user).at(0)?.authorId || -1
     }
   }
 })

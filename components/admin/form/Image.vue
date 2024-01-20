@@ -71,7 +71,7 @@ if (props.imageId > 0) {
 } else {
   label = useT('admin.add')
   image = reactive(useImageStore().getEmpty)
-  image.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
+  image.authorId = useAuthorStore().getCurrent
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

@@ -64,7 +64,7 @@ if (props.galleryId > 0) {
 } else {
   label = useT('admin.add')
   gallery = reactive(useGalleryStore().getEmpty)
-  gallery.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
+  gallery.authorId = useAuthorStore().getCurrent
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

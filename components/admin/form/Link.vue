@@ -77,7 +77,7 @@ if (props.linkId > 0) {
 } else {
   label = useT('admin.add')
   link = reactive(useLinkStore().getEmpty)
-  link.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
+  link.authorId = useAuthorStore().getCurrent
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

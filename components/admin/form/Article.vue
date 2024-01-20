@@ -85,7 +85,7 @@ if (props.articleId > 0) {
 } else {
   label = useT('admin.add')
   article = reactive(useArticleStore().getEmpty)
-  article.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
+  article.authorId = useAuthorStore().getCurrent
   article.categoryId = useCategoryStore().getByType('a')?.[0]?.categoryId || -1
   article.galleryId = undefined
 }

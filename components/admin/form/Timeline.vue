@@ -58,7 +58,7 @@ if (props.timelineId > 0) {
 } else {
   label = useT('admin.add')
   timeline = reactive(useTimelineStore().getEmpty)
-  timeline.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
+  timeline.authorId = useAuthorStore().getCurrent
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

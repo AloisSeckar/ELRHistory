@@ -56,7 +56,7 @@ if (props.newsId > 0) {
 } else {
   label = useT('admin.add')
   news = reactive(useNewsStore().getEmpty)
-  news.authorId = useAuthorStore().getItems?.[0]?.authorId || -1
+  news.authorId = useAuthorStore().getCurrent
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)
