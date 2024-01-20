@@ -11,6 +11,7 @@ import type { ArticleDB } from '@/database/types'
 await useArticleStore().init()
 await useAuthorStore().init()
 await useCategoryStore().init()
+await useGalleryStore().init()
 
 const save = async (article: ArticleDB) => {
   await useUpdateItem(useArticleStore(), 'article', '/articles', article)
