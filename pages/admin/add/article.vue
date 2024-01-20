@@ -8,13 +8,11 @@
 <script setup lang="ts">
 import type { ArticleDB } from '@/database/types'
 
+await useArticleStore().init()
+await useAuthorStore().init()
+await useCategoryStore().init()
+
 const save = async (article: ArticleDB) => {
   await useUpdateItem(useArticleStore(), 'article', '/articles', article)
 }
-
-onBeforeMount(async () => {
-  await useArticleStore().init()
-  await useAuthorStore().init()
-  await useCategoryStore().init()
-})
 </script>

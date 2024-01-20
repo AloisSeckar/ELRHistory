@@ -10,10 +10,8 @@
 
 <script setup lang="ts">
 const galleries = useGalleryStore()
-const images = useImageStore()
+await galleries.init()
 
-onBeforeMount(async () => {
-  await useGalleryStore().init()
-  await useImageStore().init()
-})
+const images = useImageStore()
+await images.init()
 </script>

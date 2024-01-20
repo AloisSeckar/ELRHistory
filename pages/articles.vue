@@ -11,8 +11,5 @@
 import type { Article } from '@/database/types'
 
 const articles = useArticleStore()
-
-onBeforeMount(async () => {
-  await useArticleStore().init()
-})
+await articles.init()
 </script>

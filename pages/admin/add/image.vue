@@ -8,13 +8,11 @@
 <script setup lang="ts">
 import type { ImageDB } from '@/database/types'
 
+await useAuthorStore().init()
+await useGalleryStore().init()
+await useImageStore().init()
+
 const save = async (image: ImageDB) => {
   await useUpdateItem(useImageStore(), 'image', `/gallery/${image.galleryId}`, image)
 }
-
-onBeforeMount(async () => {
-  await useAuthorStore().init()
-  await useGalleryStore().init()
-  await useImageStore().init()
-})
 </script>

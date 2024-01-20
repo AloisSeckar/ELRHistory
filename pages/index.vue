@@ -17,7 +17,7 @@
         </h2>
       </div>
       <div class="box-content">
-        <div v-for="item in (useContactStore().items as Contact[])" :key="item.contactId">
+        <div v-for="item in (contacts.items as Contact[])" :key="item.contactId">
           <ItemContact :item="item" />
         </div>
       </div>
@@ -30,7 +30,7 @@
         </h2>
       </div>
       <div class="box-content">
-        <div v-for="item in useNewsStore().getTopItems" :key="item.newsId">
+        <div v-for="item in news.getTopItems" :key="item.newsId">
           <ItemNews :item="item" />
         </div>
         <div>
@@ -49,8 +49,9 @@ import type { Contact } from '@/database/types'
 
 const about = preventSingleLetterOrphans(useRuntimeConfig().public.webAbout)
 
-onBeforeMount(async () => {
-  await useContactStore().init()
-  await useNewsStore().init()
-})
+const contacts = useContactStore()
+await contacts.init()
+
+const news = useNewsStore()
+await news.init()
 </script>

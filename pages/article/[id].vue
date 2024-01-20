@@ -7,6 +7,8 @@
 <script setup lang="ts">
 import type { Article } from '@/database/types'
 
+await useArticleStore().init()
+
 const item = computed(() => {
   let id = null
   try {
@@ -17,9 +19,5 @@ const item = computed(() => {
     console.error(`failed to fetch article '${id}': ${ex}`)
   }
   return {} as Article
-})
-
-onBeforeMount(async () => {
-  await useArticleStore().init()
 })
 </script>

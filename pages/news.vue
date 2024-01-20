@@ -24,8 +24,5 @@
 
 <script setup lang="ts">
 const news = useNewsStore()
-
-onBeforeMount(async () => {
-  await useNewsStore().init()
-})
+await news.init()
 </script>

@@ -8,12 +8,10 @@
 <script setup lang="ts">
 import type { TimelineDB } from '@/database/types'
 
+await useAuthorStore().init()
+await useTimelineStore().init()
+
 const save = async (timeline: TimelineDB) => {
   await useUpdateItem(useTimelineStore(), 'timeline', '/timeline', timeline)
 }
-
-onBeforeMount(async () => {
-  await useAuthorStore().init()
-  await useTimelineStore().init()
-})
 </script>

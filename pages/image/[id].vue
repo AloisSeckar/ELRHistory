@@ -7,6 +7,8 @@
 <script setup lang="ts">
 import type { Image } from '@/database/types'
 
+await useImageStore().init()
+
 const item = computed(() => {
   let id = null
   try {
@@ -17,9 +19,5 @@ const item = computed(() => {
     console.error(`failed to fetch image '${id}': ${ex}`)
   }
   return {} as Image
-})
-
-onBeforeMount(async () => {
-  await useImageStore().init()
 })
 </script>

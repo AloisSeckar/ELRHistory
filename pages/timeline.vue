@@ -9,14 +9,15 @@
 <script setup lang="ts">
 import type { InfiniTimelineSupplier } from 'infinitimeline'
 
-const store = useTimelineStore()
+const timeline = useTimelineStore()
+await timeline.init()
 
 const supplier: Ref<InfiniTimelineSupplier> = ref({
   getTotal () {
-    return store.getCount
+    return timeline.getCount
   },
   get (startIndex: number, chunkSize: number) {
-    return store.getBatch(startIndex, chunkSize).map((i) => {
+    return timeline.getBatch(startIndex, chunkSize).map((i) => {
       return {
         id: i.timelineId,
         title: i.title,
@@ -28,11 +29,7 @@ const supplier: Ref<InfiniTimelineSupplier> = ref({
   changes: false
 })
 
-watch(() => store.items, () => {
+watch(() => timeline.items, () => {
   supplier.value.changes = true
 }, { deep: true })
-
-onBeforeMount(async () => {
-  await store.init()
-})
 </script>

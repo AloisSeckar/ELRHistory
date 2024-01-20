@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="category in categories" :key="category.categoryId" class="box">
+    <div v-for="category in categoryList" :key="category.categoryId" class="box">
       <div class="box-header">
         <BaseIcon icon="globe" size="1.125rem" css-class="mb-1.5 mr-1" />
         <h2 class="inline ml-2">
@@ -24,11 +24,10 @@
 </template>
 
 <script setup lang="ts">
-const categories = computed(() => useCategoryStore().getByType('l'))
-const links = useLinkStore()
+const categories = useCategoryStore()
+await categories.init()
+const categoryList = computed(() => categories.getByType('l'))
 
-onBeforeMount(async () => {
-  await useCategoryStore().init()
-  await useLinkStore().init()
-})
+const links = useLinkStore()
+await links.init()
 </script>
