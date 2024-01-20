@@ -1,46 +1,58 @@
 <template>
   <div>
-    <FormKit
-      :id="name"
-      v-model="imgSrc"
-      type="text"
-      :name="name"
-      :label="label"
-      validation="required"
-      @change="$emit('change', imgSrc)"
-    />
-    <NuxtImg
-      v-if="imgSrc"
-      class="w-48 h-32 border"
-      provider="cloudinary"
-      :src="useRuntimeConfig().public.cloudinary.folder + imgSrc"
-      :alt="name"
-      :title="name"
-    />
-    <CldUploadWidget
-      :key="widgetKey"
-      v-slot="{ open }"
-      :upload-preset="useRuntimeConfig().public.cloudinary.preset"
-      :options="{
-        sources: ['local'],
-        clientAllowedFormats: ['jpg', 'jpeg', 'png', 'tiff', 'tif', 'gif'],
-        publicId: Date.now().toString(),
-        folder: `${useRuntimeConfig().public.cloudinary.folder}/${folder}`,
-        maxFiles: 1,
-        maxFileSize: 4000000,
-        maxImageFileSize: 4000000,
-        maxImageWidth: 2500,
-        maxImageHeight: 2500,
-      }"
-      @upload="uploadFinished"
-      @error="uploadError"
-    >
-      <FormKit
-        type="button"
-        :label="useT('admin.upload')"
-        @click="open"
-      />
-    </CldUploadWidget>
+    <div class="flex">
+      <div class="inline-block grow">
+        <FormKit
+          :id="name"
+          v-model="imgSrc"
+          type="text"
+          :name="name"
+          :label="label"
+          validation="required"
+          :disabled="true"
+          :classes="{
+            inner: 'border border-slate-500 bg-slate-300'
+          }"
+          @change="$emit('change', imgSrc)"
+        />
+      </div>
+      <div class="inline-block p-2 w-72">
+        <CldUploadWidget
+          :key="widgetKey"
+          v-slot="{ open }"
+          :upload-preset="useRuntimeConfig().public.cloudinary.preset"
+          :options="{
+            sources: ['local'],
+            clientAllowedFormats: ['jpg', 'jpeg', 'png', 'tiff', 'tif', 'gif'],
+            publicId: Date.now().toString(),
+            folder: `${useRuntimeConfig().public.cloudinary.folder}/${folder}`,
+            maxFiles: 1,
+            maxFileSize: 4000000,
+            maxImageFileSize: 4000000,
+            maxImageWidth: 2500,
+            maxImageHeight: 2500,
+          }"
+          @upload="uploadFinished"
+          @error="uploadError"
+        >
+          <FormKit
+            type="button"
+            :label="useT('admin.upload')"
+            @click="open"
+          />
+        </CldUploadWidget>
+      </div>
+      <div class="inline-block w-36 ml-8">
+        <NuxtImg
+          v-if="imgSrc"
+          class="mx-auto w-48 h-32 border"
+          provider="cloudinary"
+          :src="useRuntimeConfig().public.cloudinary.folder + imgSrc"
+          :alt="name"
+          :title="name"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
