@@ -6,5 +6,16 @@ export default defineI18nConfig(() => ({
   locale: useRuntimeConfig().public.lang,
   fallbackLocale: useRuntimeConfig().public.lang,
   messages: { cs, en },
-  warnHtmlMessage: false
+  warnHtmlMessage: false,
+  pluralRules: {
+    cs: function csPluralizationRule (choice: number) {
+      if (choice > 4) {
+        return 3
+      } else if (choice > 1) {
+        return 2
+      } else {
+        return choice
+      }
+    }
+  }
 }))

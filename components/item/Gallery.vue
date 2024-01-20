@@ -51,9 +51,8 @@
         </div>
         <div>
           <span v-if="images > 0">
-            {{ $t('galleries.images-1') }}
-            <strong>{{ useImageStore().getCountByGallery(item.galleryId) }}</strong>
-            {{ $t('galleries.images-2') }}
+            {{ $t('galleries.images-count-1') }}
+            <strong>{{ $t('galleries.images-count-2', images) }}</strong>
           </span>
           <span v-else>
             {{ $t('galleries.images-none') }}
