@@ -21,17 +21,7 @@
           :key="widgetKey"
           v-slot="{ open }"
           :upload-preset="useRuntimeConfig().public.cloudinary.preset"
-          :options="{
-            sources: ['local'],
-            clientAllowedFormats: ['jpg', 'jpeg', 'png', 'tiff', 'tif', 'gif'],
-            publicId: Date.now().toString(),
-            folder: `${useRuntimeConfig().public.cloudinary.folder}/${folder}`,
-            maxFiles: 1,
-            maxFileSize: 4000000,
-            maxImageFileSize: 4000000,
-            maxImageWidth: 2500,
-            maxImageHeight: 2500,
-          }"
+          :options="getCloudinaryOptions(folder)"
           @upload="uploadFinished"
           @error="uploadError"
         >
