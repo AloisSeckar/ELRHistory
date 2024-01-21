@@ -2,6 +2,7 @@
 # auto-merge changes from 'main' to deployment branch 'stara-krc'
 
 name: Merge 'main' into deployment branch
+run-name: "[Automated] Merge ${{ github.ref_name }} into ${{ vars.DEPLOYMENT_BRANCH }}"
 
 on:
   push:
@@ -28,8 +29,6 @@ jobs:
           destination_branch: ${{ vars.DEPLOYMENT_BRANCH }}
           pr_title: "[Automated] Merge ${{ github.ref_name }} into ${{ vars.DEPLOYMENT_BRANCH }}"
           pr_body: "Automated Pull Request from 'main' into deployment branch"
-          pr_reviewer: "ELRHistory"
-          pr_assignee: "ELRHistory"
 
       # https://github.com/marketplace/actions/enable-pull-request-automerge
       - name: enable automerge
