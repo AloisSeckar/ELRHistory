@@ -99,6 +99,15 @@
             "url" : "Odkaz:",
             "writer" : "Napsal:",
             "year" : "Rok vydání:"
+        },
+        "cloudinary" : {
+            "files" : "Moje soubory",
+            "drag" : "Přetáhněte soubor sem",
+            "or" : "nebo",
+            "browse" : "Vyberte soubor",
+            "uploading" : "Nahrávám soubor",
+            "processing" : "Zpracovávám soubor",
+            "done" : "Nahráno" 
         }
     }
 }
