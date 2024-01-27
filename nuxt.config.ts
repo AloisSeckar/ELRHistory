@@ -18,6 +18,7 @@ export default defineNuxtConfig({
       lang: 'en',
       debug: false,
       cloudinary: {
+        baseURL: 'https://res.cloudinary.com/dxn3gzvtm/image/upload/',
         preset: 'elrhistory',
         folder: 'elrhistory'
       },

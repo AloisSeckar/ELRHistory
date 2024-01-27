@@ -38,7 +38,8 @@
     "images" : {
         "title" : "Obrázky",
         "total" : "Celkem obrázků",
-        "no-dscr" : "Popis není k dispozici..."
+        "no-dscr" : "Popis není k dispozici...",
+        "full-size" : "Klikněte pro zobrazení v plné velikosti"
     },
     "books" : {
         "total" : "Celkem knih",
