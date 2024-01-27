@@ -20,13 +20,15 @@
         </div>
         <hr class="mb-2">
         <ItemImageNav :item="item" :editable="editable" />
-        <NuxtImg
-          class="my-2 inline-block w-full h-auto border"
-          provider="cloudinary"
-          :src="useRuntimeConfig().public.cloudinary.folder + item.image"
-          :alt="item.name"
-          :title="item.name"
-        />
+        <div class="mx-auto max-w-[60%]">
+          <NuxtImg
+            class="my-2 inline-block w-full h-auto border"
+            provider="cloudinary"
+            :src="useRuntimeConfig().public.cloudinary.folder + item.image"
+            :alt="item.name"
+            :title="item.name"
+          />
+        </div>
         <ItemImageNav :item="item" :editable="editable" />
       </div>
     </div>
