@@ -38,7 +38,8 @@
     "images" : {
         "title" : "Images",
         "total" : "Total images",
-        "no-dscr" : "Descripion not available..."
+        "no-dscr" : "Descripion not available...",
+        "full-size" : "Click to open full-size image"
     },
     "books" : {
         "total" : "Total books",
