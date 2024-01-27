@@ -1,10 +1,9 @@
 // https://formkit.com/getting-started/installation#configuring-nuxt
-import { en, de, cs } from '@formkit/i18n'
+import { en, cs } from '@formkit/i18n'
 import type { DefaultConfigOptions } from '@formkit/vue'
 
 const config: DefaultConfigOptions = {
-  locales: { en, de, cs },
-  locale: 'cs' // TODO should this be configured from outside?
+  locales: { en, cs }
 }
 
 export default config

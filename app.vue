@@ -13,6 +13,7 @@
 
 <script setup lang="ts">
 import './assets/css/tailwind.css'
+import { changeLocale } from '@formkit/vue'
 
 useHead({
   title: useRuntimeConfig().public.webTitle,
@@ -25,6 +26,10 @@ useHead({
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
   ]
+})
+
+onMounted(() => {
+  changeLocale(useRuntimeConfig().public.lang)
 })
 </script>
 
