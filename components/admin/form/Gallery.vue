@@ -22,7 +22,6 @@
         type="textarea"
         name="dscr"
         :label="useT('admin.form.dscr')"
-        validation="required"
       />
       <FormKit
         id="parentId"

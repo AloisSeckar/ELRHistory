@@ -22,7 +22,6 @@
         type="textarea"
         name="dscr"
         :label="useT('admin.form.dscr')"
-        validation="required"
         :rows="10"
       />
       <AdminFormSelectImage name="image" :label="useT('admin.form.image')" :source="image.image" folder="image" @change="setImage" />
