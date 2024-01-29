@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-const divMain = 'mt-[10%] w-1/3 h-fit z-20 border border-black rounded bg-white text-center'
+const divMain = 'mt-[10%] mx-1 w-full md:w-1/2 xl:w-1/3 h-fit z-20 border border-black rounded bg-white text-center'
 const divHeader = 'py-4 text-2xl font-bold'
 const divButton = 'mx-auto my-4 p-2 w-16 border border-black rounded bg-indigo-800 hover:bg-indigo-300' +
                 ' text-white hover:text-gray-700 font-bold cursor-pointer'
