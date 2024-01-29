@@ -76,7 +76,6 @@ if (props.imageId > 0) {
 const authors = computed(() => useAuthorStore().getAuthorList)
 const galleries = computed(() => useGalleryStore().getGalleryList)
 
-// TODO probably not working?
 const setImage = (path: string) => {
   image.image = path
 }
