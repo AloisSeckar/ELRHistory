@@ -22,7 +22,6 @@
         type="textarea"
         name="dscr"
         :label="useT('admin.form.dscr')"
-        validation="required"
         :rows="10"
       />
       <AdminFormSelectImage name="image" :label="useT('admin.form.image')" :source="image.image" folder="image" @change="setImage" />
@@ -77,7 +76,6 @@ if (props.imageId > 0) {
 const authors = computed(() => useAuthorStore().getAuthorList)
 const galleries = computed(() => useGalleryStore().getGalleryList)
 
-// TODO probably not working?
 const setImage = (path: string) => {
   image.image = path
 }

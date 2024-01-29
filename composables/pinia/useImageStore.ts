@@ -84,10 +84,25 @@ function get (state: StoreData) {
   return getStoreItems<Image>(state)
 }
 
-function treatInput (input: ImageDB) {
+async function treatInput (input: ImageDB) {
   input.dateEdited = new Date().toISOString()
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()
   }
-  input.ord = 1 // TODO allow proper ordering
+  if (!input.ord) {
+    input.ord = await getNewImageOrd(input.galleryId)
+  }
+}
+
+async function getNewImageOrd (galleryId: number) {
+  const { count, error } = await useSupabaseClient()
+    .from('elrhImage')
+    .select('*', { count: 'exact', head: true })
+    .eq('galleryId', galleryId)
+  if (count) {
+    return count + 1
+  } else {
+    console.error(error)
+    return 1
+  }
 }
