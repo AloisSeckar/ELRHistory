@@ -44,7 +44,7 @@ export type Gallery = GalleryRaw & {
 export type ImageDB = Omit<ImageRaw, 'imageId'>
 export type Image = ImageRaw & {
   elrhAuthor: AuthorLink
-  galleryId: GalleryLink
+  elrhGallery: GalleryLink
 }
 
 export type LinkDB = Omit<LinkRaw, 'linkId'>
