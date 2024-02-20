@@ -6,8 +6,8 @@
         {{ item.name }}
         <AdminEditLink v-if="user" :link="'image/' + item.imageId" item="image" />
         <span class="float-right pr-1 text-base font-normal">
-          <NuxtLink :to="{ path: '/gallery/' + item.galleryId?.galleryId }">
-            <strong>{{ item.galleryId?.name }}</strong>
+          <NuxtLink :to="{ path: '/gallery/' + item.elrhGallery?.galleryId }">
+            <strong>{{ item.elrhGallery?.name }}</strong>
           </NuxtLink> |
           {{ item.elrhAuthor?.name }} |
           <em>{{ toDate(item.dateCreated) }}</em>

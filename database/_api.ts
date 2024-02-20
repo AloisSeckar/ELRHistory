@@ -244,8 +244,6 @@ export interface paths {
           image?: parameters["rowFilter.elrhImage.image"];
           galleryId?: parameters["rowFilter.elrhImage.galleryId"];
           ord?: parameters["rowFilter.elrhImage.ord"];
-          prevId?: parameters["rowFilter.elrhImage.prevId"];
-          nextId?: parameters["rowFilter.elrhImage.nextId"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -305,8 +303,6 @@ export interface paths {
           image?: parameters["rowFilter.elrhImage.image"];
           galleryId?: parameters["rowFilter.elrhImage.galleryId"];
           ord?: parameters["rowFilter.elrhImage.ord"];
-          prevId?: parameters["rowFilter.elrhImage.prevId"];
-          nextId?: parameters["rowFilter.elrhImage.nextId"];
         };
         header: {
           /** Preference */
@@ -330,8 +326,6 @@ export interface paths {
           image?: parameters["rowFilter.elrhImage.image"];
           galleryId?: parameters["rowFilter.elrhImage.galleryId"];
           ord?: parameters["rowFilter.elrhImage.ord"];
-          prevId?: parameters["rowFilter.elrhImage.prevId"];
-          nextId?: parameters["rowFilter.elrhImage.nextId"];
         };
         body: {
           /** elrhImage */
@@ -1172,18 +1166,6 @@ export interface definitions {
     galleryId: number;
     /** Format: integer */
     ord: number;
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Foreign Key to `elrhImage.imageId`.<fk table='elrhImage' column='imageId'/>
-     */
-    prevId?: number;
-    /**
-     * Format: integer
-     * @description Note:
-     * This is a Foreign Key to `elrhImage.imageId`.<fk table='elrhImage' column='imageId'/>
-     */
-    nextId?: number;
   };
   elrhTimeline: {
     /**
@@ -1458,10 +1440,6 @@ export interface parameters {
   "rowFilter.elrhImage.galleryId": string;
   /** Format: integer */
   "rowFilter.elrhImage.ord": string;
-  /** Format: integer */
-  "rowFilter.elrhImage.prevId": string;
-  /** Format: integer */
-  "rowFilter.elrhImage.nextId": string;
   /** @description elrhTimeline */
   "body.elrhTimeline": definitions["elrhTimeline"];
   /** Format: integer */

@@ -1,6 +1,6 @@
 -- DB scheme for ELRHistory 1.0
 -- syntax is valid for PostgreSQL
--- last revision: 2023-12-29
+-- last revision: 2024-02-20
 
 BEGIN TRANSACTION;
 
@@ -107,9 +107,7 @@ CREATE TABLE "elrhImage" (
 	"authorId"	integer NOT NULL,
 	"image"	varchar(100) NOT NULL,
 	"galleryId"	integer NOT NULL,
-	"ord"	integer NOT NULL CHECK("ord" >= 0),
-	"prevId"	integer,
-	"nextId"	integer
+	"ord"	integer NOT NULL CHECK("ord" >= 0)
 );
 
 CREATE TABLE "elrhTimeline" (
@@ -132,8 +130,6 @@ ALTER TABLE "elrhGallery" ADD CONSTRAINT "fk_gallery_parent" FOREIGN KEY ("paren
 ALTER TABLE "elrhGallery" ADD CONSTRAINT "fk_gallery_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
 ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
 ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrhGallery"("galleryId");
-ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_prev" FOREIGN KEY ("prevId") REFERENCES "elrhImage"("imageId");
-ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_next" FOREIGN KEY ("nextId") REFERENCES "elrhImage"("imageId");
 ALTER TABLE "elrhTimeline" ADD CONSTRAINT "fk_timeline_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
 
 COMMIT;

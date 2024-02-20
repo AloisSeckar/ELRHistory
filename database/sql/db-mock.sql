@@ -1,6 +1,6 @@
 -- DB mock data for ELRHistory 1.0
 -- use to populate your DB with some values for testing
--- last revision: 2023-12-29
+-- last revision: 2024-02-20
 
 INSERT INTO "elrhAuthor"("email", "name") VALUES ('alois.seckar@gmail.com', 'ELRHistory');
 INSERT INTO "elrhAuthor"("email", "name") VALUES ('ellrohir@seznam.com', 'ELRHistory2');
@@ -53,24 +53,13 @@ INSERT INTO "elrhArticle"("categoryId", "dateCreated", "dateEdited", "name", "ds
 
 INSERT INTO "elrhImage"("dateCreated", "dateEdited", "name", "dscr", "authorId", "image", "galleryId", "ord") VALUES 
     (now(), now(),'Image 01','This is a test image',1,'/image/01.jpg',1,1),
-    (now(), now(),'Image 02','This is a test image',1,'/image/02.jpg',1,1),
-    (now(), now(),'Image 03','This is a test image',1,'/image/03.jpg',1,1),
-    (now(), now(),'Image 04','This is a test image',1,'/image/04.jpg',1,1),
-    (now(), now(),'Image 05','This is a test image',1,'/image/05.jpg',1,1),
-    (now(), now(),'Image 06','This is a test image',1,'/image/06.jpg',1,1),
-    (now(), now(),'Image 07','This is a test image',1,'/image/07.jpg',1,1),
-    (now(), now(),'Image 08','This is a test image',1,'/image/08.jpg',1,1);
-
-UPDATE "elrhImage" SET "nextId" = 2 WHERE "imageId" = 1;
-UPDATE "elrhImage" SET "prevId" = 1, "nextId" = 3 WHERE "imageId" = 2;
-UPDATE "elrhImage" SET "prevId" = 2, "nextId" = 4 WHERE "imageId" = 3;
-UPDATE "elrhImage" SET "prevId" = 3, "nextId" = 5 WHERE "imageId" = 4;
-UPDATE "elrhImage" SET "prevId" = 4, "nextId" = 6 WHERE "imageId" = 5;
-UPDATE "elrhImage" SET "prevId" = 5, "nextId" = 7 WHERE "imageId" = 6;
-UPDATE "elrhImage" SET "prevId" = 6, "nextId" = 8 WHERE "imageId" = 7;
-UPDATE "elrhImage" SET "prevId" = 7 WHERE "imageId" = 8;
-
-INSERT INTO "elrhImage"("dateCreated", "dateEdited", "name", "dscr", "authorId", "image", "galleryId", "ord") VALUES  
+    (now(), now(),'Image 02','This is a test image',1,'/image/02.jpg',1,2),
+    (now(), now(),'Image 03','This is a test image',1,'/image/03.jpg',1,3),
+    (now(), now(),'Image 04','This is a test image',1,'/image/04.jpg',1,4),
+    (now(), now(),'Image 05','This is a test image',1,'/image/05.jpg',1,5),
+    (now(), now(),'Image 06','This is a test image',1,'/image/06.jpg',1,6),
+    (now(), now(),'Image 07','This is a test image',1,'/image/07.jpg',1,7),
+    (now(), now(),'Image 08','This is a test image',1,'/image/08.jpg',1,8),
     (now(), now(),'Image 09','This is a test image',1,'/image/09.jpg',2,1),
     (now(), now(),'Image 10','This is a test image',1,'/image/10.jpg',4,1);
 
