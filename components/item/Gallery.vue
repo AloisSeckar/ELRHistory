@@ -2,14 +2,16 @@
   <div>
     <div v-if="item.name" class="box">
       <div class="box-header">
-        <BaseIcon icon="image" size="1.125rem" css-class="mb-1.5" />&nbsp;
-        <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
-          <h2 class="inline">
-            {{ item.name }}
-          </h2>
-        </NuxtLink>
-        <AdminEditLink v-if="user" :link="'gallery/' + item.galleryId" item="gallery" />
-        <span class="float-right mt-1 pr-1 text-base font-normal">
+        <span class="flex-1 mr-4 px-1">
+          <BaseIcon class="hidden lg:inline-block" icon="image" size="1.125rem" css-class="mb-1.5 mr-2" />
+          <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
+            <h2 class="inline">
+              {{ item.name }}
+            </h2>
+          </NuxtLink>
+          <AdminEditLink v-if="user" :link="'gallery/' + item.galleryId" item="gallery" />
+        </span>
+        <span class="float-right mt-1 px-1 text-base font-normal">
           <NuxtLink :to="{ path: parent?.galleryId > 0 ? '/gallery/' + parent?.galleryId : '/galleries' }">
             <strong>{{ parent?.name ? parent.name : 'Index' }}</strong>
           </NuxtLink>

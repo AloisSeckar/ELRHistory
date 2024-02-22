@@ -2,10 +2,14 @@
   <div>
     <div v-if="item.name" class="box">
       <div class="box-header">
-        <BaseIcon icon="image" size="1.125rem" css-class="mb-1.5" />&nbsp;
-        {{ item.name }}
-        <AdminEditLink v-if="user" :link="'image/' + item.imageId" item="image" />
-        <span class="float-right pr-1 text-base font-normal">
+        <span class="flex-1 mr-4 px-1">
+          <BaseIcon class="hidden lg:inline-block" icon="image" size="1.125rem" css-class="mb-1.5 mr-2" />
+          <h2 class="inline">
+            {{ item.name }}
+          </h2>
+          <AdminEditLink v-if="user" :link="'image/' + item.imageId" item="image" />
+        </span>
+        <span class="float-right mt-1 px-1 text-base font-normal">
           <NuxtLink :to="{ path: '/gallery/' + item.elrhGallery?.galleryId }">
             <strong>{{ item.elrhGallery?.name }}</strong>
           </NuxtLink> |
@@ -20,7 +24,7 @@
         </div>
         <hr class="mb-2">
         <ItemImageNav :item="item" :editable="editable" />
-        <div class="mx-auto max-w-[60%]">
+        <div class="mx-2 sm:mx-auto sm:max-w-[80%] lg:max-w-[60%]">
           <NuxtLink
             :to="useRuntimeConfig().public.cloudinary.baseURL + useRuntimeConfig().public.cloudinary.folder + item.image"
             :external="true"

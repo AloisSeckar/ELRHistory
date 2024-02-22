@@ -20,7 +20,7 @@ export const useArticleStore = defineStore({
         selectQuery: 'articleId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)',
         orderQuery: 'dateCreated',
         orderOpts: { ascending: false },
-        preventSingleLetterOrphans: ['dscr', 'content']
+        preventSingleLetterOrphans: ['name', 'dscr', 'content']
       }, forceReload)
     },
     async update (itemData: ArticleDB, itemId?: number): Promise<boolean> {
