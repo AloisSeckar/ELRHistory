@@ -12,7 +12,7 @@
         @apply mb-4 bg-white border border-sky-500;
     }
     .box-header {
-        @apply p-1 pl-3 bg-navy text-lg text-silver font-bold;
+        @apply p-1 bg-navy text-lg text-silver font-bold flex flex-col lg:flex-row;
     }
     .box-content {
         @apply my-1 px-3 py-1 text-navy;

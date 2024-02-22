@@ -53,7 +53,8 @@
     "news" : {
         "title" : "News",
         "total" : "Total news",
-        "none" : "No news yet"
+        "none" : "No news yet",
+        "added" : "added"
     },
     "invalid" : {
         "content" : "Data doesn't exist or cannot be loaded",

@@ -53,7 +53,8 @@
     "news" : {
         "title" : "Novinky",
         "total" : "Celkem novinek",
-        "none" : "Zatím žádné novinky"
+        "none" : "Zatím žádné novinky",
+        "added" : "přidal"
     },
     "invalid" : {
         "content" : "Data neexistují nebo je nelze načíst",

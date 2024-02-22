@@ -1,12 +1,15 @@
 <template>
-  <div class="flex flex-wrap">
-    <div class="flex-none w-24">
+  <div class="flex flex-col sm:flex-row mb-4">
+    <div class="sm:hidden">
+      <strong>{{ toDate(item.dateCreated) }}</strong> <em>{{ item.elrhAuthor?.name }}</em>{{ $t('news.added') }}:
+    </div>
+    <div class="hidden sm:inline-block sm:w-32">
       <strong>{{ toDate(item.dateCreated) }}</strong>
     </div>
-    <div class="flex-none w-32 px-4 text-nowrap text-center">
-      {{ item.elrhAuthor?.name }}
+    <div class="hidden sm:inline-block sm:w-32">
+      <em>{{ item.elrhAuthor?.name }}</em>
     </div>
-    <div class="flex-1">
+    <div class="flex-1 mt-2 sm:mt-0">
       <div>
         <AdminEditLink v-if="user" :link="'news/' + item.newsId" item="news" />
         <strong>{{ item.title }}</strong>
