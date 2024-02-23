@@ -2,10 +2,12 @@
   <div>
     <div class="box">
       <div class="box-header">
-        <BaseIcon icon="bullhorn" size="1.125rem" css-class="mb-1.5 mr-1" />
-        <h2 class="inline ml-2">
-          {{ $t('news.title') }}
-        </h2>
+        <div class="ml-1">
+          <BaseIcon icon="bullhorn" size="1.125rem" css-class="mb-1.5 mr-1" />
+          <h2 class="inline ml-2">
+            {{ $t('news.title') }}
+          </h2>
+        </div>
       </div>
       <div class="box-content">
         <div v-for="item in news.getItems" :key="item.newsId">
