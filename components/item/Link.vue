@@ -1,23 +1,21 @@
 <template>
-  <div class="flex">
-    <div class="flex-none w-44 p-2">
-      <a :href="item.url" :title="item.url">
-        <NuxtImg
-          class="mx-auto w-40 h-28 border"
-          provider="cloudinary"
-          :src="useRuntimeConfig().public.cloudinary.folder + item.thumb"
-          :alt="item.name"
-          :title="item.name"
-        />
-      </a>
+  <div class="flex flex-col sm:flex-row">
+    <div class="hidden sm:inline-block sm:w-44 p-2">
+      <BaseThumb :name="item.name" :image="item.thumb" :link="item.url" landscape />
     </div>
-    <div class="grow p-2 pl-4 self-center">
-      <a :href="item.url" :title="item.url">
-        <strong>{{ item.name }}</strong>
-      </a>
-      <AdminEditLink v-if="user" :link="'link/' + item.linkId" item="link" />
-      <br>
-      {{ item.dscr }}
+    <div class="flex-1 p-2 pl-4">
+      <div class="text-left sm:text-justify">
+        <a :href="item.url" :title="item.url">
+          <strong>{{ item.name }}</strong>
+        </a>
+        <AdminEditLink v-if="user" :link="'link/' + item.linkId" item="link" />
+      </div>
+      <div class="block sm:hidden m-2">
+        <BaseThumb :name="item.name" :image="item.thumb" :link="item.url" landscape />
+      </div>
+      <div class="text-left sm:text-justify">
+        {{ item.dscr }}
+      </div>
     </div>
   </div>
 </template>
