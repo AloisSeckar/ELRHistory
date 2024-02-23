@@ -19,7 +19,7 @@ export const useLinkStore = defineStore({
         storeData: this,
         selectQuery: 'linkId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, url, thumb, elrhAuthor(authorId, name)',
         orderQuery: 'ord',
-        preventSingleLetterOrphans: ['dscr']
+        preventSingleLetterOrphans: ['name', 'dscr']
       }, forceReload)
     },
     async update (itemData: LinkDB, itemId?: number): Promise<boolean> {
