@@ -18,9 +18,11 @@
         </span>
       </div>
       <div class="box-content text-center">
-        <div v-if="item.dscr" class="mb-2 text-justify html-content" v-html="item.dscr" />
-        <div v-else class="text-justify mb-2 italic">
-          {{ $t('images.no-dscr') }}
+        <div class="text-left sm:text-justify">
+          <div v-if="item.dscr" class="mb-2 html-content" v-html="item.dscr" />
+          <div v-else class="mb-2 italic">
+            {{ $t('images.no-dscr') }}
+          </div>
         </div>
         <hr class="mb-2">
         <ItemImageNav :item="item" :editable="editable" />
