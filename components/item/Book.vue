@@ -3,7 +3,7 @@
     <div class="hidden sm:inline-block sm:w-32 p-2">
       <BaseThumb :name="item.name" :image="item.thumb" :link="item.url" />
     </div>
-    <div class="flex-1 p-2 pl-4">
+    <div class="flex-1 p-2 sm:pl-4">
       <div>
         <a :href="item.url" :title="item.name">
           <strong>{{ item.name }}</strong>

@@ -9,10 +9,12 @@
     <span v-else>
       {{ author }}
     </span>
-    powered by
-    <NuxtLink to="https://nuxt.com/">
-      Nuxt3
-    </NuxtLink>
+    <span class="hidden min-[575px]:inline">
+      powered by
+      <NuxtLink to="https://nuxt.com/">
+        Nuxt3
+      </NuxtLink>
+    </span>
     |
     <span class="pl-1 text-xs">
       <NuxtLink to="/admin">
