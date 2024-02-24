@@ -19,21 +19,13 @@
           <em>{{ toDate(item.dateCreated) }}</em>
         </span>
       </div>
-      <div class="box-content flex">
-        <div v-if="!detail" class="flex-none pr-4">
-          <NuxtLink :to="{ path: articlePath }">
-            <NuxtImg
-              class="w-40 h-28 border"
-              provider="cloudinary"
-              :src="useRuntimeConfig().public.cloudinary.folder + item.thumb"
-              :alt="item.name"
-              :title="item.name"
-            />
-          </NuxtLink>
+      <div class="box-content flex flex-col sm:flex-row">
+        <div v-if="!detail" class="block sm:inline-block sm:w-44 p-2">
+          <BaseThumb :name="item.name" :image="item.thumb" :link="articlePath" landscape />
         </div>
         <div class="flex-1">
-          <div :class="[detail ? 'w-full pb-2 border-b-2 italic inline-flex' : 'pb-1']">
-            <div v-if="detail" class="w-52 flex-none">
+          <div :class="[detail ? 'w-full pb-2 border-b-2 italic flex flex-col sm:flex-row' : 'pb-1']">
+            <div v-if="detail" class="w-52 p-2 flex-none">
               <NuxtImg
                 class="mx-auto w-48 h-36 mr-4 border"
                 provider="cloudinary"
@@ -42,7 +34,7 @@
                 :title="item.name"
               />
             </div>
-            <div>
+            <div class="sm:pt-2">
               {{ item.dscr }}
             </div>
           </div>
