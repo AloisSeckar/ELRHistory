@@ -25,8 +25,8 @@
           <span v-if="longDscr" v-html="item.dscr?.substring(0, 200) + '...'" />
           <span v-else v-html="item.dscr" />
           <span v-if="longDscr">
-            [ <NuxtLink v-if="longDscr" :to="{ path: '/gallery/' + item.galleryId }">
-              {{ $t('galleries.read-more') }}</NuxtLink> ]
+            [&nbsp;<NuxtLink v-if="longDscr" :to="{ path: '/gallery/' + item.galleryId }">
+              {{ $t('galleries.read-more') }}</NuxtLink>&nbsp;]
           </span>
         </div>
         <div>
@@ -45,9 +45,9 @@
             </div>
             <div v-if="(!detail && images > 5)" class="m-1 leading-6">
               <br>
-              [ <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
+              [&nbsp;<NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
                 {{ $t('galleries.see-more') }}
-              </NuxtLink> ]
+              </NuxtLink>&nbsp;]
             </div>
           </div>
         </div>
@@ -60,8 +60,8 @@
             {{ $t('galleries.images-none') }}
           </span>
           <span v-if="!detail">
-            [ <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
-              {{ $t('galleries.images-view') }}</NuxtLink> ]
+            [&nbsp;<NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
+              {{ $t('galleries.images-view') }}</NuxtLink>&nbsp;]
           </span>
         </div>
         <div v-if="detail">

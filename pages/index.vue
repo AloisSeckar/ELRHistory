@@ -40,9 +40,9 @@
           <ItemNews :item="item" />
         </div>
         <div>
-          [ <NuxtLink to="/news">
+          [&nbsp;<NuxtLink to="/news">
             {{ $t('index.news-all') }}
-          </NuxtLink> ]
+          </NuxtLink>&nbsp;]
         </div>
       </div>
     </div>
