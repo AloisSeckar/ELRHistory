@@ -2,7 +2,7 @@
   <div>
     <div v-if="item.name" class="box">
       <div class="box-header">
-        <span class="flex-1 mr-4 px-1">
+        <span class="flex-1 mr-4 px-1 text-left sm:text-justify">
           <BaseIcon class="hidden lg:inline-block" icon="cap" size="1.5rem" css-class="mb-1.5 mr-2" />
           <NuxtLink :to="{ path: articlePath }">
             <h2 class="inline">
@@ -11,7 +11,7 @@
           </NuxtLink>
           <AdminEditLink v-if="user" :link="articlePath.slice(1)" item="article" />
         </span>
-        <span class="float-right mt-1 px-1 text-base font-normal">
+        <span class="float-right mt-1 px-1 text-base font-normal text-left sm:text-justify">
           <NuxtLink to="/articles">
             <strong>{{ item.elrhCategory?.name }}</strong>
           </NuxtLink>
@@ -34,11 +34,11 @@
                 :title="item.name"
               />
             </div>
-            <div class="sm:pt-2">
+            <div class="sm:pt-2 text-left sm:text-justify">
               {{ item.dscr }}
             </div>
           </div>
-          <div class="html-content">
+          <div class="html-content text-left sm:text-justify">
             <div v-if="detail" class="py-2" v-html="item.content" />
             <div v-else class="pt-1">
               [ <NuxtLink :to="{ path: articlePath }">
