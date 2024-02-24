@@ -2,7 +2,7 @@
   <div>
     <div v-if="item.name" class="box">
       <div class="box-header">
-        <span class="flex-1 mr-4 px-1">
+        <span class="flex-1 mr-4 px-1 text-left sm:text-justify">
           <BaseIcon class="hidden lg:inline-block" icon="image" size="1.125rem" css-class="mb-1.5 mr-2" />
           <NuxtLink :to="{ path: '/gallery/' + item.galleryId }">
             <h2 class="inline">
@@ -11,7 +11,7 @@
           </NuxtLink>
           <AdminEditLink v-if="user" :link="'gallery/' + item.galleryId" item="gallery" />
         </span>
-        <span class="float-right mt-1 px-1 text-base font-normal">
+        <span class="float-right mt-1 px-1 text-base font-normal text-left sm:text-justify">
           <NuxtLink :to="{ path: parent?.galleryId > 0 ? '/gallery/' + parent?.galleryId : '/galleries' }">
             <strong>{{ parent?.name ? parent.name : 'Index' }}</strong>
           </NuxtLink>

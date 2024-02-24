@@ -15,7 +15,7 @@
         @apply p-1 bg-navy text-lg text-silver font-bold flex flex-col lg:flex-row;
     }
     .box-content {
-        @apply my-1 px-3 py-1 text-navy;
+        @apply my-1 px-3 py-1 text-navy text-left sm:text-justify;
     }
 
     .html-content {
