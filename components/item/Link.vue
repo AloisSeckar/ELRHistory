@@ -4,7 +4,7 @@
       <BaseThumb :name="item.name" :image="item.thumb" :link="item.url" landscape />
     </div>
     <div class="flex-1 p-2 pl-4">
-      <div class="text-left sm:text-justify">
+      <div>
         <a :href="item.url" :title="item.url">
           <strong>{{ item.name }}</strong>
         </a>
@@ -13,7 +13,7 @@
       <div class="block sm:hidden m-2">
         <BaseThumb :name="item.name" :image="item.thumb" :link="item.url" landscape />
       </div>
-      <div class="text-left sm:text-justify">
+      <div>
         {{ item.dscr }}
       </div>
     </div>

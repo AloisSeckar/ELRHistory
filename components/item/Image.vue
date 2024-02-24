@@ -2,14 +2,14 @@
   <div>
     <div v-if="item.name" class="box">
       <div class="box-header">
-        <span class="flex-1 mr-4 px-1 text-left sm:text-justify">
+        <span class="flex-1 mr-4 px-1">
           <BaseIcon class="hidden lg:inline-block" icon="image" size="1.125rem" css-class="mb-1.5 mr-2" />
           <h2 class="inline">
             {{ item.name }}
           </h2>
           <AdminEditLink v-if="user" :link="'image/' + item.imageId" item="image" />
         </span>
-        <span class="float-right mt-1 px-1 text-base font-normal text-left sm:text-justify">
+        <span class="float-right mt-1 px-1 text-base font-normal">
           <NuxtLink :to="{ path: '/gallery/' + item.elrhGallery?.galleryId }">
             <strong>{{ item.elrhGallery?.name }}</strong>
           </NuxtLink> |
