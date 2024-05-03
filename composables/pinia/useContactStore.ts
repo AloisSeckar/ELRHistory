@@ -8,20 +8,20 @@ export const useContactStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Contact[]
+      items: [] as Contact[],
     } as StoreData
   },
   actions: {
-    async init () {
+    async init() {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
         selectQuery: 'name, email, phone, fb',
-        orderQuery: 'name'
+        orderQuery: 'name',
       })
-    }
+    },
   },
   getters: {
-  }
+  },
 })

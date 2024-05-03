@@ -8,11 +8,11 @@ export const useNewsStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as News[]
+      items: [] as News[],
     } as StoreData
   },
   actions: {
-    async init (forceReload?: boolean) {
+    async init(forceReload?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
@@ -20,10 +20,10 @@ export const useNewsStore = defineStore({
         selectQuery: 'newsId, dateCreated, dateEdited, title, content, url, elrhAuthor(authorId, name)',
         orderQuery: 'dateCreated',
         orderOpts: { ascending: false },
-        preventSingleLetterOrphans: ['content']
+        preventSingleLetterOrphans: ['content'],
       }, forceReload)
     },
-    async update (itemData: NewsDB, itemId?: number): Promise<boolean> {
+    async update(itemData: NewsDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)
 
       const config: UpdateConfig = {
@@ -31,7 +31,7 @@ export const useNewsStore = defineStore({
         tableName,
         itemKey: 'newsId',
         itemId,
-        itemData
+        itemData,
       }
 
       let ret: boolean
@@ -46,7 +46,7 @@ export const useNewsStore = defineStore({
       }
 
       return ret
-    }
+    },
   },
   getters: {
     getItems: state => get(state),
@@ -62,21 +62,21 @@ export const useNewsStore = defineStore({
         title: '',
         content: '',
         url: undefined,
-        authorId: 0
+        authorId: 0,
       }
       return emptyItem
     },
     getFirstId: (state) => {
       return get(state).at(0)?.newsId || 0
-    }
-  }
+    },
+  },
 })
 
-function get (state: StoreData) {
+function get(state: StoreData) {
   return getStoreItems<News>(state)
 }
 
-function treatInput (input: NewsDB) {
+function treatInput(input: NewsDB) {
   input.dateEdited = new Date().toISOString()
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()

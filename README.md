@@ -10,6 +10,8 @@ Originally a new version of [StaraKrc Python project](https://github.com/AloisSe
 - Formkit
 - Icons made possible by [FortAwesome](https://github.com/FortAwesome/vue-fontawesome)
 - Test images by [Unsplash](https://unsplash.com/)
+- Linting via [Nuxt ESLint module](https://nuxt.com/modules/eslint)
+- Tests TODO
 
 ## Setting up
 

@@ -8,21 +8,21 @@ export const useImageStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Image[]
+      items: [] as Image[],
     } as StoreData
   },
   actions: {
-    async init (force?: boolean) {
+    async init(force?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
         selectQuery: 'imageId, dateCreated, name, dscr, authorId, elrhAuthor(authorId, name), image, galleryId, elrhGallery(galleryId, name), ord',
         orderQuery: 'ord',
-        preventSingleLetterOrphans: ['name', 'dscr']
+        preventSingleLetterOrphans: ['name', 'dscr'],
       }, force)
     },
-    async update (itemData: ImageDB, itemId?: number): Promise<boolean> {
+    async update(itemData: ImageDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)
 
       const config: UpdateConfig = {
@@ -30,7 +30,7 @@ export const useImageStore = defineStore({
         tableName,
         itemKey: 'imageId',
         itemId,
-        itemData
+        itemData,
       }
 
       console.log(itemData)
@@ -48,7 +48,7 @@ export const useImageStore = defineStore({
 
       return ret
     },
-    async moveBackwards (imageId: number) {
+    async moveBackwards(imageId: number) {
       if (!useLoginStore().user) {
         throw new Error('Unautorhized')
       }
@@ -72,7 +72,7 @@ export const useImageStore = defineStore({
       this.init(true) // TODO can we just load the new one?
       useModalStore().showModal('Image moved', `Image ID ${imageId} was successfully moved backwards`)
     },
-    async moveForwards (imageId: number) {
+    async moveForwards(imageId: number) {
       if (!useLoginStore().user) {
         throw new Error('Unautorhized')
       }
@@ -95,7 +95,7 @@ export const useImageStore = defineStore({
 
       this.init(true) // TODO can we just load the new one?
       useModalStore().showModal('Image moved', `Image ID ${imageId} was successfully moved forwards`)
-    }
+    },
   },
   getters: {
     getItems: state => get(state),
@@ -118,7 +118,7 @@ export const useImageStore = defineStore({
         authorId: 0,
         image: '',
         galleryId: 0,
-        ord: 0
+        ord: 0,
       }
       return newImage
     },
@@ -148,15 +148,15 @@ export const useImageStore = defineStore({
           return undefined
         }
       }
-    }
-  }
+    },
+  },
 })
 
-function get (state: StoreData) {
+function get(state: StoreData) {
   return getStoreItems<Image>(state)
 }
 
-async function treatInput (input: ImageDB) {
+async function treatInput(input: ImageDB) {
   input.dateEdited = new Date().toISOString()
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()
@@ -166,7 +166,7 @@ async function treatInput (input: ImageDB) {
   }
 }
 
-function toImageDB (input: Image) {
+function toImageDB(input: Image) {
   return {
     dateCreated: input.dateCreated,
     dateEdited: input.dateEdited,
@@ -175,11 +175,11 @@ function toImageDB (input: Image) {
     authorId: input.authorId,
     image: input.image,
     galleryId: input.galleryId,
-    ord: input.ord
+    ord: input.ord,
   }
 }
 
-async function getNewImageOrd (galleryId: number) {
+async function getNewImageOrd(galleryId: number) {
   const { count, error } = await useSupabaseClient()
     .from('elrhImage')
     .select('*', { count: 'exact', head: true })

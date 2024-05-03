@@ -18,14 +18,14 @@ import { changeLocale } from '@formkit/vue'
 useHead({
   title: useRuntimeConfig().public.webTitle,
   htmlAttrs: {
-    lang: useRuntimeConfig().public.lang
+    lang: useRuntimeConfig().public.lang,
   },
   bodyAttrs: {
-    id: 'main'
+    id: 'main',
   },
   link: [
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
-  ]
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+  ],
 })
 
 onMounted(() => {

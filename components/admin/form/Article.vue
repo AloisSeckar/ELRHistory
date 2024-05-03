@@ -1,6 +1,8 @@
 <template>
   <div>
-    <FormKit v-slot="{ value }" type="form" :value="article" :submit-label="label" @submit="saveForm">
+    <FormKit
+      v-slot="{ value }" type="form" :value="article"
+      :submit-label="label" @submit="saveForm">
       <pre v-if="useRuntimeConfig().public.debug">{{ value }}</pre>
       <FormKit
         id="authorId"
@@ -8,23 +10,20 @@
         name="authorId"
         :label="useT('admin.form.author')"
         validation="required"
-        :options="authors"
-      />
+        :options="authors" />
       <FormKit
         id="categoryId"
         type="select"
         name="categoryId"
         :label="useT('admin.form.category')"
         validation="required"
-        :options="categories"
-      />
+        :options="categories" />
       <FormKit
         id="name"
         type="text"
         name="name"
         :label="useT('admin.form.name')"
-        validation="required"
-      />
+        validation="required" />
       <FormKit
         id="dscr"
         type="textarea"
@@ -32,28 +31,24 @@
         :label="useT('admin.form.dscr')"
         validation="required"
         :maxlength="255"
-        input-class="ta-small"
-      />
+        input-class="ta-small" />
       <FormKit
         id="content"
         type="textarea"
         name="content"
         :label="useT('admin.form.content')"
-        validation="required"
-      />
+        validation="required" />
       <AdminFormSelectImage :source="article.thumb" :label="useT('admin.form.thumb')" folder="article" @change="setThumb" />
       <FormKit
         id="galleryId"
         type="select"
         name="galleryId"
         :label="useT('admin.form.related')"
-        :options="galleries"
-      />
+        :options="galleries" />
       <FormKit
         id="dateCreated"
         name="dateCreated"
-        type="hidden"
-      />
+        type="hidden" />
     </FormKit>
   </div>
 </template>
@@ -62,9 +57,9 @@
 import type { ArticleDB } from '@/database/types'
 
 const props = defineProps({
-  articleId: { type: Number, default: -1 }
+  articleId: { type: Number, default: -1 },
 })
-const emit = defineEmits<{(e: 'save', article: ArticleDB): void }>()
+const emit = defineEmits<{ (e: 'save', article: ArticleDB): void }>()
 
 let label: string
 let article: ArticleDB
@@ -80,7 +75,7 @@ if (props.articleId > 0) {
     content: currentArticle.content,
     thumb: currentArticle.thumb,
     authorId: currentArticle.elrhAuthor?.authorId || -1,
-    galleryId: currentArticle?.elrhGallery?.galleryId
+    galleryId: currentArticle?.elrhGallery?.galleryId,
   })
 } else {
   label = useT('admin.add')
@@ -103,5 +98,4 @@ const setThumb = (path: string) => {
 const saveForm = (values: any) => {
   emit('save', JSON.parse(JSON.stringify(values)))
 }
-
 </script>

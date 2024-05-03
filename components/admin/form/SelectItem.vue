@@ -9,15 +9,12 @@
           name="selectItem"
           :label="label"
           validation="required"
-          :options="options"
-        />
+          :options="options" />
       </div>
       <div class="inline-block px-2 w-1/4">
         <FormKit
-          type="button"
-          :label="useT('admin.select')"
-          @click="$emit('selectItem', option)"
-        />
+          type="button" :label="useT('admin.select')"
+          @click="$emit('selectItem', option)" />
       </div>
     </FormKit>
   </div>
@@ -30,9 +27,9 @@ import type { FormKitOptionsItem } from '@formkit/inputs'
 const props = defineProps({
   label: { type: String, required: true },
   options: { type: Array as PropType<FormKitOptionsItem[]>, required: true },
-  selected: { type: Number, required: true }
+  selected: { type: Number, required: true },
 })
-defineEmits<{(e: 'selectItem', option: number): void}>()
+defineEmits<{ (e: 'selectItem', option: number): void }>()
 
 const option = ref(props.selected)
 </script>

@@ -8,11 +8,11 @@ export const useTimelineStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Timeline[]
+      items: [] as Timeline[],
     } as StoreData
   },
   actions: {
-    async init (forceReload?: boolean) {
+    async init(forceReload?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
@@ -20,10 +20,10 @@ export const useTimelineStore = defineStore({
         selectQuery: 'timelineId, title, content, tooltip, elrhAuthor(authorId, name)',
         orderQuery: 'title',
         orderOpts: { ascending: false },
-        preventSingleLetterOrphans: ['title', 'content', 'tooltip']
+        preventSingleLetterOrphans: ['title', 'content', 'tooltip'],
       }, forceReload)
     },
-    async update (itemData: TimelineDB, itemId?: number): Promise<boolean> {
+    async update(itemData: TimelineDB, itemId?: number): Promise<boolean> {
       // treatInput(itemData)
 
       const config: UpdateConfig = {
@@ -31,7 +31,7 @@ export const useTimelineStore = defineStore({
         tableName,
         itemKey: 'timelineId',
         itemId,
-        itemData
+        itemData,
       }
 
       let ret: boolean
@@ -46,7 +46,7 @@ export const useTimelineStore = defineStore({
       }
 
       return ret
-    }
+    },
   },
   getters: {
     getItems: state => get(state),
@@ -65,17 +65,17 @@ export const useTimelineStore = defineStore({
         title: '',
         content: '',
         tooltip: '',
-        authorId: 0
+        authorId: 0,
       }
       return emptyItem
     },
     getFirstId: (state) => {
       return get(state).at(0)?.timelineId || 0
-    }
-  }
+    },
+  },
 })
 
-function get (state: StoreData) {
+function get(state: StoreData) {
   return getStoreItems<Timeline>(state)
 }
 

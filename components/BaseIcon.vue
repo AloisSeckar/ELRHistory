@@ -2,38 +2,33 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     :class="'inline ' + cssClass"
-    :width="size"
-    :height="size"
-    :viewBox="viewBox"
-  >
+    :width="size" :height="size" :viewBox="viewBox">
     <path
       v-for="path in svgDefinition.paths"
-      :key="path"
-      :d="path"
-      :fill="fill"
-    />
+      :key="path" :d="path" :fill="fill" />
   </svg>
 </template>
 
 <script setup lang="ts">
 import icones from '@/assets/icones.json'
+
 const props = defineProps({
   icon: { type: String, required: true },
   size: { type: String, default: '2rem' },
   fill: { type: String, default: 'currentColor' },
-  cssClass: { type: String, default: '' }
+  cssClass: { type: String, default: '' },
 })
 
 const svgDefinition = getSVGDef(props.icon)
 const viewBox = `0 0 ${svgDefinition.dim} ${svgDefinition.dim}`
 
 type IconDefinition = {
-  id: string,
-  dim: number,
+  id: string
+  dim: number
   paths: string[]
 }
 
-function getSVGDef (icon: string): IconDefinition {
+function getSVGDef(icon: string): IconDefinition {
   switch (icon) {
     case 'arrow-left':
       return icones.arrowLeft

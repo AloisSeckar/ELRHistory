@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html (TODO input should be more secured here ) -->
 <template>
   <div>
     <div v-if="item.name" class="box">
@@ -36,11 +37,8 @@
               <NuxtLink :to="{ path: '/image/' + image.imageId }">
                 <NuxtImg
                   class="m-1 w-40 h-24 border"
-                  provider="cloudinary"
-                  :src="useRuntimeConfig().public.cloudinary.folder + image.image"
-                  :alt="image.name"
-                  :title="image.name"
-                />
+                  provider="cloudinary" :src="useRuntimeConfig().public.cloudinary.folder + image.image"
+                  :alt="image.name" :title="image.name" />
               </NuxtLink>
             </div>
             <div v-if="(!detail && images > 5)" class="m-1 leading-6">
@@ -111,7 +109,7 @@ import type { Gallery } from '@/database/types'
 
 const props = defineProps({
   detail: { type: Boolean, default: false },
-  item: { type: Object as PropType<Gallery>, required: true }
+  item: { type: Object as PropType<Gallery>, required: true },
 })
 
 const user = computed(() => useLoginStore().user)

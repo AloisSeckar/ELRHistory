@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-function attemptLogout () {
+function attemptLogout() {
   useLoginStore().logout()
   return navigateTo('/')
 }

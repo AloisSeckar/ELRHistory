@@ -1,5 +1,5 @@
 type UserInfo = {
-  user: string | null,
+  user: string | null
   callbackUrl: string | null
 }
 
@@ -8,11 +8,11 @@ export const useLoginStore = defineStore({
   state: () => {
     return {
       user: null,
-      callbackUrl: null
+      callbackUrl: null,
     } as UserInfo
   },
   actions: {
-    async login (email: string, password: string) {
+    async login(email: string, password: string) {
       const { data, error } = await useSupabaseClient().auth.signInWithPassword({ email, password })
       if (data) {
         if (data.user?.email) {
@@ -25,16 +25,16 @@ export const useLoginStore = defineStore({
         console.error(error)
       }
     },
-    logout () {
+    logout() {
       const user = useSessionStorage('elrh-user', null)
       user.value = this.user = null
     },
-    checkLogin () {
+    checkLogin() {
       const user = useSessionStorage('elrh-user', this.user)
       this.user = user.value
       return !!user.value
-    }
+    },
   },
   getters: {
-  }
+  },
 })

@@ -8,21 +8,21 @@ export const useBookStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Book[]
+      items: [] as Book[],
     } as StoreData
   },
   actions: {
-    async init (forceReload?: boolean) {
+    async init(forceReload?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
         selectQuery: 'bookId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, url, thumb, writer, review, year, elrhAuthor(authorId, name)',
         orderQuery: 'ord',
-        preventSingleLetterOrphans: ['name', 'dscr']
+        preventSingleLetterOrphans: ['name', 'dscr'],
       }, forceReload)
     },
-    async update (itemData: BookDB, itemId?: number): Promise<boolean> {
+    async update(itemData: BookDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)
 
       const config: UpdateConfig = {
@@ -30,7 +30,7 @@ export const useBookStore = defineStore({
         tableName,
         itemKey: 'bookId',
         itemId,
-        itemData
+        itemData,
       }
 
       let ret: boolean
@@ -45,7 +45,7 @@ export const useBookStore = defineStore({
       }
 
       return ret
-    }
+    },
   },
   getters: {
     getItems: state => get(state),
@@ -68,21 +68,21 @@ export const useBookStore = defineStore({
         writer: '',
         url: '',
         year: '',
-        authorId: 0
+        authorId: 0,
       }
       return newBook
     },
     getFirstId: (state) => {
       return get(state).at(0)?.bookId || 0
-    }
-  }
+    },
+  },
 })
 
-function get (state: StoreData) {
+function get(state: StoreData) {
   return getStoreItems<Book>(state)
 }
 
-function treatInput (input: BookDB) {
+function treatInput(input: BookDB) {
   input.dateEdited = new Date().toISOString()
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()

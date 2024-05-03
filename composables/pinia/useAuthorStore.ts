@@ -9,19 +9,19 @@ export const useAuthorStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Author[]
+      items: [] as Author[],
     } as StoreData
   },
   actions: {
-    async init () {
+    async init() {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
         selectQuery: 'authorId, email, name',
-        orderQuery: 'name'
+        orderQuery: 'name',
       })
-    }
+    },
   },
   getters: {
     getItems: state => get(state),
@@ -36,10 +36,10 @@ export const useAuthorStore = defineStore({
     },
     getCurrent: (state) => {
       return get(state).filter(a => a.email === useLoginStore().user).at(0)?.authorId || -1
-    }
-  }
+    },
+  },
 })
 
-function get (state: StoreData) {
+function get(state: StoreData) {
   return getStoreItems<Author>(state)
 }

@@ -8,21 +8,21 @@ export const useGalleryStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Gallery[]
+      items: [] as Gallery[],
     } as StoreData
   },
   actions: {
-    async init (forceReload?: boolean) {
+    async init(forceReload?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
         selectQuery: 'galleryId, dateCreated, name, dscr, elrhAuthor(authorId, name), parentId(galleryId, name), elrhArticle(articleId, name, elrhAuthor(authorId, name), galleryId)',
         orderQuery: 'name',
-        preventSingleLetterOrphans: ['name', 'dscr']
+        preventSingleLetterOrphans: ['name', 'dscr'],
       }, forceReload)
     },
-    async update (itemData: GalleryDB, itemId?: number): Promise<boolean> {
+    async update(itemData: GalleryDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)
 
       const config: UpdateConfig = {
@@ -30,7 +30,7 @@ export const useGalleryStore = defineStore({
         tableName,
         itemKey: 'galleryId',
         itemId,
-        itemData
+        itemData,
       }
 
       let ret: boolean
@@ -45,7 +45,7 @@ export const useGalleryStore = defineStore({
       }
 
       return ret
-    }
+    },
   },
   getters: {
     getItems: state => get(state),
@@ -62,7 +62,7 @@ export const useGalleryStore = defineStore({
         dateEdited: new Date().toISOString(),
         name: '',
         dscr: '',
-        authorId: 0
+        authorId: 0,
       }
       return newGallery
     },
@@ -73,15 +73,15 @@ export const useGalleryStore = defineStore({
     },
     getFirstId: (state) => {
       return get(state).at(0)?.galleryId || 0
-    }
-  }
+    },
+  },
 })
 
-function get (state: StoreData) {
+function get(state: StoreData) {
   return getStoreItems<Gallery>(state)
 }
 
-function treatInput (input: GalleryDB) {
+function treatInput(input: GalleryDB) {
   input.dateEdited = new Date().toISOString()
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()

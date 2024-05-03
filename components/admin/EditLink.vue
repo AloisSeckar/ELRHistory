@@ -11,6 +11,6 @@
 <script setup lang="ts">
 defineProps({
   link: { type: String, required: true },
-  item: { type: String, default: 'item' }
+  item: { type: String, default: 'item' },
 })
 </script>

@@ -9,19 +9,19 @@ export const useCategoryStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Category[]
+      items: [] as Category[],
     } as StoreData
   },
   actions: {
-    async init () {
+    async init() {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
         selectQuery: 'categoryId, ord, name, dscr, type',
-        orderQuery: 'ord'
+        orderQuery: 'ord',
       })
-    }
+    },
   },
   getters: {
     getItems: state => get(state),
@@ -39,10 +39,10 @@ export const useCategoryStore = defineStore({
         categories.unshift({ value: -1, label: '' })
         return categories
       }
-    }
-  }
+    },
+  },
 })
 
-function get (state: StoreData) {
+function get(state: StoreData) {
   return getStoreItems<Category>(state)
 }

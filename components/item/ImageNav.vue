@@ -32,18 +32,18 @@ import type { Image } from '@/database/types'
 
 const props = defineProps({
   item: { type: Object as PropType<Image>, required: true },
-  editable: { type: Boolean, default: false }
+  editable: { type: Boolean, default: false },
 })
 
 const prevId = computed(() => useImageStore().getPrev(props.item.imageId))
 const nextId = computed(() => useImageStore().getNext(props.item.imageId))
 
-function moveBackwards () {
+function moveBackwards() {
   useImageStore().moveBackwards(props.item.imageId)
   return navigateTo(`/image/${props.item.imageId}`)
 }
 
-function moveForwards () {
+function moveForwards() {
   useImageStore().moveForwards(props.item.imageId)
   return navigateTo(`/image/${props.item.imageId}`)
 }

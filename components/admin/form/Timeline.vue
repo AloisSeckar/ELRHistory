@@ -1,6 +1,9 @@
 <template>
   <div>
-    <FormKit v-slot="{ value }" type="form" :value="timeline" :submit-label="label" @submit="saveForm">
+    <FormKit
+      v-slot="{ value }" type="form" :value="timeline"
+      :submit-label="label"
+      @submit="saveForm">
       <pre v-if="useRuntimeConfig().public.debug">{{ value }}</pre>
       <FormKit
         id="authorId"
@@ -8,15 +11,13 @@
         name="authorId"
         :label="useT('admin.form.author')"
         validation="required"
-        :options="authors"
-      />
+        :options="authors" />
       <FormKit
         id="title"
         type="text"
         name="title"
         :label="useT('admin.form.title')"
-        validation="required"
-      />
+        validation="required" />
       <FormKit
         id="content"
         type="textarea"
@@ -24,14 +25,12 @@
         :label="useT('admin.form.content')"
         validation="required"
         :maxlength="255"
-        input-class="ta-small"
-      />
+        input-class="ta-small" />
       <FormKit
         id="tooltip"
         type="textarea"
         name="tooltip"
-        :label="useT('admin.form.tooltip')"
-      />
+        :label="useT('admin.form.tooltip')" />
     </FormKit>
   </div>
 </template>
@@ -40,9 +39,9 @@
 import type { TimelineDB } from '@/database/types'
 
 const props = defineProps({
-  timelineId: { type: Number, default: -1 }
+  timelineId: { type: Number, default: -1 },
 })
-const emit = defineEmits<{(e: 'save', timeline: TimelineDB): void }>()
+const emit = defineEmits<{ (e: 'save', timeline: TimelineDB): void }>()
 
 let label: string
 let timeline: TimelineDB
@@ -53,7 +52,7 @@ if (props.timelineId > 0) {
     title: currentTimeline.title,
     content: currentTimeline.content,
     tooltip: currentTimeline.tooltip,
-    authorId: currentTimeline.elrhAuthor?.authorId || -1
+    authorId: currentTimeline.elrhAuthor?.authorId || -1,
   })
 } else {
   label = useT('admin.add')
@@ -66,5 +65,4 @@ const authors = computed(() => useAuthorStore().getAuthorList)
 const saveForm = (values: any) => {
   emit('save', JSON.parse(JSON.stringify(values)))
 }
-
 </script>
