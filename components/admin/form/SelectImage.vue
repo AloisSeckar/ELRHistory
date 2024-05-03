@@ -41,6 +41,8 @@
 </template>
 
 <script setup lang="ts">
+import type { CldUploadWidgetResults } from '@nuxtjs/cloudinary/dist/runtime/components/CldUploadWidget.vue'
+
 const props = defineProps({
   folder: { type: String, default: 'misc' },
   name: { type: String, default: 'thumb' },
@@ -51,14 +53,14 @@ defineEmits<{ (e: 'change', path: string): void }>()
 
 const imgSrc = ref(props.source ? props.source : '/blank.jpg')
 
-const uploadFinished = (result: Ref<any>) => {
+const uploadFinished = (result: Ref<CldUploadWidgetResults>) => {
   const name = result.value.info.public_id + '.' + result.value.info.format
   imgSrc.value = name.substring(name.indexOf('/')) // root folder is added automatically
   console.debug(`image ${name} was uploaded`)
   resetWidget()
 }
 
-const uploadError = (result: Ref<any>) => {
+const uploadError = (result: Ref<{ value: string }>) => {
   console.error('upload failed')
   console.error(result.value)
   useModalStore().showModal('Error', 'Failed to upload image')

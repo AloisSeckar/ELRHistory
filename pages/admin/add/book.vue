@@ -13,6 +13,6 @@ await useAuthorStore().init()
 await useCategoryStore().init()
 
 const save = async (book: BookDB) => {
-  await useUpdateItem(useBookStore(), 'book', '/books', book)
+  await useUpdateItem(useBookStore().update, 'book', '/books', book)
 }
 </script>

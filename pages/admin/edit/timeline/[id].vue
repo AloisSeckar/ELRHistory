@@ -32,7 +32,7 @@ for (let i = 0; i < useTimelineStore().items.length; i++) {
 }
 
 const save = async (timeline: TimelineDB) => {
-  await useUpdateItem(useTimelineStore(), 'timeline', '/timeline', timeline, timelineId)
+  await useUpdateItem(useTimelineStore().update, 'timeline', '/timeline', timeline, timelineId)
 }
 
 const changeItem = (callback: number) => {

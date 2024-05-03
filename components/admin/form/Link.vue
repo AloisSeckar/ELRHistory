@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import type { LinkDB } from '@/database/types'
+import type { AbstractValues, LinkDB } from '@/database/types'
 
 const props = defineProps({
   linkId: { type: Number, default: -1 },
@@ -83,7 +83,7 @@ const setThumb = (path: string) => {
   link.thumb = path
 }
 
-const saveForm = (values: any) => {
+const saveForm = (values: AbstractValues) => {
   emit('save', JSON.parse(JSON.stringify(values)))
 }
 </script>

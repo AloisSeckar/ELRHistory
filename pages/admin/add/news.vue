@@ -13,6 +13,6 @@ await useAuthorStore().init()
 await useCategoryStore().init()
 
 const save = async (news: NewsDB) => {
-  await useUpdateItem(useNewsStore(), 'news', '/news', news)
+  await useUpdateItem(useNewsStore().update, 'news', '/news', news)
 }
 </script>

@@ -1,5 +1,5 @@
 import type { StoreData } from '@/composables/usePiniaHelpers'
-import type { Gallery, GalleryDB } from '@/database/types'
+import type { Gallery, GalleryDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhGallery'
 
@@ -22,8 +22,8 @@ export const useGalleryStore = defineStore({
         preventSingleLetterOrphans: ['name', 'dscr'],
       }, forceReload)
     },
-    async update(itemData: GalleryDB, itemId?: number): Promise<boolean> {
-      treatInput(itemData)
+    async update(itemData: SupabaseUpdateData, itemId?: number): Promise<boolean> {
+      treatInput(itemData as GalleryDB)
 
       const config: UpdateConfig = {
         supabaseClient: useSupabaseClient<GalleryDB>(),

@@ -13,6 +13,6 @@ await useAuthorStore().init()
 await useCategoryStore().init()
 
 const save = async (link: LinkDB) => {
-  await useUpdateItem(useLinkStore(), 'link', '/links', link)
+  await useUpdateItem(useLinkStore().update, 'link', '/links', link)
 }
 </script>

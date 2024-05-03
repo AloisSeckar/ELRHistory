@@ -14,6 +14,6 @@ await useCategoryStore().init()
 await useGalleryStore().init()
 
 const save = async (article: ArticleDB) => {
-  await useUpdateItem(useArticleStore(), 'article', '/articles', article)
+  await useUpdateItem(useArticleStore().update, 'article', '/articles', article)
 }
 </script>

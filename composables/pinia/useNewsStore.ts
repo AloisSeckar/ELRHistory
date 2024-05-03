@@ -1,5 +1,5 @@
 import type { StoreData, UpdateConfig } from '@/composables/usePiniaHelpers'
-import type { News, NewsDB } from '@/database/types'
+import type { News, NewsDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhNews'
 
@@ -23,8 +23,8 @@ export const useNewsStore = defineStore({
         preventSingleLetterOrphans: ['content'],
       }, forceReload)
     },
-    async update(itemData: NewsDB, itemId?: number): Promise<boolean> {
-      treatInput(itemData)
+    async update(itemData: SupabaseUpdateData, itemId?: number): Promise<boolean> {
+      treatInput(itemData as NewsDB)
 
       const config: UpdateConfig = {
         supabaseClient: useSupabaseClient<NewsDB>(),

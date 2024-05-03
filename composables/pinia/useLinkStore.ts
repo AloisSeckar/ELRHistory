@@ -1,5 +1,5 @@
 import type { StoreData, UpdateConfig } from '@/composables/usePiniaHelpers'
-import type { Link, LinkDB } from '@/database/types'
+import type { Link, LinkDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhLink'
 
@@ -22,8 +22,8 @@ export const useLinkStore = defineStore({
         preventSingleLetterOrphans: ['name', 'dscr'],
       }, forceReload)
     },
-    async update(itemData: LinkDB, itemId?: number): Promise<boolean> {
-      treatInput(itemData)
+    async update(itemData: SupabaseUpdateData, itemId?: number): Promise<boolean> {
+      treatInput(itemData as LinkDB)
 
       const config: UpdateConfig = {
         supabaseClient: useSupabaseClient<LinkDB>(),

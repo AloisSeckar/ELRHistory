@@ -13,6 +13,6 @@ await useGalleryStore().init()
 await useImageStore().init()
 
 const save = async (image: ImageDB) => {
-  await useUpdateItem(useImageStore(), 'image', `/gallery/${image.galleryId}`, image)
+  await useUpdateItem(useImageStore().update, 'image', `/gallery/${image.galleryId}`, image)
 }
 </script>

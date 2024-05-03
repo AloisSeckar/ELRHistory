@@ -70,3 +70,9 @@ export type SupabaseActionType = 'add' | 'edit'
 
 export type SupabaseStoreClient = SupabaseClient<Article> | SupabaseClient<Book> | SupabaseClient<Gallery> | SupabaseClient<Image> | SupabaseClient<Link> | SupabaseClient<News> | SupabaseClient<Timeline>
 export type SupabaseUpdateClient = SupabaseClient<ArticleDB> | SupabaseClient<BookDB> | SupabaseClient<GalleryDB> | SupabaseClient<ImageDB> | SupabaseClient<LinkDB> | SupabaseClient<NewsDB> | SupabaseClient<TimelineDB>
+
+export type SupabaseUpdateFunction = (itemData: SupabaseUpdateData, itemId?: number) => Promise<boolean>
+
+export type AbstractValues = {
+  [key: string]: unknown
+}
