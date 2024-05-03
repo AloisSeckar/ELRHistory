@@ -65,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import type { BookDB } from '@/database/types'
+import type { BookDB, AbstractValues } from '@/database/types'
 
 const props = defineProps({
   bookId: { type: Number, default: -1 },
@@ -104,7 +104,7 @@ const setThumb = (path: string) => {
   book.thumb = path
 }
 
-const saveForm = (values: any) => {
+const saveForm = (values: AbstractValues) => {
   emit('save', JSON.parse(JSON.stringify(values)))
 }
 </script>

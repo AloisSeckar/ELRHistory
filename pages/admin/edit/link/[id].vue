@@ -33,7 +33,7 @@ for (let i = 0; i < useLinkStore().items.length; i++) {
 }
 
 const save = async (link: LinkDB) => {
-  await useUpdateItem(useLinkStore(), 'link', '/links', link, linkId)
+  await useUpdateItem(useLinkStore().update, 'link', '/links', link, linkId)
 }
 
 const changeItem = (callback: number) => {

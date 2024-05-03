@@ -1,5 +1,5 @@
 import type { StoreData } from '@/composables/usePiniaHelpers'
-import type { Image, ImageDB } from '@/database/types'
+import type { Image, ImageDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhImage'
 
@@ -22,8 +22,8 @@ export const useImageStore = defineStore({
         preventSingleLetterOrphans: ['name', 'dscr'],
       }, force)
     },
-    async update(itemData: ImageDB, itemId?: number): Promise<boolean> {
-      treatInput(itemData)
+    async update(itemData: SupabaseUpdateData, itemId?: number): Promise<boolean> {
+      treatInput(itemData as ImageDB)
 
       const config: UpdateConfig = {
         supabaseClient: useSupabaseClient<ImageDB>(),

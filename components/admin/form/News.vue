@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import type { NewsDB } from '@/database/types'
+import type { AbstractValues, NewsDB } from '@/database/types'
 
 const props = defineProps({
   newsId: { type: Number, default: -1 },
@@ -59,7 +59,7 @@ if (props.newsId > 0) {
 
 const authors = computed(() => useAuthorStore().getAuthorList)
 
-const saveForm = (values: any) => {
+const saveForm = (values: AbstractValues) => {
   emit('save', JSON.parse(JSON.stringify(values)))
 }
 </script>

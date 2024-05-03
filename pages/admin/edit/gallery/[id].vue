@@ -33,7 +33,7 @@ for (let i = 0; i < useGalleryStore().items.length; i++) {
 }
 
 const save = async (gallery: GalleryDB) => {
-  await useUpdateItem(useGalleryStore(), 'gallery', `/gallery/${galleryId}`, gallery, galleryId)
+  await useUpdateItem(useGalleryStore().update, 'gallery', `/gallery/${galleryId}`, gallery, galleryId)
 }
 
 const changeItem = (callback: number) => {

@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ArticleDB } from '@/database/types'
+import type { ArticleDB, AbstractValues } from '@/database/types'
 
 const props = defineProps({
   articleId: { type: Number, default: -1 },
@@ -95,7 +95,7 @@ const setThumb = (path: string) => {
   article.thumb = path
 }
 
-const saveForm = (values: any) => {
+const saveForm = (values: AbstractValues) => {
   emit('save', JSON.parse(JSON.stringify(values)))
 }
 </script>

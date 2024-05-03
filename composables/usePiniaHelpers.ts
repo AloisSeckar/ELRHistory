@@ -2,6 +2,8 @@ import { preventSingleLetterOrphans } from 'elrh-pslo/src/main'
 import type {
   SupabaseStoreClient, SupabaseUpdateClient,
   SupabaseStoreData, SupabaseUpdateData, SupabaseItemType,
+  AbstractValues,
+  SupabaseUpdateFunction,
 } from '@/database/types'
 
 export type OrderOpts = {
@@ -27,25 +29,27 @@ export async function useStoreInit(config: StoreConfig, forceReload?: boolean) {
   if (!config.storeData?.loaded || forceReload) {
     console.debug('getting ' + config.tableName + ' from Supabase')
     await fetchSupabase(config)
-      .then((x: any) => {
+      .then((response: unknown) => {
         console.debug(`${config.tableName} loaded from Supabase`)
+
+        const typedResponse = response as { data: SupabaseStoreData }
 
         // prevent single-letter orpans in texts
         if (config.preventSingleLetterOrphans) {
           config.preventSingleLetterOrphans.forEach((column) => {
-            x.data?.forEach((data: any) => {
+            typedResponse.data?.forEach((data: AbstractValues) => {
               if (data[column]) {
-                data[column] = preventSingleLetterOrphans(data[column])
+                data[column] = preventSingleLetterOrphans(data[column] as string)
               }
             })
           })
         }
 
-        config.storeData.items = x.data
+        config.storeData.items = typedResponse.data
         config.storeData.loaded = true
-      }).catch((x: any) => {
+      }).catch((err: Error) => {
         console.error(`failed to load ${config.tableName} from Supabase`)
-        console.error(x.error ? x.error : x)
+        console.error(err)
         config.storeData.loaded = false
       })
   } else {
@@ -61,9 +65,9 @@ async function fetchSupabase(config: StoreConfig) {
 }
 
 // TODO replace "store: any" with proper TS definition
-export async function useUpdateItem(store: any, itemType: SupabaseItemType, redirect: string, item: SupabaseUpdateData, itemId?: number) {
+export async function useUpdateItem(update: SupabaseUpdateFunction, itemType: SupabaseItemType, redirect: string, item: SupabaseUpdateData, itemId?: number) {
   const action = itemId ? 'updated' : 'saved'
-  const result = await store.update(JSON.parse(JSON.stringify(item)), itemId)
+  const result = await update(JSON.parse(JSON.stringify(item)), itemId)
   if (result) {
     useModalStore().showModal('Item saved', `Current ${itemType} was successfully ${action}`)
     return navigateTo(redirect)

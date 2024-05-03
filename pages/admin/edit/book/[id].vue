@@ -33,7 +33,7 @@ for (let i = 0; i < useBookStore().items.length; i++) {
 }
 
 const save = async (book: BookDB) => {
-  await useUpdateItem(useBookStore(), 'book', '/books', book, bookId)
+  await useUpdateItem(useBookStore().update, 'book', '/books', book, bookId)
 }
 
 const changeItem = (callback: number) => {

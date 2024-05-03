@@ -33,7 +33,7 @@ for (let i = 0; i < useImageStore().items.length; i++) {
 }
 
 const save = async (image: ImageDB) => {
-  await useUpdateItem(useImageStore(), 'image', `/image/${imageId}`, image, imageId)
+  await useUpdateItem(useImageStore().update, 'image', `/image/${imageId}`, image, imageId)
 }
 
 const changeItem = (callback: number) => {

@@ -12,6 +12,6 @@ await useAuthorStore().init()
 await useTimelineStore().init()
 
 const save = async (timeline: TimelineDB) => {
-  await useUpdateItem(useTimelineStore(), 'timeline', '/timeline', timeline)
+  await useUpdateItem(useTimelineStore().update, 'timeline', '/timeline', timeline)
 }
 </script>

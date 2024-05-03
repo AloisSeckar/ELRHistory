@@ -1,5 +1,5 @@
 import type { StoreData, UpdateConfig } from '@/composables/usePiniaHelpers'
-import type { Book, BookDB } from '@/database/types'
+import type { Book, BookDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhBook'
 
@@ -22,8 +22,8 @@ export const useBookStore = defineStore({
         preventSingleLetterOrphans: ['name', 'dscr'],
       }, forceReload)
     },
-    async update(itemData: BookDB, itemId?: number): Promise<boolean> {
-      treatInput(itemData)
+    async update(itemData: SupabaseUpdateData, itemId?: number): Promise<boolean> {
+      treatInput(itemData as BookDB)
 
       const config: UpdateConfig = {
         supabaseClient: useSupabaseClient<BookDB>(),

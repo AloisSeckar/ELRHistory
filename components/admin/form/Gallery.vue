@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryDB } from '@/database/types'
+import type { AbstractValues, GalleryDB } from '@/database/types'
 
 const props = defineProps({
   galleryId: { type: Number, default: -1 },
@@ -71,7 +71,7 @@ const galleries = computed(() => {
   return fixedList
 })
 
-const saveForm = (values: any) => {
+const saveForm = (values: AbstractValues) => {
   emit('save', JSON.parse(JSON.stringify(values)))
 }
 </script>

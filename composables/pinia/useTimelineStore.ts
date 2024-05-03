@@ -1,5 +1,5 @@
 import type { StoreData, UpdateConfig } from '@/composables/usePiniaHelpers'
-import type { Timeline, TimelineDB } from '@/database/types'
+import type { SupabaseUpdateData, Timeline, TimelineDB } from '@/database/types'
 
 const tableName = 'elrhTimeline'
 
@@ -23,8 +23,8 @@ export const useTimelineStore = defineStore({
         preventSingleLetterOrphans: ['title', 'content', 'tooltip'],
       }, forceReload)
     },
-    async update(itemData: TimelineDB, itemId?: number): Promise<boolean> {
-      // treatInput(itemData)
+    async update(itemData: SupabaseUpdateData, itemId?: number): Promise<boolean> {
+      // treatInput(itemData as TimelineDB)
 
       const config: UpdateConfig = {
         supabaseClient: useSupabaseClient<TimelineDB>(),

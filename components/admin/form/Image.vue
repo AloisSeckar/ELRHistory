@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ImageDB } from '@/database/types'
+import type { AbstractValues, ImageDB } from '@/database/types'
 
 const props = defineProps({
   imageId: { type: Number, default: -1 },
@@ -78,7 +78,7 @@ const setImage = (path: string) => {
   image.image = path
 }
 
-const saveForm = (values: any) => {
+const saveForm = (values: AbstractValues) => {
   emit('save', JSON.parse(JSON.stringify(values)))
 }
 </script>
