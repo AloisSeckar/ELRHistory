@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html (TODO input should be more secured here ) -->
 <template>
   <div>
     <div v-if="item.name" class="box">
@@ -28,11 +29,8 @@
             <div v-if="detail" class="w-52 p-2 flex-none">
               <NuxtImg
                 class="mx-auto w-48 h-36 mr-4 border"
-                provider="cloudinary"
-                :src="useRuntimeConfig().public.cloudinary.folder + item.thumb"
-                :alt="item.name"
-                :title="item.name"
-              />
+                provider="cloudinary" :src="useRuntimeConfig().public.cloudinary.folder + item.thumb"
+                :alt="item.name" :title="item.name" />
             </div>
             <div class="sm:pt-2">
               {{ item.dscr }}
@@ -69,7 +67,7 @@ import type { Article } from '@/database/types'
 
 const props = defineProps({
   item: { type: Object as PropType<Article>, required: true },
-  detail: { type: Boolean, default: false }
+  detail: { type: Boolean, default: false },
 })
 
 const user = computed(() => useLoginStore().user)

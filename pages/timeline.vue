@@ -13,20 +13,20 @@ const timeline = useTimelineStore()
 await timeline.init()
 
 const supplier: Ref<InfiniTimelineSupplier> = ref({
-  getTotal () {
+  getTotal() {
     return timeline.getCount
   },
-  get (startIndex: number, chunkSize: number) {
+  get(startIndex: number, chunkSize: number) {
     return timeline.getBatch(startIndex, chunkSize).map((i) => {
       return {
         id: i.timelineId,
         title: i.title,
         content: i.content,
-        tooltip: i.tooltip
+        tooltip: i.tooltip,
       }
     })
   },
-  changes: false
+  changes: false,
 })
 
 watch(() => timeline.items, () => {

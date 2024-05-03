@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html ("about" text is loaded from config ) -->
 <template>
   <div>
     <div class="box">

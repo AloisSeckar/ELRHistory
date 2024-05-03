@@ -1,6 +1,6 @@
 import type { CldUploadWidgetPropsOptions } from '@nuxtjs/cloudinary/dist/runtime/components/CldUploadWidget.vue'
 
-export function getCloudinaryOptions (folder: string) {
+export function getCloudinaryOptions(folder: string) {
   const options: CldUploadWidgetPropsOptions = {
     sources: ['local'],
     clientAllowedFormats: ['jpg', 'jpeg', 'png', 'tiff', 'tif', 'gif'],
@@ -10,7 +10,7 @@ export function getCloudinaryOptions (folder: string) {
     maxFileSize: 4000000,
     maxImageFileSize: 4000000,
     maxImageWidth: 2500,
-    maxImageHeight: 2500
+    maxImageHeight: 2500,
   }
 
   if (useRuntimeConfig().public.lang === 'cs') {
@@ -18,18 +18,18 @@ export function getCloudinaryOptions (folder: string) {
       en: {
         or: useT('admin.cloudinary.or'),
         menu: {
-          files: useT('admin.cloudinary.files')
+          files: useT('admin.cloudinary.files'),
         },
         local: {
           browse: useT('admin.cloudinary.browse'),
-          dd_title_single: useT('admin.cloudinary.drag')
+          dd_title_single: useT('admin.cloudinary.drag'),
         },
         queue: {
           title_uploading_with_counter: useT('admin.cloudinary.uploading'),
           title_processing_with_counter: useT('admin.cloudinary.processing'),
-          done: useT('admin.cloudinary.done')
-        }
-      }
+          done: useT('admin.cloudinary.done'),
+        },
+      },
     }
   }
 

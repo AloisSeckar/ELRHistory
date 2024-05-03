@@ -1,4 +1,4 @@
-import { SupabaseClient } from '@supabase/supabase-js'
+import type { SupabaseClient } from '@supabase/supabase-js'
 import type { definitions } from './_api'
 
 export type Author = definitions['elrhAuthor']

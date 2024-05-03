@@ -25,7 +25,7 @@ import type { PropType } from 'vue'
 import type { Link } from '@/database/types'
 
 defineProps({
-  item: { type: Object as PropType<Link>, required: true }
+  item: { type: Object as PropType<Link>, required: true },
 })
 
 const user = computed(() => useLoginStore().user)

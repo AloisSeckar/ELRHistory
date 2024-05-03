@@ -8,11 +8,11 @@ export const useArticleStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Article[]
+      items: [] as Article[],
     } as StoreData
   },
   actions: {
-    async init (forceReload?: boolean) {
+    async init(forceReload?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient<Article>(),
         tableName,
@@ -20,10 +20,10 @@ export const useArticleStore = defineStore({
         selectQuery: 'articleId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, content, thumb, elrhAuthor(authorId, name), elrhGallery(galleryId, name)',
         orderQuery: 'dateCreated',
         orderOpts: { ascending: false },
-        preventSingleLetterOrphans: ['name', 'dscr', 'content']
+        preventSingleLetterOrphans: ['name', 'dscr', 'content'],
       }, forceReload)
     },
-    async update (itemData: ArticleDB, itemId?: number): Promise<boolean> {
+    async update(itemData: ArticleDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)
 
       const config: UpdateConfig = {
@@ -31,7 +31,7 @@ export const useArticleStore = defineStore({
         tableName,
         itemKey: 'articleId',
         itemId,
-        itemData
+        itemData,
       }
 
       let ret: boolean
@@ -46,7 +46,7 @@ export const useArticleStore = defineStore({
       }
 
       return ret
-    }
+    },
   },
   getters: {
     getItems: state => get(state),
@@ -67,21 +67,21 @@ export const useArticleStore = defineStore({
         content: '',
         thumb: '',
         authorId: 0,
-        galleryId: undefined
+        galleryId: undefined,
       }
       return newArticle
     },
     getFirstId: (state) => {
       return get(state).at(0)?.articleId || 0
-    }
-  }
+    },
+  },
 })
 
-function get (state: StoreData) {
+function get(state: StoreData) {
   return getStoreItems<Article>(state)
 }
 
-function treatInput (input: ArticleDB) {
+function treatInput(input: ArticleDB) {
   input.dateEdited = new Date().toISOString()
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()

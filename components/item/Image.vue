@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html (TODO input should be more secured here ) -->
 <template>
   <div>
     <div v-if="item.name" class="box">
@@ -29,16 +30,11 @@
         <div class="mx-2 sm:mx-auto sm:max-w-[80%] lg:max-w-[60%]">
           <NuxtLink
             :to="useRuntimeConfig().public.cloudinary.baseURL + useRuntimeConfig().public.cloudinary.folder + item.image"
-            :external="true"
-            target="_blank"
-          >
+            :external="true" target="_blank">
             <NuxtImg
               class="my-2 inline-block w-full h-auto border"
-              provider="cloudinary"
-              :src="useRuntimeConfig().public.cloudinary.folder + item.image"
-              :alt="item.name"
-              :title="useT('images.full-size')"
-            />
+              provider="cloudinary" :src="useRuntimeConfig().public.cloudinary.folder + item.image"
+              :alt="item.name" :title="useT('images.full-size')" />
           </NuxtLink>
         </div>
         <ItemImageNav :item="item" :editable="editable" />
@@ -53,7 +49,7 @@ import type { PropType } from 'vue'
 import type { Image } from '@/database/types'
 
 defineProps({
-  item: { type: Object as PropType<Image>, required: true }
+  item: { type: Object as PropType<Image>, required: true },
 })
 
 const editable = computed(() => !!useLoginStore().user)

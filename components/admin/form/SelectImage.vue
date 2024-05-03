@@ -10,11 +10,8 @@
           :label="label"
           validation="required"
           :disabled="true"
-          :classes="{
-            inner: 'border border-slate-500 bg-slate-300'
-          }"
-          @change="$emit('change', imgSrc)"
-        />
+          :classes="{ inner: 'border border-slate-500 bg-slate-300' }"
+          @change="$emit('change', imgSrc)" />
       </div>
       <div class="inline-block p-2 w-72">
         <CldUploadWidget
@@ -23,13 +20,11 @@
           :upload-preset="useRuntimeConfig().public.cloudinary.preset"
           :options="getCloudinaryOptions(folder)"
           @upload="uploadFinished"
-          @error="uploadError"
-        >
+          @error="uploadError">
           <FormKit
             type="button"
             :label="useT('admin.upload')"
-            @click="open"
-          />
+            @click="open" />
         </CldUploadWidget>
       </div>
       <div class="inline-block w-36 ml-2">
@@ -39,8 +34,7 @@
           provider="cloudinary"
           :src="useRuntimeConfig().public.cloudinary.folder + imgSrc"
           :alt="name"
-          :title="name"
-        />
+          :title="name" />
       </div>
     </div>
   </div>
@@ -51,9 +45,9 @@ const props = defineProps({
   folder: { type: String, default: 'misc' },
   name: { type: String, default: 'thumb' },
   label: { type: String, default: 'Thumb:' },
-  source: { type: String, default: '/blank.jpg' }
+  source: { type: String, default: '/blank.jpg' },
 })
-defineEmits<{(e: 'change', path: string): void}>()
+defineEmits<{ (e: 'change', path: string): void }>()
 
 const imgSrc = ref(props.source ? props.source : '/blank.jpg')
 

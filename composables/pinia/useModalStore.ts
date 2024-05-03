@@ -4,17 +4,17 @@ export const useModalStore = defineStore({
     return {
       show: false,
       modalTitle: '',
-      modalText: ''
+      modalText: '',
     }
   },
   actions: {
-    showModal (title: string, text: string): void {
+    showModal(title: string, text: string): void {
       this.modalTitle = title
       this.modalText = text
       this.show = true
     },
-    hideModal (): void {
+    hideModal(): void {
       this.show = false
-    }
-  }
+    },
+  },
 })

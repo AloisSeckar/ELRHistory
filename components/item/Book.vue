@@ -29,7 +29,7 @@ import type { PropType } from 'vue'
 import type { Book } from '@/database/types'
 
 defineProps({
-  item: { type: Object as PropType<Book>, required: true }
+  item: { type: Object as PropType<Book>, required: true },
 })
 
 const user = computed(() => useLoginStore().user)

@@ -8,21 +8,21 @@ export const useLinkStore = defineStore({
   state: () => {
     return {
       loaded: false,
-      items: [] as Link[]
+      items: [] as Link[],
     } as StoreData
   },
   actions: {
-    async init (forceReload?: boolean) {
+    async init(forceReload?: boolean) {
       await useStoreInit({
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
         selectQuery: 'linkId, elrhCategory(categoryId, name), dateCreated, dateEdited, name, dscr, url, thumb, elrhAuthor(authorId, name)',
         orderQuery: 'ord',
-        preventSingleLetterOrphans: ['name', 'dscr']
+        preventSingleLetterOrphans: ['name', 'dscr'],
       }, forceReload)
     },
-    async update (itemData: LinkDB, itemId?: number): Promise<boolean> {
+    async update(itemData: LinkDB, itemId?: number): Promise<boolean> {
       treatInput(itemData)
 
       const config: UpdateConfig = {
@@ -30,7 +30,7 @@ export const useLinkStore = defineStore({
         tableName,
         itemKey: 'linkId',
         itemId,
-        itemData
+        itemData,
       }
 
       let ret: boolean
@@ -45,7 +45,7 @@ export const useLinkStore = defineStore({
       }
 
       return ret
-    }
+    },
   },
   getters: {
     getItems: state => get(state),
@@ -66,21 +66,21 @@ export const useLinkStore = defineStore({
         dscr: '',
         url: '',
         thumb: '',
-        authorId: 0
+        authorId: 0,
       }
       return emptyItem
     },
     getFirstId: (state) => {
       return get(state).at(0)?.linkId || 0
-    }
-  }
+    },
+  },
 })
 
-function get (state: StoreData) {
+function get(state: StoreData) {
   return getStoreItems<Link>(state)
 }
 
-function treatInput (input: LinkDB) {
+function treatInput(input: LinkDB) {
   input.dateEdited = new Date().toISOString()
   if (input.dateCreated === undefined) {
     input.dateCreated = new Date().toISOString()
