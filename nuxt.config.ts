@@ -1,8 +1,10 @@
 export default defineNuxtConfig({
   ssr: false,
+
   devtools: {
     enabled: false,
   },
+
   modules: [
     '@vueuse/nuxt',
     '@nuxt/eslint',
@@ -14,11 +16,13 @@ export default defineNuxtConfig({
     '@formkit/nuxt',
     '@pinia/nuxt',
   ],
+
   eslint: {
     config: {
       stylistic: true,
     },
   },
+
   runtimeConfig: {
     public: {
       lang: 'en',
@@ -35,6 +39,7 @@ export default defineNuxtConfig({
       webLink: 'https://alois-seckar.cz/',
     },
   },
+
   image: {
     cloudinary: {
       baseURL: 'https://res.cloudinary.com/dxn3gzvtm/image/upload/',
@@ -50,7 +55,10 @@ export default defineNuxtConfig({
       },
     },
   },
+
   supabase: {
     redirect: false,
   },
+
+  compatibilityDate: '2024-07-31',
 })
