@@ -17,6 +17,10 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
 
+  i18n: {
+    vueI18n: './i18n.config.ts',
+  },
+
   eslint: {
     config: {
       stylistic: true,
