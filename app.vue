@@ -28,6 +28,8 @@ useHead({
   ],
 })
 
+await useAdminStore().load()
+
 onMounted(() => {
   changeLocale(useRuntimeConfig().public.lang)
 })

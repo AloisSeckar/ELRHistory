@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned
 
+export { useAdminStore } from '@/composables/pinia/useAdminStore'
 export { useArticleStore } from '@/composables/pinia/useArticleStore'
 export { useAuthorStore } from '@/composables/pinia/useAuthorStore'
 export { useBookStore } from '@/composables/pinia/useBookStore'
