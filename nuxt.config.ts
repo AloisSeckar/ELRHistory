@@ -1,9 +1,11 @@
 export default defineNuxtConfig({
-  ssr: false,
+  compatibilityDate: '2024-08-31',
 
   devtools: {
     enabled: false,
   },
+
+  ssr: false,
 
   modules: [
     '@vueuse/nuxt',
@@ -63,6 +65,4 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
-
-  compatibilityDate: '2024-07-31',
 })
