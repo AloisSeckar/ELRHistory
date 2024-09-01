@@ -3,8 +3,6 @@
  * Do not make direct changes to the file.
  */
 
-/* eslint-disable */
-
 export interface paths {
   "/": {
     get: {
