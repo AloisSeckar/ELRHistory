@@ -12,7 +12,7 @@
   "devDependencies": {
     "@formkit/nuxt": "1.6.5",
     "@formkit/vue": "1.6.5",
-    "@nuxt/eslint": "0.5.4",
+    "@nuxt/eslint": "0.5.5",
     "@nuxt/image": "1.8.0",
     "@nuxtjs/cloudinary": "3.1.0",
     "@nuxtjs/i18n": "8.5.1",
