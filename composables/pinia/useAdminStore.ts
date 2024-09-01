@@ -8,27 +8,26 @@ type PageConfig = {
   enabled: boolean
 }
 
-
 export const useAdminStore = defineStore({
- id: 'admins-store',
+  id: 'admins-store',
   state: () => {
     return {
       config: [] as SiteConfig[],
-      pages: [] as PageConfig[], 
+      pages: [] as PageConfig[],
     }
   },
   actions: {
     async load() {
       this.config = await getSiteConfig()
-      this.pages = await getPageConfig() 
-    }
+      this.pages = await getPageConfig()
+    },
   },
 })
 
 async function getSiteConfig() {
   return (await useSupabaseClient<SiteConfig[]>().from('elrhAdminConfig').select('config, value')).data || getDefaultSiteConfig()
 }
-  
+
 function getDefaultSiteConfig() {
   return [
     { config: 'webTitle', value: useRuntimeConfig().public.webTitle },
