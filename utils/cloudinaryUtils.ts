@@ -1,4 +1,16 @@
-import type { CldUploadWidgetPropsOptions } from '@nuxtjs/cloudinary/dist/runtime/components/CldUploadWidget.vue'
+// type cherry-picked from '@nuxtjs/cloudinary/dist/runtime/components/CldUploadWidget.vue'
+type CldUploadWidgetPropsOptions = {
+  sources?: Array<'local'>
+  clientAllowedFormats?: Array<string>
+  publicId?: string
+  folder?: string
+  maxFiles?: number
+  maxFileSize?: number
+  maxImageFileSize?: number
+  maxImageHeight?: number
+  maxImageWidth?: number
+  text?: object
+}
 
 export function getCloudinaryOptions(folder: string) {
   const options: CldUploadWidgetPropsOptions = {
@@ -9,8 +21,8 @@ export function getCloudinaryOptions(folder: string) {
     maxFiles: 1,
     maxFileSize: 4000000,
     maxImageFileSize: 4000000,
-    maxImageWidth: 2500,
     maxImageHeight: 2500,
+    maxImageWidth: 2500,
   }
 
   if (useRuntimeConfig().public.lang === 'cs') {

@@ -19,6 +19,7 @@
     "@nuxtjs/supabase": "1.4.0",
     "@nuxtjs/tailwindcss": "6.12.1",
     "@pinia/nuxt": "0.5.4",
+    "@supabase/supabase-js": "2.45.3",
     "@vueuse/core": "11.0.3",
     "@vueuse/nuxt": "11.0.3",
     "cloudinary": "2.4.0",

@@ -31,14 +31,17 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      // default language
       lang: 'en',
+      // excessive logging
       debug: false,
+      // config for image provider
       cloudinary: {
         baseURL: 'https://res.cloudinary.com/dxn3gzvtm/image/upload/',
         preset: 'elrhistory',
         folder: 'elrhistory',
       },
-      // TODO allow following to be admin-edited
+      // fallback config for site description
       webTitle: 'ELRHistory',
       webAbout: 'This is a welcome text displayed on the index page.<br /><br />It can be <strong>HTML <span style="color: red">formatted</span></strong>.',
       webAuthor: 'Alois Sečkár',
