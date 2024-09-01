@@ -35,6 +35,9 @@ importers:
       '@pinia/nuxt':
         specifier: 0.5.4
         version: 0.5.4(magicast@0.3.5)(rollup@4.21.2)(typescript@5.5.4)(vue@3.4.38(typescript@5.5.4))
+      '@supabase/supabase-js':
+        specifier: ^2.45.3
+        version: 2.45.3
       '@vueuse/core':
         specifier: 11.0.3
         version: 11.0.3(vue@3.4.38(typescript@5.5.4))
@@ -66,7 +69,7 @@ importers:
         specifier: 3.4.10
         version: 3.4.10
       typescript:
-        specifier: ^5.5.4
+        specifier: 5.5.4
         version: 5.5.4
 
 packages:
