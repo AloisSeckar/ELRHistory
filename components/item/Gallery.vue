@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-v-html (TODO input should be more secured here ) -->
 <template>
   <div>
     <div v-if="item.name" class="box">
@@ -21,10 +20,10 @@
         </span>
       </div>
       <div class="box-content html-content">
-        <div v-if="detail" v-html="item.dscr" />
+        <div v-if="detail" v-dompurify-html="item.dscr" />
         <div v-else>
-          <span v-if="longDscr" v-html="item.dscr?.substring(0, 200) + '...'" />
-          <span v-else v-html="item.dscr" />
+          <span v-if="longDscr" v-dompurify-html="item.dscr?.substring(0, 200) + '...'" />
+          <span v-else v-dompurify-html="item.dscr" />
           <span v-if="longDscr">
             [&nbsp;<NuxtLink v-if="longDscr" :to="{ path: '/gallery/' + item.galleryId }">
               {{ $t('galleries.read-more') }}</NuxtLink>&nbsp;]
