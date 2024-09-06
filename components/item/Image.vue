@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-v-html (TODO input should be more secured here ) -->
 <template>
   <div>
     <div v-if="item.name" class="box">
@@ -20,7 +19,7 @@
       </div>
       <div class="box-content text-center">
         <div class="text-left sm:text-justify">
-          <div v-if="item.dscr" class="mb-2 html-content" v-html="item.dscr" />
+          <div v-if="item.dscr" v-dompurify-html="item.dscr" class="mb-2 html-content" />
           <div v-else class="mb-2 italic">
             {{ $t('images.no-dscr') }}
           </div>

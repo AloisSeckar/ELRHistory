@@ -8,6 +8,7 @@ Originally a new version of [StaraKrc Python project](https://github.com/AloisSe
 - Tailwind CSS
 - Supabase DB
 - Formkit
+- [vue-dompurify-html](https://github.com/LeSuisse/vue-dompurify-html) for sanitizing HTML content
 - Icons made possible by [FortAwesome](https://github.com/FortAwesome/vue-fontawesome)
 - Test images by [Unsplash](https://unsplash.com/)
 - Linting via [Nuxt ESLint module](https://nuxt.com/modules/eslint)

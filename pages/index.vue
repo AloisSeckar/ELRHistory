@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-v-html ("about" text is loaded from config ) -->
 <template>
   <div>
     <div class="box">
@@ -10,7 +9,7 @@
           </h2>
         </div>
       </div>
-      <div class="box-content" v-html="about" />
+      <div v-dompurify-html="about" class="box-content" />
     </div>
     <div class="box">
       <div class="box-header">

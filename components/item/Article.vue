@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-v-html (TODO input should be more secured here ) -->
 <template>
   <div>
     <div v-if="item.name" class="box">
@@ -37,7 +36,7 @@
             </div>
           </div>
           <div class="html-content">
-            <div v-if="detail" class="py-2" v-html="item.content" />
+            <div v-if="detail" v-dompurify-html="item.content" class="py-2" />
             <div v-else class="pt-1">
               [&nbsp;<NuxtLink :to="{ path: articlePath }">
                 {{ $t('articles.read') }}
