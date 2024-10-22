@@ -51,8 +51,8 @@ importers:
         specifier: 2.5.1
         version: 2.5.1
       elrh-pslo:
-        specifier: 1.0.1
-        version: 1.0.1
+        specifier: 1.1.6
+        version: 1.1.6
       infinitimeline:
         specifier: 0.4.2
         version: 0.4.2(typescript@5.6.3)
@@ -2278,8 +2278,8 @@ packages:
   electron-to-chromium@1.5.30:
     resolution: {integrity: sha512-sXI35EBN4lYxzc/pIGorlymYNzDBOqkSlVRe6MkgBsW/hW1tpC/HDJ2fjG7XnjakzfLEuvdmux0Mjs6jHq4UOA==}
 
-  elrh-pslo@1.0.1:
-    resolution: {integrity: sha512-/uYw4OxuPyzG1sN/9Nd93MMowFm9tWapsSYMlIK9w+miCKWNa3puEfL1D/f/VLtGm9uBCWwdp4uy/t/muMfdfQ==}
+  elrh-pslo@1.1.6:
+    resolution: {integrity: sha512-DPPvTaMKRV5jFfi48jaFK5soJjB9ZiO2actXps4aT9r6+GGTN81Gi/nfcLeVlrq5hXIogxGbYANZl3It/Gxviw==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -7394,7 +7394,7 @@ snapshots:
 
   electron-to-chromium@1.5.30: {}
 
-  elrh-pslo@1.0.1: {}
+  elrh-pslo@1.1.6: {}
 
   emoji-regex@8.0.0: {}
 

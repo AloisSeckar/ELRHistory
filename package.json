@@ -23,7 +23,7 @@
     "@vueuse/core": "11.1.0",
     "@vueuse/nuxt": "11.1.0",
     "cloudinary": "2.5.1",
-    "elrh-pslo": "1.0.1",
+    "elrh-pslo": "1.1.6",
     "infinitimeline": "0.4.2",
     "nuxt": "3.13.2",
     "openapi-typescript": "5.4.1",
