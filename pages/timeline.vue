@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="m-4 h-[60vh] border border-black">
-      <InfiniTimeline :data-supplier="supplier" css-text-color="#000033" :logging="true" />
+      <InfiniTimeline
+        :data-supplier="supplier" css-text-color="#000033" :logging="true"
+        :images="true" blank-image="/favicon.png" />
     </div>
   </div>
 </template>
