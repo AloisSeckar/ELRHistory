@@ -1,11 +1,4 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2024-09-01',
-
-  devtools: {
-    enabled: false,
-  },
-
-  ssr: false,
 
   modules: [
     '@vueuse/nuxt',
@@ -19,14 +12,10 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
 
-  i18n: {
-    vueI18n: './i18n.config.ts',
-  },
+  ssr: false,
 
-  eslint: {
-    config: {
-      stylistic: true,
-    },
+  devtools: {
+    enabled: false,
   },
 
   runtimeConfig: {
@@ -47,6 +36,18 @@ export default defineNuxtConfig({
       webAuthor: 'Alois Sečkár',
       webLink: 'https://alois-seckar.cz/',
     },
+  },
+
+  compatibilityDate: '2024-11-01',
+
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
+
+  i18n: {
+    vueI18n: './i18n.config.ts',
   },
 
   image: {
