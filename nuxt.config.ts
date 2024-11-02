@@ -40,6 +40,20 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-11-01',
 
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id: string) {
+            if (id.includes('pinia') || id.includes('Pinia')) {
+              return 'pinia'
+            }
+          },
+        },
+      },
+    },
+  },
+
   eslint: {
     config: {
       stylistic: true,
