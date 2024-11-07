@@ -25,7 +25,7 @@
     "cloudinary": "2.5.1",
     "elrh-pslo": "1.1.6",
     "infinitimeline": "0.5.0",
-    "nuxt": "3.14.0",
+    "nuxt": "3.14.159",
     "openapi-typescript": "5.4.1",
     "pinia": "2.2.5",
     "supabase": "1.207.9",
@@ -35,8 +35,7 @@
   },
   "pnpm": {
     "overrides": {
-      "cookie": "^0.7.0",
-      "nitropack": "2.10.2"
+      "cookie": "^0.7.0"
     }
   }
 }

@@ -38,7 +38,7 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-11-04',
+  compatibilityDate: '2024-11-06',
 
   vite: {
     build: {
