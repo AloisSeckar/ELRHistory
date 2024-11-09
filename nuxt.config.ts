@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-
   modules: [
     '@vueuse/nuxt',
     '@nuxt/eslint',
@@ -38,7 +37,7 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-11-06',
+  compatibilityDate: '2024-11-09',
 
   vite: {
     build: {
