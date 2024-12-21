@@ -10,27 +10,11 @@
     "supabase": "npx openapi-typescript https://bcsqxrbptpbzhnlfxrrh.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjc3F4cmJwdHBiemhubGZ4cnJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Njc4NTQ4NTIsImV4cCI6MTk4MzQzMDg1Mn0.kPtJGKrQhQWbiCnM4e6OpfciBOhGqXd012MRMkX6pWE --output database/_api.ts"
   },
   "devDependencies": {
-    "@formkit/nuxt": "1.6.7",
-    "@formkit/vue": "1.6.7",
-    "@nuxt/eslint": "0.6.1",
-    "@nuxt/image": "1.8.1",
+    "nuxt-ignis": "0.1.5",
     "@nuxtjs/cloudinary": "3.1.1",
-    "@nuxtjs/i18n": "8.5.5",
-    "@nuxtjs/supabase": "1.4.1",
-    "@nuxtjs/tailwindcss": "6.12.2",
-    "@pinia/nuxt": "0.6.1",
-    "@supabase/supabase-js": "2.46.1",
-    "@vueuse/core": "11.2.0",
-    "@vueuse/nuxt": "11.2.0",
     "cloudinary": "2.5.1",
-    "elrh-pslo": "1.1.6",
     "infinitimeline": "0.5.0",
-    "nuxt": "3.14.159",
     "openapi-typescript": "5.4.1",
-    "pinia": "2.2.5",
-    "supabase": "1.207.9",
-    "tailwindcss": "3.4.14",
-    "typescript": "5.6.3",
     "vue-dompurify-html": "5.1.0"
   }
 }

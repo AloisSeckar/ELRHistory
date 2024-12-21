@@ -1,21 +1,15 @@
 export default defineNuxtConfig({
-  modules: [
-    '@vueuse/nuxt',
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxtjs/cloudinary',
-    '@nuxtjs/i18n',
-    '@nuxtjs/supabase',
-    '@nuxtjs/tailwindcss',
-    '@formkit/nuxt',
-    '@pinia/nuxt',
+
+  extends: [
+    'nuxt-ignis'
   ],
 
-  ssr: false,
+  modules: [
+    '@nuxtjs/cloudinary',
+  ],
 
-  devtools: {
-    enabled: false,
-  },
+  // TODO should be configured in Nuxt Ignis
+  ssr: false,
 
   runtimeConfig: {
     public: {
@@ -37,8 +31,6 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-11-13',
-
   vite: {
     build: {
       rollupOptions: {
@@ -59,8 +51,15 @@ export default defineNuxtConfig({
     },
   },
 
+  // for now this is required override of Nuxt Ignis default i18n config
+  // TODO config should be extensible (has to be solved in upstream)
   i18n: {
-    vueI18n: './i18n.config.ts',
+    vueI18n: './elrhistory-i18n.config.ts',
+  },
+  // for now this is required override of Nuxt Ignis default formkit config
+  // TODO config should be extensible (has to be solved in upstream)
+  formkit: {
+    configFile:  './elrhistory-formkit.config.ts',
   },
 
   image: {
@@ -79,7 +78,13 @@ export default defineNuxtConfig({
     },
   },
 
-  supabase: {
-    redirect: false,
-  },
+  // required to allow images from Cloudinary
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        'img-src': ["'self'", "https://res.cloudinary.com/"],
+      }
+    }
+  }
+
 })

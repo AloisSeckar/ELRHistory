@@ -11,8 +11,8 @@
     </span>
     <span class="hidden min-[575px]:inline">
       powered by
-      <NuxtLink to="https://nuxt.com/">
-        Nuxt3
+      <NuxtLink to="https://github.com/AloisSeckar/nuxt-ignis">
+        Nuxt Ignis
       </NuxtLink>
     </span>
     |
