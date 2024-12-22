@@ -7,7 +7,7 @@
           <h2 class="inline">
             {{ item.name }}
           </h2>
-          <AdminEditLink v-if="user" :link="'image/' + item.imageId" item="image" />
+          <AdminLinkIcon v-if="user" :link="'image/' + item.imageId" item="image" />
         </span>
         <span class="float-right mt-1 px-1 text-base font-normal">
           <NuxtLink :to="{ path: '/gallery/' + item.elrhGallery?.galleryId }">

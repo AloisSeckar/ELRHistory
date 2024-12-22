@@ -9,7 +9,7 @@
               {{ item.name }}
             </h2>
           </NuxtLink>
-          <AdminEditLink v-if="user" :link="articlePath.slice(1)" item="article" />
+          <AdminLinkIcon v-if="user" :link="articlePath.slice(1)" item="article" />
         </span>
         <span class="float-right mt-1 px-1 text-base font-normal">
           <NuxtLink to="/articles">

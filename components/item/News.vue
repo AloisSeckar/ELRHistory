@@ -11,7 +11,7 @@
     </div>
     <div class="flex-1 mt-2 md:mt-0">
       <div>
-        <AdminEditLink v-if="user" :link="'news/' + item.newsId" item="news" />
+        <AdminLinkIcon v-if="user" :link="'news/' + item.newsId" item="news" />
         <strong>{{ item.title }}</strong>
         <NuxtLink v-if="item.url" :to="item.url">
           <BaseIcon icon="goto" css-class="h-4" />

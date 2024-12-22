@@ -9,24 +9,24 @@
       <div>
         <div class="inline-block w-60">
           <ul class="list-disc ml-6 mb-2">
-            <AdminManageLink action="add" item="article" />
-            <AdminManageLink action="add" item="book" />
-            <AdminManageLink action="add" item="gallery" />
-            <AdminManageLink action="add" item="image" />
-            <AdminManageLink action="add" item="link" />
-            <AdminManageLink action="add" item="news" />
-            <AdminManageLink action="add" item="timeline" />
+            <AdminLinkText action="add" item="article" />
+            <AdminLinkText action="add" item="book" />
+            <AdminLinkText action="add" item="gallery" />
+            <AdminLinkText action="add" item="image" />
+            <AdminLinkText action="add" item="link" />
+            <AdminLinkText action="add" item="news" />
+            <AdminLinkText action="add" item="timeline" />
           </ul>
         </div>
         <div class="inline-block w-60">
           <ul class="list-disc ml-6 mb-2">
-            <AdminManageLink action="edit" item="article" />
-            <AdminManageLink action="edit" item="book" />
-            <AdminManageLink action="edit" item="gallery" />
-            <AdminManageLink action="edit" item="image" />
-            <AdminManageLink action="edit" item="link" />
-            <AdminManageLink action="edit" item="news" />
-            <AdminManageLink action="edit" item="timeline" />
+            <AdminLinkText action="edit" item="article" />
+            <AdminLinkText action="edit" item="book" />
+            <AdminLinkText action="edit" item="gallery" />
+            <AdminLinkText action="edit" item="image" />
+            <AdminLinkText action="edit" item="link" />
+            <AdminLinkText action="edit" item="news" />
+            <AdminLinkText action="edit" item="timeline" />
           </ul>
         </div>
       </div>

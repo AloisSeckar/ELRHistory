@@ -8,7 +8,7 @@
         <a :href="item.url" :title="item.name">
           <strong>{{ item.name }}</strong>
         </a>
-        <AdminEditLink v-if="user" :link="'book/' + item.bookId" item="book" />
+        <AdminLinkIcon v-if="user" :link="'book/' + item.bookId" item="book" />
       </div>
       <div>
         <strong><em>{{ item.writer }}, {{ item.year }}</em></strong>

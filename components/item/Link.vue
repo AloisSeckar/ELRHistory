@@ -8,7 +8,7 @@
         <a :href="item.url" :title="item.url">
           <strong>{{ item.name }}</strong>
         </a>
-        <AdminEditLink v-if="user" :link="'link/' + item.linkId" item="link" />
+        <AdminLinkIcon v-if="user" :link="'link/' + item.linkId" item="link" />
       </div>
       <div class="block sm:hidden m-2">
         <BaseThumb :name="item.name" :image="item.thumb" :link="item.url" landscape />
