@@ -14,6 +14,10 @@ const props = defineProps<{
   item: SupabaseItemType
 }>()
 
-const link = `/admin/${props.action}/${props.item}` + (props.action === 'edit' ? '/first' : '')
+let link = `/admin/${props.action}/${props.item}` + (props.action === 'edit' ? '/first' : '')
+if (props.action === 'add' && props.item === 'image') {
+  link += '/first'
+}
+
 const text = props.action === 'edit' ? useTAdminEdit(props.item) : useTAdminAdd(props.item)
 </script>

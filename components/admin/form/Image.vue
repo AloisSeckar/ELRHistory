@@ -47,6 +47,7 @@ import type { AbstractValues, ImageDB } from '@/database/types'
 
 const props = defineProps({
   imageId: { type: Number, default: -1 },
+  galleryId: { type: Number, default: -1 },
 })
 const emit = defineEmits<{ (e: 'save', article: ImageDB): void }>()
 
@@ -69,6 +70,9 @@ if (props.imageId > 0) {
   label = useT('admin.add')
   image = reactive(useImageStore().getEmpty)
   image.authorId = useAuthorStore().getCurrent
+  if (props.galleryId > -1) {
+    image.galleryId = props.galleryId
+  }
 }
 
 const authors = computed(() => useAuthorStore().getAuthorList)

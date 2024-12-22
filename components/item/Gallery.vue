@@ -10,7 +10,7 @@
             </h2>
           </NuxtLink>
           <AdminLinkIcon v-if="user" :link="'gallery/' + item.galleryId" item="gallery" />
-          <AdminLinkIcon v-if="user" :link="'image'" item="image" action="add" />
+          <AdminLinkIcon v-if="user" :link="'image/' + item.galleryId" item="image" action="add" />
         </span>
         <span class="float-right mt-1 px-1 text-base font-normal">
           <NuxtLink :to="{ path: parent?.galleryId > 0 ? '/gallery/' + parent?.galleryId : '/galleries' }">
