@@ -1,7 +1,7 @@
 <template>
   <li>
     <NuxtLink :to="link">
-      {{ $t(text) }}
+      {{ text }}
     </NuxtLink>
   </li>
 </template>
