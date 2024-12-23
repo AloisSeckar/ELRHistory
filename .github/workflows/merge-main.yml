@@ -4,9 +4,10 @@ name: Merge 'main' into deployment branch
 run-name: "[Automated] Merge ${{ github.ref_name }} into ${{ vars.DEPLOYMENT_BRANCH }}"
 
 on:
-  push:
-    branches:
-      - 'main'
+  # 2024-12-23 - this workflow is not used
+  # push:
+  #  branches:
+  #    - 'main'
   workflow_dispatch:
 
 jobs:
