@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
 
   extends: [
-    'nuxt-ignis'
+    'nuxt-ignis',
   ],
 
   modules: [
@@ -51,15 +51,16 @@ export default defineNuxtConfig({
     },
   },
 
+  // for now this is required override of Nuxt Ignis default formkit config
+  // TODO config should be extensible (has to be solved in upstream)
+  formkit: {
+    configFile: './elrhistory-formkit.config.ts',
+  },
+
   // for now this is required override of Nuxt Ignis default i18n config
   // TODO config should be extensible (has to be solved in upstream)
   i18n: {
     vueI18n: './elrhistory-i18n.config.ts',
-  },
-  // for now this is required override of Nuxt Ignis default formkit config
-  // TODO config should be extensible (has to be solved in upstream)
-  formkit: {
-    configFile:  './elrhistory-formkit.config.ts',
   },
 
   image: {
@@ -82,9 +83,9 @@ export default defineNuxtConfig({
   security: {
     headers: {
       contentSecurityPolicy: {
-        'img-src': ["'self'", "https://res.cloudinary.com/"],
-      }
-    }
-  }
+        'img-src': ['\'self\'', 'https://res.cloudinary.com/'],
+      },
+    },
+  },
 
 })
