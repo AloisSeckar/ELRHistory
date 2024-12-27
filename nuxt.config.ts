@@ -19,7 +19,7 @@ export default defineNuxtConfig({
       debug: false,
       // config for image provider
       cloudinary: {
-        baseURL: 'https://res.cloudinary.com/dxn3gzvtm/image/upload/',
+        baseURL: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`,
         preset: 'elrhistory',
         folder: 'elrhistory',
       },
@@ -65,7 +65,7 @@ export default defineNuxtConfig({
 
   image: {
     cloudinary: {
-      baseURL: 'https://res.cloudinary.com/dxn3gzvtm/image/upload/',
+      baseURL: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`,
     },
     presets: {
       thumb: {
