@@ -3,8 +3,7 @@ import type { Contact } from '@/database/types'
 
 const tableName = 'elrhContact'
 
-export const useContactStore = defineStore({
-  id: tableName + '-store',
+export const useContactStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,

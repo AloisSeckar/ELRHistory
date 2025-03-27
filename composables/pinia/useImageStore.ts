@@ -3,8 +3,7 @@ import type { Image, ImageDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhImage'
 
-export const useImageStore = defineStore({
-  id: tableName + '-store',
+export const useImageStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,

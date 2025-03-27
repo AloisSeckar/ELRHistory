@@ -3,8 +3,7 @@ import type { SupabaseUpdateData, Timeline, TimelineDB } from '@/database/types'
 
 const tableName = 'elrhTimeline'
 
-export const useTimelineStore = defineStore({
-  id: tableName + '-store',
+export const useTimelineStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,

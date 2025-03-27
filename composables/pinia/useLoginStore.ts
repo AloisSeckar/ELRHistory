@@ -3,8 +3,7 @@ type UserInfo = {
   callbackUrl: string | null
 }
 
-export const useLoginStore = defineStore({
-  id: 'login-store',
+export const useLoginStore = defineStore('login-store', {
   state: () => {
     return {
       user: null,

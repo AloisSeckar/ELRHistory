@@ -3,8 +3,7 @@ import type { Article, ArticleDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhArticle'
 
-export const useArticleStore = defineStore({
-  id: tableName + '-store',
+export const useArticleStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,

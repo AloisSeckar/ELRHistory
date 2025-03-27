@@ -1,5 +1,4 @@
-export const useModalStore = defineStore({
-  id: 'modal-store',
+export const useModalStore = defineStore('modal-store', {
   state: () => {
     return {
       show: false,

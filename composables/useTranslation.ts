@@ -1,5 +1,7 @@
+import { useT as useIgnisT } from '../node_modules/nuxt-ignis/composables/useTranslation'
+
 export function useT(key: string): string {
-  return useNuxtApp().$i18n.t(key)
+  return useIgnisT(key)
 }
 
 export function useTAdminAdd(key: string): string {

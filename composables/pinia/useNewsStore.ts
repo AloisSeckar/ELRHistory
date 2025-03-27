@@ -3,8 +3,7 @@ import type { News, NewsDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhNews'
 
-export const useNewsStore = defineStore({
-  id: tableName + '-store',
+export const useNewsStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,

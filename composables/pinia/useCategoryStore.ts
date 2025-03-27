@@ -4,8 +4,7 @@ import type { FormkitValue } from '@/utils/storeUtils'
 
 const tableName = 'elrhCategory'
 
-export const useCategoryStore = defineStore({
-  id: tableName + '-store',
+export const useCategoryStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,

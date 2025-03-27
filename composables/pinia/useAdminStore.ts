@@ -8,8 +8,7 @@ type PageConfig = {
   enabled: boolean
 }
 
-export const useAdminStore = defineStore({
-  id: 'admins-store',
+export const useAdminStore = defineStore('admins-store', {
   state: () => {
     return {
       config: [] as SiteConfig[],

@@ -3,8 +3,7 @@ import type { Link, LinkDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhLink'
 
-export const useLinkStore = defineStore({
-  id: tableName + '-store',
+export const useLinkStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,

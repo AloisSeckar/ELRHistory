@@ -3,8 +3,7 @@ import type { Book, BookDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhBook'
 
-export const useBookStore = defineStore({
-  id: tableName + '-store',
+export const useBookStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,

@@ -3,8 +3,7 @@ import type { Gallery, GalleryDB, SupabaseUpdateData } from '@/database/types'
 
 const tableName = 'elrhGallery'
 
-export const useGalleryStore = defineStore({
-  id: tableName + '-store',
+export const useGalleryStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,

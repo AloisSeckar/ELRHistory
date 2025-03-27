@@ -4,8 +4,7 @@ import type { FormkitValue } from '@/utils/storeUtils'
 
 const tableName = 'elrhAuthor'
 
-export const useAuthorStore = defineStore({
-  id: tableName + '-store',
+export const useAuthorStore = defineStore(tableName + '-store', {
   state: () => {
     return {
       loaded: false,
