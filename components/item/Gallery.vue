@@ -38,7 +38,7 @@
                 <NuxtImg
                   class="m-1 w-40 h-24 border"
                   provider="cloudinary" :src="useRuntimeConfig().public.cloudinary.folder + image.image"
-                  :alt="image.name" :title="image.name" />
+                  :alt="image.name" :title="image.name" crossorigin />
               </NuxtLink>
             </div>
             <div v-if="(!detail && images > 5)" class="m-1 leading-6">

@@ -33,7 +33,7 @@
             <NuxtImg
               class="my-2 inline-block w-full h-auto border"
               provider="cloudinary" :src="useRuntimeConfig().public.cloudinary.folder + item.image"
-              :alt="item.name" :title="useT('images.full-size')" />
+              :alt="item.name" :title="useT('images.full-size')" crossorigin />
           </NuxtLink>
         </div>
         <ItemImageNav :item="item" :editable="editable" />

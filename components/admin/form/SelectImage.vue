@@ -33,8 +33,7 @@
           class="mx-auto w-48 h-32 border"
           provider="cloudinary"
           :src="useRuntimeConfig().public.cloudinary.folder + imgSrc"
-          :alt="name"
-          :title="name" />
+          :alt="name" :title="name" crossorigin />
       </div>
     </div>
   </div>

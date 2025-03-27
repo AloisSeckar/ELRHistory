@@ -29,7 +29,7 @@
               <NuxtImg
                 class="mx-auto w-48 h-36 mr-4 border"
                 provider="cloudinary" :src="useRuntimeConfig().public.cloudinary.folder + item.thumb"
-                :alt="item.name" :title="item.name" />
+                :alt="item.name" :title="item.name" crossorigin />
             </div>
             <div class="sm:pt-2">
               {{ item.dscr }}

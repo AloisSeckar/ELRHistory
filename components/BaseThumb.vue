@@ -3,7 +3,7 @@
     <NuxtImg
       class="sm:mx-auto border" :class="landscape ? 'w-40 h-28' : 'w-28 h-36'"
       provider="cloudinary" :src="useRuntimeConfig().public.cloudinary.folder + image"
-      :alt="name" :title="name" />
+      :alt="name" :title="name" crossorigin />
   </a>
 </template>
 
