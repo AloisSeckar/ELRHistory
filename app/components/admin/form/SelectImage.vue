@@ -23,6 +23,7 @@
           @error="uploadError">
           <FormKit
             type="button"
+            style="margin-top: 16px!important;"
             :label="useT('admin.upload')"
             @click="open" />
         </CldUploadWidget>

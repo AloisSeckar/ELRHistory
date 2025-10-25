@@ -37,8 +37,12 @@ a:hover, a:active {
     @apply text-sky-500;
 }
 
+.formkit-inner {
+    @apply border-0 bg-transparent;
+}
+
 .formkit-input {
-    @apply mb-1 px-1 w-full h-10;
+    @apply mb-1 px-1 w-full h-10 rounded bg-white disabled:bg-slate-300 border border-navy;
 }
 
 textarea.formkit-input {
