@@ -8,9 +8,6 @@ export default defineNuxtConfig({
     '@nuxtjs/cloudinary',
   ],
 
-  // TODO should be configured in Nuxt Ignis
-  ssr: false,
-
   runtimeConfig: {
     public: {
       // default language
@@ -51,14 +48,9 @@ export default defineNuxtConfig({
     },
   },
 
-  // for now this is required override of Nuxt Ignis default formkit config
-  // TODO config should be extensible (has to be solved in upstream)
-  formkit: {
-    configFile: './elrhistory-formkit.config.ts',
-  },
-
   // for now this is required override of Nuxt Ignis default i18n config
   // TODO config should be extensible (has to be solved in upstream)
+  // https://github.com/AloisSeckar/ELRHistory/issues/201
   i18n: {
     vueI18n: './elrhistory-i18n.config.ts',
   },

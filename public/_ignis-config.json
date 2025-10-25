@@ -81,6 +81,7 @@
     "autoImport": true,
     "configFile": "./elrhistory-formkit.config.ts"
   },
+  "ssr": false,
   "app": {
     "head": {
       "meta": [
