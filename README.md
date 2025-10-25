@@ -1,10 +1,10 @@
 # ELRHistory
 Website designed for photos/pictures and information about random historical topic (e.g. history of a town).
 
-Originally a new version of [StaraKrc Python project](https://github.com/AloisSeckar/StaraKrc), this time in [Nuxt3](https://v3.nuxtjs.org/). However, my current goal is to make it customizable for possible re-use for other city parts etc.
+Originally a new version of [StaraKrc Python project](https://github.com/AloisSeckar/StaraKrc), this time in [Nuxt](https://nuxt.com/). However, my current goal is to make it customizable for possible re-use for other city parts etc.
 
 ## Tech stack
-- Nuxt 3 framework + VueUse + nuxt/i18n
+- Nuxt framework + VueUse + nuxt/i18n
 - Tailwind CSS
 - Supabase DB
 - Formkit
@@ -16,7 +16,7 @@ Originally a new version of [StaraKrc Python project](https://github.com/AloisSe
 
 ## Setting up
 
-Right now you can just clone the repo and follow [Nuxt 3 deployment instructions](https://v3.nuxtjs.org/getting-started/deployment/).
+Right now you can just clone the repo and follow [Nuxt deployment instructions](https://nuxt.com/docs/4.x/getting-started/introduction).
 
 Later I plan to optimize the project for Netlify auto-deployment via GitHub Actions.
 
@@ -24,7 +24,7 @@ Later I plan to optimize the project for Netlify auto-deployment via GitHub Acti
 
 ### Configuration
 
-Some site-related values are defined as [Nuxt 3 runtime config](https://v3.nuxtjs.org/guide/going-further/runtime-config) variables. To tailor them the to your needs, use `.env` file.
+Some site-related values are defined as [Nuxt runtime config](https://nuxt.com/docs/4.x/guide/going-further/runtime-config) variables. To tailor them the to your needs, use `.env` file.
 
 List of variables:
 * **NUXT_PUBLIC_LANG** - locale for [i18n messages](https://i18n.nuxtjs.org/) (currently supported either `en` or `cs`)

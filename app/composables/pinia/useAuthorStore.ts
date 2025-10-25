@@ -1,6 +1,6 @@
 import type { StoreData } from '@/composables/usePiniaHelpers'
 import type { Author } from '@/database/types'
-import type { FormkitValue } from '@/utils/storeUtils'
+import type { FormkitValue } from '~/app/utils/storeUtils'
 
 const tableName = 'elrhAuthor'
 

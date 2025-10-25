@@ -38,7 +38,7 @@
     "config": {}
   },
   "css": [
-    "C:\\Git\\ELRHistory\\node_modules\\.pnpm\\nuxt-ignis@0.5.0-rc.2_3db474d7fa8d4e653ea922db4b2d7e73\\node_modules\\nuxt-ignis\\app\\assets\\css\\ignis-tailwind.css"
+    "C:\\Git\\ELRHistory\\node_modules\\.pnpm\\nuxt-ignis@0.5.0-rc.2_2e9d09db1fe808b1f7cb74436bec8d55\\node_modules\\nuxt-ignis\\app\\assets\\css\\ignis-tailwind.css"
   ],
   "vite": {
     "plugins": [
