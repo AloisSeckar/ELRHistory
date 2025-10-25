@@ -1,61 +1,62 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* required import to allow Tailwind v4 for @apply */
+@import "tailwindcss";
 
-@layer components {
+@theme {
+    --bg-navy: #cccccc;
+    --color-navy: #000033;
+    --color-silver: #cccccc;
+}
 
-    #main {
-        @apply bg-orange-100 font-sans text-left sm:text-justify text-pretty text-base;
-    }
+#main {
+    @apply bg-orange-100 font-sans text-left sm:text-justify text-pretty text-base;
+}
 
-    .box {
-        @apply mb-4 bg-white border border-sky-500;
-    }
-    .box-header {
-        @apply p-1 bg-navy text-lg text-silver font-bold flex flex-col lg:flex-row;
-    }
-    .box-content {
-        @apply my-1 px-3 py-1 text-navy;
-    }
+.box {
+    @apply mb-4 bg-white border border-sky-500;
+}
+.box-header {
+    @apply p-1 bg-navy text-lg text-silver font-bold flex flex-col lg:flex-row;
+}
+.box-content {
+    @apply my-1 px-3 py-1 text-navy;
+}
 
-    .html-content {
-        & a {
-            @apply text-amber-500 underline;
-        } 
-        & p {
-            @apply mt-1 mb-4;
-        }
+.html-content {
+    & a {
+        @apply text-amber-500 underline;
     } 
-
-    a:hover, a:active {
-        @apply text-amber-300;
+    & p {
+        @apply mt-1 mb-4;
     }
-    .box a:hover, .box a:active {
-        @apply text-sky-500;
-    }
+} 
 
-    .formkit-input {
-        @apply mb-1 px-1 w-full h-10;
-    }
+a:hover, a:active {
+    @apply text-amber-300;
+}
+.box a:hover, .box a:active {
+    @apply text-sky-500;
+}
 
-    textarea.formkit-input {
-        @apply h-80;
-    }
+.formkit-input {
+    @apply mb-1 px-1 w-full h-10;
+}
 
-    textarea.ta-small {
-        @apply h-32;
-    }
+textarea.formkit-input {
+    @apply h-80;
+}
 
-    button.formkit-input {
-        @apply mx-auto my-6 px-2 py-1 rounded bg-navy text-white hover:text-amber-300;
-    }
+textarea.ta-small {
+    @apply h-32;
+}
 
-    h2 {
-        @apply text-xl font-bold mb-1;
-    }
+button.formkit-input {
+    @apply mx-auto my-6 px-2 py-1 rounded bg-navy text-white hover:text-amber-300;
+}
 
-    h3 {
-        @apply text-lg font-bold mt-4 mb-1;
-    }
+h2 {
+    @apply text-xl font-bold mb-1;
+}
 
-  }
+h3 {
+    @apply text-lg font-bold mt-4 mb-1;
+}

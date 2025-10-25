@@ -1,0 +1,126 @@
+{
+  "modules": [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "nuxt-security",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+    "@nuxtjs/supabase",
+    "@nuxtjs/i18n",
+    "@formkit/nuxt"
+  ],
+  "vue": {
+    "compilerOptions": {},
+    "transformAssetUrls": {
+      "video": [
+        "src",
+        "poster"
+      ],
+      "source": [
+        "src"
+      ],
+      "img": [
+        "src"
+      ],
+      "image": [
+        "xlink:href",
+        "href"
+      ],
+      "use": [
+        "xlink:href",
+        "href"
+      ]
+    },
+    "runtimeCompiler": false,
+    "propsDestructure": true,
+    "config": {}
+  },
+  "css": [
+    "C:\\Git\\ELRHistory\\node_modules\\.pnpm\\nuxt-ignis@0.5.0-rc.2_2e9d09db1fe808b1f7cb74436bec8d55\\node_modules\\nuxt-ignis\\app\\assets\\css\\ignis-tailwind.css"
+  ],
+  "vite": {
+    "plugins": [
+      {
+        "name": "vite-plugin-ignore-sourcemap-warnings",
+        "apply": "build"
+      },
+      [
+        {
+          "name": "@tailwindcss/vite:scan",
+          "enforce": "pre"
+        },
+        {
+          "name": "@tailwindcss/vite:generate:serve",
+          "apply": "serve",
+          "enforce": "pre"
+        },
+        {
+          "name": "@tailwindcss/vite:generate:build",
+          "apply": "build",
+          "enforce": "pre"
+        }
+      ]
+    ]
+  },
+  "supabase": {
+    "redirect": false
+  },
+  "i18n": {
+    "vueI18n": "./elrhistory-i18n.config.ts",
+    "locales": [
+      "cs"
+    ],
+    "strategy": "no_prefix",
+    "bundle": {
+      "optimizeTranslationDirective": false
+    }
+  },
+  "formkit": {
+    "autoImport": true,
+    "configFile": "./elrhistory-formkit.config.ts"
+  },
+  "app": {
+    "head": {
+      "meta": [
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1"
+        },
+        {
+          "charset": "utf-8"
+        }
+      ],
+      "link": [],
+      "style": [],
+      "script": [],
+      "noscript": [],
+      "htmlAttrs": {
+        "lang": "en"
+      },
+      "title": "Nuxt Ignis App"
+    },
+    "baseURL": "/",
+    "buildAssetsDir": "/_nuxt/",
+    "cdnURL": "",
+    "layoutTransition": false,
+    "pageTransition": false,
+    "viewTransition": false,
+    "keepalive": false,
+    "rootId": "__nuxt",
+    "rootTag": "div",
+    "rootAttrs": {
+      "id": "__nuxt"
+    },
+    "teleportTag": "div",
+    "teleportId": "teleports",
+    "teleportAttrs": {
+      "id": "teleports"
+    },
+    "spaLoaderTag": "div",
+    "spaLoaderAttrs": {
+      "id": "__nuxt-loader"
+    }
+  }
+}
