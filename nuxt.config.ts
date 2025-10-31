@@ -42,11 +42,6 @@ export default defineNuxtConfig({
     },
   },
 
-  // temp fix for https://github.com/nuxt/nuxt/issues/33582
-  hooks: {
-    'vite:extendConfig': extendViteConfig,
-  },
-
   eslint: {
     config: {
       stylistic: true,
@@ -86,12 +81,3 @@ export default defineNuxtConfig({
   },
 
 })
-
-// temp fix for https://github.com/nuxt/nuxt/issues/33582
-function extendViteConfig(config: import('vite').UserConfig) {
-  const plugin = config.plugins?.find(plugin => isPlugin(plugin, 'nuxt:environments'))
-  if (plugin) plugin.enforce = 'pre'
-}
-function isPlugin(plugin: unknown, name: string): plugin is import('vite').Plugin {
-  return !!(plugin && typeof plugin === 'object' && 'name' in plugin && plugin.name === name)
-}
