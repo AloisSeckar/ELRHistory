@@ -51,7 +51,7 @@
 
 <script setup lang="ts">
 import { preventSingleLetterOrphans } from 'elrh-pslo'
-import type { Contact } from '@/database/types'
+import type { Contact } from '@/../database/types'
 
 const about = preventSingleLetterOrphans(useRuntimeConfig().public.webAbout)
 

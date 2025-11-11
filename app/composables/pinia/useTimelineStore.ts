@@ -1,5 +1,5 @@
 import type { StoreData, UpdateConfig } from '@/composables/usePiniaHelpers'
-import type { SupabaseUpdateData, Timeline, TimelineDB } from '@/database/types'
+import type { SupabaseUpdateData, Timeline, TimelineDB } from '@/../database/types'
 
 const tableName = 'elrhTimeline'
 

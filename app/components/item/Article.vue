@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { Article } from '@/database/types'
+import type { Article } from '@/../database/types'
 
 const props = defineProps({
   item: { type: Object as PropType<Article>, required: true },

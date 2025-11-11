@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import type { AbstractValues, NewsDB } from '@/database/types'
+import type { AbstractValues, NewsDB } from '@/../database/types'
 
 const props = defineProps({
   newsId: { type: Number, default: -1 },

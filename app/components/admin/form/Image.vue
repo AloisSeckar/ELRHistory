@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import type { AbstractValues, ImageDB } from '@/database/types'
+import type { AbstractValues, ImageDB } from '@/../database/types'
 
 const props = defineProps({
   imageId: { type: Number, default: -1 },

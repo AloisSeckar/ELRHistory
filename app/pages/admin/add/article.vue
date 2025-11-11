@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ArticleDB } from '@/database/types'
+import type { ArticleDB } from '@/../database/types'
 
 await useArticleStore().init()
 await useAuthorStore().init()

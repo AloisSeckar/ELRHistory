@@ -1,5 +1,5 @@
 import type { StoreData } from '@/composables/usePiniaHelpers'
-import type { Contact } from '@/database/types'
+import type { Contact } from '@/../database/types'
 
 const tableName = 'elrhContact'
 

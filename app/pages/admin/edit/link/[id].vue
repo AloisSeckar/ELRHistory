@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import type { FormKitOptionsItem } from '@formkit/inputs'
-import type { Link, LinkDB } from '@/database/types'
+import type { Link, LinkDB } from '@/../database/types'
 
 const initStores = async () => {
   await useLinkStore().init()

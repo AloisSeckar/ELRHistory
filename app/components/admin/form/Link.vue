@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import type { AbstractValues, LinkDB } from '@/database/types'
+import type { AbstractValues, LinkDB } from '@/../database/types'
 
 const props = defineProps({
   linkId: { type: Number, default: -1 },

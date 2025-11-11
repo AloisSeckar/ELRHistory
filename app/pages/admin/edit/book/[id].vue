@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import type { FormKitOptionsItem } from '@formkit/inputs'
-import type { Book, BookDB } from '@/database/types'
+import type { Book, BookDB } from '@/../database/types'
 
 const initStores = async () => {
   await useBookStore().init()

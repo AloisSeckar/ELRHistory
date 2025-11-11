@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import type { AbstractValues, GalleryDB } from '@/database/types'
+import type { AbstractValues, GalleryDB } from '@/../database/types'
 
 const props = defineProps({
   galleryId: { type: Number, default: -1 },

@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import type { NewsDB } from '@/database/types'
+import type { NewsDB } from '@/../database/types'
 
 await useNewsStore().init()
 await useAuthorStore().init()

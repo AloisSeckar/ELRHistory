@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import type { AbstractValues, TimelineDB } from '@/database/types'
+import type { AbstractValues, TimelineDB } from '@/../database/types'
 
 const props = defineProps({
   timelineId: { type: Number, default: -1 },
