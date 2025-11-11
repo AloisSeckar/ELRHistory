@@ -15,6 +15,7 @@ export type GalleryLink = Pick<GalleryRaw, 'galleryId' | 'name'>
 
 export type BookRaw = definitions['elrhBook']
 export type ImageRaw = definitions['elrhImage']
+export type MapRaw = definitions['elrhMap']
 export type NewsRaw = definitions['elrhNews']
 export type LinkRaw = definitions['elrhLink']
 export type TimelineRaw = definitions['elrhTimeline']
@@ -53,6 +54,11 @@ export type Link = LinkRaw & {
   elrhCategory: CategoryLink
 }
 
+export type MapDB = Omit<MapRaw, 'mapId'>
+export type Map = MapRaw & {
+  elrhAuthor: AuthorLink
+}
+
 export type NewsDB = Omit<NewsRaw, 'newsId'>
 export type News = NewsRaw & {
   elrhAuthor: AuthorLink
@@ -63,13 +69,13 @@ export type Timeline = TimelineRaw & {
   elrhAuthor: AuthorLink
 }
 
-export type SupabaseStoreData = Article[] | Author[] | Book[] | Category[] | Contact[] | Gallery[] | Image[] | Link[] | News[] | Timeline[]
-export type SupabaseUpdateData = ArticleDB | BookDB | GalleryDB | ImageDB | LinkDB | NewsDB | TimelineDB
-export type SupabaseItemType = 'article' | 'book' | 'gallery' | 'image' | 'link' | 'news' | 'timeline'
+export type SupabaseStoreData = Article[] | Author[] | Book[] | Category[] | Contact[] | Gallery[] | Image[] | Map[] | Link[] | News[] | Timeline[]
+export type SupabaseUpdateData = ArticleDB | BookDB | GalleryDB | ImageDB | LinkDB | MapDB | NewsDB | TimelineDB
+export type SupabaseItemType = 'article' | 'book' | 'gallery' | 'image' | 'link' | 'map' | 'news' | 'timeline'
 export type SupabaseActionType = 'add' | 'edit'
 
-export type SupabaseStoreClient = SupabaseClient<Article> | SupabaseClient<Book> | SupabaseClient<Gallery> | SupabaseClient<Image> | SupabaseClient<Link> | SupabaseClient<News> | SupabaseClient<Timeline>
-export type SupabaseUpdateClient = SupabaseClient<ArticleDB> | SupabaseClient<BookDB> | SupabaseClient<GalleryDB> | SupabaseClient<ImageDB> | SupabaseClient<LinkDB> | SupabaseClient<NewsDB> | SupabaseClient<TimelineDB>
+export type SupabaseStoreClient = SupabaseClient<Article> | SupabaseClient<Book> | SupabaseClient<Gallery> | SupabaseClient<Image> | SupabaseClient<Link> | SupabaseClient<Map> | SupabaseClient<News> | SupabaseClient<Timeline>
+export type SupabaseUpdateClient = SupabaseClient<ArticleDB> | SupabaseClient<BookDB> | SupabaseClient<GalleryDB> | SupabaseClient<ImageDB> | SupabaseClient<LinkDB> | SupabaseClient<MapDB> | SupabaseClient<NewsDB> | SupabaseClient<TimelineDB>
 
 export type SupabaseUpdateFunction = (itemData: SupabaseUpdateData, itemId?: number) => Promise<boolean>
 

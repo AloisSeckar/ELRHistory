@@ -3,6 +3,7 @@
         "index" : "Index",
         "articles" : "Články",
         "galleries" : "Galerie",
+        "map" : "Mapa",
         "timeline" : "Časová osa",
         "books" : "Knihy",
         "links" : "Odkazy"
@@ -40,6 +41,9 @@
         "total" : "Celkem obrázků",
         "no-dscr" : "Popis není k dispozici...",
         "full-size" : "Klikněte pro zobrazení v plné velikosti"
+    },
+    "map" : {
+        "title" : "Interaktivní mapa"
     },
     "books" : {
         "total" : "Celkem knih",

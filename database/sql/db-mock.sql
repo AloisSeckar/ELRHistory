@@ -1,6 +1,6 @@
 -- DB mock data for ELRHistory 1.0
 -- use to populate your DB with some values for testing
--- last revision: 2024-02-20
+-- last revision: 2025-11-11
 
 INSERT INTO "elrhAuthor"("email", "name") VALUES ('alois.seckar@gmail.com', 'ELRHistory');
 INSERT INTO "elrhAuthor"("email", "name") VALUES ('ellrohir@seznam.com', 'ELRHistory2');
@@ -86,3 +86,6 @@ INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2
 INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2003', 'Event #21', 'Text appearing on hover', 1);
 INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2002', 'Event #22', 'Text appearing on hover', 1);
 INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2001', 'Event #23', 'Text appearing on hover', 1);
+
+INSERT INTO "elrhMap"("title", "dscr", "coordX", "coordY", "galleryId", "authorId") VALUES ('Trees', 'North of the island', 520, 60, 1, 1);
+INSERT INTO "elrhMap"("title", "dscr", "coordX", "coordY", "galleryId", "authorId") VALUES ('Rocks', 'South of the island', 450, 420, 2, 1);
