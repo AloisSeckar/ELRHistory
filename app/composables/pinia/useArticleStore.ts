@@ -1,5 +1,5 @@
 import type { StoreData, UpdateConfig } from '@/composables/usePiniaHelpers'
-import type { Article, ArticleDB, SupabaseUpdateData } from '@/database/types'
+import type { Article, ArticleDB, SupabaseUpdateData } from '@/../database/types'
 
 const tableName = 'elrhArticle'
 

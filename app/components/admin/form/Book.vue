@@ -65,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import type { BookDB, AbstractValues } from '@/database/types'
+import type { BookDB, AbstractValues } from '@/../database/types'
 
 const props = defineProps({
   bookId: { type: Number, default: -1 },

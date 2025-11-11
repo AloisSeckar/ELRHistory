@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryDB } from '@/database/types'
+import type { GalleryDB } from '@/../database/types'
 
 await useAuthorStore().init()
 await useGalleryStore().init()

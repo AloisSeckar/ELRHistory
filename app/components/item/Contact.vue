@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { Contact } from '@/database/types'
+import type { Contact } from '@/../database/types'
 
 defineProps({
   item: { type: Object as PropType<Contact>, required: true },

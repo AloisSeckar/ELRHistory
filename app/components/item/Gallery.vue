@@ -105,7 +105,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { Gallery } from '@/database/types'
+import type { Gallery } from '@/../database/types'
 
 const props = defineProps({
   detail: { type: Boolean, default: false },

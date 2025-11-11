@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Article } from '@/database/types'
+import type { Article } from '@/../database/types'
 
 const articles = useArticleStore()
 await articles.init()

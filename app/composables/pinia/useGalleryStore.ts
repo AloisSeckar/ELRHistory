@@ -1,5 +1,5 @@
 import type { StoreData } from '@/composables/usePiniaHelpers'
-import type { Gallery, GalleryDB, SupabaseUpdateData } from '@/database/types'
+import type { Gallery, GalleryDB, SupabaseUpdateData } from '@/../database/types'
 
 const tableName = 'elrhGallery'
 

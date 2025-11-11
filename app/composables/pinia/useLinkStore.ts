@@ -1,5 +1,5 @@
 import type { StoreData, UpdateConfig } from '@/composables/usePiniaHelpers'
-import type { Link, LinkDB, SupabaseUpdateData } from '@/database/types'
+import type { Link, LinkDB, SupabaseUpdateData } from '@/../database/types'
 
 const tableName = 'elrhLink'
 

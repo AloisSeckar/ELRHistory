@@ -4,7 +4,7 @@ import type {
   SupabaseStoreData, SupabaseUpdateData, SupabaseItemType,
   AbstractValues,
   SupabaseUpdateFunction,
-} from '@/database/types'
+} from '@/../database/types'
 
 export type OrderOpts = {
   ascending?: boolean

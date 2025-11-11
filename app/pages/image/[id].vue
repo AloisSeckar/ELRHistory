@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Image } from '@/database/types'
+import type { Image } from '@/../database/types'
 
 await useImageStore().init()
 

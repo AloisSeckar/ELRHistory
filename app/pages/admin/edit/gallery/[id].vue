@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import type { FormKitOptionsItem } from '@formkit/inputs'
-import type { Gallery, GalleryDB } from '@/database/types'
+import type { Gallery, GalleryDB } from '@/../database/types'
 
 const initStores = async () => {
   await useAuthorStore().init()

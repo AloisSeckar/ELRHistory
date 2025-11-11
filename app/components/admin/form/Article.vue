@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ArticleDB, AbstractValues } from '@/database/types'
+import type { ArticleDB, AbstractValues } from '@/../database/types'
 
 const props = defineProps({
   articleId: { type: Number, default: -1 },

@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import type { SupabaseActionType, SupabaseItemType } from '@/database/types'
+import type { SupabaseActionType, SupabaseItemType } from '@/../database/types'
 
 const props = defineProps({
   action: { type: String as PropType<SupabaseActionType>, default: 'edit' },

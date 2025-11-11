@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import type { FormKitOptionsItem } from '@formkit/inputs'
-import type { Article, ArticleDB } from '@/database/types'
+import type { Article, ArticleDB } from '@/../database/types'
 
 const initStores = async () => {
   await useArticleStore().init()

@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import type { LinkDB } from '@/database/types'
+import type { LinkDB } from '@/../database/types'
 
 await useLinkStore().init()
 await useAuthorStore().init()

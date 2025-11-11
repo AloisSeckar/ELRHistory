@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import type { FormKitOptionsItem } from '@formkit/inputs'
-import type { News, NewsDB } from '@/database/types'
+import type { News, NewsDB } from '@/../database/types'
 
 const initStores = async () => {
   await useNewsStore().init()
