@@ -55,6 +55,12 @@ const titleData = computed(() => {
       page: useT('menu.timeline'),
       text: useTAdminAdd('timeline'),
     }
+  } else if (useRoute().path.includes('map')) {
+    return {
+      link: 'map',
+      page: useT('menu.map'),
+      text: useTAdminAdd('map'),
+    }
   } else if (useRoute().path.includes('admin')) {
     return {
       page: useT('admin.index'),

@@ -3,6 +3,7 @@
         "index" : "Index",
         "articles" : "Articles",
         "galleries" : "Galleries",
+        "map" : "Map",
         "timeline" : "Timeline",
         "books" : "Books",
         "links" : "Links"
@@ -34,6 +35,9 @@
         "sub-none" : "No sub-galleries",
         "articles" : "Related articles:",
         "articles-none" : "No related articles"
+    },
+    "map" : {
+        "title" : "Interactive map"
     },
     "images" : {
         "title" : "Images",

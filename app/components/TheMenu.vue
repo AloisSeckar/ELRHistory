@@ -9,6 +9,9 @@
     <NuxtLink to="/galleries">
       <BaseIcon icon="image" size="1.125rem" :css-class="menuIcon" /> {{ $t('menu.galleries') }}
     </NuxtLink>
+    <NuxtLink to="/map" class="text-nowrap">
+      <BaseIcon icon="map" size="1.125rem" :css-class="menuIcon" /> {{ $t('menu.map') }}
+    </NuxtLink>
     <NuxtLink to="/timeline" class="text-nowrap">
       <BaseIcon icon="timeline" size="1.125rem" :css-class="menuIcon" /> {{ $t('menu.timeline') }}
     </NuxtLink>

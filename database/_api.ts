@@ -441,6 +441,192 @@ export interface paths {
       };
     };
   };
+  "/elrhAdminConfig": {
+    get: {
+      parameters: {
+        query: {
+          configId?: parameters["rowFilter.elrhAdminConfig.configId"];
+          config?: parameters["rowFilter.elrhAdminConfig.config"];
+          value?: parameters["rowFilter.elrhAdminConfig.value"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhAdminConfig"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhAdminConfig */
+          elrhAdminConfig?: definitions["elrhAdminConfig"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferPost"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          configId?: parameters["rowFilter.elrhAdminConfig.configId"];
+          config?: parameters["rowFilter.elrhAdminConfig.config"];
+          value?: parameters["rowFilter.elrhAdminConfig.value"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          configId?: parameters["rowFilter.elrhAdminConfig.configId"];
+          config?: parameters["rowFilter.elrhAdminConfig.config"];
+          value?: parameters["rowFilter.elrhAdminConfig.value"];
+        };
+        body: {
+          /** elrhAdminConfig */
+          elrhAdminConfig?: definitions["elrhAdminConfig"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/elrhAdminPages": {
+    get: {
+      parameters: {
+        query: {
+          pageId?: parameters["rowFilter.elrhAdminPages.pageId"];
+          page?: parameters["rowFilter.elrhAdminPages.page"];
+          enabled?: parameters["rowFilter.elrhAdminPages.enabled"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhAdminPages"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhAdminPages */
+          elrhAdminPages?: definitions["elrhAdminPages"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferPost"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          pageId?: parameters["rowFilter.elrhAdminPages.pageId"];
+          page?: parameters["rowFilter.elrhAdminPages.page"];
+          enabled?: parameters["rowFilter.elrhAdminPages.enabled"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          pageId?: parameters["rowFilter.elrhAdminPages.pageId"];
+          page?: parameters["rowFilter.elrhAdminPages.page"];
+          enabled?: parameters["rowFilter.elrhAdminPages.enabled"];
+        };
+        body: {
+          /** elrhAdminPages */
+          elrhAdminPages?: definitions["elrhAdminPages"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/elrhArticle": {
     get: {
       parameters: {
@@ -735,6 +921,111 @@ export interface paths {
         body: {
           /** elrhAuthor */
           elrhAuthor?: definitions["elrhAuthor"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/elrhMap": {
+    get: {
+      parameters: {
+        query: {
+          mapId?: parameters["rowFilter.elrhMap.mapId"];
+          title?: parameters["rowFilter.elrhMap.title"];
+          dscr?: parameters["rowFilter.elrhMap.dscr"];
+          coordX?: parameters["rowFilter.elrhMap.coordX"];
+          coordY?: parameters["rowFilter.elrhMap.coordY"];
+          galleryId?: parameters["rowFilter.elrhMap.galleryId"];
+          authorId?: parameters["rowFilter.elrhMap.authorId"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["elrhMap"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** elrhMap */
+          elrhMap?: definitions["elrhMap"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferPost"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          mapId?: parameters["rowFilter.elrhMap.mapId"];
+          title?: parameters["rowFilter.elrhMap.title"];
+          dscr?: parameters["rowFilter.elrhMap.dscr"];
+          coordX?: parameters["rowFilter.elrhMap.coordX"];
+          coordY?: parameters["rowFilter.elrhMap.coordY"];
+          galleryId?: parameters["rowFilter.elrhMap.galleryId"];
+          authorId?: parameters["rowFilter.elrhMap.authorId"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          mapId?: parameters["rowFilter.elrhMap.mapId"];
+          title?: parameters["rowFilter.elrhMap.title"];
+          dscr?: parameters["rowFilter.elrhMap.dscr"];
+          coordX?: parameters["rowFilter.elrhMap.coordX"];
+          coordY?: parameters["rowFilter.elrhMap.coordY"];
+          galleryId?: parameters["rowFilter.elrhMap.galleryId"];
+          authorId?: parameters["rowFilter.elrhMap.authorId"];
+        };
+        body: {
+          /** elrhMap */
+          elrhMap?: definitions["elrhMap"];
         };
         header: {
           /** Preference */
@@ -1187,6 +1478,30 @@ export interface definitions {
      */
     authorId: number;
   };
+  elrhAdminConfig: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    configId: number;
+    /** Format: character varying */
+    config: string;
+    /** Format: text */
+    value: string;
+  };
+  elrhAdminPages: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    pageId: number;
+    /** Format: character varying */
+    page: string;
+    /** Format: boolean */
+    enabled: boolean;
+  };
   elrhArticle: {
     /**
      * Format: integer
@@ -1252,6 +1567,34 @@ export interface definitions {
     email: string;
     /** Format: character varying */
     name: string;
+  };
+  elrhMap: {
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    mapId: number;
+    /** Format: character varying */
+    title: string;
+    /** Format: text */
+    dscr?: string;
+    /** Format: integer */
+    coordX: number;
+    /** Format: integer */
+    coordY: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhGallery.galleryId`.<fk table='elrhGallery' column='galleryId'/>
+     */
+    galleryId: number;
+    /**
+     * Format: integer
+     * @description Note:
+     * This is a Foreign Key to `elrhAuthor.authorId`.<fk table='elrhAuthor' column='authorId'/>
+     */
+    authorId: number;
   };
   elrhGallery: {
     /**
@@ -1452,6 +1795,22 @@ export interface parameters {
   "rowFilter.elrhTimeline.tooltip": string;
   /** Format: integer */
   "rowFilter.elrhTimeline.authorId": string;
+  /** @description elrhAdminConfig */
+  "body.elrhAdminConfig": definitions["elrhAdminConfig"];
+  /** Format: integer */
+  "rowFilter.elrhAdminConfig.configId": string;
+  /** Format: character varying */
+  "rowFilter.elrhAdminConfig.config": string;
+  /** Format: text */
+  "rowFilter.elrhAdminConfig.value": string;
+  /** @description elrhAdminPages */
+  "body.elrhAdminPages": definitions["elrhAdminPages"];
+  /** Format: integer */
+  "rowFilter.elrhAdminPages.pageId": string;
+  /** Format: character varying */
+  "rowFilter.elrhAdminPages.page": string;
+  /** Format: boolean */
+  "rowFilter.elrhAdminPages.enabled": string;
   /** @description elrhArticle */
   "body.elrhArticle": definitions["elrhArticle"];
   /** Format: integer */
@@ -1494,6 +1853,22 @@ export interface parameters {
   "rowFilter.elrhAuthor.email": string;
   /** Format: character varying */
   "rowFilter.elrhAuthor.name": string;
+  /** @description elrhMap */
+  "body.elrhMap": definitions["elrhMap"];
+  /** Format: integer */
+  "rowFilter.elrhMap.mapId": string;
+  /** Format: character varying */
+  "rowFilter.elrhMap.title": string;
+  /** Format: text */
+  "rowFilter.elrhMap.dscr": string;
+  /** Format: integer */
+  "rowFilter.elrhMap.coordX": string;
+  /** Format: integer */
+  "rowFilter.elrhMap.coordY": string;
+  /** Format: integer */
+  "rowFilter.elrhMap.galleryId": string;
+  /** Format: integer */
+  "rowFilter.elrhMap.authorId": string;
   /** @description elrhGallery */
   "body.elrhGallery": definitions["elrhGallery"];
   /** Format: integer */

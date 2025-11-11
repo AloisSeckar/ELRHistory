@@ -1,9 +1,11 @@
 -- DB scheme for ELRHistory 1.0
 -- syntax is valid for PostgreSQL
--- last revision: 2024-02-20
+-- last revision: 2025-11-11
 
 BEGIN TRANSACTION;
 
+DROP TABLE IF EXISTS "elrhMap";
+DROP TABLE IF EXISTS "elrhTimeline";
 DROP TABLE IF EXISTS "elrhBook";
 DROP TABLE IF EXISTS "elrhContact";
 DROP TABLE IF EXISTS "elrhLink";
@@ -118,6 +120,16 @@ CREATE TABLE "elrhTimeline" (
 	"authorId"	integer NOT NULL
 );
 
+CREATE TABLE "elrhMap" (
+	"mapId"	integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	"title"	varchar(100) NOT NULL,
+	"dscr"	text,
+	"coordX"	integer NOT NULL CHECK("coordX" >= 0),
+	"coordY"	integer NOT NULL CHECK("coordY" >= 0),
+	"galleryId"	integer NOT NULL,
+	"authorId"	integer NOT NULL
+);
+
 ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
 ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_category" FOREIGN KEY ("categoryId") REFERENCES "elrhCategory"("categoryId");
 ALTER TABLE "elrhArticle" ADD CONSTRAINT "fk_article_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrhGallery"("galleryId");
@@ -131,5 +143,7 @@ ALTER TABLE "elrhGallery" ADD CONSTRAINT "fk_gallery_author" FOREIGN KEY ("autho
 ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
 ALTER TABLE "elrhImage" ADD CONSTRAINT "fk_image_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrhGallery"("galleryId");
 ALTER TABLE "elrhTimeline" ADD CONSTRAINT "fk_timeline_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
+ALTER TABLE "elrhMap" ADD CONSTRAINT "fk_map_author" FOREIGN KEY ("authorId") REFERENCES "elrhAuthor"("authorId");
+ALTER TABLE "elrhMap" ADD CONSTRAINT "fk_map_gallery" FOREIGN KEY ("galleryId") REFERENCES "elrhGallery"("galleryId");
 
 COMMIT;

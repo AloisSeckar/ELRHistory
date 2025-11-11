@@ -58,6 +58,8 @@ function getSVGDef(icon: string): IconDefinition {
       return icones.image
     case 'key':
       return icones.key
+    case 'map':
+      return icones.map
     case 'plus':
       return icones.plus
     case 'timeline':
