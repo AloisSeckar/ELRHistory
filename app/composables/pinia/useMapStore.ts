@@ -16,7 +16,7 @@ export const useMapStore = defineStore(tableName + '-store', {
         supabaseClient: useSupabaseClient(),
         tableName,
         storeData: this,
-        selectQuery: 'mapId, title, dscr, coordX, coordY, galleryId, authorId',
+        selectQuery: 'mapId, title, dscr, coordX, coordY, diameter, galleryId, authorId',
         orderQuery: 'title',
         preventSingleLetterOrphans: ['title', 'dscr'],
       }, forceReload)
@@ -58,6 +58,7 @@ export const useMapStore = defineStore(tableName + '-store', {
         dscr: '',
         coordX: 0,
         coordY: 0,
+        diameter: 0,
         galleryId: 0,
         authorId: 0,
       }
