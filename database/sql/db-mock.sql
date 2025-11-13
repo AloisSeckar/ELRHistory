@@ -87,5 +87,5 @@ INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2
 INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2002', 'Event #22', 'Text appearing on hover', 1);
 INSERT INTO "elrhTimeline"("title", "content", "tooltip", "authorId") VALUES ('2001', 'Event #23', 'Text appearing on hover', 1);
 
-INSERT INTO "elrhMap"("title", "dscr", "coordX", "coordY", "galleryId", "authorId") VALUES ('Trees', 'North of the island', 520, 60, 1, 1);
-INSERT INTO "elrhMap"("title", "dscr", "coordX", "coordY", "galleryId", "authorId") VALUES ('Rocks', 'South of the island', 450, 420, 2, 1);
+INSERT INTO "elrhMap"("title", "dscr", "coordX", "coordY", "diameter", "galleryId", "authorId") VALUES ('Trees', 'North of the island', 520, 60, 60, 1, 1);
+INSERT INTO "elrhMap"("title", "dscr", "coordX", "coordY", "diameter", "galleryId", "authorId") VALUES ('Rocks', 'South of the island', 450, 420, 80, 2, 1);

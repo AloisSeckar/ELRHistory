@@ -942,6 +942,7 @@ export interface paths {
           dscr?: parameters["rowFilter.elrhMap.dscr"];
           coordX?: parameters["rowFilter.elrhMap.coordX"];
           coordY?: parameters["rowFilter.elrhMap.coordY"];
+          diameter?: parameters["rowFilter.elrhMap.diameter"];
           galleryId?: parameters["rowFilter.elrhMap.galleryId"];
           authorId?: parameters["rowFilter.elrhMap.authorId"];
           /** Filtering Columns */
@@ -999,6 +1000,7 @@ export interface paths {
           dscr?: parameters["rowFilter.elrhMap.dscr"];
           coordX?: parameters["rowFilter.elrhMap.coordX"];
           coordY?: parameters["rowFilter.elrhMap.coordY"];
+          diameter?: parameters["rowFilter.elrhMap.diameter"];
           galleryId?: parameters["rowFilter.elrhMap.galleryId"];
           authorId?: parameters["rowFilter.elrhMap.authorId"];
         };
@@ -1020,6 +1022,7 @@ export interface paths {
           dscr?: parameters["rowFilter.elrhMap.dscr"];
           coordX?: parameters["rowFilter.elrhMap.coordX"];
           coordY?: parameters["rowFilter.elrhMap.coordY"];
+          diameter?: parameters["rowFilter.elrhMap.diameter"];
           galleryId?: parameters["rowFilter.elrhMap.galleryId"];
           authorId?: parameters["rowFilter.elrhMap.authorId"];
         };
@@ -1583,6 +1586,8 @@ export interface definitions {
     coordX: number;
     /** Format: integer */
     coordY: number;
+    /** Format: integer */
+    diameter: number;
     /**
      * Format: integer
      * @description Note:
@@ -1865,6 +1870,8 @@ export interface parameters {
   "rowFilter.elrhMap.coordX": string;
   /** Format: integer */
   "rowFilter.elrhMap.coordY": string;
+  /** Format: integer */
+  "rowFilter.elrhMap.diameter": string;
   /** Format: integer */
   "rowFilter.elrhMap.galleryId": string;
   /** Format: integer */

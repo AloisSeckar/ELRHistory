@@ -126,6 +126,7 @@ CREATE TABLE "elrhMap" (
 	"dscr"	text,
 	"coordX"	integer NOT NULL CHECK("coordX" >= 0),
 	"coordY"	integer NOT NULL CHECK("coordY" >= 0),
+	"diameter" integer NOT NULL CHECK("diameter" >= 0),
 	"galleryId"	integer NOT NULL,
 	"authorId"	integer NOT NULL
 );
