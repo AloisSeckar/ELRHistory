@@ -13,14 +13,11 @@
     "@nuxtjs/cloudinary": "4.0.0",
     "cloudinary": "2.8.0",
     "infinitimeline": "0.5.0",
-    "nuxt-ignis": "0.5.1",
+    "nuxt-ignis": "0.5.2",
     "openapi-typescript": "5.4.1",
     "vue-dompurify-html": "5.3.0"
   },
   "pnpm": {
-    "overrides": {
-      "tar": "^7.5.2"
-    },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "@tailwindcss/oxide",
@@ -32,5 +29,5 @@
       "vue-demi"
     ]
   },
-  "packageManager": "pnpm@10.22.0"
+  "packageManager": "pnpm@10.24.0"
 }
