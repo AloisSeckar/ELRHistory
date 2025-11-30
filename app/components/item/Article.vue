@@ -50,6 +50,7 @@
           </div>
         </div>
       </div>
+      <ShareButtons class="m-2" />
     </div>
     <ItemInvalid v-else item="article" />
     <div v-if="detail" class="m-[-12px] text-center">

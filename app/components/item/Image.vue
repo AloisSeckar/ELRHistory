@@ -37,6 +37,7 @@
           </NuxtLink>
         </div>
         <ItemImageNav :item="item" :editable="editable" />
+        <ShareButtons class="mb-2 mt-4 mx-auto w-[328px]" />
       </div>
     </div>
     <ItemInvalid v-else item="image" />

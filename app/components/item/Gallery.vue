@@ -98,6 +98,7 @@
           </div>
         </div>
       </div>
+      <ShareButtons class="m-2 mt-4" />
     </div>
     <ItemInvalid v-else item="gallery" />
   </div>
