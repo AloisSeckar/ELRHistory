@@ -21,4 +21,11 @@ const item = computed(() => {
   }
   return {} as Gallery
 })
+
+usePageMeta({
+  title: item.value.name,
+  dscr: item.value.dscr,
+  // TODO use first image in gallery as og:image
+  // image: item.value
+})
 </script>

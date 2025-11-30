@@ -25,6 +25,8 @@ export default defineNuxtConfig({
       webAbout: 'This is a welcome text displayed on the index page.<br /><br />It can be <strong>HTML <span style="color: red">formatted</span></strong>.',
       webAuthor: 'Alois Sečkár',
       webLink: 'https://alois-seckar.cz/',
+      // social media image
+      ogImage: '/og.jpg',
       // map page background image (TODO move to database?)
       mapImage: '/map.jpg',
       mapImageWidth: 1000,

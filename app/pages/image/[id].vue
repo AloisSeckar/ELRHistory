@@ -20,4 +20,10 @@ const item = computed(() => {
   }
   return {} as Image
 })
+
+usePageMeta({
+  title: item.value.name,
+  dscr: item.value.dscr,
+  image: item.value.image,
+})
 </script>

@@ -28,6 +28,9 @@ useHead({
   ],
 })
 
+// injcect default meta tags to all pages, ovewrridable per page
+usePageMeta({})
+
 await useAdminStore().load()
 
 onMounted(() => {
