@@ -1,6 +1,6 @@
 import type { StoreData } from '@/composables/usePiniaHelpers'
 import type { Category } from '@/../database/types'
-import type { FormkitValue } from '~/app/utils/storeUtils'
+import type { FormkitValue } from '~/utils/storeUtils'
 
 const tableName = 'elrhCategory'
 

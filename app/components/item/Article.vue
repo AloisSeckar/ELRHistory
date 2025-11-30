@@ -53,7 +53,7 @@
       <ShareButtons class="m-2" />
     </div>
     <ItemInvalid v-else item="article" />
-    <div v-if="detail" class="m-[-12px] text-center">
+    <div v-if="detail" class="-m-3 text-center">
       <NuxtLink :to="{ path: '/articles' }" class="hover:text-sky-500">
         {{ $t('articles.back') }}
       </NuxtLink>
