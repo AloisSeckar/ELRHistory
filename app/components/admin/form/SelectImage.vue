@@ -3,10 +3,10 @@
     <div class="flex">
       <div class="inline-block grow">
         <FormKit
-          :id="name"
+          :id="filename"
           v-model="imgSrc"
           type="text"
-          :name="name"
+          :name="filename"
           :label="label"
           validation="required"
           :disabled="true"
@@ -19,7 +19,8 @@
           v-slot="{ open }"
           :upload-preset="useRuntimeConfig().public.cloudinary.preset"
           :options="getCloudinaryOptions(folder)"
-          @upload="uploadFinished"
+          @result="uploadResult"
+          @success="uploadFinished"
           @error="uploadError">
           <FormKit
             type="button"
@@ -34,18 +35,18 @@
           class="mx-auto w-48 h-32 border"
           provider="cloudinary"
           :src="useRuntimeConfig().public.cloudinary.folder + imgSrc"
-          :alt="name" :title="name" crossorigin />
+          :alt="filename" :title="filename" crossorigin />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { CldUploadWidgetResults } from '@nuxtjs/cloudinary/dist/runtime/components/CldUploadWidget.vue'
+import type { CloudinaryUploadWidgetError, CloudinaryUploadWidgetInfo, CloudinaryUploadWidgetResults } from '@cloudinary-util/types'
 
 const props = defineProps({
   folder: { type: String, default: 'misc' },
-  name: { type: String, default: 'thumb' },
+  filename: { type: String, default: 'thumb' },
   label: { type: String, default: 'Thumb:' },
   source: { type: String, default: '/blank.jpg' },
 })
@@ -53,16 +54,21 @@ defineEmits<{ (e: 'change', path: string): void }>()
 
 const imgSrc = ref(props.source ? props.source : '/blank.jpg')
 
-const uploadFinished = (result: Ref<CldUploadWidgetResults>) => {
-  const name = result.value.info.public_id + '.' + result.value.info.format
+const uploadResult = (result: CloudinaryUploadWidgetResults) => {
+  console.debug('upload result', result)
+}
+
+const uploadFinished = (result: CloudinaryUploadWidgetResults) => {
+  const info = result.info as CloudinaryUploadWidgetInfo
+  const name = info.public_id + '.' + info.format
   imgSrc.value = name.substring(name.indexOf('/')) // root folder is added automatically
   console.debug(`image ${name} was uploaded`)
   resetWidget()
 }
 
-const uploadError = (result: Ref<{ value: string }>) => {
+const uploadError = (error: CloudinaryUploadWidgetError) => {
   console.error('upload failed')
-  console.error(result.value)
+  console.error(error)
   useModalStore().showModal('Error', 'Failed to upload image')
   resetWidget()
 }
