@@ -16,6 +16,9 @@ const idString = useRoute().params.gallery as string
 const galleryId = idString === 'first' ? useGalleryStore().getFirstId : parseInt(idString)
 
 const save = async (image: ImageDB) => {
+  // always add new image as last
+  image.ord = useImageStore().getCountByGallery(image.galleryId) + 1
+  //
   await useUpdateItem(useImageStore().update, 'image', `/gallery/${image.galleryId}`, image)
 }
 </script>
