@@ -25,7 +25,7 @@
         :rows="10" />
       <AdminFormSelectImage
         name="image" :label="useT('admin.form.image')" :source="image.image"
-        folder="image"
+        folder="image" filename="image"
         @change="setImage" />
       <FormKit
         id="galleryId"
