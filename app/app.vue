@@ -3,8 +3,8 @@
     <TheModal v-show="useModalStore().show" />
     <TheHeader />
     <TheMenu />
-    <TheTitle />
-    <div class="mx-2 md:mx-8 lg:mx-16 xl:mx-32 mb-12">
+    <div class="max-w-[1036px] mx-2 md:mx-8 lg:mx-16 xl:mx-auto mb-12">
+      <TheTitle />
       <NuxtPage />
     </div>
     <TheFooter />
