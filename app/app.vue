@@ -3,7 +3,7 @@
     <TheModal v-show="useModalStore().show" />
     <TheHeader />
     <TheMenu />
-    <div class="max-w-[1036px] mx-2 md:mx-8 lg:mx-16 xl:mx-auto mb-12">
+    <div class="max-w-260 mx-2 md:mx-8 lg:mx-16 xl:mx-auto mb-12">
       <TheTitle />
       <NuxtPage />
     </div>
@@ -28,7 +28,7 @@ useHead({
   ],
 })
 
-// injcect default meta tags to all pages, ovewrridable per page
+// inject default meta tags to all pages, ovewrridable per page
 usePageMeta({})
 
 await useAdminStore().load()

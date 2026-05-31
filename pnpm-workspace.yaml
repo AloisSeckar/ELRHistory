@@ -1,0 +1,12 @@
+shamefullyHoist: true
+
+allowBuilds:
+  # post-install scripts required for correct behavior
+  '@parcel/watcher': true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  vue-demi: true
+  # post-install scripts that can be ignored
+  maplibre-gl: false
+  puppeteer: false

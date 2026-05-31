@@ -1,5 +1,5 @@
-import cs from '@/assets/lang/cs.json'
-import en from '@/assets/lang/en.json'
+import cs from './locales/cs.json'
+import en from './locales/en.json'
 
 export default defineI18nConfig(() => ({
   legacy: false,

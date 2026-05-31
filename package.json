@@ -11,23 +11,11 @@
   },
   "devDependencies": {
     "@nuxtjs/cloudinary": "4.0.0",
-    "cloudinary": "2.8.0",
+    "cloudinary": "2.10.0",
     "infinitimeline": "0.5.0",
-    "nuxt-ignis": "0.5.2",
+    "nuxt-ignis": "0.6.0-rc.2",
     "openapi-typescript": "5.4.1",
     "vue-dompurify-html": "5.3.0"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@tailwindcss/oxide",
-      "better-sqlite3",
-      "esbuild",
-      "maplibre-gl",
-      "sharp",
-      "unrs-resolver",
-      "vue-demi"
-    ]
-  },
-  "packageManager": "pnpm@10.24.0"
+  "packageManager": "pnpm@11.5.0"
 }

@@ -54,11 +54,31 @@ export default defineNuxtConfig({
     },
   },
 
-  // for now this is required override of Nuxt Ignis default i18n config
-  // TODO config should be extensible (has to be solved in upstream)
-  // https://github.com/AloisSeckar/ELRHistory/issues/201
-  i18n: {
-    vueI18n: './elrhistory-i18n.config.ts',
+  ignis: {
+    preset: {
+      ui: 'tailwind',
+      db: 'supabase',
+      forms: 'formkit',
+    },
+    config: {
+      nuxt: {
+        ssr: false,
+      },
+    },
+    default: {
+      css: false,
+    },
+    content: {
+      i18n: {
+        enabled: true,
+        strategy: 'no_prefix',
+        default: process.env.NUXT_PUBLIC_LANG || 'en',
+      },
+      social: {
+        enabled: true,
+        url: 'https://krc-historie.cz/',
+      },
+    },
   },
 
   image: {
