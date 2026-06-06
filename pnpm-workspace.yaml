@@ -10,3 +10,15 @@ allowBuilds:
   # post-install scripts that can be ignored
   maplibre-gl: false
   puppeteer: false
+
+minimumReleaseAgeExclude:
+  # nuxt-ignis and its submodules must be excluded to allow 
+  # installing latest version without cooldown
+  - 'nuxt-ignis'
+  - '@nuxt-ignis/content'
+  - '@nuxt-ignis/default'
+  - '@nuxt-ignis/db'
+  - '@nuxt-ignis/forms'
+  - '@nuxt-ignis/ui'
+  - '@nuxt-ignis/utils'
+  - '@nuxt-ignis/validation'
