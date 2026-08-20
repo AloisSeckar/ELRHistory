@@ -1,20 +1,18 @@
 shamefullyHoist: true
 
 allowBuilds:
-  # post-install scripts required for correct behavior
   '@parcel/watcher': true
-  esbuild: true
-  sharp: true
-  unrs-resolver: true
-  vue-demi: true
-  # post-install scripts that can be ignored
-  maplibre-gl: false
-  puppeteer: false
+  'sharp': true
+  'unrs-resolver': true
+  'esbuild': false
+  'maplibre-gl': false
+  'vue-demi': false
 
 minimumReleaseAgeExclude:
   # nuxt-ignis and its submodules must be excluded to allow 
   # installing latest version without cooldown
   - 'nuxt-ignis'
+  - 'nuxt-spec'
   - '@nuxt-ignis/content'
   - '@nuxt-ignis/default'
   - '@nuxt-ignis/db'

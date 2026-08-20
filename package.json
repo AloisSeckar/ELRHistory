@@ -13,9 +13,9 @@
     "@nuxtjs/cloudinary": "4.0.0",
     "cloudinary": "2.10.0",
     "infinitimeline": "0.5.0",
-    "nuxt-ignis": "0.6.0",
+    "nuxt-ignis": "0.6.1",
     "openapi-typescript": "5.4.1",
     "vue-dompurify-html": "5.3.0"
   },
-  "packageManager": "pnpm@11.5.2"
+  "packageManager": "pnpm@11.22.0"
 }
